@@ -34,7 +34,8 @@
 %macro SetIMRTPrd;
 	/*	Set LibName to access data from IMRT production system	*/
 	libname imrtprd postgres server='imrt-prod-bi.c7g9woytu6d2.us-west-2.rds.amazonaws.com'
-					port=5432 user=analyst password='che3UaPo' database=imrt;
+					port=5432 user=analyst password="{SAS004}16BA0F3B37E8E8015239B6EA6094FB6AE51C247064ACD638"
+					database=imrt;
 %mend SetIMRTPrd;
 
 /*==========================================================================================================*
@@ -50,7 +51,8 @@
 	/*	Set LibName to access data from TCD system	*/
 	libname itmsts postgres
 		server="analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com"
-		port=5432 database=tcd user=root password="eiY8phohiu7Pho3e";
+		port=5432 database=tcd user=root
+		password="{SAS004}4E11C901BB7A6F3CFBD7D14A4E0C34ECB28A7DD30321EE2CCE64BD05D6811DA4B968C63B5DB72413";
 %mend SetTCD;
 
 /*-------------------------------------------------------------------*
