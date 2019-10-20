@@ -50,7 +50,7 @@ options nosymbolgen nomprint nomlogic;
 	/*	This data step builds the item level field format macro block	*/
 	data _null_;
 		format OutLyne $64.;
-		file "&workhere.\MacDef\&CntGrd._AIRImport_FmtMacDef.sas";
+		file "&workhere.\AIRMacDef\&CntGrd._AIRImport_FmtMacDef.sas";
 		%do fld = 17 %to &LastField.;
 			%if &fld. = 17 %then %do;
 				OutLyne = '%macro '||"&CntGrd."||'_Fmt;';
@@ -61,7 +61,7 @@ options nosymbolgen nomprint nomlogic;
 			%if %substr(%trim(&&field&fld..), 3, 2) = RV %then %do;
 				OutLyne = "%trim(&&field&fld..)"||'_str $512. ';
 				put @3 OutLyne;
-				OutLyne = "%trim(&&field&fld..)"||' $18. ';
+				OutLyne = "%trim(&&field&fld..)"||' $24. ';
 				put @3 OutLyne;
 			%end;
 			%else %do;
@@ -82,7 +82,7 @@ options nosymbolgen nomprint nomlogic;
 		%let field&fld. = &&field&fld.. ;
 	%end;
 	options mprint mlogic symbolgen;
-	%include "&workhere.\MacDef\&CntGrd._AIRImport_FmtMacDef.sas";
+	%include "&workhere.\AIRMacDef\&CntGrd._AIRImport_FmtMacDef.sas";
 	%SetDSLabel;
 	data libhere.&CntGrd._AIRSrc (compress=yes label="&DSLabel.");
 		infile "&workhere.\AIRCSV\&TargetFyl." firstobs=2 lrecl=24000 dsd missover;
@@ -90,7 +90,7 @@ options nosymbolgen nomprint nomlogic;
 			tdsopportunityguid $36. COMPONENT_1_OPPKEY $36. COMPONENT_2_OPPKEY $36.
 			COMPONENT_1_OPPID 8.0 COMPONENT_2_OPPID 8.0 transformed_clientname $20.
 			EconomicDisadvantaged $3. Ethnicity 2.0 gender $6. PrimaryDisability $4.
-			ELL $3. overall_thetascore 18.14 ;
+			ELL $3. overall_thetascore 18.14 EBSR_Part1 $312. EBSR_Part2 $312.;
 		%&CntGrd._Fmt;
 		input TestID $ TestSubject $ TestedGrade $  vndr_test_event_ID
 			tdsopportunityguid $ COMPONENT_1_OPPKEY $ COMPONENT_2_OPPKEY $
@@ -106,68 +106,71 @@ options nosymbolgen nomprint nomlogic;
 				%end;
 			%end;
 			;
-		/* Here is where EBSR XML content is processed */
+		/* Here is where item response content is processed */
 		%do fld = 17 %to &LastField.;
 			%if %substr(%trim(&&field&fld..), 3, 2) = RV %then %do;
 				if substr(&&field&fld.._str, 1, 17) = 'choiceInteraction' then do;
-					
-					
-					%do rsp = 1 %to 6;
-						searchStr = trim('<response id="EBSR')||trim("&rsp.")||trim('"><value>');
-						SubStart = index(&&field&fld.._str, searchStr);
-						if SubStart > 0 then do;
-							&&field&fld.._str = substr(&&field&fld.._str, SubStart + 28);
-							SubEnd = index(&&field&fld.._str, '</value></response>');
-							%if &rsp.=1 %then %do;
-								IR&rsp. = substr(&&field&fld.._str, 1, SubEnd - 1);
-								&&field&fld.. = IR&rsp.;
-							%end;
-							%else %do;
-								/*	Look for additional responses in EBSR2	*/
-								SubMid = index(&&field&fld.._str, '</value><value>');
-								if SubMid > 0 then do;
-									%do mrsp = 1 %to 6;
-										SubMid = index(&&field&fld.._str, '</value><value>');
-										SubMEnd = index(&&field&fld.._str, '</value></response>');
-										if SubMid > 0 then do;
-											%if &mrsp. = 1 %then %do;
-												IMR&mrsp. = substr(&&field&fld.._str, 1, SubMid - 1);
-												&&field&fld.. = trim(&&field&fld..)||';'||trim(IMR&mrsp.);
-											%end;
-											%else %do;
-												IMR&mrsp. = substr(&&field&fld.._str, 1, SubMid - 1);
-												&&field&fld.. = trim(&&field&fld..)||'|'||trim(IMR&mrsp.);
-											%end;
-										end;
-										else if SubMid = 0 and SubMEnd > 0 then do;
-											IMR&mrsp. = substr(&&field&fld.._str, 1, 1);
-											&&field&fld.. = trim(&&field&fld..)||'|'||trim(IMR&mrsp.);
-										end;
-										%if &mrsp. < 6 %then %do;
-											&&field&fld.._str = substr(&&field&fld.._str, 17);
-										%end;
-									%end;
-								end;
-								else do;
-									IR&rsp. = substr(&&field&fld.._str, 1, SubEnd - 1);
-									&&field&fld.. = trim(&&field&fld..)||';'||trim(IR&rsp.);
-								end;
-							%end;
+					fieldLen = length(&&field&fld.._str);
+					select(fieldLen);
+						when(28) &&field&fld.. = compress(substr(&&field&fld.._str, 28, 1));
+						when(57) &&field&fld.. = compress(substr(&&field&fld.._str, 28, 1)||'|'||substr(&&field&fld.._str, 57, 1));
+						when(86) &&field&fld.. = compress(substr(&&field&fld.._str, 28, 1)||'|'||substr(&&field&fld.._str, 57, 1)||'|'||
+											substr(&&field&fld.._str, 86, 1));
+						when(115) &&field&fld.. = compress(substr(&&field&fld.._str, 28, 1)||'|'||substr(&&field&fld.._str, 57, 1)||'|'||
+											substr(&&field&fld.._str, 86, 1)||'|'||substr(&&field&fld.._str, 115, 1));
+						when(144) &&field&fld.. = compress(substr(&&field&fld.._str, 28, 1)||'|'||substr(&&field&fld.._str, 57, 1)||'|'||
+											substr(&&field&fld.._str, 86, 1)||'|'||substr(&&field&fld.._str, 115, 1)||'|'||substr(&&field&fld.._str, 144, 1));
+						when(173) &&field&fld.. = compress(substr(&&field&fld.._str, 28, 1)||'|'||substr(&&field&fld.._str, 57, 1)||'|'||
+											substr(&&field&fld.._str, 86, 1)||'|'||substr(&&field&fld.._str, 115, 1)||'|'||substr(&&field&fld.._str, 144, 1)||'|'||
+											substr(&&field&fld.._str, 173, 1));
+						when(202) &&field&fld.. = compress(substr(&&field&fld.._str, 28, 1)||'|'||substr(&&field&fld.._str, 57, 1)||'|'||
+											substr(&&field&fld.._str, 86, 1)||'|'||substr(&&field&fld.._str, 115, 1)||'|'||substr(&&field&fld.._str, 144, 1)||'|'||
+											substr(&&field&fld.._str, 173, 1)||'|'||substr(&&field&fld.._str, 202, 1));
+						when(231) &&field&fld.. = compress(substr(&&field&fld.._str, 28, 1)||'|'||substr(&&field&fld.._str, 57, 1)||'|'||
+											substr(&&field&fld.._str, 86, 1)||'|'||substr(&&field&fld.._str, 115, 1)||'|'||substr(&&field&fld.._str, 144, 1)||'|'||
+											substr(&&field&fld.._str, 173, 1)||'|'||substr(&&field&fld.._str, 202, 1)||'|'||substr(&&field&fld.._str, 202, 1));
+						otherwise do;
+							&&field&fld.. = "PROB";
+							put "Problem with field length for: &&field&fld.._str" ;
 						end;
+					end; /* select */
+				end;
+				else if substr(&&field&fld.._str, 1, 20) = '{{{choiceInteraction' then do;	/*	These are the EBSR item responses	*/
+					/*	Split the two parts apart	*/
+					EBSR_Split_Loc = index(&&field&fld.._str, '}}}{{{') + 3;
+					EBSR_Part1_str=substr(&&field&fld.._str, 1, EBSR_Split_Loc - 1);
+					EBSR_Part2_str=substr(&&field&fld.._str, EBSR_Split_Loc);
+					%do prt = 1 %to 2;
+						fieldLen = length(EBSR_Part&prt._str);
+						select(fieldLen);
+							when(64) EBSR_Part&prt. = compress(substr(EBSR_Part&prt._str, 61, 1));
+							when(93) EBSR_Part&prt. = compress(substr(EBSR_Part&prt._str, 61, 1)||'|'||substr(EBSR_Part&prt._str, 90, 1));
+							when(122) EBSR_Part&prt. = compress(substr(EBSR_Part&prt._str, 61, 1)||'|'||substr(EBSR_Part&prt._str, 90, 1)||'|'||substr(EBSR_Part&prt._str, 119, 1));
+							when(151) EBSR_Part&prt. = compress(substr(EBSR_Part&prt._str, 61, 1)||'|'||substr(EBSR_Part&prt._str, 90, 1)||'|'||substr(EBSR_Part&prt._str, 119, 1)||'|'||
+												substr(EBSR_Part&prt._str, 148, 1));
+							when(180) EBSR_Part&prt. = compress(substr(EBSR_Part&prt._str, 61, 1)||'|'||substr(EBSR_Part&prt._str, 90, 1)||'|'||substr(EBSR_Part&prt._str, 119, 1)||'|'||
+												substr(EBSR_Part&prt._str, 148, 1)||'|'||substr(EBSR_Part&prt._str, 177, 1));
+							when(209) EBSR_Part&prt. = compress(substr(EBSR_Part&prt._str, 61, 1)||'|'||substr(EBSR_Part&prt._str, 90, 1)||'|'||substr(EBSR_Part&prt._str, 119, 1)||'|'||
+												substr(EBSR_Part&prt._str, 148, 1)||'|'||substr(EBSR_Part&prt._str, 177, 1)||'|'||substr(EBSR_Part&prt._str, 206, 1));
+							otherwise do;
+								EBSR_Part&prt. = "PROB.E&prt.";
+								put "Problem with field length for: &&field&fld.._str" ;
+							end;
+						end;	/*	select	*/
 					%end;
-					&&field&fld.. = tranwrd(&&field&fld.., 'A', '1');
-					&&field&fld.. = tranwrd(&&field&fld.., 'B', '2');
-					&&field&fld.. = tranwrd(&&field&fld.., 'C', '3');
-					&&field&fld.. = tranwrd(&&field&fld.., 'D', '4');
-					&&field&fld.. = tranwrd(&&field&fld.., 'E', '5');
-					&&field&fld.. = tranwrd(&&field&fld.., 'F', '6');
+					&&field&fld.. = compress(EBSR_Part1||';'||EBSR_Part2);
 				end;
-				else if substr(&&field&fld.._str, 1, 20) = '{{{choiceInteraction' then do;
-				end;
-				
 				else do;
 					&&field&fld.. = compress(&&field&fld.._str);
 				end;
+				&&field&fld.. = tranwrd(&&field&fld.., 'A', '1');
+				&&field&fld.. = tranwrd(&&field&fld.., 'B', '2');
+				&&field&fld.. = tranwrd(&&field&fld.., 'C', '3');
+				&&field&fld.. = tranwrd(&&field&fld.., 'D', '4');
+				&&field&fld.. = tranwrd(&&field&fld.., 'E', '5');
+				&&field&fld.. = tranwrd(&&field&fld.., 'F', '6');
+				&&field&fld.. = tranwrd(&&field&fld.., 'G', '7');
+				&&field&fld.. = tranwrd(&&field&fld.., 'H', '8');
 			%end;
 		%end;
 		/* Now drop the wider RV fields after successfully processing the EBSR responses	*/
@@ -177,8 +180,7 @@ options nosymbolgen nomprint nomlogic;
 				&&field&fld.._str
 			%end;
 		%end;
-			searchStr IR1 IR2 IR3 IR4 IR5 IR6 SubStart SubEnd 
-			SubMid SubMEnd IMR1 IMR2 IMR3 IMR4 IMR5 IMR6;
+		fieldLen EBSR_Split_Loc EBSR_Part1 EBSR_Part2 EBSR_Part1_str EBSR_Part2_str;
 	run;
 	proc datasets library=libhere;
  	  modify &CntGrd._AIRSrc;
@@ -186,17 +188,17 @@ options nosymbolgen nomprint nomlogic;
     	  index create tdsopportunityguid;
 	run;
 %mend ImprtAIR;
-	%ImprtAIR(math03, Math_3_all_formats.csv);
-%*	%ImprtAIR(math07, Math_7_all_formats.csv);
-%* 	%ImprtAIR(math08, Math_8_all_formats.csv);
 %*	%ImprtAIR(ela03, ELA_3_all_formats.csv);
 %*	%ImprtAIR(ela04, ELA_4_all_formats.csv);
+%*	%ImprtAIR(math03, Math_3_all_formats.csv);
 %*	%ImprtAIR(ela05, ELA_5_all_formats.csv);
-%*	%ImprtAIR(math04, Math_4_all_formats.csv);
-%*	%ImprtAIR(math05, Math_5_all_formats.csv);
-%*	%ImprtAIR(ela07, ELA_7_all_formats.csv);
 %*	%ImprtAIR(ela06, ELA_6_all_formats.csv);
-%*	%ImprtAIR(math06, Math_6_all_formats.csv);
-%*	%ImprtAIR(math11, Math_HS_all_formats.csv);
+%*	%ImprtAIR(ela07, ELA_7_all_formats.csv);
 %*	%ImprtAIR(ela08, ELA_8_all_formats.csv);
 %*	%ImprtAIR(ela11, ELA_HS_all_formats.csv);
+%*	%ImprtAIR(math04, Math_4_all_formats.csv);
+%*	%ImprtAIR(math05, Math_5_all_formats.csv);
+%*	%ImprtAIR(math06, Math_6_all_formats.csv);
+%*	%ImprtAIR(math07, Math_7_all_formats.csv);
+%* 	%ImprtAIR(math08, Math_8_all_formats.csv);
+%*	%ImprtAIR(math11, Math_HS_all_formats.csv);
