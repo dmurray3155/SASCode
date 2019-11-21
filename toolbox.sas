@@ -232,8 +232,8 @@
  | Return SAS date value from string pieces 19 SEP 2011              |
  *-------------------------------------------------------------------*/
  %macro Time_HMS(HH, MM, SS);
-    if &HH in ("01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12",
-    						"13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23")
+    if &HH in ("00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11",
+    						"12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23")
        and &MM in ("00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11",
        						 "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23",
        						 "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35",
@@ -480,7 +480,7 @@
              Report_None = "No multiple occurrances of &&VarNum&i...";
              output ;
           run;
-          proc print data=ReptNone;
+          proc print data=ReptNone noobs;
              var Report_None ;
              Title1 "Macro ReptMulti results reported &now.";
              Title2 "Variable &&VarNum&i.. does not occur multiple times in &DSName.";
