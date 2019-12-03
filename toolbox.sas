@@ -157,7 +157,7 @@
 %mend now;
 
 %global PersInfo;
-%let PersInfo=%str(D.Murray, (970) 372-1668);
+%let PersInfo=%str(D.Murray, (970) 617-3155);
 
 %macro DSExists(DsName=);
    %global DSExists;
