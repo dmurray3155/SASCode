@@ -47,13 +47,44 @@
  *------- Development History ------------------------------------------------------------------------------*
  |  2019 08 28		Initial Logic Development.																																|
  *==========================================================================================================*/
+%macro ConTCD;
+	server="analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com"
+	port=5432 database=tcd user=dmurray
+	password="{SAS004}70C77B5C28AB1C0D08B92DB91E465FE4E886F34B598E14AF"
+%mend ConTCD;
 %macro SetTCD;
 	/*	Set LibName to access data from TCD system	*/
-	libname itmsts postgres
-		server="analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com"
-		port=5432 database=tcd user=root
-		password="{SAS004}4E11C901BB7A6F3CFBD7D14A4E0C34ECB28A7DD30321EE2CCE64BD05D6811DA4B968C63B5DB72413";
+	libname tcd postgres %ConTCD;
 %mend SetTCD;
+
+/*==========================================================================================================*
+ |  Name: ConRSItm																																													|
+ |  Author: Don Murray (as Smarter Balanced)																																|
+ |  Purpose: General, often used utilities																																	|
+ |  Notes: Added under SBAC tenure																																					|
+ |  Application: Define parameters for connect to string.																										|
+ *------- Development History ------------------------------------------------------------------------------*
+ |  2019 12 13		Initial Logic Development.																																|
+ *==========================================================================================================*/
+%macro ConRSItm;
+	server="analytics.cs909ohc4ovd.us-west-2.redshift.amazonaws.com"
+	port=5439 database=items user=ca_analytics
+	password="{SAS004}3F84105DD2614973017278F8C138573F06354E17FE2FAD9D"
+%mend ConRSItm;
+
+/*==========================================================================================================*
+ |  Name: SetRSItm																																													|
+ |  Author: Don Murray (as Smarter Balanced)																																|
+ |  Purpose: General, often used utilities																																	|
+ |  Notes: Added under SBAC tenure.  Uses ConRSItm as a submacro for connection parameters.									|
+ |  Application: Define SAS library to postGreSQL TCD access.																								|
+ *------- Development History ------------------------------------------------------------------------------*
+ |  2019 12 12		Initial Logic Development.																																|
+ *==========================================================================================================*/
+%macro SetRSItm;
+	/*	Set LibName to access data from TCD system	*/
+	libname items redshift %ConRSItm;
+%mend SetRSItm;
 
 /*-------------------------------------------------------------------*
  | Set preferred system options based on SAS version (03 DEC 2009)   |
