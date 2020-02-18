@@ -7,6 +7,7 @@ Inputs  : API->datasets
 Outputs : dataset->API
 Requires: HTML Tidy for Win32: http://www.paehl.com/open_source/?HTML_Tidy_for_Windows
 		      Autocall macros: %array, %do_over
+Source  : https://github.com/billroehl/google_drive_api_sas/blob/master/google_drive_integration_macro_suite.sas
 PROGRAM HISTORY
 2012-03-13 WR Initial program developed.
 2013-01-10 WR Updates to CreateWS to properly handle column headers.
