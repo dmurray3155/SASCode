@@ -49,7 +49,7 @@
  *==========================================================================================================*/
 %macro ConTCD;
 	server="analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com"
-	port=5432 database=tcd user=dmurray
+	port=5432 database=test_construction user=dmurray
 	password="{SAS004}70C77B5C28AB1C0D08B92DB91E465FE4E886F34B598E14AF"
 %mend ConTCD;
 %macro SetTCD;
