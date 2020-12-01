@@ -22,6 +22,42 @@
 libname imrtLib "&OneDrvStub.\IMRT";
 libname libHere "&wrkHere.";
 
+%macro InteractionData;
+	%SetDSLabel;
+	data libHere.InterAction (label = "&DSLabel.");
+		format itemType $6. subject $4. interaction $30. sbirt $40. ;
+		itemType = 'MC';	subject = 'BOTH';		interaction = 'multipleChoice' ;
+		sbirt = 'SR single response' ;	output;
+		itemType = 'MS';	subject = 'BOTH';		interaction = 'multipleSelect' ;
+		sbirt = 'SR multiple correct responses' ;	output;
+		itemType = 'HTQO';	subject = 'ELA';		interaction = 'hotTextReorder' ;
+		sbirt = 'Hot Text' ;	output;
+		itemType = 'HTQS';	subject = 'ELA';		interaction = 'hotTextSelectable' ;
+		sbirt = 'Hot Text' ;	output;
+		/*	Note that the item type in the XML file has only item type of 'HTQ'	*/
+		itemType = 'SA';	subject = 'BOTH';		interaction = 'textEntrySimple' ;
+		sbirt = 'Short text' ;	output;
+		itemType = 'MI';	subject = 'BOTH';		interaction = 'tableMatch' ;
+		sbirt = 'Matching Tables variation T-F or Y-N' ;	output;
+		itemType = 'EBSR';	subject = 'ELA';		interaction = 'multipleChoice multipleSelect' ;
+		sbirt = 'EBSR' ;	output;
+		itemType = 'GI';	subject = 'MATH';		interaction = 'grid' ;
+		sbirt = '' ;	output;
+		itemType = 'EQ';	subject = 'MATH';		interaction = 'equation' ;
+		sbirt = '' ;	output;
+		itemType = 'TI';	subject = 'MATH';		interaction = 'tableInput' ;
+		sbirt = '' ;	output;
+		label sbirt = 'Smarter Balanced Item Response Types';
+	run;
+	%GetSnow;
+	Title "Contents of libHere.InterAction [&now.]";
+	proc contents data=libHere.InterAction order=varnum;
+	run;
+	proc print data=libHere.InterAction;
+	run;
+%mend InteractionData;
+%*	%InteractionData;
+
 %macro SubjGrd(Subj, Grd, tipp, ppfd);
 	/*	testitem poolproperty - top	*/
 	%if &tipp. = 1 %then %do;	 /* refresh tipp datasets - top	*/
@@ -176,7 +212,7 @@ libname libHere "&wrkHere.";
 	%end;		/*	Recompute ppfd counts - bottom	*/
 	/*	poolproperty counts - bottom	*/
 %mend SubjGrd;
-	%SubjGrd(ELA, 6, 1, 1);
+/*	%SubjGrd(ELA, 6, 1, 1);
 	%SubjGrd(ELA, 7, 1, 1);
 	%SubjGrd(MATH, 4, 1, 1);
-	%SubjGrd(MATH, 8, 1, 1);
+	%SubjGrd(MATH, 8, 1, 1);	*/
