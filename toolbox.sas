@@ -34,8 +34,7 @@
 %macro SetIMRTPrd;
 	/*	Set LibName to access data from IMRT production system	*/
 	libname imrtprd postgres server='imrt-prod-bi.c7g9woytu6d2.us-west-2.rds.amazonaws.com'
-					port=5432 user=analyst password="{SAS004}16BA0F3B37E8E8015239B6EA6094FB6AE51C247064ACD638"
-					database=imrt;
+					port=5432 user=analyst password='che3UaPo' database=imrt;
 %mend SetIMRTPrd;
 
 /*==========================================================================================================*
@@ -47,44 +46,12 @@
  *------- Development History ------------------------------------------------------------------------------*
  |  2019 08 28		Initial Logic Development.																																|
  *==========================================================================================================*/
-%macro ConTCD;
-	server="analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com"
-	port=5432 database=test_construction user=dmurray
-	password="{SAS004}70C77B5C28AB1C0D08B92DB91E465FE4E886F34B598E14AF"
-%mend ConTCD;
 %macro SetTCD;
 	/*	Set LibName to access data from TCD system	*/
-	libname tcd postgres %ConTCD;
+	libname itmsts postgres
+		server="analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com"
+		port=5432 database=tcd user=root password="eiY8phohiu7Pho3e";
 %mend SetTCD;
-
-/*==========================================================================================================*
- |  Name: ConRSItm																																													|
- |  Author: Don Murray (as Smarter Balanced)																																|
- |  Purpose: General, often used utilities																																	|
- |  Notes: Added under SBAC tenure																																					|
- |  Application: Define parameters for connect to string.																										|
- *------- Development History ------------------------------------------------------------------------------*
- |  2019 12 13		Initial Logic Development.																																|
- *==========================================================================================================*/
-%macro ConRSItm;
-	server="analytics.cs909ohc4ovd.us-west-2.redshift.amazonaws.com"
-	port=5439 database=items user=ca_analytics
-	password="{SAS004}3F84105DD2614973017278F8C138573F06354E17FE2FAD9D"
-%mend ConRSItm;
-
-/*==========================================================================================================*
- |  Name: SetRSItm																																													|
- |  Author: Don Murray (as Smarter Balanced)																																|
- |  Purpose: General, often used utilities																																	|
- |  Notes: Added under SBAC tenure.  Uses ConRSItm as a submacro for connection parameters.									|
- |  Application: Define SAS library to postGreSQL TCD access.																								|
- *------- Development History ------------------------------------------------------------------------------*
- |  2019 12 12		Initial Logic Development.																																|
- *==========================================================================================================*/
-%macro SetRSItm;
-	/*	Set LibName to access data from TCD system	*/
-	libname items redshift %ConRSItm;
-%mend SetRSItm;
 
 /*-------------------------------------------------------------------*
  | Set preferred system options based on SAS version (03 DEC 2009)   |
@@ -188,7 +155,7 @@
 %mend now;
 
 %global PersInfo;
-%let PersInfo=%str(D.Murray, (970) 617-3155);
+%let PersInfo=%str(D.Murray, (970) 372-1668);
 
 %macro DSExists(DsName=);
    %global DSExists;
@@ -210,6 +177,22 @@
     %end;
     options mprint;
 %mend Clear_Titles;
+
+/*-------------------------------------------------------------------*
+ | List all 15 used content codes in IMS (2014-02-11)                |
+ *-------------------------------------------------------------------*/
+ %macro IMSu15CCc;
+    iu_cc1_p, iu_pc1_p, iu_cc2_p, iu_cc3_p, iu_cc4_p, iu_cc1_s, iu_pc1_s, iu_cc2_s, iu_cc3_s, iu_cc4_s, iu_cc1_t, iu_pc1_t, iu_cc2_t, iu_cc3_t, iu_cc4_t
+ %mend IMSu15CCc;
+ %macro IMSu15CC;
+    iu_cc1_p iu_pc1_p iu_cc2_p iu_cc3_p iu_cc4_p iu_cc1_s iu_pc1_s iu_cc2_s iu_cc3_s iu_cc4_s iu_cc1_t iu_pc1_t iu_cc2_t iu_cc3_t iu_cc4_t
+ %mend IMSu15CC;
+ %macro IMSp15CCc;
+    ip_cc1_p, ip_pc1_p, ip_cc2_p, ip_cc3_p, ip_cc4_p, ip_cc1_s, ip_pc1_s, ip_cc2_s, ip_cc3_s, ip_cc4_s, ip_cc1_t, ip_pc1_t, ip_cc2_t, ip_cc3_t, ip_cc4_t
+ %mend IMSp15CCc;
+ %macro IMSp15CC;
+    ip_cc1_p ip_pc1_p ip_cc2_p ip_cc3_p ip_cc4_p ip_cc1_s ip_pc1_s ip_cc2_s ip_cc3_s ip_cc4_s ip_cc1_t ip_pc1_t ip_cc2_t ip_cc3_t ip_cc4_t
+ %mend IMSp15CC;
 
 /*-------------------------------------------------------------------*
  | Redirect Print Output to PC flat file.                            |
@@ -255,7 +238,7 @@
                      "1994", "1995", "1996", "1997", "1998", "1999", "2000", "2001", "2002",
                      "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011",
                      "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020",
-					 "2021", "2022", "2023", "2024", "2025")
+										 "2021", "2022", "2023", "2024", "2025")
             then Date_Val = MDY(&MM, &DD, &YYYY);
     else Date_Val = .;
  %mend Date_MDY;
@@ -264,18 +247,17 @@
  | Return SAS date value from string pieces 19 SEP 2011              |
  *-------------------------------------------------------------------*/
  %macro Time_HMS(HH, MM, SS);
-    if &HH in ("00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11",
-    						"12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23")
-       and &MM in ("00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11",
-       						 "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23",
-       						 "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35",
-       						 "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47",
-       						 "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59")
-       and &SS in ("00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11",
-       						 "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23",
-       						 "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35",
-       						 "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47",
-       						 "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59")
+    if &MM in ("01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12")
+       and &MM in ("01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12",
+                   "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24",
+                   "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36",
+                   "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48",
+                   "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59")
+       and &SS in ("01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12",
+                   "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24",
+                   "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36",
+                   "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48",
+                   "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59")
             then Time_Val = HMS(&HH, &MM, &SS);
     else Time_Val = .;
  %mend Time_HMS;
@@ -462,7 +444,7 @@
 
 /*======================================================================================================*
  | Macro Name : ReptMulti                                                                               |
- | Stored As  : \\Pacmet-svr\users\Don\toolbox.SAS                                                      |
+ | Stored As  : C:\Users\Donald Murray\OneDrive ... \Documents\MySAS\toolbox.sas                        |
  | Author     : Don Murray                                                                              |
  | Purpose    : Report whether a field has multiple occurrances of the same value in a given dataset.   |
  | SubMacros  : TotalRec (see above)                                                                    |
@@ -474,6 +456,9 @@
  | ....name........  ....description................................................................... |
  |  DSName            Name of input dataset containing field of interest.  Can be two-level DS name.    |
  |  VarName           Name of field of interest from input dataset.  This can be one or more fields.    |
+ |	PrntRslts					Default is one. Set to 0 to suppress print of FD.																	|
+ |  WrytOutDS         Default value is zero.  Set to 1 to harvest results into an output dataset.       |
+ |  outDSName         Name of output dataset.  if WrytOutDS = 0 then this parameter is ignored.         |
  |------------------------------------------------------------------------------------------------------|
  | PRODUCTION HISTORY:                                                                                  |
  | ..date.....  ....description........................................................................ |
@@ -481,11 +466,13 @@
  |              that I decided it was time to design it properly.                                       |
  | 10 JUN 2005  Added logic to report that there were no cases of multiple values.                      |
  | 13 NOV 2009  Added Date / Time to second title in results output.                                    |
+ | 2021 09 13		Added the conditional capability to output variables to a dataset for downstream use.   |
+ | 2021 11 19		Added the conditional capability to suppress printing of the FD.												|
  *======================================================================================================*/
 /*-------------------------------------------------------------------*
- | Report mutiple occurances of values in a particular variable      |
+ | Report mutiple occurances of values in a specified variable       |
  *-------------------------------------------------------------------*/
- %macro ReptMulti(DSName=, VarName=);
+ %macro ReptMulti(DSName=, VarName=, PrntRslts=1, WrytOutDS=0, outDSName=);
     %let NumVars = 0;
     %do %until(%quote(&test) = );
        %let NumVars = %eval(&NumVars. + 1);
@@ -504,6 +491,11 @@
           set ReptDS;
           if count > 1;
        run;
+       %if %eval(&WrytOutDS. = 1) %then %do;
+          data &outDSName.;
+          	 set ReptDS;
+          run;
+       %end;
        %TotalRec(inDS=ReptDS);
        %GetNow;
        %if &NumObs= %then %do;
@@ -512,18 +504,20 @@
              Report_None = "No multiple occurrances of &&VarNum&i...";
              output ;
           run;
-          proc print data=ReptNone noobs;
+          proc print data=ReptNone;
              var Report_None ;
              Title1 "Macro ReptMulti results reported &now.";
              Title2 "Variable &&VarNum&i.. does not occur multiple times in &DSName.";
           run;
        %end;
        %else %do;
-          proc print data=ReptDS;
-             var &&VarNum&i.. Count ;
-             Title1 "Macro ReptMulti results reported &now.";
-             Title2 "Variable &&VarNum&i.. occurs multiple times in &DSName.";
-          run;
+       		%if %eval(&PrntRslts. = 1) %then %do;
+	          proc print data=ReptDS;
+  	           var &&VarNum&i.. Count ;
+    	         Title1 "Macro ReptMulti results reported &now.";
+      	       Title2 "Variable &&VarNum&i.. occurs multiple times in &DSName.";
+        	  run;
+        	%end;
        %end;
        Title ;
     %end;
@@ -641,7 +635,7 @@
  | Macro Name : CSList.sas                                                                         |
  | Stored As  : D:\Server\U\Don\CSList.sas                                                         |
  | Author     : Don Murray                                                                         |
- | Purpose    : From a variable in a SAS dataset create a text file containing a comma separated   |
+ | Purpose    : From a variable in a SAS dataset create a test file containing a comma separated   |
  |              list.                                                                              |
  | SubMacros  : SetYYYYMMDD, SetHHMMSS (both from toolbox.sas)                                     |
  | Notes      : A strong motivation for developing this is the need for comma separated lists of   |
