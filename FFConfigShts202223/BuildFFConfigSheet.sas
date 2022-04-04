@@ -18,17 +18,17 @@
  |	..date..... 	....description.................................................................	|
  |	2019 04 08		Initial development.																															|
  |	2019 04 23		ICA labels do not receive the 'High School' replacement for 'Grade 11'.						|
+ |	2019 12 19		Copied from the 2019-20 project folder to this location, for 2020-21							|
+ |	2022 03 31		Copied from 2020-21 project folder here for 2022-23.	This instance reads TDFs		|
+ |								from the TCD.TDF table.  The forms to run are inferred from the contents of the		|
+ |								TDFs. Mark V. specified to run based on all forms in 2022-23_iab_v91 and 					|
+ |								2022-23_ica_v89.																																	|
  *==================================================================================================*/
-/*
-%let UniRoot=/folders/myfolders;
-%let WrkHere=SBTemp/FFConfig;
-libname WrkData "&UniRoot./&WrkHere.";
-*/
 
-options noxwait;
+options noxwait mlogic mprint symbolgen;
 
-%let WrkHere=C:\Users\Donald Murray\OneDrive - Smarter Balanced UCSC\SBTemp\FFConfig;
-libname WrkData "&WrkHere.";
+%let wrkHere=C:\Users\Donald Murray\OneDrive - Smarter Balanced UCSC\SBTemp\FFConfig\2022-23;
+libname wrkData "&wrkHere.";
 
 %global Subj Grd TSubTyp IABShortTitle IABShortTitleSAS _AcadYear_  _FylName_
 		_PackageId_		_TestId_ 	_TestId2_	_TestLabel_		_TestLabel2_
@@ -36,16 +36,8 @@ libname WrkData "&WrkHere.";
 		_SegmentLabel_	_SegmentLabel2_		_SegmentLabelB_		_SegmentLabel2B_
 		_SegmentFormId_		_SegmentFormId2_	_SegmentFormIdB_	_SegmentFormId2B_
 		_vrsn_  _TestStructure_  _TSItemCounts_  IsThisAReRun
-		NumTtlSegs NumShrtTitles _CntSpanPresTF_ WrkHere;
-
-%* %let Subj=ELA;							/* ELA or MATH	*/
-%* %let Grd=11;								/* 3 - 8, 11	*/
-%* %let TSubTyp=ICA;						/* IAB or ICA	*/
-%* %let IABShortTitle=ListenInterpet;		/*	See IAB short name values	*/
-%* %let _AcadYear_=2019-2020;					/*	academic year as YYYY-YYYY	*/
-
-%* %let _vrsn_=2;
-%* %let IsThisAReRun=No;
+		NumTtlSegs NumShrtTitles _CntSpanPresTF_ WrkHere
+		ExceptionalTestList NumExcepTests ExcepTest1 ExcepTest2 ExcepTest3 ExcepTest4;
 
 %macro BlankOutTestSegFormIDs;
 	%let _TestId_=;
@@ -103,20 +95,20 @@ libname WrkData "&WrkHere.";
 %mend SetFylName;
 
 /*	Subset the config-sheet level data from the TDF	*/
-%macro SubsetTDF(TSubTyp, TDFVrs, Subj, Grd, IABShortTitle);
+%macro SubsetTDF(TSubTyp, TDFVrs, Subj, Grd, IABShortTitle, _AcadYear_);
 	proc sql;
 		create table TDF_Data as
-		select * from WrkData.TDF_2019_20_&TSubTyp._v&TDFVrs.
-		where Subject="&Subj." and StudentGrade=&Grd.
+		select * from WrkData.TDF_2020_21_&TSubTyp._v&TDFVrs.			/*	HERE!! <<<-----===##<<<	*/
+		where Subject="&Subj." and student_grade=&Grd.
 		%if &TSubTyp.=IAB or &TSubTyp.=FIAB or &TSubTyp.=Practice %then %do;
-			and ShortTitle="&IABShortTitle."
+			and Short_Title="&IABShortTitle."
 		%end;
 		%if &TSubTyp.=Practice or &TSubTyp.=Training %then %do;
-			order by SegmentPosition, ItemPosition;
+			order by Seg_Position, Item_Position;
 		%end;
 		%else %do;
 			%if &Subj.=ELA %then %do;
-				order by ShortTitle, Sequence;
+				order by Short_Title, Sequence;
 			%end;
 			%else %if &Subj.=MATH %then %do;
 				order by Sequence;
@@ -125,7 +117,7 @@ libname WrkData "&WrkHere.";
 	quit;
 	data TDF_Data;
 		set TDF_Data;
-		if ShortTitle = 'ListenInterpet' then ShortTitle='ListenInterpret';
+		if Short_Title = 'ListenInterpet' then Short_Title='ListenInterpret';
 	run;
 /*%GetSnow;
 	Title "DS: TDF_Data [&now.]";
@@ -133,31 +125,42 @@ libname WrkData "&WrkHere.";
 	run;*/
 %mend SubsetTDF;
 
+/*	This setting is to support exceptional tests.  PackageID, TestID, and SegmentID are effected	*/
+%macro SetExceptionalTests;
+	%let ExceptionalTestList=%str("FIAB-MATH-TFG-7-2021-2022", "FIAB-MATH-TIG-8-2021-2022",
+			"FIAB-MATH-TGCEDLinExp-11-2021-2022", "FIAB-MATH-TGCEDQuad-11-2021-2022");
+	%let NumExcepTests=4;
+	%let ExcepTest1=IAB-MATH-TFG-7;
+	%let ExcepTest2=IAB-MATH-TIG-8;
+	%let ExcepTest3=IAB-MATH-TGCEDLinExp-11;
+	%let ExcepTest4=IAB-MATH-TGCEDQuad-11;
+%mend SetExceptionalTests;
+
 %macro Cre8TstSegNames(TSubTyp, tdfvrsn, Subj, Grd, IABShortTitle, _AcadYear_, ReptResults);
 	%BlankOutTestSegFormIDs;
 	%let IABShortTitleSAS=%substr(&IABShortTitle, 1, 25);
 	%tranwrdMac(IABShortTitleSAS, -, _);
-	%SubsetTDF(&TSubTyp., &tdfvrsn., &Subj., &Grd., &IABShortTitle.);
+	%SubsetTDF(&TSubTyp., &tdfvrsn., &Subj., &Grd., &IABShortTitle., &_AcadYear_.);
 	%if &IABShortTitleSAS.=ListenInterpet %then %let IABShortTitle=ListenInterpret;
 	proc sql;
 		create table SFTSgData as
-		select distinct ShortTitle, FullTitle, SegmentDescription
+		select distinct Short_Title, Full_Title, Seg_Description
 		from TDF_Data
-		order by ShortTitle, FullTitle, SegmentDescription
+		order by Short_Title, Full_Title, Seg_Description
 		%if &Subj.=MATH %then %do;
 			descending
 		%end;
 		;
 		create table SFTData as
-		select distinct ShortTitle, FullTitle
+		select distinct Short_Title, Full_Title
 		from TDF_Data
-		order by ShortTitle;
+		order by Short_Title;
 	quit;
 	%TotalRec(inDS=SFTSgData);
 	%let NumTtlSegs=&NumObs.;
-	%TransMac(DSName=SFTSgData, VarName=ShortTitle, Prefx=STSg);
-	%TransMac(DSName=SFTSgData, VarName=FullTitle, Prefx=FTSg);
-	%TransMac(DSName=SFTSgData, VarName=SegmentDescription, Prefx=TSeg);
+	%TransMac(DSName=SFTSgData, VarName=Short_Title, Prefx=STSg);
+	%TransMac(DSName=SFTSgData, VarName=Full_Title, Prefx=FTSg);
+	%TransMac(DSName=SFTSgData, VarName=Seg_Description, Prefx=TSeg);
 	%if &NumTtlSegs=1 %then %do;
 		%let _TestId_=SBAC-&TSubTyp.-&Subj.-&IABShortTitle.-&Grd.;
 		%let _TestLabel_=Grade &Grd. &Subj. - &FTSg1. (&TSubTyp.);
@@ -324,47 +327,30 @@ libname WrkData "&WrkHere.";
 	%tranwrdMac(_PackageId_, FIAB, IAB);
 	%tranwrdMac(_TestId_, FIAB, IAB);
 	%tranwrdMac(_TestId2_, FIAB, IAB);
-	%tranwrdMac(_TestLabel_, FIAB, IAB);
-	%tranwrdMac(_TestLabel2_, FIAB, IAB);
+%*	%tranwrdMac(_TestLabel_, FIAB, IAB);
+%*	%tranwrdMac(_TestLabel2_, FIAB, IAB);
 	%tranwrdMac(_SegmentId_, FIAB, IAB);
-	%tranwrdMac(_SegmentLabel_, FIAB, IAB);
-	%tranwrdMac(_SegmentLabel2_, FIAB, IAB);
+%*	%tranwrdMac(_SegmentLabel_, FIAB, IAB);
+%*	%tranwrdMac(_SegmentLabel2_, FIAB, IAB);
 	%tranwrdMac(_SegmentLabelB_, FIAB, IAB);
 	%tranwrdMac(_SegmentLabel2B_, FIAB, IAB);
 	%tranwrdMac(_SegmentId2_, FIAB, IAB);
 	%tranwrdMac(_SegmentIdB_, FIAB, IAB);
-	%tranwrdMac(_SegmentFormId_, FIAB, IAB);
-	%tranwrdMac(_SegmentFormId2_, FIAB, IAB);
-	%tranwrdMac(_SegmentFormIdB_, FIAB, IAB);
-	%tranwrdMac(_SegmentFormId2B_, FIAB, IAB);
+%*	%tranwrdMac(_SegmentFormId_, FIAB, IAB);
+%*	%tranwrdMac(_SegmentFormId2_, FIAB, IAB);
+%*	%tranwrdMac(_SegmentFormIdB_, FIAB, IAB);
+%*	%tranwrdMac(_SegmentFormId2B_, FIAB, IAB);
 	/*	Put conditional ID and Label adjustment logic here		*/
-	%MacCondAdj(_TestId_, SBAC-IAB-MATH-TGEE-6, SBAC-IAB-MATH-TGEE-6-Calc);		/* SBAC-FIAB-MATH-TGEE-6-2019-2020_v2.xlsx */
-	%MacCondAdj(_PackageId_, SBAC-IAB-MATH-TGEE-6, SBAC-IAB-MATH-TGEE-6-Calc);
-	%MacCondAdj(_SegmentId_, SBAC-IAB-MATH-TGEE-6, SBAC-IAB-MATH-TGEE-6-Calc);		
-	%MacCondAdj(_TestId_, SBAC-IAB-MATH-F-8, SBAC-IAB-MATH-F-8-Calc);					/* SBAC-IAB-MATH-F-8-2019-2020_v2.xlsx */
-	%MacCondAdj(_PackageId_, SBAC-IAB-MATH-F-8, SBAC-IAB-MATH-F-8-Calc);
-	%MacCondAdj(_SegmentId_, SBAC-IAB-MATH-F-8, SBAC-IAB-MATH-F-8-Calc);
-	%MacCondAdj(_TestId_, SBAC-IAB-MATH-G-6, SBAC-IAB-MATH-G-6-Calc);					/* SBAC-IAB-MATH-G-6-2019-2020_v2.xlsx */
-	%MacCondAdj(_PackageId_, SBAC-IAB-MATH-G-6, SBAC-IAB-MATH-G-6-Calc);
-	%MacCondAdj(_SegmentId_, SBAC-IAB-MATH-G-6, SBAC-IAB-MATH-G-6-Calc);
-	%MacCondAdj(_TestId_, SBAC-IAB-MATH-G-8, SBAC-IAB-MATH-G-8-Calc);					/* SBAC-IAB-MATH-G-8-2019-2020_v2.xlsx */
-	%MacCondAdj(_PackageId_, SBAC-IAB-MATH-G-8, SBAC-IAB-MATH-G-8-Calc);
-	%MacCondAdj(_SegmentId_, SBAC-IAB-MATH-G-8, SBAC-IAB-MATH-G-8-Calc);
-	/* Below: SBAC-IAB-MATH-GeoRightTriRatios-11-2019-2020_v2.xlsx */
-	%MacCondAdj(_TestId_, SBAC-IAB-MATH-GeoRightTriRatios-11, SBAC-IAB-MATH-GeoRightTriRatios-11-Calc);
-	%MacCondAdj(_PackageId_, SBAC-IAB-MATH-GeoRightTriRatios-11, SBAC-IAB-MATH-GeoRightTriRatios-11-Calc);
-	%MacCondAdj(_SegmentId_, SBAC-IAB-MATH-GeoRightTriRatios-11, SBAC-IAB-MATH-GeoRightTriRatios-11-Calc);
-	%MacCondAdj(_TestId_, SBAC-IAB-MATH-GMD-11, SBAC-IAB-MATH-GMD-11-Calc);					/* SBAC-IAB-MATH-GMD-11-2019-2020_v2.xlsx */
-	%MacCondAdj(_PackageId_, SBAC-IAB-MATH-GMD-11, SBAC-IAB-MATH-GMD-11-Calc);
-	%MacCondAdj(_SegmentId_, SBAC-IAB-MATH-GMD-11, SBAC-IAB-MATH-GMD-11-Calc);
-	%MacCondAdj(_TestId_, SBAC-IAB-MATH-RP-7, SBAC-IAB-MATH-RP-7-Calc);					/* SBAC-IAB-MATH-RP-7-2019-2020_v2.xlsx */
-	%MacCondAdj(_PackageId_, SBAC-IAB-MATH-RP-7, SBAC-IAB-MATH-RP-7-Calc);
-	%MacCondAdj(_SegmentId_, SBAC-IAB-MATH-RP-7, SBAC-IAB-MATH-RP-7-Calc);
-	%MacCondAdj(_TestId_, SBAC-IAB-MATH-SP-7, SBAC-IAB-MATH-SP-7-Calc);					/* SBAC-IAB-MATH-SP-7-2019-2020_v2.xlsx */
-	%MacCondAdj(_PackageId_, SBAC-IAB-MATH-SP-7, SBAC-IAB-MATH-SP-7-Calc);
-	%MacCondAdj(_SegmentId_, SBAC-IAB-MATH-SP-7, SBAC-IAB-MATH-SP-7-Calc);
+	%SetExceptionalTests;
+	%do ClcOnly=1 %to &NumExcepTests;
+		%MacCondAdj(_TestId_, SBAC-&&ExcepTest&ClcOnly.., SBAC-&&ExcepTest&ClcOnly..-Calc);
+		%MacCondAdj(_PackageId_, SBAC-&&ExcepTest&ClcOnly.., SBAC-&&ExcepTest&ClcOnly..-Calc);
+		%MacCondAdj(_SegmentId_, SBAC-&&ExcepTest&ClcOnly.., SBAC-&&ExcepTest&ClcOnly..-Calc);
+	%end;
+	%put _PackageId_ &_PackageId_.;
+	%put _TestId_ &_TestId_.;
+	%put _SegmentId_ &_SegmentId_.;
 	%if &ReptResults.=1 %then %do;
-/*	FileName outRept "&UniRoot./&WrkHere./OutFiles./&_FylName_..txt";		*/
 		FileName outRept "&WrkHere.\OutFiles.\&_FylName_..txt";
 		data _null_;
 			format OutLyn $84.;
@@ -694,7 +680,6 @@ libname WrkData "&WrkHere.";
 		%ConditionallyRemoveOriginalFiles(&_FylName_.);
 	%end;
 	libname SrcData "&WrkHere.\SrcData";
-/*	libname XLOut XLSX "&UniRoot./WrkHere./OutFiles/&_FylName_..xlsx";	*/
 	libname XLOut XLSX "&WrkHere.\OutFiles\&_FylName_.";
 	/*** === Package === ***/
 	proc sql noprint;
@@ -724,11 +709,11 @@ libname WrkData "&WrkHere.";
 		%else %do;
 			if InputParam='_TSubType_' then InputParam="&TSubTyp.";
 		%end;
-		if InputParam='_ScaledLo_' then InputParam="&_SL_.";
+		if InputParam='_ScaledLo_' then InputParam=compress("&_SL_.");
 		if InputParam='_ScaledPart1_' then InputParam="&_SP1_.";
 		if InputParam='_ScaledPart2_' then InputParam="&_SP2_.";
 		if InputParam='_ScaledPart3_' then InputParam="&_SP3_.";
-		if InputParam='_ScaledHi_' then InputParam="&_SH_.";
+		if InputParam='_ScaledHi_' then InputParam=compress("&_SH_.");
 		put '***>>> ' InputParam=  ;
 	run;
 	data XLOut.Package;
@@ -990,6 +975,7 @@ libname WrkData "&WrkHere.";
 	/*	Pre-Process the data from the TDF	*/
 	%TotalRec(inDS=TDF_Data);
 	%let NumItems=&NumObs.;
+	%SetExceptionalTests;
 	data TDF_DataSF;
 		set TDF_Data;
 		format IRTModel1 $8. IRTModel2 $8. MaxRubStrd1 $1. MaxRubStrd2 $1. Scr1Dim $1. Scr2Dim $1. weight1 $1. weight2 $1.
@@ -1000,14 +986,12 @@ libname WrkData "&WrkHere.";
 					b3Parm1Str $8. b3Parm2Str $8. cParm1Str $1. cParm2Str $1.	 
 					V2InputParam $88. SegId $88. SegFrmId $88.;
 		%if &TSubTyp.=IAB or &TSubTyp.=FIAB or &TSubTyp.=Practice or &TSubTyp.=Training %then %do;
-			if ItemPosition = 1 then V2InputParam = 'Multiple ItemIds Allowed Per Segment';
+			if Item_Position = 1 then V2InputParam = 'Multiple ItemIds Allowed Per Segment';
 			else V2InputParam = '';
 			/*	These are exceptional tests	*/
-			if "&TSubTyp.-&Subj.-&IABShortTitle.-&Grd.-&_AcadYear_." in ("FIAB-MATH-TGEE-6-2019-2020", "IAB-MATH-F-8-2019-2020",
-				 "IAB-MATH-G-6-2019-2020", "IAB-MATH-G-8-2019-2020", "IAB-MATH-GeoRightTriRatios-11-2019-2020", "IAB-MATH-GMD-11-2019-2020",
-				 "IAB-MATH-RP-7-2019-2020", "IAB-MATH-SP-7-2019-2020", "SBAC-IAB-MATH-GCO-11-2019-2020_v3.xlsx") and SegmentPosition = 2 then do;
-				SegmentPosition = 1 ;
-			end;
+			if (("&TSubTyp.-&Subj.-&IABShortTitle.-&Grd.-&_AcadYear_." in (&ExceptionalTestList.))
+						and (SegmentPosition = 2)) then SegmentPosition = 1 ;
+		/*	put 'SegmentPosition: ' SegmentPosition;	*/
 			if SegmentPosition = 1 then do;
 				SegId = "&_SegmentId_.";
 				SegFrmId = "&_SegmentFormId_.";
@@ -1016,30 +1000,30 @@ libname WrkData "&WrkHere.";
 				SegId = "&_SegmentIdB_.";
 				SegFrmId = "&_SegmentFormIdB_.";
 			end;
-		%end;		/*	TSubTyp is either IAB or FIAB		*/
+		%end;		/*	TSubTyp is either IAB or FIAB	or Practice or Training	*/
 		%else %if &TSubTyp.=ICA %then %do;
 			%if &Subj.=ELA %then %do;
-				if ShortTitle = 'FIXED' then do;
+				if Short_Title = 'FIXED' then do;
 					SegId = "&_SegmentId_.";
 					SegFrmId = "&_SegmentFormId_.";
-					if segmentPosition = 1 and ItemPosition = 1 then V2InputParam = 'Multiple ItemIds Allowed Per Segment';
+					if seg_Position = 1 and Item_Position = 1 then V2InputParam = 'Multiple ItemIds Allowed Per Segment';
 					else V2InputParam = '';
 				end;
-				else if ShortTitle = 'PT' then do;
+				else if Short_Title = 'PT' then do;
 					V2InputParam = 'Multiple ItemIds Allowed Per Segment';
-					if SegmentDescription = 'PT1' then do;
+					if Seg_Description = 'PT1' then do;
 						SegId = "&_SegmentId2_.";
 						SegFrmId = "&_SegmentFormId2_.";
 					end;
-					else if SegmentDescription = 'PT2' then do;
+					else if Seg_Description = 'PT2' then do;
 						SegId = "&_SegmentId2B_.";
 						SegFrmId = "&_SegmentFormId2B_.";
 					end;
 				end;
 			%end;
 			%else %if &Subj.=MATH %then %do;
-				if ShortTitle = 'FIXED' then do;
-					if ItemPosition = 1 then V2InputParam = 'Multiple ItemIds Allowed Per Segment';
+				if Short_Title = 'FIXED' then do;
+					if Item_Position = 1 then V2InputParam = 'Multiple ItemIds Allowed Per Segment';
 					else V2InputParam = '';
 					if SegmentPosition = 1 then do;
 						SegId = "&_SegmentId_.";
@@ -1050,8 +1034,8 @@ libname WrkData "&WrkHere.";
 						SegFrmId = "&_SegmentFormIdB_.";
 					end;
 				end;
-				else if ShortTitle = 'PT' then do;
-					if ItemPosition = 1 then V2InputParam = 'Multiple ItemIds Allowed Per Segment';
+				else if Short_Title = 'PT' then do;
+					if Item_Position = 1 then V2InputParam = 'Multiple ItemIds Allowed Per Segment';
 					else V2InputParam = '';
 					SegId = "&_SegmentId2_.";
 					SegFrmId = "&_SegmentFormId2_.";
@@ -1059,12 +1043,14 @@ libname WrkData "&WrkHere.";
 			%end;
 		%end;	/* TSubType is ICA	*/
 		%if &TSubTyp.=Practice or &TSubTyp.=Training %then %do;
-			if MaxRub_d1 =. then MaxRub_d1 = 1;
+			if max_rubric_d1 =. then max_rubric_d1 = 1;
 		%end;
-		%SetIRTModel(MaxRub_d1, IRTModel1);
-		%SetIRTModel(MaxRub_d2, IRTModel2);
-		if MaxRub_d1 = . then MaxRubStrd1 = '';		else MaxRubStrd1 = compress(MaxRub_d1);
-		if MaxRub_d2 = . then MaxRubStrd2 = '';		else MaxRubStrd2 = compress(MaxRub_d2);
+		if compress(Recoding_d1) = '' and max_rubric_d1 = . then max_rubric_d1 = max_score_d1;
+		if compress(Recoding_d2) = '' and max_rubric_d2 = . then max_rubric_d2 = Max_score_d2;
+		%SetIRTModel(max_rubric_d1, IRTModel1);
+		%SetIRTModel(max_rubric_d2, IRTModel2);
+		if max_rubric_d1 = . then MaxRubStrd1 = '';		else MaxRubStrd1 = compress(max_rubric_d1);
+		if max_rubric_d2 = . then MaxRubStrd2 = '';		else MaxRubStrd2 = compress(max_rubric_d2);
 		if ItemType='wer' then do;
 			Scr1Dim = 'C';		Scr2Dim = 'D';
 		end;
@@ -1072,23 +1058,23 @@ libname WrkData "&WrkHere.";
 			Scr1Dim = '';			Scr2Dim = '';
 		end;
 		%if &TSubTyp.=Practice or &TSubTyp.=Training %then %do;
-			if IRTa_d1 =. then IRTa_d1 = 1;
-			if IRTb_d1 =. then IRTb_d1 = 1;
-			aparm1Str = compress(irta_d1);
+			if irt_a_d1 =. then irt_a_d1 = 1;
+			if irt_b_d1 =. then irt_b_d1 = 1;
+			aparm1Str = compress(irt_a_d1);
 		%end;
 		%else %do;
-			if IRTa_d1 =. then aparm1Str = '';	else aparm1Str = compress(irta_d1);
-			if IRTa_d2 =. then aparm2Str = '';	else aparm2Str = compress(irta_d2);
+			if irt_a_d1 =. then aparm1Str = '';	else aparm1Str = compress(irt_a_d1);
+			if irt_a_d2 =. then aparm2Str = '';	else aparm2Str = compress(irt_a_d2);
 		%end;
 		if IRTModel1='IRT3PLn' then do;
-			bparm1Str=compress(irtb_d1);					cParm1Str='0';
+			bparm1Str=compress(irt_b_d1);					cParm1Str='0';
 		end;
 		else do;
 			bparm1Str='';					cParm1Str='';
-			if GPCd2_d1 =. then irtb0_d1=.;			else irtb0_d1 = irtb_d1 - GPCd2_d1;
-			if GPCd3_d1 =. then irtb1_d1=.;			else irtb1_d1 = irtb_d1 - GPCd3_d1;
-			if GPCd4_d1 =. then irtb2_d1=.;			else irtb2_d1 = irtb_d1 - GPCd4_d1;
-			if GPCd5_d1 =. then irtb3_d1=.;			else irtb3_d1 = irtb_d1 - GPCd5_d1;
+			if irt_step_2_d1 =. then irtb0_d1=.;			else irtb0_d1 = irt_b_d1 - irt_step_2_d1;
+			if irt_step_3_d1 =. then irtb1_d1=.;			else irtb1_d1 = irt_b_d1 - irt_step_3_d1;
+			if irt_step_4_d1 =. then irtb2_d1=.;			else irtb2_d1 = irt_b_d1 - irt_step_4_d1;
+			if irt_step_5_d1 =. then irtb3_d1=.;			else irtb3_d1 = irt_b_d1 - irt_step_5_d1;
 			if irtb0_d1 =. then b0Parm1Str='';	else b0Parm1Str = compress(irtb0_d1);
 			if irtb1_d1 =. then b1Parm1Str='';	else b1Parm1Str = compress(irtb1_d1);
 			if irtb2_d1 =. then b2Parm1Str='';	else b2Parm1Str = compress(irtb2_d1);
@@ -1099,23 +1085,27 @@ libname WrkData "&WrkHere.";
 		end;
 		else do;
 			bparm2Str='';					cParm2Str='';
-			if GPCd2_d2 =. then irtb0_d2=.;			else irtb0_d2 = irtb_d2 - GPCd2_d2;
-			if GPCd3_d2 =. then irtb1_d2=.;			else irtb1_d2 = irtb_d2 - GPCd3_d2;
-			if GPCd4_d2 =. then irtb2_d2=.;			else irtb2_d2 = irtb_d2 - GPCd4_d2;
-			if GPCd5_d2 =. then irtb3_d2=.;			else irtb3_d2 = irtb_d2 - GPCd5_d2;
+			if irt_step_2_d2 =. then irtb0_d2=.;			else irtb0_d2 = irt_ b_d2 - irt_step_2_d2;
+			if irt_step_3_d2 =. then irtb1_d2=.;			else irtb1_d2 = irt_b_d2 - irt_step_3_d2;
+			if irt_step_4_d2 =. then irtb2_d2=.;			else irtb2_d2 = irt_b_d2 - irt_step_4_d2;
+			if irt_step_5_d2 =. then irtb3_d2=.;			else irtb3_d2 = irt_b_d2 - irt_step_5_d2;
 			if irtb0_d2 =. then b0Parm2Str='';	else b0Parm2Str = compress(irtb0_d2);
 			if irtb1_d2 =. then b1Parm2Str='';	else b1Parm2Str = compress(irtb1_d2);
 			if irtb2_d2 =. then b2Parm2Str='';	else b2Parm2Str = compress(irtb2_d2);
 			if irtb3_d2 =. then b3Parm2Str='';	else b3Parm2Str = compress(irtb3_d2);
 		end;
 		weight1 = '1';
-		if MaxRub_d2 =. then weight2 = '';	else weight2 = '1';
+		if max_rubric_d2 =. then weight2 = '';	else weight2 = '1';
+	/*U	put 'SegmentPosition: ' SegmentPosition;	*/
 	run;
 	%TransMac(DSName=TDF_DataSF, VarName=V2InputParam, Prefx=V2InPrm);
 	%TransMac(DSName=TDF_DataSF, VarName=SegId, Prefx=sgid);
 	%TransMac(DSName=TDF_DataSF, VarName=SegFrmId, Prefx=sgfid);
 	%TransMac(DSName=TDF_Data, VarName=ItemId, Prefx=itid);
-	%TransMac(DSName=TDF_Data, VarName=SegmentPosition, Prefx=sgpo);
+	%TransMac(DSName=TDF_DataSF, VarName=SegmentPosition, Prefx=sgpo);
+/*	%do jitm=1 %to &NumItems.;
+		%put segpos&jitm. = &&sgpo&jitm..;
+	%end;	*/
 	%TransMac(DSName=TDF_Data, VarName=ItemPosition, Prefx=itpo);
 	%TransMac(DSName=TDF_DataSF, VarName=IRTModel1, Prefx=irt1mod);
 	%TransMac(DSName=TDF_DataSF, VarName=IRTModel2, Prefx=irt2mod);
@@ -1365,17 +1355,17 @@ libname WrkData "&WrkHere.";
 	%macro MSegFrmsPage;
 		proc sql;
 			create table StFtSdData as
-			select distinct ShortTitle, FullTitle, SegmentDescription
+			select distinct Short_Title, Full_Title, Seg_Description
 			from TDF_Data
-			order by ShortTitle, FullTitle, SegmentDescription
+			order by Short_Title, Full_Title, Seg_Description
 			%if &Subj.=MATH %then %do;
 				descending
 			%end;
 			;
 			create table StFtData as
-			select distinct ShortTitle, FullTitle
+			select distinct Short_Title, Full_Title
 			from TDF_Data
-			order by ShortTitle;
+			order by Short_Title;
 		quit;
 		%TotalRec(inDS=StFtSdData);
 		%let NumItmGrps=&NumObs.;
@@ -1384,12 +1374,12 @@ libname WrkData "&WrkHere.";
 			%let NumItms=&NumObs.;
 		%end;
 		%else %if &NumItmGrps=2 %then %do;
-			%TransMac(DSName=StFtSdData, Varname=ShortTitle, Prefx=st);
-			%TransMac(DSName=StFtSdData, Varname=SegmentDescription, Prefx=sd);
+			%TransMac(DSName=StFtSdData, Varname=Short_Title, Prefx=st);
+			%TransMac(DSName=StFtSdData, Varname=Seg_Description, Prefx=sd);
 			%do dsn=1 %to 2;
 				data ItmGrp&dsn.;
 					set TDF_Data;
-					if ShortTitle="&&st&dsn.." and SegmentDescription="&&sd&dsn..";
+					if Short_Title="&&st&dsn.." and Seg_Description="&&sd&dsn..";
 				run;
 				%TotalRec(inDS=ItmGrp&dsn.);
 				%let Ni_Ig_&dsn. = &NumObs.;
@@ -1398,12 +1388,12 @@ libname WrkData "&WrkHere.";
 			%let ig2s=%eval(&NI_Ig_1. + 1);									%let ig2e=%eval(&NI_Ig_1. + &NI_Ig_2.);
 		%end;
 		%else %if &NumItmGrps=3 %then %do;
-			%TransMac(DSName=StFtSdData, Varname=ShortTitle, Prefx=st);
-			%TransMac(DSName=StFtSdData, Varname=SegmentDescription, Prefx=sd);
+			%TransMac(DSName=StFtSdData, Varname=Short_Title, Prefx=st);
+			%TransMac(DSName=StFtSdData, Varname=Seg_Description, Prefx=sd);
 			%do dsn=1 %to 3;
 				data ItmGrp&dsn.;
 					set TDF_Data;
-					if ShortTitle="&&st&dsn.." and SegmentDescription="&&sd&dsn..";
+					if Short_Title="&&st&dsn.." and Seg_Description="&&sd&dsn..";
 				run;
 				%TotalRec(inDS=ItmGrp&dsn.);
 				%let Ni_Ig_&dsn. = &NumObs.;
@@ -1499,280 +1489,218 @@ libname WrkData "&WrkHere.";
 %mend RunFullProc;
 
 %macro RunFullICAProc;
-	%RunFullProc(ICA, 03, 2, ELA, 3, FIXED, 2019-2020);
-	%RunFullProc(ICA, 03, 2, ELA, 4, FIXED, 2019-2020);
-	%RunFullProc(ICA, 03, 2, ELA, 5, FIXED, 2019-2020);
-	%RunFullProc(ICA, 03, 2, ELA, 6, FIXED, 2019-2020);
-	%RunFullProc(ICA, 03, 2, ELA, 7, FIXED, 2019-2020);
-	%RunFullProc(ICA, 03, 2, ELA, 8, FIXED, 2019-2020);
-	%RunFullProc(ICA, 03, 2, ELA, 9, FIXED, 2019-2020);
-	%RunFullProc(ICA, 03, 2, ELA, 10, FIXED, 2019-2020);
-	%RunFullProc(ICA, 03, 3, ELA, 11, FIXED, 2019-2020);
-	%RunFullProc(ICA, 03, 2, MATH, 3, FIXED, 2019-2020);		**	Remember to shift Scoring:Q16:Q17		** ;
-	%RunFullProc(ICA, 03, 2, MATH, 4, FIXED, 2019-2020);		**	up to Scoring:Q14:15 for these			** ;
-	%RunFullProc(ICA, 03, 2, MATH, 5, FIXED, 2019-2020);		**	three config sheet files						** ;
-	%RunFullProc(ICA, 03, 2, MATH, 6, FIXED, 2019-2020);
-	%RunFullProc(ICA, 03, 2, MATH, 7, FIXED, 2019-2020);
-	%RunFullProc(ICA, 03, 3, MATH, 8, FIXED, 2019-2020);
-	%RunFullProc(ICA, 03, 2, MATH, 9, FIXED, 2019-2020);
-	%RunFullProc(ICA, 03, 2, MATH, 10, FIXED, 2019-2020);
-	%RunFullProc(ICA, 03, 2, MATH, 11, FIXED, 2019-2020);	
+	%RunFullProc(ica, 89, 1, ela, 3, FIXED, 2022-23);
+	%RunFullProc(ica, 89, 1, ela, 4, FIXED, 2022-23);
+	%RunFullProc(ica, 89, 1, ela, 5, FIXED, 2022-23);
+	%RunFullProc(ica, 89, 1, ela, 6, FIXED, 2022-23);
+	%RunFullProc(ica, 89, 1, ela, 7, FIXED, 2022-23);
+	%RunFullProc(ica, 89, 1, ela, 8, FIXED, 2022-23);
+	%RunFullProc(ica, 89, 1, ela, 9, FIXED, 2022-23);
+	%RunFullProc(ica, 89, 1, ela, 10, FIXED, 2022-23);
+	%RunFullProc(ica, 89, 1, ela, 11, FIXED, 2022-23);
+	%RunFullProc(ica, 89, 1, math, 3, FIXED, 2022-23);
+	%RunFullProc(ica, 89, 1, math, 4, FIXED, 2022-23);
+	%RunFullProc(ica, 89, 1, math, 5, FIXED, 2022-23);
+	%RunFullProc(ica, 89, 1, math, 6, FIXED, 2022-23);
+	%RunFullProc(ica, 89, 1, math, 7, FIXED, 2022-23);
+	%RunFullProc(ica, 89, 1, math, 8, FIXED, 2022-23);
+	%RunFullProc(ica, 89, 1, math, 9, FIXED, 2022-23);
+	%RunFullProc(ica, 89, 1, math, 10, FIXED, 2022-23);
+	%RunFullProc(ica, 89, 1, math, 11, FIXED, 2022-23);
 %mend RunFullICAProc;
-%* 	%RunFullICAProc;
-
-%macro RunFullFIABProc;
-	%RunFullProc(FIAB, 01, 2, ELA, 3, ResearchAnalyzeInfo, 2019-2020);
-	%RunFullProc(FIAB, 01, 2, ELA, 3, ResearchInterpInteg, 2019-2020);
-	%RunFullProc(FIAB, 01, 2, ELA, 3, WriteNarrative, 2019-2020);
-	%RunFullProc(FIAB, 01, 2, ELA, 4, ResearchAnalyzeInfo, 2019-2020);
-	%RunFullProc(FIAB, 01, 2, ELA, 4, ResearchInterpInteg, 2019-2020);
-	%RunFullProc(FIAB, 01, 2, ELA, 4, WriteNarrative, 2019-2020);
-	%RunFullProc(FIAB, 01, 2, ELA, 5, ResearchAnalyzeInfo, 2019-2020);
-	%RunFullProc(FIAB, 01, 2, ELA, 5, ResearchInterpInteg, 2019-2020);
-	%RunFullProc(FIAB, 01, 2, ELA, 5, WriteNarrative, 2019-2020);
-	%RunFullProc(FIAB, 01, 2, ELA, 6, ResearchAnalyzeInfo, 2019-2020);
-	%RunFullProc(FIAB, 01, 2, ELA, 6, ResearchInterpInteg, 2019-2020);
-	%RunFullProc(FIAB, 01, 2, ELA, 6, WriteNarrative, 2019-2020);
-	%RunFullProc(FIAB, 01, 2, ELA, 7, ResearchAnalyzeInfo, 2019-2020);
-	%RunFullProc(FIAB, 01, 2, ELA, 7, ResearchInterpInteg, 2019-2020);
-	%RunFullProc(FIAB, 01, 2, ELA, 7, WriteNarrative, 2019-2020);
-	%RunFullProc(FIAB, 01, 2, ELA, 8, ResearchAnalyzeInfo, 2019-2020);
-	%RunFullProc(FIAB, 01, 2, ELA, 8, ResearchInterpInteg, 2019-2020);
-	%RunFullProc(FIAB, 01, 2, ELA, 8, WriteNarrative, 2019-2020);
-	%RunFullProc(FIAB, 01, 2, ELA, 11, ResearchAnalyzeInfo, 2019-2020);
-	%RunFullProc(FIAB, 01, 2, ELA, 11, ResearchInterpInteg, 2019-2020);
-	%RunFullProc(FIAB, 01, 2, ELA, 11, WriteNarrative, 2019-2020);
-	%RunFullProc(FIAB, 01, 2, MATH, 3, TAOA, 2019-2020);
-	%RunFullProc(FIAB, 01, 2, MATH, 3, TBOA, 2019-2020);
-	%RunFullProc(FIAB, 01, 2, MATH, 3, TCOA, 2019-2020);
-	%RunFullProc(FIAB, 01, 2, MATH, 4, TAOA, 2019-2020);
-	%RunFullProc(FIAB, 01, 2, MATH, 4, TFNF, 2019-2020);
-	%RunFullProc(FIAB, 01, 2, MATH, 4, THNF, 2019-2020);
-	%RunFullProc(FIAB, 01, 2, MATH, 5, TAOA, 2019-2020);
-	%RunFullProc(FIAB, 01, 2, MATH, 5, TDNBT, 2019-2020);
-	%RunFullProc(FIAB, 01, 2, MATH, 5, TENF, 2019-2020);
-	%RunFullProc(FIAB, 01, 2, MATH, 6, TBNS, 2019-2020);
-	%RunFullProc(FIAB, 01, 2, MATH, 6, TFEE, 2019-2020);
-	%RunFullProc(FIAB, 01, 2, MATH, 6, TGEE, 2019-2020);
-	%RunFullProc(FIAB, 01, 2, MATH, 7, TCEE, 2019-2020);
-	%RunFullProc(FIAB, 01, 2, MATH, 7, TDEE, 2019-2020);
-	%RunFullProc(FIAB, 01, 2, MATH, 7, TEG, 2019-2020);
-	%RunFullProc(FIAB, 01, 2, MATH, 8, TCEE, 2019-2020);
-	%RunFullProc(FIAB, 01, 2, MATH, 8, TDEE, 2019-2020);
-	%RunFullProc(FIAB, 01, 2, MATH, 8, TGG, 2019-2020);
-	%RunFullProc(FIAB, 01, 2, MATH, 11, THREI, 2019-2020);
-	%RunFullProc(FIAB, 01, 2, MATH, 11, TIREILinExp, 2019-2020);
-	%RunFullProc(FIAB, 01, 2, MATH, 11, TIREIQuad, 2019-2020);
-%mend RunFullFIABProc;
-%* 	%RunFullFIABProc;
+%*	%RunFullICAProc;
 
 %macro RunFullIABProc;
-	%RunFullProc(IAB, 02, 2, ELA, 3, BriefWrites, 2019-2020);
-	%RunFullProc(IAB, 02, 2, ELA, 3, Editing, 2019-2020);
-	%RunFullProc(IAB, 02, 2, ELA, 3, LangVocab, 2019-2020);
-	%RunFullProc(IAB, 02, 4, ELA, 3, ListenInterpet, 2019-2020);
-	%RunFullProc(IAB, 02, 2, ELA, 3, ReadInfo, 2019-2020);
-	%RunFullProc(IAB, 02, 2, ELA, 3, ReadLit, 2019-2020);
-	%RunFullProc(IAB, 02, 2, ELA, 3, Research, 2019-2020);
-	%RunFullProc(IAB, 02, 2, ELA, 3, Revision, 2019-2020);
-	%RunFullProc(IAB, 02, 2, ELA, 4, BriefWrites, 2019-2020);
-	%RunFullProc(IAB, 02, 2, ELA, 4, Editing, 2019-2020);
-	%RunFullProc(IAB, 02, 2, ELA, 4, LangVocab, 2019-2020);
-	%RunFullProc(IAB, 02, 2, ELA, 4, ListenInterpet, 2019-2020);
-	%RunFullProc(IAB, 02, 2, ELA, 4, ReadInfo, 2019-2020);
-	%RunFullProc(IAB, 02, 2, ELA, 4, ReadLit, 2019-2020);
-	%RunFullProc(IAB, 02, 2, ELA, 4, Research, 2019-2020);
-	%RunFullProc(IAB, 02, 2, ELA, 4, Revision, 2019-2020);
-	%RunFullProc(IAB, 02, 2, ELA, 5, BriefWrites, 2019-2020);
-	%RunFullProc(IAB, 02, 2, ELA, 5, Editing, 2019-2020);
-	%RunFullProc(IAB, 02, 2, ELA, 5, LangVocab, 2019-2020);
-	%RunFullProc(IAB, 02, 2, ELA, 5, ListenInterpet, 2019-2020);
-	%RunFullProc(IAB, 02, 2, ELA, 5, ReadInfo, 2019-2020);
-	%RunFullProc(IAB, 02, 3, ELA, 5, ReadLit, 2019-2020);
-	%RunFullProc(IAB, 02, 2, ELA, 5, Research, 2019-2020);
-	%RunFullProc(IAB, 02, 2, ELA, 5, Revision, 2019-2020);
-	%RunFullProc(IAB, 02, 2, ELA, 6, BriefWrites, 2019-2020);
-	%RunFullProc(IAB, 02, 2, ELA, 6, Editing, 2019-2020);
-	%RunFullProc(IAB, 02, 2, ELA, 6, LangVocab, 2019-2020);
-	%RunFullProc(IAB, 02, 2, ELA, 6, ListenInterpet, 2019-2020);
-	%RunFullProc(IAB, 02, 2, ELA, 6, ReadInfo, 2019-2020);
-	%RunFullProc(IAB, 02, 2, ELA, 6, ReadLit, 2019-2020);
-	%RunFullProc(IAB, 02, 2, ELA, 6, Research, 2019-2020);
-	%RunFullProc(IAB, 02, 2, ELA, 6, Revision, 2019-2020);
-	%RunFullProc(IAB, 02, 2, ELA, 7, BriefWrites, 2019-2020);
-	%RunFullProc(IAB, 02, 2, ELA, 7, Editing, 2019-2020);
-	%RunFullProc(IAB, 02, 2, ELA, 7, LangVocab, 2019-2020);
-	%RunFullProc(IAB, 02, 2, ELA, 7, ListenInterpet, 2019-2020);
-	%RunFullProc(IAB, 02, 2, ELA, 7, ReadInfo, 2019-2020);
-	%RunFullProc(IAB, 02, 2, ELA, 7, ReadLit, 2019-2020);
-	%RunFullProc(IAB, 02, 2, ELA, 7, Research, 2019-2020);
-	%RunFullProc(IAB, 02, 2, ELA, 7, Revision, 2019-2020);
-	%RunFullProc(IAB, 02, 2, ELA, 8, BriefWrites, 2019-2020);
-	%RunFullProc(IAB, 02, 2, ELA, 8, EditRevise, 2019-2020);
-	%RunFullProc(IAB, 02, 2, ELA, 8, ListenInterpet, 2019-2020);
-	%RunFullProc(IAB, 02, 2, ELA, 8, ReadInfo, 2019-2020);
-	%RunFullProc(IAB, 02, 2, ELA, 8, ReadLit, 2019-2020);
-	%RunFullProc(IAB, 02, 2, ELA, 8, Research, 2019-2020);
-	%RunFullProc(IAB, 02, 2, ELA, 11, BriefWrites, 2019-2020);
-	%RunFullProc(IAB, 02, 2, ELA, 11, Editing, 2019-2020);
-	%RunFullProc(IAB, 02, 2, ELA, 11, LangVocab, 2019-2020);
-	%RunFullProc(IAB, 02, 2, ELA, 11, ListenInterpet, 2019-2020);
-	%RunFullProc(IAB, 02, 2, ELA, 11, ReadInfo, 2019-2020);
-	%RunFullProc(IAB, 02, 2, ELA, 11, ReadLit, 2019-2020);
-	%RunFullProc(IAB, 02, 2, ELA, 11, Research, 2019-2020);
-	%RunFullProc(IAB, 02, 2, ELA, 11, Revision, 2019-2020);
-	%RunFullProc(IAB, 02, 2, MATH, 3, G, 2019-2020);
-	%RunFullProc(IAB, 02, 2, MATH, 3, MD, 2019-2020);
-	%RunFullProc(IAB, 02, 2, MATH, 3, NBT, 2019-2020);
-	%RunFullProc(IAB, 02, 2, MATH, 3, NF, 2019-2020);
-	%RunFullProc(IAB, 02, 2, MATH, 3, OA, 2019-2020);
-	%RunFullProc(IAB, 02, 2, MATH, 4, G, 2019-2020);
-	%RunFullProc(IAB, 02, 2, MATH, 4, MD, 2019-2020);
-	%RunFullProc(IAB, 02, 2, MATH, 4, NBT, 2019-2020);
-	%RunFullProc(IAB, 02, 2, MATH, 4, NF, 2019-2020);
-	%RunFullProc(IAB, 02, 2, MATH, 4, OA, 2019-2020);
-	%RunFullProc(IAB, 02, 2, MATH, 5, G, 2019-2020);
-	%RunFullProc(IAB, 02, 2, MATH, 5, MD, 2019-2020);
-	%RunFullProc(IAB, 02, 2, MATH, 5, NBT, 2019-2020);
-	%RunFullProc(IAB, 02, 2, MATH, 5, NF, 2019-2020);
-	%RunFullProc(IAB, 02, 2, MATH, 5, OA, 2019-2020);
-	%RunFullProc(IAB, 02, 3, MATH, 6, EE, 2019-2020);
-	%RunFullProc(IAB, 02, 2, MATH, 6, G, 2019-2020);
-	%RunFullProc(IAB, 02, 2, MATH, 6, NS, 2019-2020);
-	%RunFullProc(IAB, 02, 2, MATH, 6, RP, 2019-2020);
-	%RunFullProc(IAB, 02, 2, MATH, 6, SP, 2019-2020);
-	%RunFullProc(IAB, 02, 2, MATH, 7, EE, 2019-2020);
-	%RunFullProc(IAB, 02, 2, MATH, 7, G, 2019-2020);
-	%RunFullProc(IAB, 02, 2, MATH, 7, NS, 2019-2020);
-	%RunFullProc(IAB, 02, 2, MATH, 7, RP, 2019-2020);
-	%RunFullProc(IAB, 02, 2, MATH, 7, SP, 2019-2020);
-	%RunFullProc(IAB, 02, 2, MATH, 8, EE, 2019-2020);
-	%RunFullProc(IAB, 02, 2, MATH, 8, EE2, 2019-2020);
-	%RunFullProc(IAB, 02, 2, MATH, 8, F, 2019-2020);
-	%RunFullProc(IAB, 02, 2, MATH, 8, G, 2019-2020);
-	%RunFullProc(IAB, 02, 2, MATH, 8, NS, 2019-2020);
-	%RunFullProc(IAB, 02, 2, MATH, 11, AlgLin, 2019-2020);
-	%RunFullProc(IAB, 02, 2, MATH, 11, AlgQuad, 2019-2020);
-	%RunFullProc(IAB, 02, 2, MATH, 11, GCO, 2019-2020);
-	%RunFullProc(IAB, 02, 2, MATH, 11, GMD, 2019-2020);
-	%RunFullProc(IAB, 02, 2, MATH, 11, GeoRightTriRatios, 2019-2020);
-	%RunFullProc(IAB, 02, 3, MATH, 11, IF, 2019-2020);
-	%RunFullProc(IAB, 02, 2, MATH, 11, NQ, 2019-2020);
-	%RunFullProc(IAB, 02, 2, MATH, 11, SP, 2019-2020);
-	%RunFullProc(IAB, 02, 2, MATH, 11, SSE, 2019-2020);
-	%RunFullProc(IAB, 02, 2, ELA, 3, Perf-Opinion-Beetles, 2019-2020);
-	%RunFullProc(IAB, 02, 2, ELA, 4, Perf-Narrative-UnlikelyAnimal, 2019-2020);
-	%RunFullProc(IAB, 02, 2, ELA, 5, Perf-Narrative-Whales, 2019-2020);
-	%RunFullProc(IAB, 02, 2, ELA, 6, Perf-Argument-Multivitamins, 2019-2020);
-	%RunFullProc(IAB, 02, 2, ELA, 7, Perf-Explanatory-MobileEdTech, 2019-2020);
-	%RunFullProc(IAB, 02, 2, ELA, 8, Perf-Explanatory-CompareAncient, 2019-2020);
-	%RunFullProc(IAB, 02, 2, ELA, 11, Perf-Explanatory-Marshmallow, 2019-2020);
-	%RunFullProc(IAB, 02, 2, MATH, 3, Perf-OrderForm, 2019-2020);
-	%RunFullProc(IAB, 02, 2, MATH, 4, Perf-AnimalJumping, 2019-2020);
-	%RunFullProc(IAB, 02, 2, MATH, 5, Perf-TurtleHabitat, 2019-2020);
-	%RunFullProc(IAB, 02, 2, MATH, 6, Perf-CellPhonePlan, 2019-2020);
-	%RunFullProc(IAB, 02, 2, MATH, 7, Perf-CampingTasks, 2019-2020);
-	%RunFullProc(IAB, 02, 2, MATH, 8, Perf-BaseballTickets, 2019-2020);
-	%RunFullProc(IAB, 02, 2, MATH, 11, Perf-TeenDrivingRest, 2019-2020);
+	%RunFullProc(iab, 91, 1, ela, 3, BriefWrites, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 3, Editing, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 3, LangVocab, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 3, ListenInterpret, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 3, Perf-Opinion-Beetles, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 3, ReadInfo, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 3, ReadLit, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 3, Research, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 3, ResearchAnalyzeInfo, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 3, ResearchEvidence, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 3, ResearchInterpInteg, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 3, Revision, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 3, WriteInfo, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 3, WriteNarrative, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 3, WriteOpinion, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 4, BriefWrites, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 4, Editing, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 4, LangVocab, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 4, ListenInterpret, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 4, Perf-Opinion-Reptiles, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 4, ReadInfo, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 4, ReadLit, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 4, Research, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 4, ResearchAnalyzeInfo, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 4, ResearchEvidence, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 4, ResearchInterpInteg, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 4, Revision, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 4, WriteInfo, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 4, WriteNarrative, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 4, WriteOpinion, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 5, BriefWrites, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 5, Editing, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 5, LangVocab, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 5, ListenInterpret, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 5, Perf-Informational-Recycling, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 5, ReadInfo, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 5, ReadLit, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 5, Research, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 5, ResearchAnalyzeInfo, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 5, ResearchEvidence, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 5, ResearchInterpInteg, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 5, Revision, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 5, WriteInfo, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 5, WriteNarrative, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 5, WriteOpinion, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 6, BriefWrites, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 6, Editing, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 6, LangVocab, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 6, ListenInterpret, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 6, Perf-Argument-Multivitamins, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 6, ReadInfo, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 6, ReadLit, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 6, Research, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 6, ResearchAnalyzeInfo, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 6, ResearchEvidence, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 6, ResearchInterpInteg, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 6, Revision, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 6, WriteArgue, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 6, WriteExplanatory, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 6, WriteNarrative, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 7, BriefWrites, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 7, Editing, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 7, LangVocab, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 7, ListenInterpret, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 7, Perf-Explanatory-MobileEdTech, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 7, ReadInfo, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 7, ReadLit, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 7, Research, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 7, ResearchAnalyzeInfo, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 7, ResearchEvidence, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 7, ResearchInterpInteg, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 7, Revision, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 7, WriteArgue, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 7, WriteExplanatory, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 7, WriteNarrative, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 8, BriefWrites, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 8, EditRevise, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 8, Editing, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 8, LangVocab, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 8, ListenInterpret, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 8, Perf-Argument-MapsandTechnology, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 8, ReadInfo, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 8, ReadLit, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 8, Research, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 8, ResearchAnalyzeInfo, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 8, ResearchEvidence, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 8, ResearchInterpInteg, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 8, WriteArgue, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 8, WriteExplanatory, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 8, WriteNarrative, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 11, BriefWrites, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 11, Editing, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 11, LangVocab, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 11, ListenInterpret, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 11, Perf-Explanatory-Marshmallow, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 11, ReadInfo, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 11, ReadLit, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 11, Research, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 11, ResearchAnalyzeInfo, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 11, ResearchEvidence, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 11, ResearchInterpInteg, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 11, Revision, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 11, WriteArgue, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 11, WriteExplanatory, 2022-23);
+	%RunFullProc(iab, 91, 1, ela, 11, WriteNarrative, 2022-23);
+	%RunFullProc(iab, 91, 1, math, 3, G, 2022-23);
+	%RunFullProc(iab, 91, 1, math, 3, MD, 2022-23);
+	%RunFullProc(iab, 91, 1, math, 3, NBT, 2022-23);
+	%RunFullProc(iab, 91, 1, math, 3, NF, 2022-23);
+	%RunFullProc(iab, 91, 1, math, 3, OA, 2022-23);
+	%RunFullProc(iab, 91, 1, math, 3, Perf-OrderForm, 2022-23);
+	%RunFullProc(iab, 91, 1, math, 3, TAOA, 2022-23);
+	%RunFullProc(iab, 91, 1, math, 3, TBOA, 2022-23);
+	%RunFullProc(iab, 91, 1, math, 3, TCOA, 2022-23);
+	%RunFullProc(iab, 91, 1, math, 3, TDOA, 2022-23);
+	%RunFullProc(iab, 91, 1, math, 3, TGMD, 2022-23);
+	%RunFullProc(iab, 91, 1, math, 3, TIJMD, 2022-23);
+	%RunFullProc(iab, 91, 1, math, 4, G, 2022-23);
+	%RunFullProc(iab, 91, 1, math, 4, MD, 2022-23);
+	%RunFullProc(iab, 91, 1, math, 4, NBT, 2022-23);
+	%RunFullProc(iab, 91, 1, math, 4, NF, 2022-23);
+	%RunFullProc(iab, 91, 1, math, 4, OA, 2022-23);
+	%RunFullProc(iab, 91, 1, math, 4, Perf-AnimalJumping, 2022-23);
+	%RunFullProc(iab, 91, 1, math, 4, TAOA, 2022-23);
+	%RunFullProc(iab, 91, 1, math, 4, TBOA, 2022-23);
+	%RunFullProc(iab, 91, 1, math, 4, TCOA, 2022-23);
+	%RunFullProc(iab, 91, 1, math, 4, TDNBT, 2022-23);
+	%RunFullProc(iab, 91, 1, math, 4, TENBT, 2022-23);
+	%RunFullProc(iab, 91, 1, math, 4, TFNF, 2022-23);
+	%RunFullProc(iab, 91, 1, math, 4, TGNF, 2022-23);
+	%RunFullProc(iab, 91, 1, math, 4, THNF, 2022-23);
+	%RunFullProc(iab, 91, 1, math, 5, G, 2022-23);
+	%RunFullProc(iab, 91, 1, math, 5, MD, 2022-23);
+	%RunFullProc(iab, 91, 1, math, 5, NBT, 2022-23);
+	%RunFullProc(iab, 91, 1, math, 5, NF, 2022-23);
+	%RunFullProc(iab, 91, 1, math, 5, OA, 2022-23);
+	%RunFullProc(iab, 91, 1, math, 5, Perf-TurtleHabitat, 2022-23);
+	%RunFullProc(iab, 91, 1, math, 5, TAOA, 2022-23);
+	%RunFullProc(iab, 91, 1, math, 5, TCNBT, 2022-23);
+	%RunFullProc(iab, 91, 1, math, 5, TDNBT, 2022-23);
+	%RunFullProc(iab, 91, 1, math, 5, TENF, 2022-23);
+	%RunFullProc(iab, 91, 1, math, 5, TGMD, 2022-23);
+	%RunFullProc(iab, 91, 1, math, 5, TIMD, 2022-23);
+	%RunFullProc(iab, 91, 1, math, 6, EE, 2022-23);
+	%RunFullProc(iab, 91, 1, math, 6, G, 2022-23);
+	%RunFullProc(iab, 91, 1, math, 6, NS, 2022-23);
+	%RunFullProc(iab, 91, 1, math, 6, Perf-CellPhonePlan, 2022-23);
+	%RunFullProc(iab, 91, 1, math, 6, Perf-FeedingTheGiraffe, 2022-23);
+	%RunFullProc(iab, 91, 1, math, 6, RP, 2022-23);
+	%RunFullProc(iab, 91, 1, math, 6, SP, 2022-23);
+	%RunFullProc(iab, 91, 1, math, 6, TBNS, 2022-23);
+	%RunFullProc(iab, 91, 1, math, 6, TCNS, 2022-23);
+	%RunFullProc(iab, 91, 1, math, 6, TDNSRat, 2022-23);
+	%RunFullProc(iab, 91, 1, math, 6, TEEE, 2022-23);
+	%RunFullProc(iab, 91, 1, math, 6, TFEE, 2022-23);
+	%RunFullProc(iab, 91, 1, math, 6, TGEE, 2022-23);
+	%RunFullProc(iab, 91, 1, math, 7, EE, 2022-23);
+	%RunFullProc(iab, 91, 1, math, 7, G, 2022-23);
+	%RunFullProc(iab, 91, 1, math, 7, NS, 2022-23);
+	%RunFullProc(iab, 91, 1, math, 7, Perf-CampingTasks, 2022-23);
+	%RunFullProc(iab, 91, 1, math, 7, RP, 2022-23);
+	%RunFullProc(iab, 91, 1, math, 7, SP, 2022-23);
+	%RunFullProc(iab, 91, 1, math, 7, TCEE, 2022-23);
+	%RunFullProc(iab, 91, 1, math, 7, TDEE, 2022-23);
+	%RunFullProc(iab, 91, 1, math, 7, TEG, 2022-23);
+	%RunFullProc(iab, 91, 1, math, 7, TFG, 2022-23);
+	%RunFullProc(iab, 91, 1, math, 8, EE, 2022-23);
+	%RunFullProc(iab, 91, 1, math, 8, EE2, 2022-23);
+	%RunFullProc(iab, 91, 1, math, 8, F, 2022-23);
+	%RunFullProc(iab, 91, 1, math, 8, G, 2022-23);
+	%RunFullProc(iab, 91, 1, math, 8, NS, 2022-23);
+	%RunFullProc(iab, 91, 1, math, 8, Perf-BaseballTickets, 2022-23);
+	%RunFullProc(iab, 91, 1, math, 8, TCEE, 2022-23);
+	%RunFullProc(iab, 91, 1, math, 8, TDEE, 2022-23);
+	%RunFullProc(iab, 91, 1, math, 8, TGG, 2022-23);
+	%RunFullProc(iab, 91, 1, math, 8, TIG, 2022-23);
+	%RunFullProc(iab, 91, 1, math, 11, AlgLin, 2022-23);
+	%RunFullProc(iab, 91, 1, math, 11, AlgQuad, 2022-23);
+	%RunFullProc(iab, 91, 1, math, 11, GCO, 2022-23);
+	%RunFullProc(iab, 91, 1, math, 11, GMD, 2022-23);
+	%RunFullProc(iab, 91, 1, math, 11, GeoRightTriRatios, 2022-23);
+	%RunFullProc(iab, 91, 1, math, 11, IF, 2022-23);
+	%RunFullProc(iab, 91, 1, math, 11, NQ, 2022-23);
+	%RunFullProc(iab, 91, 1, math, 11, Perf-TeenDrivingRest, 2022-23);
+	%RunFullProc(iab, 91, 1, math, 11, SP, 2022-23);
+	%RunFullProc(iab, 91, 1, math, 11, SSE, 2022-23);
+	%RunFullProc(iab, 91, 1, math, 11, TGCEDLinExp, 2022-23);
+	%RunFullProc(iab, 91, 1, math, 11, TGCEDQuad, 2022-23);
+	%RunFullProc(iab, 91, 1, math, 11, THREI, 2022-23);
+	%RunFullProc(iab, 91, 1, math, 11, TIREILinExp, 2022-23);
+	%RunFullProc(iab, 91, 1, math, 11, TIREIQuad, 2022-23);
 %mend RunFullIABProc;
 %*	%RunFullIABProc;
-
-%macro RunSpecialCases;
-	%RunFullProc(FIAB, 01, 4, MATH, 6, TGEE, 2019-2020);
-	%RunFullProc(IAB, 02, 4, MATH, 8, F, 2019-2020);
-	%RunFullProc(IAB, 02, 4, MATH, 6, G, 2019-2020);
-	%RunFullProc(IAB, 02, 4, MATH, 8, G, 2019-2020);
-	%RunFullProc(IAB, 02, 4, MATH, 11, GeoRightTriRatios, 2019-2020);
-	%RunFullProc(IAB, 02, 4, MATH, 11, GMD, 2019-2020);
-	%RunFullProc(IAB, 02, 4, MATH, 7, RP, 2019-2020);
-	%RunFullProc(IAB, 02, 4, MATH, 7, SP, 2019-2020);
-	%* %RunFullProc(IAB, 02, 3, MATH, 11, GCO, 2019-2020);		/*	Look at SegmentForms page and make needed corrections	*/
-%mend RunSpecialCases;
-%*	%RunSpecialCases;
-
-%macro RunMoreSpecialCases;
-	%RunFullProc(FIAB, 06, 3, MATH, 3, TAOA, 2019-2020);
-	%RunFullProc(FIAB, 06, 3, MATH, 4, TAOA, 2019-2020);
-	%RunFullProc(FIAB, 06, 3, MATH, 11, TIREILinExp, 2019-2020);
-	%RunFullProc(FIAB, 06, 3, MATH, 11, TIREIQuad, 2019-2020);
-	%RunFullProc(IAB, 08, 3, MATH, 11, SSE, 2019-2020);
-%mend RunMoreSpecialCases;
-%*	%RunMoreSpecialCases;
-
-%macro ReRunELA7IABEditingTDF04;
-	%RunFullProc(IAB, 07, 3, ELA, 7, Editing, 2019-2020);
-%mend ReRunELA7IABEditingTDF04;
-%*	%ReRunELA7IABEditingTDF04;	
-
-%macro RunFullPractice;
-/*	%RunFullProc(Practice, 02, 3, ELA, 3, PRAC, 2019-2020);
-	%RunFullProc(Practice, 02, 4, ELA, 3, PRAC-Perf, 2019-2020);
-	%RunFullProc(Practice, 02, 3, ELA, 4, PRAC, 2019-2020);
-	%RunFullProc(Practice, 02, 4, ELA, 4, PRAC-Perf, 2019-2020);
-	%RunFullProc(Practice, 02, 1, ELA, 5, PRAC, 2019-2020);
-	%RunFullProc(Practice, 02, 1, ELA, 5, PRAC-Perf, 2019-2020);
-	%RunFullProc(Practice, 02, 1, ELA, 6, PRAC, 2019-2020);
-	%RunFullProc(Practice, 02, 1, ELA, 6, PRAC-Perf, 2019-2020);
-	%RunFullProc(Practice, 02, 1, ELA, 7, PRAC, 2019-2020);
-	%RunFullProc(Practice, 02, 1, ELA, 7, PRAC-Perf, 2019-2020);
-	%RunFullProc(Practice, 02, 1, ELA, 8, PRAC, 2019-2020);
-	%RunFullProc(Practice, 02, 1, ELA, 8, PRAC-Perf, 2019-2020);
-	%RunFullProc(Practice, 02, 1, ELA, 11, PRAC, 2019-2020);
-	%RunFullProc(Practice, 02, 1, ELA, 11, PRAC-Perf, 2019-2020);
-	%RunFullProc(Practice, 02, 1, MATH, 3, PRAC, 2019-2020);
-	%RunFullProc(Practice, 02, 1, MATH, 3, PRAC-Perf, 2019-2020);
-	%RunFullProc(Practice, 02, 1, MATH, 4, PRAC, 2019-2020);
-	%RunFullProc(Practice, 02, 1, MATH, 4, PRAC-Perf, 2019-2020);
-	%RunFullProc(Practice, 02, 1, MATH, 5, PRAC, 2019-2020);
-	%RunFullProc(Practice, 02, 1, MATH, 5, PRAC-Perf, 2019-2020);
-	%RunFullProc(Practice, 02, 1, MATH, 6, PRAC, 2019-2020);
-	%RunFullProc(Practice, 02, 1, MATH, 6, PRAC-Perf, 2019-2020);
-	%RunFullProc(Practice, 02, 1, MATH, 7, PRAC, 2019-2020);
-	%RunFullProc(Practice, 02, 1, MATH, 7, PRAC-Perf, 2019-2020);
-	%RunFullProc(Practice, 02, 3, MATH, 8, PRAC, 2019-2020);
-	%RunFullProc(Practice, 02, 3, MATH, 8, PRAC-Perf, 2019-2020);
-	%RunFullProc(Practice, 02, 3, MATH, 11, PRAC, 2019-2020);	*/
-	%RunFullProc(Practice, 02, 3, MATH, 11, PRAC-Perf, 2019-2020);
-%mend RunFullPractice;
-%*	%RunFullPractice;
-
-%macro RunFullTraining;
-/*	%RunFullProc(Training, 02, 1, ELA, 3, TRN, 2019-2020);
-	%RunFullProc(Training, 02, 1, ELA, 6, TRN, 2019-2020);
-	%RunFullProc(Training, 02, 1, ELA, 10, TRN, 2019-2020);
-	%RunFullProc(Training, 02, 1, MATH, 3, TRN, 2019-2020);	*/
-	%RunFullProc(Training, 03, 2, MATH, 6, TRN, 2019-2020);
-	%RunFullProc(Training, 03, 2, MATH, 10, TRN, 2019-2020);
-%mend RunFullTraining;
-%*	%RunFullTraining;
-
-%macro RunEvenMoreFIAB2IAB;
-	%RunFullProc(FIAB, 06, 3, MATH, 6, TBNS, 2019-2020);
-	%RunFullProc(FIAB, 06, 3, MATH, 6, TFEE, 2019-2020);
-	%RunFullProc(FIAB, 06, 3, MATH, 7, TCEE, 2019-2020);
-	%RunFullProc(FIAB, 06, 3, MATH, 7, TDEE, 2019-2020);
-	%RunFullProc(FIAB, 06, 3, MATH, 7, TEG, 2019-2020);
-	%RunFullProc(FIAB, 06, 3, MATH, 8, TDEE, 2019-2020);
-	%RunFullProc(FIAB, 06, 3, MATH, 8, TGG, 2019-2020);
-	%RunFullProc(FIAB, 06, 3, MATH, 11, THREI, 2019-2020);
-	%RunFullProc(FIAB, 06, 4, MATH, 11, TIREILinExp, 2019-2020);
-	%RunFullProc(FIAB, 06, 4, MATH, 11, TIREIQuad, 2019-2020);
-%mend RunEvenMoreFIAB2IAB;
-%*	%RunEvenMoreFIAB2IAB;
-
-%macro RunEvenMore2FIAB2IAB;
-/*	%RunFullProc(FIAB, 12, 3, ELA, 3, WriteNarrative, 2019-2020);
-	%RunFullProc(FIAB, 12, 3, ELA, 4, WriteNarrative, 2019-2020);
-	%RunFullProc(FIAB, 12, 3, ELA, 5, WriteNarrative, 2019-2020);
-	%RunFullProc(FIAB, 12, 3, ELA, 6, WriteNarrative, 2019-2020);	*/
-	%RunFullProc(FIAB, 12, 3, ELA, 8, WriteNarrative, 2019-2020);
-%mend RunEvenMore2FIAB2IAB;
-%*	%RunEvenMore2FIAB2IAB;
-
-%macro ReRunG9G10ICAs;
-	%RunFullProc(ICA, 13, 3, ELA, 9, FIXED, 2019-2020);
-	%RunFullProc(ICA, 13, 3, ELA, 10, FIXED, 2019-2020);
-	%RunFullProc(ICA, 13, 3, MATH, 9, FIXED, 2019-2020);
-	%RunFullProc(ICA, 13, 3, MATH, 10, FIXED, 2019-2020);
-%mend ReRunG9G10ICAs;
-	%ReRunG9G10ICAs
