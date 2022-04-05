@@ -86,30 +86,52 @@ libname libHere "&wrkHere.";
 %*	%FDSubNameGrades(2022_23, ICA, 89);
 %*	%FDSubNameGrades(2022_23, IAB, 91);
 
-%macro BldMacCalls(DSName);
+%macro CheckFields(DSName);
+	%TrimCharVars(&DSName., NowtheFD);
+	options ls=135;
+	%GetSnow;
+	Title "Contents of &DSName. [&now.]";
+	proc freq data=NowtheFD;
+		tables subject * student_grade * tdf_type * asmt * asmt_subtype * role / list missing;
+	run;
+%mend CheckFields;
+%*	%CheckFields(libHere.TDF_2022_23_ICA_v89);
+%*	%CheckFields(libHere.TDF_2022_23_IAB_v91);
+
+%macro BldMacCalls(DSName, itype);
 	proc freq data = &DSName. ;
-		tables asmt_subtype * tdf_version * subject * student_grade * short_title * admin_year /
+		tables role * tdf_version * subject * student_grade * short_title * admin_year /
 				list noprint out=ForMacCalls;
+	run;
+	data &itype.MacCalls;
+		set ForMacCalls;
+		if role = "&itype.";
 	run;
 /*	%GetSnow;
 	Title "Contents of &DSName. [&now.]";
 	proc print data = ForMacCalls;
 	run;	*/
-	FileName MacCalls "&WrkHere.\MacCalls_&DSName..sas";
+	FileName MacCalls "&WrkHere.\MacCalls_&itype..sas";
 	data _null_;
-		set ForMacCalls;
+		set &itype.MacCalls;
 		format outlyn $84.;
 		file MacCalls;
-		outlyn = '09'x || '%RunFullProc(' || compress(asmt_subtype) || ', ' || compress(tdf_version) || ', 1, ' ||
+		format admin_year2 $9.;
+		if admin_year = '2022-23' then admin_year2 = '2022-2023';
+		outlyn = '09'x || '%RunFullProc(' || compress(role) || ', ' || compress(tdf_version) || ', 1, ' ||
 			compress(subject) || ', ' || compress(student_grade) || ', ' || compress(short_title) || ', ' ||
-			compress(admin_year) || ');' ;
-		if compress(short_title) ne 'PT' then do;
-			put outlyn;
+			compress(admin_year2) || ');' ;
+/*	if ((compress(short_title) ne 'PT') and (index(compress(short_title), '-') = 0)) then do;		*/
+		if (compress(short_title) ne 'PT') then do;
+			if index(compress(short_title), '-') > 0 then do;
+				put outlyn;
+			end;
 		end;
 	run;
 %mend BldMacCalls;
-	%BldMacCalls(libHere.TDF_2022_23_ICA_v89);
-	%BldMacCalls(libHere.TDF_2022_23_IAB_v91);
+%*	%BldMacCalls(libHere.TDF_2022_23_ICA_v89, ica);
+	%BldMacCalls(libHere.TDF_2022_23_IAB_v91, iab);
+%*	%BldMacCalls(libHere.TDF_2022_23_IAB_v91, fiab);
 	
 /*	%RunFullProc(ICA, 03, 2, ELA, 7, FIXED, 2019-2020);	*/
 /*	%RunFullProc(IAB, 13, 1, ELA, 4, LangVocab, 2020-2021);	*/
