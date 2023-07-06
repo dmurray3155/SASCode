@@ -16,7 +16,7 @@ proc sql;
 	select aur_id, monthyear, member, login, lastloginpt, lastloginiso8601,
 		lastloginiso8601 - lastloginpt as time_diff
 	from t4t.app_use_rept
-	where monthyear = 'Jan2022';
+	where monthyear = 'Jun2023';
 quit;
 
 %GetSnow;

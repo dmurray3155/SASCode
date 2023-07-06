@@ -1,0 +1,4004 @@
+1                                          The SAS System               16:31 Thursday, July 6, 2023
+
+NOTE: Copyright (c) 2016 by SAS Institute Inc., Cary, NC, USA. 
+NOTE: SAS (r) Proprietary Software 9.4 (TS1M7) 
+      Licensed to UNIVERSITY OF CALIFORNIA SYSTEM-SFA-T&R, Site 70081229.
+NOTE: This session is executing on the X64_10PRO  platform.
+
+
+
+NOTE: Analytical products:
+      
+      SAS/STAT 15.2
+      SAS/ETS 15.2
+      SAS/OR 15.2
+      SAS/IML 15.2
+      SAS/QC 15.2
+
+NOTE: Additional host information:
+
+ X64_10PRO WIN 10.0.19041  Workstation
+
+NOTE: SAS initialization used:
+      real time           0.30 seconds
+      cpu time            0.37 seconds
+      
+
+NOTE: AUTOEXEC processing beginning; file is C:\Program 
+      Files\SASHome\SASFoundation\9.4\autoexec.sas.
+
+
+NOTE: PROCEDURE SETINIT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+Original site validation data
+Current version: 9.04.01M7P080520
+Site name:    'UNIVERSITY OF CALIFORNIA SYSTEM-SFA-T&R'.
+Site number:  70081229.
+CPU A: Model name='' model number='' serial=''.
+Expiration:   30JUN2023.
+Grace Period:  45 days (ending 14AUG2023).
+Warning Period: 45 days (ending 28SEP2023).
+System birthday:   20JUN2022.
+Operating System:   WX64_WKS.
+Product expiration dates:
+---Base SAS Software                                                                                
+    30JUN2023 (CPU A) 
+---SAS/STAT                                                                                         
+    30JUN2023 (CPU A) 
+---SAS/GRAPH                                                                                        
+    30JUN2023 (CPU A) 
+---SAS/ETS                                                                                          
+    30JUN2023 (CPU A) 
+---SAS/FSP                                                                                          
+    30JUN2023 (CPU A) 
+---SAS/OR                                                                                           
+2                                          The SAS System               16:31 Thursday, July 6, 2023
+
+    30JUN2023 (CPU A) 
+---SAS/AF                                                                                           
+    30JUN2023 (CPU A) 
+---SAS/IML                                                                                          
+    30JUN2023 (CPU A) 
+---SAS/QC                                                                                           
+    30JUN2023 (CPU A) 
+---SAS/SHARE                                                                                        
+    30JUN2023 (CPU A) 
+---SAS/ASSIST                                                                                       
+    30JUN2023 (CPU A) 
+---SAS/CONNECT                                                                                      
+    30JUN2023 (CPU A) 
+---SAS/TOOLKIT                                                                                      
+    30JUN2023 (CPU A) 
+---SAS/EIS                                                                                          
+    30JUN2023 (CPU A) 
+---SAS/GIS                                                                                          
+    30JUN2023 (CPU A) 
+---SAS/SHARE*NET                                                                                    
+    30JUN2023 (CPU A) 
+---SAS Enterprise Miner                                                                             
+    30JUN2023 (CPU A) 
+---SAS/IntrNet                                                                                      
+    30JUN2023 (CPU A) 
+---MDDB Server common products                                                                      
+    30JUN2023 (CPU A) 
+---SAS Integration Technologies                                                                     
+    30JUN2023 (CPU A) 
+---SAS/Secure 168-bit                                                                               
+    30JUN2023 (CPU A) 
+---SAS/Secure Windows                                                                               
+    30JUN2023 (CPU A) 
+---SAS Text Miner                                                                                   
+    30JUN2023 (CPU A) 
+---SAS/Genetics                                                                                     
+    30JUN2023 (CPU A) 
+---SAS Enterprise Guide                                                                             
+    30JUN2023 (CPU A) 
+---SAS Bridge for ESRI                                                                              
+    30JUN2023 (CPU A) 
+---OR OPT                                                                                           
+    30JUN2023 (CPU A) 
+---OR PRS                                                                                           
+    30JUN2023 (CPU A) 
+---OR IVS                                                                                           
+    30JUN2023 (CPU A) 
+---OR LSO                                                                                           
+    30JUN2023 (CPU A) 
+---SAS/ACCESS Interface to DB2                                                                      
+    30JUN2023 (CPU A) 
+---SAS/ACCESS Interface to Oracle                                                                   
+    30JUN2023 (CPU A) 
+---SAS/ACCESS Interface to SAP ASE                                                                  
+3                                          The SAS System               16:31 Thursday, July 6, 2023
+
+    30JUN2023 (CPU A) 
+---SAS/ACCESS Interface to PC Files                                                                 
+    30JUN2023 (CPU A) 
+---SAS/ACCESS Interface to ODBC                                                                     
+    30JUN2023 (CPU A) 
+---SAS/ACCESS Interface to OLE DB                                                                   
+    30JUN2023 (CPU A) 
+---SAS/ACCESS Interface to R/3                                                                      
+    30JUN2023 (CPU A) 
+---SAS/ACCESS Interface to Teradata                                                                 
+    30JUN2023 (CPU A) 
+---SAS/ACCESS Interface to Microsoft SQL Server                                                     
+    30JUN2023 (CPU A) 
+---SAS/ACCESS Interface to MySQL                                                                    
+    30JUN2023 (CPU A) 
+---Text Miner for French                                                                            
+    30JUN2023 (CPU A) 
+---SAS/IML Studio                                                                                   
+    30JUN2023 (CPU A) 
+---SAS Workspace Server for Local Access                                                            
+    30JUN2023 (CPU A) 
+---SAS/ACCESS Interface to Netezza                                                                  
+    30JUN2023 (CPU A) 
+---SAS/ACCESS Interface to Aster nCluster                                                           
+    30JUN2023 (CPU A) 
+---SAS/ACCESS Interface to Greenplum                                                                
+    30JUN2023 (CPU A) 
+---SAS/ACCESS Interface to SAP IQ                                                                   
+    30JUN2023 (CPU A) 
+---SAS/ACCESS to Hadoop                                                                             
+    30JUN2023 (CPU A) 
+---SAS/ACCESS to Vertica                                                                            
+    30JUN2023 (CPU A) 
+---SAS/ACCESS to Postgres                                                                           
+    30JUN2023 (CPU A) 
+---SAS/ACCESS to Impala                                                                             
+    30JUN2023 (CPU A) 
+---SAS/ACCESS to Salesforce                                                                         
+    30JUN2023 (CPU A) 
+---SAS/ACCESS to HAWQ                                                                               
+    30JUN2023 (CPU A) 
+---SAS/ACCESS to Amazon Redshift                                                                    
+    30JUN2023 (CPU A) 
+---High Performance Suite                                                                           
+    30JUN2023 (CPU A) 
+---SAS Add-in for Microsoft Excel                                                                   
+    30JUN2023 (CPU A) 
+---SAS/ACCESS to SAP HANA                                                                           
+    30JUN2023 (CPU A) 
+---SAS/ACCESS Interface to the PI System                                                            
+    30JUN2023 (CPU A) 
+---SAS/ACCESS to JDBC                                                                               
+    30JUN2023 (CPU A) 
+---SAS/ACCESS to Snowflake                                                                          
+4                                          The SAS System               16:31 Thursday, July 6, 2023
+
+    30JUN2023 (CPU A) 
+
+MPRINT(SETOPTIONS):   symbolgen spool formchar="|----|+|---+=|-/\<>*";
+MLOGIC(SETOPTIONS):  Ending execution.
+
+NOTE: AUTOEXEC processing completed.
+
+1          /*=======================================================================================
+1        ! ===========*
+2           | Program	:	LoadCSV2DB.sas																																				|
+3           | Author		:	Don Murray (for Smarter Balanced)																											|
+4           | Purpose	:	From TDF (or pull list), develop data that will be written to XML for CAT
+4        ! Admin				|
+5           |						package.																																							|
+6           | Macros		: ConT4T - sets connection parameters to the t4t database in Aurora
+6        ! (PostAdmin)					|
+7           |						SetT4T - defines the t4t library using postgres engine and ConT4T connection
+7        ! 					|
+8           |											parameters.																																	|
+9           |						ProcessTotalLogins - reads the TotalLogins CSV data and keeps the records that do
+9        !  not	|
+10          |										already exist in t4t.total_logins.																						|
+11          |							parameters:																																					|
+12          |								Load2DB - Set to 1 to load the target records to t4t.total_logins									|
+13          |									(default is zero)																																|
+14          |						ReadMonthly - reads the monthly ApplicationUsageReportST.csv files.										|
+15          |							parameters:																																					|
+16          |								ST - two letter state reference - see which files must be read.										|
+17          |								insrt - set to 1 to load the target records to t4t.app_use_rept.									|
+18          |									(otherwise set to zero)																													|
+19          |						... as well as small, often used tools from my toolbox.																|
+20          | Notes		:	Applicable to tools for teachers (T4T) login and user activity summary
+20       ! reporting.			|
+21          |						Baseline month year was August of 2021.  We receive a TotalNumberofLogins.csv
+21       ! each		|
+22          |						month. For monthly activities the entire TotalNumberofLogins.csv is read and only
+22       !  		|
+23          | 						the records that do not already exist in t4t.total_logins are added.									|
+24          | Usage		:	1. Set the global macro variable monYear to the correct value for the target
+24       ! month 		|
+25          |								and year.																																					|
+26          |						2. Make sure the macro calls for ProcessTotalLogins and ReadMonthly are properly
+26       ! 			|
+27          |								structured.																																				|
+28          |						3. (optional) Execute study_date_times.sas in order to validate that the date /
+28       ! time	|
+29          |								values were processed correctly and consistently.																	|
+30          |---------------------------------------------------------------------------------------
+30       ! -----------|
+31          | AMENDMENT HISTORY:																																								|
+32          |	..date.....
+32       ! 	....description.................................................................. |
+33          |	2021 09 13		Initial development. 																															|
+34          |	2021 10 01		Loaded Sep2021 data.  Also had to fix the bug in processing data for the
+The SAS System
+
+34       ! date /		|
+35          |								time field named t4t.lastloginpt.																									|
+36          |	2021 11 04		Loaded Oct2021 data.																															|
+37          |	2021 12 07		Loading Nov2021 data.  State membership will only be from
+37       ! TotalNumberLogins.csv		|
+38          |	2022 01 04		Load Dec2021 data.																																|
+39          |	2022 03 02		Load Feb2022 data.																																|
+40          |	2022 04 04		Load Mar2022 data.																																|
+41          |	2022 05 05		Load Apr2022 data.																																|
+42          |	2022 06 06		Load May2022 data.																																|
+43          |	2022 07 01		Load Jun2022 data.																																|
+44          |	2022 08 02		Load Jul2022 data.																																|
+45          |	2022 09 06		Load Aug2022 data (VT data no longer included).																		|
+46          |	2022 10 06		Load Sep2022 data.																																|
+47          |	2022 11 07		Load Oct2022 data.																																|
+48          |	2022 12 02		Load Nov2022 data.																																|
+49          |	2023 01 04		Load Dec2022 data.																																|
+50          |	2023 02 05		Load Jan2023 data.																																|
+51          |	2023 03 03		Load Feb2023 data.																																|
+52          |	2023 04 05		Load Mar2023 data.																																|
+53          |	2023 05 03		Load Apr2023 data.																																|
+54          |	2023 06 05		Load May2023 data.																																|
+55          |	2023 07 06		Load Jun2023 data.																																|
+56          *=======================================================================================
+56       ! ===========*/
+57         
+58         %let sysroot=C:\Users\Donald Murray;
+59         %let wrkHere=&sysroot.\OneDrive - Smarter Balanced UCSC\T4T Summary;
+SYMBOLGEN:  Macro variable SYSROOT resolves to C:\Users\Donald Murray
+60         %* %let srcFldr=&sysroot.\Smarter Balanced UCSC\System Design - T4T summary;
+61         %let srcFldr=&sysroot.\OneDrive - Smarter Balanced UCSC\T4T Summary;
+SYMBOLGEN:  Macro variable SYSROOT resolves to C:\Users\Donald Murray
+62         
+63         %global monYear;
+64         %let monYear = Jun2023;				/* !!!!! <<<<<====----====<<<<< !!!!!	*/
+65         %let monYr_id = 23;						/* !!!!! <<<<<====----====<<<<< !!!!!	*/
+66         
+67         %macro ConT4T;
+68         	server="analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com"
+69         	port=5432 database=t4t user=dmurray
+70         	password="{SAS004}70C77B5C28AB1C0D08B92DB91E465FE4E886F34B598E14AF"
+71         %mend ConT4T;
+72         %macro SetT4T;
+73         	/*	Set LibName to access data from TCD system	*/
+74         	libname t4t postgres %ConT4T;
+75         %mend SetT4T;
+76         
+77         %macro Insrt2myo;
+78         	%SetT4T;
+79         	proc sql;
+80         		insert into t4t.monyr_order (my_id, monyear) values
+81         			(&monYr_id., "&monYear.");
+82         	quit;
+83         %mend Insrt2myo;
+The SAS System
+
+84         %*	%Insrt2myo;
+85         
+86         %macro ProcessTotalLogins(load2DB=0);
+87         	filename TotalLog "&srcFldr.\&monYear.\TotalNumberofLogins.csv";
+88         	data TotalLogins;
+89         		format email $64. state_fld $32. state $4. ucemail $64.;
+90         		infile TotalLog firstobs=2 dlm=',';
+91         		input email $ state_fld $;
+92         		state = substr(state_fld, 5, 2);
+93         		ucemail = upcase(email);
+94         	run;
+95         
+96         	%GetSnow;
+97         	Title "FD of state from TotalLogins [&now.]";
+98         	proc freq data=TotalLogins;
+99         		tables state;
+100        	run;
+101        	%ReptMulti(DSName=TotalLogins, VarName=ucemail);
+102        
+103        	proc sql;
+104        		create table TotalLogins2 as
+105        		select distinct ucemail as email, state
+106        		from TotalLogins;
+107        	run;
+108        
+109        	data TotalLogins3;
+110        		set TotalLogins2;
+111        		email = lowcase(email);
+112        	run;
+113        	%ReptMulti(DSName=TotalLogins3, VarName=email);
+114        
+115        	%SetT4T;
+116        	proc sql;
+117        		create table TotalLogins4 as
+118        		select email, state
+119        		from TotalLogins3
+120        		where email not in (select distinct email from t4t.total_logins);
+121        		select max(tl_id) into :lastindx
+122        		from t4t.total_logins;
+123        	quit;
+124        
+125        	data TotalLogins5;
+126        		format indx 6.0;
+127        		set TotalLogins4;
+128        		format monYear $8.;
+129        		indx = &lastindx. + _n_;
+130        		monYear = "&monYear.";
+131        	run;
+132        
+133        	/*
+134        	%GetSnow;
+135        	Title "Contents of TotalLogins5 that are new to t4t.total_logins [&now.]";
+136        	proc print data=TotalLogins5;
+137        	run;	*/
+The SAS System
+
+138        
+139        	%if %eval(&load2DB. = 1) %then %do;
+140        		%SetT4T;
+141        		proc sql;
+142        			insert into t4t.total_logins
+143        			select indx, email, state, monYear from TotalLogins5;
+144        		quit;
+145        	%end;
+146        
+147        %mend ProcessTotalLogins;
+148        	%ProcessTotalLogins(load2DB=1);
+MLOGIC(PROCESSTOTALLOGINS):  Beginning execution.
+MLOGIC(PROCESSTOTALLOGINS):  Parameter LOAD2DB has value 1
+SYMBOLGEN:  Macro variable SRCFLDR resolves to C:\Users\Donald Murray\OneDrive - Smarter Balanced 
+            UCSC\T4T Summary
+SYMBOLGEN:  Macro variable MONYEAR resolves to Jun2023
+MPRINT(PROCESSTOTALLOGINS):   filename TotalLog "C:\Users\Donald Murray\OneDrive - Smarter Balanced 
+UCSC\T4T Summary\Jun2023\TotalNumberofLogins.csv";
+MPRINT(PROCESSTOTALLOGINS):   data TotalLogins;
+MPRINT(PROCESSTOTALLOGINS):   format email $64. state_fld $32. state $4. ucemail $64.;
+MPRINT(PROCESSTOTALLOGINS):   infile TotalLog firstobs=2 dlm=',';
+MPRINT(PROCESSTOTALLOGINS):   input email $ state_fld $;
+MPRINT(PROCESSTOTALLOGINS):   state = substr(state_fld, 5, 2);
+MPRINT(PROCESSTOTALLOGINS):   ucemail = upcase(email);
+MPRINT(PROCESSTOTALLOGINS):   run;
+
+NOTE: The infile TOTALLOG is:
+      
+      Filename=C:\Users\Donald Murray\OneDrive - Smarter Balanced UCSC\T4T 
+      Summary\Jun2023\TotalNumberofLogins.csv,
+      RECFM=V,LRECL=32767,File Size (bytes)=4842825,
+      Last Modified=06Jul2023:16:20:41,
+      Create Time=06Jul2023:22:19:00
+
+NOTE: 131933 records were read from the infile TOTALLOG.
+      The minimum record length was 22.
+      The maximum record length was 62.
+NOTE: The data set WORK.TOTALLOGINS has 131933 observations and 4 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.12 seconds
+      cpu time            0.09 seconds
+      
+
+MLOGIC(GETSNOW):  Beginning execution.
+MLOGIC(GETSNOW):  %GLOBAL  NOW
+MLOGIC(GETSNOW):  %LET (variable name is TIME)
+MLOGIC(GETSNOW):  %LET (variable name is DATE)
+MLOGIC(GETSNOW):  %LET (variable name is NOW)
+SYMBOLGEN:  Macro variable DATE resolves to 06JUL2023
+SYMBOLGEN:  Macro variable TIME resolves to 16:31
+MLOGIC(GETSNOW):  Ending execution.
+MPRINT(PROCESSTOTALLOGINS):  ;
+SYMBOLGEN:  Macro variable NOW resolves to 06JUL2023 16:31
+MPRINT(PROCESSTOTALLOGINS):   Title "FD of state from TotalLogins [06JUL2023 16:31]";
+The SAS System
+
+MPRINT(PROCESSTOTALLOGINS):   proc freq data=TotalLogins;
+MPRINT(PROCESSTOTALLOGINS):   tables state;
+MPRINT(PROCESSTOTALLOGINS):   run;
+
+NOTE: There were 131933 observations read from the data set WORK.TOTALLOGINS.
+NOTE: The PROCEDURE FREQ printed page 1.
+NOTE: PROCEDURE FREQ used (Total process time):
+      real time           0.08 seconds
+      cpu time            0.07 seconds
+      
+
+MLOGIC(REPTMULTI):  Beginning execution.
+MLOGIC(REPTMULTI):  Parameter DSNAME has value TotalLogins
+MLOGIC(REPTMULTI):  Parameter VARNAME has value ucemail
+MLOGIC(REPTMULTI):  Parameter PRNTRSLTS has value 1
+MLOGIC(REPTMULTI):  Parameter WRYTOUTDS has value 0
+MLOGIC(REPTMULTI):  Parameter OUTDSNAME has value 
+MLOGIC(REPTMULTI):  %LET (variable name is NUMVARS)
+MLOGIC(REPTMULTI):  %DO %UNTIL(%quote(&test) =) loop beginning.
+MLOGIC(REPTMULTI):  %LET (variable name is NUMVARS)
+SYMBOLGEN:  Macro variable NUMVARS resolves to 0
+MLOGIC(REPTMULTI):  %LET (variable name is TEST)
+SYMBOLGEN:  Macro variable VARNAME resolves to ucemail
+SYMBOLGEN:  Macro variable NUMVARS resolves to 1
+SYMBOLGEN:  Macro variable TEST resolves to ucemail
+MLOGIC(REPTMULTI):  %DO %UNTIL(%quote(&test) =) condition is FALSE; loop will iterate again.
+MLOGIC(REPTMULTI):  %LET (variable name is NUMVARS)
+SYMBOLGEN:  Macro variable NUMVARS resolves to 1
+MLOGIC(REPTMULTI):  %LET (variable name is TEST)
+SYMBOLGEN:  Macro variable VARNAME resolves to ucemail
+SYMBOLGEN:  Macro variable NUMVARS resolves to 2
+SYMBOLGEN:  Macro variable TEST resolves to 
+MLOGIC(REPTMULTI):  %DO %UNTIL() condition is TRUE; loop will not iterate again.
+MLOGIC(REPTMULTI):  %LET (variable name is NUMVARS)
+SYMBOLGEN:  Macro variable NUMVARS resolves to 2
+SYMBOLGEN:  Macro variable NUMVARS resolves to 1
+MLOGIC(REPTMULTI):  %DO loop beginning; index variable I; start value is 1; stop value is 1; by 
+      value is 1.  
+SYMBOLGEN:  Macro variable I resolves to 1
+MLOGIC(REPTMULTI):  %LET (variable name is VARNUM1)
+SYMBOLGEN:  Macro variable VARNAME resolves to ucemail
+SYMBOLGEN:  Macro variable I resolves to 1
+MLOGIC(REPTMULTI):  %DO loop index variable I is now 2; loop will not iterate again.
+SYMBOLGEN:  Macro variable NUMVARS resolves to 1
+MLOGIC(REPTMULTI):  %DO loop beginning; index variable I; start value is 1; stop value is 1; by 
+      value is 1.  
+SYMBOLGEN:  Macro variable DSNAME resolves to TotalLogins
+MPRINT(REPTMULTI):   proc freq data=TotalLogins ;
+SYMBOLGEN:  && resolves to &.
+SYMBOLGEN:  Macro variable I resolves to 1
+SYMBOLGEN:  Macro variable VARNUM1 resolves to ucemail
+MPRINT(REPTMULTI):   tables ucemail / noprint out=ReptDS;
+MPRINT(REPTMULTI):   run;
+
+The SAS System
+
+NOTE: There were 131933 observations read from the data set WORK.TOTALLOGINS.
+NOTE: The data set WORK.REPTDS has 131308 observations and 3 variables.
+NOTE: PROCEDURE FREQ used (Total process time):
+      real time           0.39 seconds
+      cpu time            0.39 seconds
+      
+
+MPRINT(REPTMULTI):   data ReptDS;
+MPRINT(REPTMULTI):   set ReptDS;
+MPRINT(REPTMULTI):   if count > 1;
+MPRINT(REPTMULTI):   run;
+NOTE: There were 131308 observations read from the data set WORK.REPTDS.
+NOTE: The data set WORK.REPTDS has 625 observations and 3 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+SYMBOLGEN:  Macro variable WRYTOUTDS resolves to 0
+MLOGIC(REPTMULTI):  %IF condition %eval(&WrytOutDS. = 1) is FALSE
+MLOGIC(TOTALREC):  Beginning execution.
+MLOGIC(TOTALREC):  Parameter INDS has value ReptDS
+MLOGIC(TOTALREC):  %GLOBAL  NUMOBS
+MLOGIC(TOTALREC):  %LOCAL  TOTOBS
+MPRINT(TOTALREC):   data _null_ ;
+SYMBOLGEN:  Macro variable INDS resolves to ReptDS
+MPRINT(TOTALREC):   set ReptDS end=LastOne ;
+MPRINT(TOTALREC):   if LastOne then call symput('TotObs', _n_);
+MPRINT(TOTALREC):   run;
+
+NOTE: Numeric values have been converted to character values at the places given by: 
+      (Line):(Column).
+      148:100   
+NOTE: There were 625 observations read from the data set WORK.REPTDS.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MLOGIC(TOTALREC):  %LET (variable name is NUMOBS)
+SYMBOLGEN:  Macro variable TOTOBS resolves to          625
+MLOGIC(TOTALREC):  Ending execution.
+MPRINT(REPTMULTI):  ;
+MLOGIC(GETNOW):  Beginning execution.
+MLOGIC(GETNOW):  %GLOBAL  NOW
+MLOGIC(GETNOW):  %LET (variable name is TIME)
+MLOGIC(GETNOW):  %LET (variable name is DATE)
+MLOGIC(GETNOW):  %LET (variable name is NOW)
+SYMBOLGEN:  Macro variable DATE resolves to Jul 6, 2023
+SYMBOLGEN:  Macro variable TIME resolves to 4:31:23 PM
+MLOGIC(GETNOW):  Ending execution.
+MPRINT(REPTMULTI):  ;
+SYMBOLGEN:  Macro variable NUMOBS resolves to 625
+MLOGIC(REPTMULTI):  %IF condition &NumObs= is FALSE
+The SAS System
+
+SYMBOLGEN:  Macro variable PRNTRSLTS resolves to 1
+MLOGIC(REPTMULTI):  %IF condition %eval(&PrntRslts. = 1) is TRUE
+MPRINT(REPTMULTI):   proc print data=ReptDS;
+SYMBOLGEN:  && resolves to &.
+SYMBOLGEN:  Macro variable I resolves to 1
+SYMBOLGEN:  Macro variable VARNUM1 resolves to ucemail
+MPRINT(REPTMULTI):   var ucemail Count ;
+SYMBOLGEN:  Macro variable NOW resolves to on Jul 6, 2023 at 4:31:23 PM
+MPRINT(REPTMULTI):   Title1 "Macro ReptMulti results reported on Jul 6, 2023 at 4:31:23 PM";
+SYMBOLGEN:  && resolves to &.
+SYMBOLGEN:  Macro variable I resolves to 1
+SYMBOLGEN:  Macro variable VARNUM1 resolves to ucemail
+SYMBOLGEN:  Macro variable DSNAME resolves to TotalLogins
+MPRINT(REPTMULTI):   Title2 "Variable ucemail occurs multiple times in TotalLogins";
+MPRINT(REPTMULTI):   run;
+NOTE: There were 625 observations read from the data set WORK.REPTDS.
+NOTE: The PROCEDURE PRINT printed pages 2-14.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(REPTMULTI):   Title ;
+MLOGIC(REPTMULTI):  %DO loop index variable I is now 2; loop will not iterate again.
+MPRINT(REPTMULTI):   proc datasets Lib=work nolist;
+MPRINT(REPTMULTI):   delete ReptDS ReptNone ;
+MPRINT(REPTMULTI):   run;
+
+NOTE: The file WORK.REPTNONE (memtype=DATA) was not found, but appears on a DELETE statement.
+NOTE: Deleting WORK.REPTDS (memtype=DATA).
+MPRINT(REPTMULTI):   quit;
+
+NOTE: PROCEDURE DATASETS used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MLOGIC(REPTMULTI):  Ending execution.
+MPRINT(PROCESSTOTALLOGINS):  ;
+MPRINT(PROCESSTOTALLOGINS):   proc sql;
+MPRINT(PROCESSTOTALLOGINS):   create table TotalLogins2 as select distinct ucemail as email, state 
+from TotalLogins;
+NOTE: Table WORK.TOTALLOGINS2 created, with 131310 rows and 2 columns.
+
+NOTE: PROC SQL statements are executed immediately; The RUN statement has no effect.
+MPRINT(PROCESSTOTALLOGINS):   run;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.07 seconds
+      cpu time            0.12 seconds
+      
+
+MPRINT(PROCESSTOTALLOGINS):   data TotalLogins3;
+MPRINT(PROCESSTOTALLOGINS):   set TotalLogins2;
+MPRINT(PROCESSTOTALLOGINS):   email = lowcase(email);
+The SAS System
+
+MPRINT(PROCESSTOTALLOGINS):   run;
+
+NOTE: There were 131310 observations read from the data set WORK.TOTALLOGINS2.
+NOTE: The data set WORK.TOTALLOGINS3 has 131310 observations and 2 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.02 seconds
+      cpu time            0.03 seconds
+      
+
+MLOGIC(REPTMULTI):  Beginning execution.
+MLOGIC(REPTMULTI):  Parameter DSNAME has value TotalLogins3
+MLOGIC(REPTMULTI):  Parameter VARNAME has value email
+MLOGIC(REPTMULTI):  Parameter PRNTRSLTS has value 1
+MLOGIC(REPTMULTI):  Parameter WRYTOUTDS has value 0
+MLOGIC(REPTMULTI):  Parameter OUTDSNAME has value 
+MLOGIC(REPTMULTI):  %LET (variable name is NUMVARS)
+MLOGIC(REPTMULTI):  %DO %UNTIL(%quote(&test) =) loop beginning.
+MLOGIC(REPTMULTI):  %LET (variable name is NUMVARS)
+SYMBOLGEN:  Macro variable NUMVARS resolves to 0
+MLOGIC(REPTMULTI):  %LET (variable name is TEST)
+SYMBOLGEN:  Macro variable VARNAME resolves to email
+SYMBOLGEN:  Macro variable NUMVARS resolves to 1
+SYMBOLGEN:  Macro variable TEST resolves to email
+MLOGIC(REPTMULTI):  %DO %UNTIL(%quote(&test) =) condition is FALSE; loop will iterate again.
+MLOGIC(REPTMULTI):  %LET (variable name is NUMVARS)
+SYMBOLGEN:  Macro variable NUMVARS resolves to 1
+MLOGIC(REPTMULTI):  %LET (variable name is TEST)
+SYMBOLGEN:  Macro variable VARNAME resolves to email
+SYMBOLGEN:  Macro variable NUMVARS resolves to 2
+SYMBOLGEN:  Macro variable TEST resolves to 
+MLOGIC(REPTMULTI):  %DO %UNTIL() condition is TRUE; loop will not iterate again.
+MLOGIC(REPTMULTI):  %LET (variable name is NUMVARS)
+SYMBOLGEN:  Macro variable NUMVARS resolves to 2
+SYMBOLGEN:  Macro variable NUMVARS resolves to 1
+MLOGIC(REPTMULTI):  %DO loop beginning; index variable I; start value is 1; stop value is 1; by 
+      value is 1.  
+SYMBOLGEN:  Macro variable I resolves to 1
+MLOGIC(REPTMULTI):  %LET (variable name is VARNUM1)
+SYMBOLGEN:  Macro variable VARNAME resolves to email
+SYMBOLGEN:  Macro variable I resolves to 1
+MLOGIC(REPTMULTI):  %DO loop index variable I is now 2; loop will not iterate again.
+SYMBOLGEN:  Macro variable NUMVARS resolves to 1
+MLOGIC(REPTMULTI):  %DO loop beginning; index variable I; start value is 1; stop value is 1; by 
+      value is 1.  
+SYMBOLGEN:  Macro variable DSNAME resolves to TotalLogins3
+MPRINT(REPTMULTI):   proc freq data=TotalLogins3 ;
+SYMBOLGEN:  && resolves to &.
+SYMBOLGEN:  Macro variable I resolves to 1
+SYMBOLGEN:  Macro variable VARNUM1 resolves to email
+MPRINT(REPTMULTI):   tables email / noprint out=ReptDS;
+MPRINT(REPTMULTI):   run;
+
+NOTE: There were 131310 observations read from the data set WORK.TOTALLOGINS3.
+NOTE: The data set WORK.REPTDS has 131308 observations and 3 variables.
+The SAS System
+
+NOTE: PROCEDURE FREQ used (Total process time):
+      real time           0.14 seconds
+      cpu time            0.14 seconds
+      
+
+MPRINT(REPTMULTI):   data ReptDS;
+MPRINT(REPTMULTI):   set ReptDS;
+MPRINT(REPTMULTI):   if count > 1;
+MPRINT(REPTMULTI):   run;
+NOTE: There were 131308 observations read from the data set WORK.REPTDS.
+NOTE: The data set WORK.REPTDS has 2 observations and 3 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+SYMBOLGEN:  Macro variable WRYTOUTDS resolves to 0
+MLOGIC(REPTMULTI):  %IF condition %eval(&WrytOutDS. = 1) is FALSE
+MLOGIC(TOTALREC):  Beginning execution.
+MLOGIC(TOTALREC):  Parameter INDS has value ReptDS
+MLOGIC(TOTALREC):  %GLOBAL  NUMOBS
+MLOGIC(TOTALREC):  %LOCAL  TOTOBS
+MPRINT(TOTALREC):   data _null_ ;
+SYMBOLGEN:  Macro variable INDS resolves to ReptDS
+MPRINT(TOTALREC):   set ReptDS end=LastOne ;
+MPRINT(TOTALREC):   if LastOne then call symput('TotObs', _n_);
+MPRINT(TOTALREC):   run;
+
+NOTE: Numeric values have been converted to character values at the places given by: 
+      (Line):(Column).
+      148:100   
+NOTE: There were 2 observations read from the data set WORK.REPTDS.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MLOGIC(TOTALREC):  %LET (variable name is NUMOBS)
+SYMBOLGEN:  Macro variable TOTOBS resolves to            2
+MLOGIC(TOTALREC):  Ending execution.
+MPRINT(REPTMULTI):  ;
+MLOGIC(GETNOW):  Beginning execution.
+MLOGIC(GETNOW):  %GLOBAL  NOW
+MLOGIC(GETNOW):  %LET (variable name is TIME)
+MLOGIC(GETNOW):  %LET (variable name is DATE)
+MLOGIC(GETNOW):  %LET (variable name is NOW)
+SYMBOLGEN:  Macro variable DATE resolves to Jul 6, 2023
+SYMBOLGEN:  Macro variable TIME resolves to 4:31:23 PM
+MLOGIC(GETNOW):  Ending execution.
+MPRINT(REPTMULTI):  ;
+SYMBOLGEN:  Macro variable NUMOBS resolves to 2
+MLOGIC(REPTMULTI):  %IF condition &NumObs= is FALSE
+SYMBOLGEN:  Macro variable PRNTRSLTS resolves to 1
+MLOGIC(REPTMULTI):  %IF condition %eval(&PrntRslts. = 1) is TRUE
+The SAS System
+
+MPRINT(REPTMULTI):   proc print data=ReptDS;
+SYMBOLGEN:  && resolves to &.
+SYMBOLGEN:  Macro variable I resolves to 1
+SYMBOLGEN:  Macro variable VARNUM1 resolves to email
+MPRINT(REPTMULTI):   var email Count ;
+SYMBOLGEN:  Macro variable NOW resolves to on Jul 6, 2023 at 4:31:23 PM
+MPRINT(REPTMULTI):   Title1 "Macro ReptMulti results reported on Jul 6, 2023 at 4:31:23 PM";
+SYMBOLGEN:  && resolves to &.
+SYMBOLGEN:  Macro variable I resolves to 1
+SYMBOLGEN:  Macro variable VARNUM1 resolves to email
+SYMBOLGEN:  Macro variable DSNAME resolves to TotalLogins3
+MPRINT(REPTMULTI):   Title2 "Variable email occurs multiple times in TotalLogins3";
+MPRINT(REPTMULTI):   run;
+NOTE: There were 2 observations read from the data set WORK.REPTDS.
+NOTE: The PROCEDURE PRINT printed page 15.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(REPTMULTI):   Title ;
+MLOGIC(REPTMULTI):  %DO loop index variable I is now 2; loop will not iterate again.
+MPRINT(REPTMULTI):   proc datasets Lib=work nolist;
+MPRINT(REPTMULTI):   delete ReptDS ReptNone ;
+MPRINT(REPTMULTI):   run;
+
+NOTE: The file WORK.REPTNONE (memtype=DATA) was not found, but appears on a DELETE statement.
+NOTE: Deleting WORK.REPTDS (memtype=DATA).
+MPRINT(REPTMULTI):   quit;
+
+NOTE: PROCEDURE DATASETS used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+MLOGIC(REPTMULTI):  Ending execution.
+MPRINT(PROCESSTOTALLOGINS):  ;
+MLOGIC(SETT4T):  Beginning execution.
+MPRINT(SETT4T):   libname t4t postgres
+MLOGIC(CONT4T):  Beginning execution.
+MPRINT(CONT4T):   server
+MLOGIC(CONT4T):  Ending execution.
+MPRINT(SETT4T):  ="analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com" 
+port=5432 database=t4t user=dmurray 
+password="{SAS004}70C77B5C28AB1C0D08B92DB91E465FE4E886F34B598E14AF";
+NOTE: Libref T4T was successfully assigned as follows: 
+      Engine:        POSTGRES 
+      Physical Name: analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com
+MLOGIC(SETT4T):  Ending execution.
+MPRINT(PROCESSTOTALLOGINS):  ;
+MPRINT(PROCESSTOTALLOGINS):   proc sql;
+MPRINT(PROCESSTOTALLOGINS):   create table TotalLogins4 as select email, state from TotalLogins3 
+where email not in (select distinct email from t4t.total_logins);
+NOTE: Table WORK.TOTALLOGINS4 created, with 567 rows and 2 columns.
+The SAS System
+
+
+MPRINT(PROCESSTOTALLOGINS):   select max(tl_id) into :lastindx from t4t.total_logins;
+MPRINT(PROCESSTOTALLOGINS):   quit;
+NOTE: The PROCEDURE SQL printed page 16.
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           2.32 seconds
+      cpu time            0.34 seconds
+      
+
+MPRINT(PROCESSTOTALLOGINS):   data TotalLogins5;
+MPRINT(PROCESSTOTALLOGINS):   format indx 6.0;
+MPRINT(PROCESSTOTALLOGINS):   set TotalLogins4;
+MPRINT(PROCESSTOTALLOGINS):   format monYear $8.;
+SYMBOLGEN:  Macro variable LASTINDX resolves to      130742
+MPRINT(PROCESSTOTALLOGINS):   indx = 130742 + _n_;
+SYMBOLGEN:  Macro variable MONYEAR resolves to Jun2023
+MPRINT(PROCESSTOTALLOGINS):   monYear = "Jun2023";
+MPRINT(PROCESSTOTALLOGINS):   run;
+
+NOTE: There were 567 observations read from the data set WORK.TOTALLOGINS4.
+NOTE: The data set WORK.TOTALLOGINS5 has 567 observations and 4 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+SYMBOLGEN:  Macro variable LOAD2DB resolves to 1
+MLOGIC(PROCESSTOTALLOGINS):  %IF condition %eval(&load2DB. = 1) is TRUE
+MLOGIC(SETT4T):  Beginning execution.
+MPRINT(SETT4T):   libname t4t postgres
+MLOGIC(CONT4T):  Beginning execution.
+MPRINT(CONT4T):   server
+MLOGIC(CONT4T):  Ending execution.
+MPRINT(SETT4T):  ="analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com" 
+port=5432 database=t4t user=dmurray 
+password="{SAS004}70C77B5C28AB1C0D08B92DB91E465FE4E886F34B598E14AF";
+NOTE: Libref T4T was successfully assigned as follows: 
+      Engine:        POSTGRES 
+      Physical Name: analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com
+MLOGIC(SETT4T):  Ending execution.
+MPRINT(PROCESSTOTALLOGINS):  ;
+MPRINT(PROCESSTOTALLOGINS):   proc sql;
+MPRINT(PROCESSTOTALLOGINS):   insert into t4t.total_logins select indx, email, state, monYear from 
+TotalLogins5;
+WARNING: Character expression will be truncated when assigned to character column state.
+NOTE: 567 rows were inserted into T4T.TOTAL_LOGINS.
+
+MPRINT(PROCESSTOTALLOGINS):   quit;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           41.63 seconds
+      cpu time            0.23 seconds
+      
+
+MLOGIC(PROCESSTOTALLOGINS):  Ending execution.
+The SAS System
+
+149        
+150        %macro StripLeadingSingleQuote(varName);
+151        	if substr(dequote(&varName.), 1, 1) = "'" then &varName. = substr(dequote(&varName.), 2)
+151      ! ;
+152        %mend StripLeadingSingleQuote;
+153        
+154        /*	Here is where the monthly Application Usage Reports are processed		*/
+155        %macro ReadMonthly(ST, insrt);
+156        	filename inMonFyl "&srcFldr.\&monYear.\ApplicationUsageReport&ST..csv";
+157        	data Mnthly;
+158        		format person $32. Login $64. appUserName $64. NumLogins_Str $6. NumLogins 6.0
+158      ! LastLogin_str $28. LastLogin DateTime20.
+159        						LastLoginISO8601_str $30. LastLoginISO8601 E8601DT19. monthYear $8. /* member $4.
+159      ! */
+160        						monp 3.0 dayp 3.0 yearp 4.0 hourp 3.0 minp 3.0 secp 3.0 datepart $10. timepart $8.;
+161        		infile inMonFyl firstobs = 2 dlm = ',';
+162        		input person $ Login $ appUserName $ NumLogins_Str $ LastLogin_str $
+162      ! LastLoginISO8601_str $ ;
+163        		%StripLeadingSingleQuote(person);
+164        		%StripLeadingSingleQuote(Login);
+165        		%StripLeadingSingleQuote(appUserName);
+166        		if substr(dequote(NumLogins_Str), 1, 1) = "'" then NumLogins =
+166      ! put(substr(dequote(NumLogins_Str), 2), 6.0);
+167        		else NumLogins = put(dequote(NumLogins_Str), 6.0);
+168        		%StripLeadingSingleQuote(LastLogin_str);
+169        *		put 'LastLogin_str: ' LastLogin_str;
+170        		%StripLeadingSingleQuote(LastLoginISO8601_str);
+171        *		put 'LastLoginISO8601_str: ' LastLoginISO8601_str;
+172        		datepart = scan(LastLogin_str, 1, ' ');
+173        		timepart = scan(LastLogin_str, 2, ' ');
+174        		monp = put(scan(datepart, 1, '/'), 2.0);
+175        		dayp = put(scan(datepart, 2, '/'), 2.0);
+176        		yearp = put(scan(datepart, 3, '/'), 2.0) + 2000;
+177        		hourp = put(scan(timepart, 1, ':'), 2.0);
+178        		/*	Here is where the pacific time date / time bug was squashed		*/
+179        		if index(LastLogin_str, ' PM ') > 0 then do;
+180        			if hourp < 12 then hourp = hourp + 12;
+181        		end;
+182        		else if index(LastLogin_str, ' AM ') > 0 then do;
+183        			if hourp = 12 then hourp = 0;
+184        		end;
+185        		minp = put(scan(timepart, 2, ':'), 2.0);
+186        		secp = put(scan(timepart, 3, ':'), 2.0);
+187        		LastLogin = dhms(mdy(monp, dayp, yearp), hourp, minp, secp);
+188        		datepart = scan(LastLoginISO8601_str, 1, 'T');
+189        		timepart = scan(scan(LastLoginISO8601_str, 2, 'T'), 1, '.');
+190        		yearp = put(scan(datepart, 1, '-'), 4.0);
+191        		monp = put(scan(datepart, 2, '-'), 2.0);
+192        		dayp = put(scan(datepart, 3, '-'), 2.0);
+193        		hourp = put(scan(timepart, 1, ':'), 2.0);
+194        		minp = put(scan(timepart, 2, ':'), 2.0);
+195        		secp = put(scan(timepart, 3, ':'), 2.0);
+196        		LastLoginISO8601 = dhms(mdy(monp, dayp, yearp), hourp, minp, secp);
+197        		monthYear = "&monYear.";
+The SAS System
+
+198        *		member = "&ST.";	/*	State needs to be retrieved from the TotalNumberofLogins.csv data
+198      ! (2021-12-07)		*/
+199        		drop NumLogins_Str LastLoginISO8601_str LastLogin_str
+200        					monp dayp yearp hourp minp secp datepart timepart;
+201        	run;
+202        	%SetT4T;
+203        	proc sql;
+204        		create table monthly as
+205        		select a.*, b.state as member
+206        		from Mnthly as a, t4t.total_logins as b
+207        		where upcase(a.Login) = upcase(b.email) ;
+208        	quit;
+209        	%if %eval("&ST." = "ZZ") %then %do;
+210        		%let lastindx = 0;
+211        	%end;
+212        	%else %do;
+213        		%SetT4T;
+214        		proc sql;
+215        			Title "Retrieve max aur_id value from t4t.app_use_rept.";
+216        			select max(aur_id) into :lastindx
+217        			from t4t.app_use_rept;
+218        		quit;
+219        	%end;
+220        	data Monthly2;
+221        		format indx 6.0;
+222        		set monthly;
+223        		indx = _n_ + &lastindx.;
+224        	run;
+225        
+226        	%GetSnow;
+227        	Title "Quick look at Monthly data for &ST. [&now.]";
+228        	proc print data=Monthly2 (obs=9);
+229        	run;
+230        
+231        	%if %eval(&insrt. = 1) %then %do;
+232        		%SetT4T;
+233        		proc sql;
+234        			insert into t4t.app_use_rept
+235        			select indx, person, Login, appUserName, NumLogins, LastLogin,
+236        						LastLoginISO8601, monthYear, member
+237        			from Monthly2;
+238        		quit;
+239        	%end;
+240        
+241        %mend ReadMonthly;
+242        	%ReadMonthly(CA, 1);		%ReadMonthly(CT, 1);
+MLOGIC(READMONTHLY):  Beginning execution.
+MLOGIC(READMONTHLY):  Parameter ST has value CA
+MLOGIC(READMONTHLY):  Parameter INSRT has value 1
+SYMBOLGEN:  Macro variable SRCFLDR resolves to C:\Users\Donald Murray\OneDrive - Smarter Balanced 
+            UCSC\T4T Summary
+SYMBOLGEN:  Macro variable MONYEAR resolves to Jun2023
+SYMBOLGEN:  Macro variable ST resolves to CA
+MPRINT(READMONTHLY):   filename inMonFyl "C:\Users\Donald Murray\OneDrive - Smarter Balanced 
+The SAS System
+
+UCSC\T4T Summary\Jun2023\ApplicationUsageReportCA.csv";
+MPRINT(READMONTHLY):   data Mnthly;
+MPRINT(READMONTHLY):   format person $32. Login $64. appUserName $64. NumLogins_Str $6. NumLogins 
+6.0 LastLogin_str $28. LastLogin DateTime20. LastLoginISO8601_str $30. LastLoginISO8601 E8601DT19. 
+monthYear $8. monp 3.0 dayp 3.0 yearp 4.0 hourp 3.0 minp 3.0 secp 3.0 datepart $10. timepart $8.;
+MPRINT(READMONTHLY):   infile inMonFyl firstobs = 2 dlm = ',';
+MPRINT(READMONTHLY):   input person $ Login $ appUserName $ NumLogins_Str $ LastLogin_str $ 
+LastLoginISO8601_str $ ;
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Beginning execution.
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Parameter VARNAME has value person
+SYMBOLGEN:  Macro variable VARNAME resolves to person
+SYMBOLGEN:  Macro variable VARNAME resolves to person
+SYMBOLGEN:  Macro variable VARNAME resolves to person
+MPRINT(STRIPLEADINGSINGLEQUOTE):   if substr(dequote(person), 1, 1) = "'" then person = 
+substr(dequote(person), 2);
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Beginning execution.
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Parameter VARNAME has value Login
+SYMBOLGEN:  Macro variable VARNAME resolves to Login
+SYMBOLGEN:  Macro variable VARNAME resolves to Login
+SYMBOLGEN:  Macro variable VARNAME resolves to Login
+MPRINT(STRIPLEADINGSINGLEQUOTE):   if substr(dequote(Login), 1, 1) = "'" then Login = 
+substr(dequote(Login), 2);
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Beginning execution.
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Parameter VARNAME has value appUserName
+SYMBOLGEN:  Macro variable VARNAME resolves to appUserName
+SYMBOLGEN:  Macro variable VARNAME resolves to appUserName
+SYMBOLGEN:  Macro variable VARNAME resolves to appUserName
+MPRINT(STRIPLEADINGSINGLEQUOTE):   if substr(dequote(appUserName), 1, 1) = "'" then appUserName = 
+substr(dequote(appUserName), 2);
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MPRINT(READMONTHLY):   if substr(dequote(NumLogins_Str), 1, 1) = "'" then NumLogins = 
+put(substr(dequote(NumLogins_Str), 2), 6.0);
+MPRINT(READMONTHLY):   else NumLogins = put(dequote(NumLogins_Str), 6.0);
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Beginning execution.
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Parameter VARNAME has value LastLogin_str
+SYMBOLGEN:  Macro variable VARNAME resolves to LastLogin_str
+SYMBOLGEN:  Macro variable VARNAME resolves to LastLogin_str
+SYMBOLGEN:  Macro variable VARNAME resolves to LastLogin_str
+MPRINT(STRIPLEADINGSINGLEQUOTE):   if substr(dequote(LastLogin_str), 1, 1) = "'" then LastLogin_str 
+= substr(dequote(LastLogin_str), 2);
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MPRINT(READMONTHLY):   * put 'LastLogin_str: ' LastLogin_str;
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Beginning execution.
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Parameter VARNAME has value LastLoginISO8601_str
+SYMBOLGEN:  Macro variable VARNAME resolves to LastLoginISO8601_str
+SYMBOLGEN:  Macro variable VARNAME resolves to LastLoginISO8601_str
+SYMBOLGEN:  Macro variable VARNAME resolves to LastLoginISO8601_str
+MPRINT(STRIPLEADINGSINGLEQUOTE):   if substr(dequote(LastLoginISO8601_str), 1, 1) = "'" then 
+The SAS System
+
+LastLoginISO8601_str = substr(dequote(LastLoginISO8601_str), 2);
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MPRINT(READMONTHLY):   * put 'LastLoginISO8601_str: ' LastLoginISO8601_str;
+MPRINT(READMONTHLY):   datepart = scan(LastLogin_str, 1, ' ');
+MPRINT(READMONTHLY):   timepart = scan(LastLogin_str, 2, ' ');
+MPRINT(READMONTHLY):   monp = put(scan(datepart, 1, '/'), 2.0);
+MPRINT(READMONTHLY):   dayp = put(scan(datepart, 2, '/'), 2.0);
+MPRINT(READMONTHLY):   yearp = put(scan(datepart, 3, '/'), 2.0) + 2000;
+MPRINT(READMONTHLY):   hourp = put(scan(timepart, 1, ':'), 2.0);
+MPRINT(READMONTHLY):   if index(LastLogin_str, ' PM ') > 0 then do;
+MPRINT(READMONTHLY):   if hourp < 12 then hourp = hourp + 12;
+MPRINT(READMONTHLY):   end;
+MPRINT(READMONTHLY):   else if index(LastLogin_str, ' AM ') > 0 then do;
+MPRINT(READMONTHLY):   if hourp = 12 then hourp = 0;
+MPRINT(READMONTHLY):   end;
+MPRINT(READMONTHLY):   minp = put(scan(timepart, 2, ':'), 2.0);
+MPRINT(READMONTHLY):   secp = put(scan(timepart, 3, ':'), 2.0);
+MPRINT(READMONTHLY):   LastLogin = dhms(mdy(monp, dayp, yearp), hourp, minp, secp);
+MPRINT(READMONTHLY):   datepart = scan(LastLoginISO8601_str, 1, 'T');
+MPRINT(READMONTHLY):   timepart = scan(scan(LastLoginISO8601_str, 2, 'T'), 1, '.');
+MPRINT(READMONTHLY):   yearp = put(scan(datepart, 1, '-'), 4.0);
+MPRINT(READMONTHLY):   monp = put(scan(datepart, 2, '-'), 2.0);
+MPRINT(READMONTHLY):   dayp = put(scan(datepart, 3, '-'), 2.0);
+MPRINT(READMONTHLY):   hourp = put(scan(timepart, 1, ':'), 2.0);
+MPRINT(READMONTHLY):   minp = put(scan(timepart, 2, ':'), 2.0);
+MPRINT(READMONTHLY):   secp = put(scan(timepart, 3, ':'), 2.0);
+MPRINT(READMONTHLY):   LastLoginISO8601 = dhms(mdy(monp, dayp, yearp), hourp, minp, secp);
+SYMBOLGEN:  Macro variable MONYEAR resolves to Jun2023
+MPRINT(READMONTHLY):   monthYear = "Jun2023";
+MPRINT(READMONTHLY):   * member = "&ST.";
+MPRINT(READMONTHLY):   drop NumLogins_Str LastLoginISO8601_str LastLogin_str monp dayp yearp hourp 
+minp secp datepart timepart;
+MPRINT(READMONTHLY):   run;
+
+NOTE: Character values have been converted to numeric values at the places given by: 
+      (Line):(Column).
+      242:204   242:14    242:77    242:120   242:164   242:215   242:194   242:237   242:202
+      242:245   242:36    242:80    242:123   242:166   
+NOTE: The infile INMONFYL is:
+      
+      Filename=C:\Users\Donald Murray\OneDrive - Smarter Balanced UCSC\T4T 
+      Summary\Jun2023\ApplicationUsageReportCA.csv,
+      RECFM=V,LRECL=32767,File Size (bytes)=150103,
+      Last Modified=06Jul2023:16:20:40,
+      Create Time=06Jul2023:22:19:00
+
+NOTE: 1157 records were read from the infile INMONFYL.
+      The minimum record length was 102.
+      The maximum record length was 175.
+NOTE: The data set WORK.MNTHLY has 1157 observations and 7 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+The SAS System
+
+      
+
+MLOGIC(SETT4T):  Beginning execution.
+MPRINT(SETT4T):   libname t4t postgres
+MLOGIC(CONT4T):  Beginning execution.
+MPRINT(CONT4T):   server
+MLOGIC(CONT4T):  Ending execution.
+MPRINT(SETT4T):  ="analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com" 
+port=5432 database=t4t user=dmurray 
+password="{SAS004}70C77B5C28AB1C0D08B92DB91E465FE4E886F34B598E14AF";
+NOTE: Libref T4T was successfully assigned as follows: 
+      Engine:        POSTGRES 
+      Physical Name: analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com
+MLOGIC(SETT4T):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MPRINT(READMONTHLY):   proc sql;
+MPRINT(READMONTHLY):   create table monthly as select a.*, b.state as member from Mnthly as a, 
+t4t.total_logins as b where upcase(a.Login) = upcase(b.email) ;
+NOTE: Table WORK.MONTHLY created, with 1141 rows and 8 columns.
+
+MPRINT(READMONTHLY):   quit;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           1.86 seconds
+      cpu time            0.26 seconds
+      
+
+SYMBOLGEN:  Macro variable ST resolves to CA
+MLOGIC(READMONTHLY):  %IF condition %eval("&ST." = "ZZ") is FALSE
+MLOGIC(SETT4T):  Beginning execution.
+MPRINT(SETT4T):   libname t4t postgres
+MLOGIC(CONT4T):  Beginning execution.
+MPRINT(CONT4T):   server
+MLOGIC(CONT4T):  Ending execution.
+MPRINT(SETT4T):  ="analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com" 
+port=5432 database=t4t user=dmurray 
+password="{SAS004}70C77B5C28AB1C0D08B92DB91E465FE4E886F34B598E14AF";
+NOTE: Libref T4T was successfully assigned as follows: 
+      Engine:        POSTGRES 
+      Physical Name: analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com
+MLOGIC(SETT4T):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MPRINT(READMONTHLY):   proc sql;
+MPRINT(READMONTHLY):   Title "Retrieve max aur_id value from t4t.app_use_rept.";
+MPRINT(READMONTHLY):   select max(aur_id) into :lastindx from t4t.app_use_rept;
+MPRINT(READMONTHLY):   quit;
+NOTE: The PROCEDURE SQL printed page 17.
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.68 seconds
+      cpu time            0.03 seconds
+      
+
+MPRINT(READMONTHLY):   data Monthly2;
+MPRINT(READMONTHLY):   format indx 6.0;
+MPRINT(READMONTHLY):   set monthly;
+The SAS System
+
+SYMBOLGEN:  Macro variable LASTINDX resolves to      209555
+MPRINT(READMONTHLY):   indx = _n_ + 209555;
+MPRINT(READMONTHLY):   run;
+
+NOTE: There were 1141 observations read from the data set WORK.MONTHLY.
+NOTE: The data set WORK.MONTHLY2 has 1141 observations and 9 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+MLOGIC(GETSNOW):  Beginning execution.
+MLOGIC(GETSNOW):  %GLOBAL  NOW
+MLOGIC(GETSNOW):  %LET (variable name is TIME)
+MLOGIC(GETSNOW):  %LET (variable name is DATE)
+MLOGIC(GETSNOW):  %LET (variable name is NOW)
+SYMBOLGEN:  Macro variable DATE resolves to 06JUL2023
+SYMBOLGEN:  Macro variable TIME resolves to 16:32
+MLOGIC(GETSNOW):  Ending execution.
+MPRINT(READMONTHLY):  ;
+SYMBOLGEN:  Macro variable ST resolves to CA
+SYMBOLGEN:  Macro variable NOW resolves to 06JUL2023 16:32
+MPRINT(READMONTHLY):   Title "Quick look at Monthly data for CA [06JUL2023 16:32]";
+MPRINT(READMONTHLY):   proc print data=Monthly2 (obs=9);
+MPRINT(READMONTHLY):   run;
+
+NOTE: There were 9 observations read from the data set WORK.MONTHLY2.
+NOTE: The PROCEDURE PRINT printed page 18.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+SYMBOLGEN:  Macro variable INSRT resolves to 1
+MLOGIC(READMONTHLY):  %IF condition %eval(&insrt. = 1) is TRUE
+MLOGIC(SETT4T):  Beginning execution.
+MPRINT(SETT4T):   libname t4t postgres
+MLOGIC(CONT4T):  Beginning execution.
+MPRINT(CONT4T):   server
+MLOGIC(CONT4T):  Ending execution.
+MPRINT(SETT4T):  ="analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com" 
+port=5432 database=t4t user=dmurray 
+password="{SAS004}70C77B5C28AB1C0D08B92DB91E465FE4E886F34B598E14AF";
+NOTE: Libref T4T was successfully assigned as follows: 
+      Engine:        POSTGRES 
+      Physical Name: analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com
+MLOGIC(SETT4T):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MPRINT(READMONTHLY):   proc sql;
+MPRINT(READMONTHLY):   insert into t4t.app_use_rept select indx, person, Login, appUserName, 
+NumLogins, LastLogin, LastLoginISO8601, monthYear, member from Monthly2;
+NOTE: 1141 rows were inserted into T4T.APP_USE_REPT.
+
+MPRINT(READMONTHLY):   quit;
+The SAS System
+
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           1:23.31
+      cpu time            0.32 seconds
+      
+
+MLOGIC(READMONTHLY):  Ending execution.
+MLOGIC(READMONTHLY):  Beginning execution.
+MLOGIC(READMONTHLY):  Parameter ST has value CT
+MLOGIC(READMONTHLY):  Parameter INSRT has value 1
+SYMBOLGEN:  Macro variable SRCFLDR resolves to C:\Users\Donald Murray\OneDrive - Smarter Balanced 
+            UCSC\T4T Summary
+SYMBOLGEN:  Macro variable MONYEAR resolves to Jun2023
+SYMBOLGEN:  Macro variable ST resolves to CT
+MPRINT(READMONTHLY):   filename inMonFyl "C:\Users\Donald Murray\OneDrive - Smarter Balanced 
+UCSC\T4T Summary\Jun2023\ApplicationUsageReportCT.csv";
+MPRINT(READMONTHLY):   data Mnthly;
+MPRINT(READMONTHLY):   format person $32. Login $64. appUserName $64. NumLogins_Str $6. NumLogins 
+6.0 LastLogin_str $28. LastLogin DateTime20. LastLoginISO8601_str $30. LastLoginISO8601 E8601DT19. 
+monthYear $8. monp 3.0 dayp 3.0 yearp 4.0 hourp 3.0 minp 3.0 secp 3.0 datepart $10. timepart $8.;
+MPRINT(READMONTHLY):   infile inMonFyl firstobs = 2 dlm = ',';
+MPRINT(READMONTHLY):   input person $ Login $ appUserName $ NumLogins_Str $ LastLogin_str $ 
+LastLoginISO8601_str $ ;
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Beginning execution.
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Parameter VARNAME has value person
+SYMBOLGEN:  Macro variable VARNAME resolves to person
+SYMBOLGEN:  Macro variable VARNAME resolves to person
+SYMBOLGEN:  Macro variable VARNAME resolves to person
+MPRINT(STRIPLEADINGSINGLEQUOTE):   if substr(dequote(person), 1, 1) = "'" then person = 
+substr(dequote(person), 2);
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Beginning execution.
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Parameter VARNAME has value Login
+SYMBOLGEN:  Macro variable VARNAME resolves to Login
+SYMBOLGEN:  Macro variable VARNAME resolves to Login
+SYMBOLGEN:  Macro variable VARNAME resolves to Login
+MPRINT(STRIPLEADINGSINGLEQUOTE):   if substr(dequote(Login), 1, 1) = "'" then Login = 
+substr(dequote(Login), 2);
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Beginning execution.
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Parameter VARNAME has value appUserName
+SYMBOLGEN:  Macro variable VARNAME resolves to appUserName
+SYMBOLGEN:  Macro variable VARNAME resolves to appUserName
+SYMBOLGEN:  Macro variable VARNAME resolves to appUserName
+MPRINT(STRIPLEADINGSINGLEQUOTE):   if substr(dequote(appUserName), 1, 1) = "'" then appUserName = 
+substr(dequote(appUserName), 2);
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MPRINT(READMONTHLY):   if substr(dequote(NumLogins_Str), 1, 1) = "'" then NumLogins = 
+put(substr(dequote(NumLogins_Str), 2), 6.0);
+MPRINT(READMONTHLY):   else NumLogins = put(dequote(NumLogins_Str), 6.0);
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Beginning execution.
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Parameter VARNAME has value LastLogin_str
+The SAS System
+
+SYMBOLGEN:  Macro variable VARNAME resolves to LastLogin_str
+SYMBOLGEN:  Macro variable VARNAME resolves to LastLogin_str
+SYMBOLGEN:  Macro variable VARNAME resolves to LastLogin_str
+MPRINT(STRIPLEADINGSINGLEQUOTE):   if substr(dequote(LastLogin_str), 1, 1) = "'" then LastLogin_str 
+= substr(dequote(LastLogin_str), 2);
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MPRINT(READMONTHLY):   * put 'LastLogin_str: ' LastLogin_str;
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Beginning execution.
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Parameter VARNAME has value LastLoginISO8601_str
+SYMBOLGEN:  Macro variable VARNAME resolves to LastLoginISO8601_str
+SYMBOLGEN:  Macro variable VARNAME resolves to LastLoginISO8601_str
+SYMBOLGEN:  Macro variable VARNAME resolves to LastLoginISO8601_str
+MPRINT(STRIPLEADINGSINGLEQUOTE):   if substr(dequote(LastLoginISO8601_str), 1, 1) = "'" then 
+LastLoginISO8601_str = substr(dequote(LastLoginISO8601_str), 2);
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MPRINT(READMONTHLY):   * put 'LastLoginISO8601_str: ' LastLoginISO8601_str;
+MPRINT(READMONTHLY):   datepart = scan(LastLogin_str, 1, ' ');
+MPRINT(READMONTHLY):   timepart = scan(LastLogin_str, 2, ' ');
+MPRINT(READMONTHLY):   monp = put(scan(datepart, 1, '/'), 2.0);
+MPRINT(READMONTHLY):   dayp = put(scan(datepart, 2, '/'), 2.0);
+MPRINT(READMONTHLY):   yearp = put(scan(datepart, 3, '/'), 2.0) + 2000;
+MPRINT(READMONTHLY):   hourp = put(scan(timepart, 1, ':'), 2.0);
+MPRINT(READMONTHLY):   if index(LastLogin_str, ' PM ') > 0 then do;
+MPRINT(READMONTHLY):   if hourp < 12 then hourp = hourp + 12;
+MPRINT(READMONTHLY):   end;
+MPRINT(READMONTHLY):   else if index(LastLogin_str, ' AM ') > 0 then do;
+MPRINT(READMONTHLY):   if hourp = 12 then hourp = 0;
+MPRINT(READMONTHLY):   end;
+MPRINT(READMONTHLY):   minp = put(scan(timepart, 2, ':'), 2.0);
+MPRINT(READMONTHLY):   secp = put(scan(timepart, 3, ':'), 2.0);
+MPRINT(READMONTHLY):   LastLogin = dhms(mdy(monp, dayp, yearp), hourp, minp, secp);
+MPRINT(READMONTHLY):   datepart = scan(LastLoginISO8601_str, 1, 'T');
+MPRINT(READMONTHLY):   timepart = scan(scan(LastLoginISO8601_str, 2, 'T'), 1, '.');
+MPRINT(READMONTHLY):   yearp = put(scan(datepart, 1, '-'), 4.0);
+MPRINT(READMONTHLY):   monp = put(scan(datepart, 2, '-'), 2.0);
+MPRINT(READMONTHLY):   dayp = put(scan(datepart, 3, '-'), 2.0);
+MPRINT(READMONTHLY):   hourp = put(scan(timepart, 1, ':'), 2.0);
+MPRINT(READMONTHLY):   minp = put(scan(timepart, 2, ':'), 2.0);
+MPRINT(READMONTHLY):   secp = put(scan(timepart, 3, ':'), 2.0);
+MPRINT(READMONTHLY):   LastLoginISO8601 = dhms(mdy(monp, dayp, yearp), hourp, minp, secp);
+SYMBOLGEN:  Macro variable MONYEAR resolves to Jun2023
+MPRINT(READMONTHLY):   monthYear = "Jun2023";
+MPRINT(READMONTHLY):   * member = "&ST.";
+MPRINT(READMONTHLY):   drop NumLogins_Str LastLoginISO8601_str LastLogin_str monp dayp yearp hourp 
+minp secp datepart timepart;
+MPRINT(READMONTHLY):   run;
+
+NOTE: Character values have been converted to numeric values at the places given by: 
+      (Line):(Column).
+      242:204   242:14    242:77    242:120   242:164   242:215   242:194   242:237   242:202
+      242:245   242:36    242:80    242:123   242:166   
+NOTE: The infile INMONFYL is:
+The SAS System
+
+      
+      Filename=C:\Users\Donald Murray\OneDrive - Smarter Balanced UCSC\T4T 
+      Summary\Jun2023\ApplicationUsageReportCT.csv,
+      RECFM=V,LRECL=32767,File Size (bytes)=43554,
+      Last Modified=06Jul2023:16:20:40,
+      Create Time=06Jul2023:22:19:00
+
+NOTE: 319 records were read from the infile INMONFYL.
+      The minimum record length was 109.
+      The maximum record length was 179.
+NOTE: The data set WORK.MNTHLY has 319 observations and 7 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+MLOGIC(SETT4T):  Beginning execution.
+MPRINT(SETT4T):   libname t4t postgres
+MLOGIC(CONT4T):  Beginning execution.
+MPRINT(CONT4T):   server
+MLOGIC(CONT4T):  Ending execution.
+MPRINT(SETT4T):  ="analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com" 
+port=5432 database=t4t user=dmurray 
+password="{SAS004}70C77B5C28AB1C0D08B92DB91E465FE4E886F34B598E14AF";
+NOTE: Libref T4T was successfully assigned as follows: 
+      Engine:        POSTGRES 
+      Physical Name: analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com
+MLOGIC(SETT4T):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MPRINT(READMONTHLY):   proc sql;
+MPRINT(READMONTHLY):   create table monthly as select a.*, b.state as member from Mnthly as a, 
+t4t.total_logins as b where upcase(a.Login) = upcase(b.email) ;
+NOTE: Table WORK.MONTHLY created, with 315 rows and 8 columns.
+
+MPRINT(READMONTHLY):   quit;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           1.83 seconds
+      cpu time            0.31 seconds
+      
+
+SYMBOLGEN:  Macro variable ST resolves to CT
+MLOGIC(READMONTHLY):  %IF condition %eval("&ST." = "ZZ") is FALSE
+MLOGIC(SETT4T):  Beginning execution.
+MPRINT(SETT4T):   libname t4t postgres
+MLOGIC(CONT4T):  Beginning execution.
+MPRINT(CONT4T):   server
+MLOGIC(CONT4T):  Ending execution.
+MPRINT(SETT4T):  ="analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com" 
+port=5432 database=t4t user=dmurray 
+password="{SAS004}70C77B5C28AB1C0D08B92DB91E465FE4E886F34B598E14AF";
+NOTE: Libref T4T was successfully assigned as follows: 
+      Engine:        POSTGRES 
+      Physical Name: analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com
+MLOGIC(SETT4T):  Ending execution.
+The SAS System
+
+MPRINT(READMONTHLY):  ;
+MPRINT(READMONTHLY):   proc sql;
+MPRINT(READMONTHLY):   Title "Retrieve max aur_id value from t4t.app_use_rept.";
+MPRINT(READMONTHLY):   select max(aur_id) into :lastindx from t4t.app_use_rept;
+MPRINT(READMONTHLY):   quit;
+NOTE: The PROCEDURE SQL printed page 19.
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.69 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(READMONTHLY):   data Monthly2;
+MPRINT(READMONTHLY):   format indx 6.0;
+MPRINT(READMONTHLY):   set monthly;
+SYMBOLGEN:  Macro variable LASTINDX resolves to      210696
+MPRINT(READMONTHLY):   indx = _n_ + 210696;
+MPRINT(READMONTHLY):   run;
+
+NOTE: There were 315 observations read from the data set WORK.MONTHLY.
+NOTE: The data set WORK.MONTHLY2 has 315 observations and 9 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MLOGIC(GETSNOW):  Beginning execution.
+MLOGIC(GETSNOW):  %GLOBAL  NOW
+MLOGIC(GETSNOW):  %LET (variable name is TIME)
+MLOGIC(GETSNOW):  %LET (variable name is DATE)
+MLOGIC(GETSNOW):  %LET (variable name is NOW)
+SYMBOLGEN:  Macro variable DATE resolves to 06JUL2023
+SYMBOLGEN:  Macro variable TIME resolves to 16:33
+MLOGIC(GETSNOW):  Ending execution.
+MPRINT(READMONTHLY):  ;
+SYMBOLGEN:  Macro variable ST resolves to CT
+SYMBOLGEN:  Macro variable NOW resolves to 06JUL2023 16:33
+MPRINT(READMONTHLY):   Title "Quick look at Monthly data for CT [06JUL2023 16:33]";
+MPRINT(READMONTHLY):   proc print data=Monthly2 (obs=9);
+MPRINT(READMONTHLY):   run;
+
+NOTE: There were 9 observations read from the data set WORK.MONTHLY2.
+NOTE: The PROCEDURE PRINT printed page 20.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+SYMBOLGEN:  Macro variable INSRT resolves to 1
+MLOGIC(READMONTHLY):  %IF condition %eval(&insrt. = 1) is TRUE
+MLOGIC(SETT4T):  Beginning execution.
+MPRINT(SETT4T):   libname t4t postgres
+MLOGIC(CONT4T):  Beginning execution.
+MPRINT(CONT4T):   server
+MLOGIC(CONT4T):  Ending execution.
+The SAS System
+
+MPRINT(SETT4T):  ="analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com" 
+port=5432 database=t4t user=dmurray 
+password="{SAS004}70C77B5C28AB1C0D08B92DB91E465FE4E886F34B598E14AF";
+NOTE: Libref T4T was successfully assigned as follows: 
+      Engine:        POSTGRES 
+      Physical Name: analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com
+MLOGIC(SETT4T):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MPRINT(READMONTHLY):   proc sql;
+MPRINT(READMONTHLY):   insert into t4t.app_use_rept select indx, person, Login, appUserName, 
+NumLogins, LastLogin, LastLoginISO8601, monthYear, member from Monthly2;
+NOTE: 315 rows were inserted into T4T.APP_USE_REPT.
+
+MPRINT(READMONTHLY):   quit;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           24.34 seconds
+      cpu time            0.17 seconds
+      
+
+MLOGIC(READMONTHLY):  Ending execution.
+243        	%ReadMonthly(DE, 1);		%ReadMonthly(HI, 1);
+MLOGIC(READMONTHLY):  Beginning execution.
+MLOGIC(READMONTHLY):  Parameter ST has value DE
+MLOGIC(READMONTHLY):  Parameter INSRT has value 1
+SYMBOLGEN:  Macro variable SRCFLDR resolves to C:\Users\Donald Murray\OneDrive - Smarter Balanced 
+            UCSC\T4T Summary
+SYMBOLGEN:  Macro variable MONYEAR resolves to Jun2023
+SYMBOLGEN:  Macro variable ST resolves to DE
+MPRINT(READMONTHLY):   filename inMonFyl "C:\Users\Donald Murray\OneDrive - Smarter Balanced 
+UCSC\T4T Summary\Jun2023\ApplicationUsageReportDE.csv";
+MPRINT(READMONTHLY):   data Mnthly;
+MPRINT(READMONTHLY):   format person $32. Login $64. appUserName $64. NumLogins_Str $6. NumLogins 
+6.0 LastLogin_str $28. LastLogin DateTime20. LastLoginISO8601_str $30. LastLoginISO8601 E8601DT19. 
+monthYear $8. monp 3.0 dayp 3.0 yearp 4.0 hourp 3.0 minp 3.0 secp 3.0 datepart $10. timepart $8.;
+MPRINT(READMONTHLY):   infile inMonFyl firstobs = 2 dlm = ',';
+MPRINT(READMONTHLY):   input person $ Login $ appUserName $ NumLogins_Str $ LastLogin_str $ 
+LastLoginISO8601_str $ ;
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Beginning execution.
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Parameter VARNAME has value person
+SYMBOLGEN:  Macro variable VARNAME resolves to person
+SYMBOLGEN:  Macro variable VARNAME resolves to person
+SYMBOLGEN:  Macro variable VARNAME resolves to person
+MPRINT(STRIPLEADINGSINGLEQUOTE):   if substr(dequote(person), 1, 1) = "'" then person = 
+substr(dequote(person), 2);
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Beginning execution.
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Parameter VARNAME has value Login
+SYMBOLGEN:  Macro variable VARNAME resolves to Login
+SYMBOLGEN:  Macro variable VARNAME resolves to Login
+SYMBOLGEN:  Macro variable VARNAME resolves to Login
+MPRINT(STRIPLEADINGSINGLEQUOTE):   if substr(dequote(Login), 1, 1) = "'" then Login = 
+substr(dequote(Login), 2);
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Ending execution.
+The SAS System
+
+MPRINT(READMONTHLY):  ;
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Beginning execution.
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Parameter VARNAME has value appUserName
+SYMBOLGEN:  Macro variable VARNAME resolves to appUserName
+SYMBOLGEN:  Macro variable VARNAME resolves to appUserName
+SYMBOLGEN:  Macro variable VARNAME resolves to appUserName
+MPRINT(STRIPLEADINGSINGLEQUOTE):   if substr(dequote(appUserName), 1, 1) = "'" then appUserName = 
+substr(dequote(appUserName), 2);
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MPRINT(READMONTHLY):   if substr(dequote(NumLogins_Str), 1, 1) = "'" then NumLogins = 
+put(substr(dequote(NumLogins_Str), 2), 6.0);
+MPRINT(READMONTHLY):   else NumLogins = put(dequote(NumLogins_Str), 6.0);
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Beginning execution.
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Parameter VARNAME has value LastLogin_str
+SYMBOLGEN:  Macro variable VARNAME resolves to LastLogin_str
+SYMBOLGEN:  Macro variable VARNAME resolves to LastLogin_str
+SYMBOLGEN:  Macro variable VARNAME resolves to LastLogin_str
+MPRINT(STRIPLEADINGSINGLEQUOTE):   if substr(dequote(LastLogin_str), 1, 1) = "'" then LastLogin_str 
+= substr(dequote(LastLogin_str), 2);
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MPRINT(READMONTHLY):   * put 'LastLogin_str: ' LastLogin_str;
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Beginning execution.
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Parameter VARNAME has value LastLoginISO8601_str
+SYMBOLGEN:  Macro variable VARNAME resolves to LastLoginISO8601_str
+SYMBOLGEN:  Macro variable VARNAME resolves to LastLoginISO8601_str
+SYMBOLGEN:  Macro variable VARNAME resolves to LastLoginISO8601_str
+MPRINT(STRIPLEADINGSINGLEQUOTE):   if substr(dequote(LastLoginISO8601_str), 1, 1) = "'" then 
+LastLoginISO8601_str = substr(dequote(LastLoginISO8601_str), 2);
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MPRINT(READMONTHLY):   * put 'LastLoginISO8601_str: ' LastLoginISO8601_str;
+MPRINT(READMONTHLY):   datepart = scan(LastLogin_str, 1, ' ');
+MPRINT(READMONTHLY):   timepart = scan(LastLogin_str, 2, ' ');
+MPRINT(READMONTHLY):   monp = put(scan(datepart, 1, '/'), 2.0);
+MPRINT(READMONTHLY):   dayp = put(scan(datepart, 2, '/'), 2.0);
+MPRINT(READMONTHLY):   yearp = put(scan(datepart, 3, '/'), 2.0) + 2000;
+MPRINT(READMONTHLY):   hourp = put(scan(timepart, 1, ':'), 2.0);
+MPRINT(READMONTHLY):   if index(LastLogin_str, ' PM ') > 0 then do;
+MPRINT(READMONTHLY):   if hourp < 12 then hourp = hourp + 12;
+MPRINT(READMONTHLY):   end;
+MPRINT(READMONTHLY):   else if index(LastLogin_str, ' AM ') > 0 then do;
+MPRINT(READMONTHLY):   if hourp = 12 then hourp = 0;
+MPRINT(READMONTHLY):   end;
+MPRINT(READMONTHLY):   minp = put(scan(timepart, 2, ':'), 2.0);
+MPRINT(READMONTHLY):   secp = put(scan(timepart, 3, ':'), 2.0);
+MPRINT(READMONTHLY):   LastLogin = dhms(mdy(monp, dayp, yearp), hourp, minp, secp);
+MPRINT(READMONTHLY):   datepart = scan(LastLoginISO8601_str, 1, 'T');
+MPRINT(READMONTHLY):   timepart = scan(scan(LastLoginISO8601_str, 2, 'T'), 1, '.');
+MPRINT(READMONTHLY):   yearp = put(scan(datepart, 1, '-'), 4.0);
+MPRINT(READMONTHLY):   monp = put(scan(datepart, 2, '-'), 2.0);
+MPRINT(READMONTHLY):   dayp = put(scan(datepart, 3, '-'), 2.0);
+MPRINT(READMONTHLY):   hourp = put(scan(timepart, 1, ':'), 2.0);
+The SAS System
+
+MPRINT(READMONTHLY):   minp = put(scan(timepart, 2, ':'), 2.0);
+MPRINT(READMONTHLY):   secp = put(scan(timepart, 3, ':'), 2.0);
+MPRINT(READMONTHLY):   LastLoginISO8601 = dhms(mdy(monp, dayp, yearp), hourp, minp, secp);
+SYMBOLGEN:  Macro variable MONYEAR resolves to Jun2023
+MPRINT(READMONTHLY):   monthYear = "Jun2023";
+MPRINT(READMONTHLY):   * member = "&ST.";
+MPRINT(READMONTHLY):   drop NumLogins_Str LastLoginISO8601_str LastLogin_str monp dayp yearp hourp 
+minp secp datepart timepart;
+MPRINT(READMONTHLY):   run;
+
+NOTE: Character values have been converted to numeric values at the places given by: 
+      (Line):(Column).
+      243:204   243:14    243:77    243:120   243:164   243:215   243:194   243:237   243:202
+      243:245   243:36    243:80    243:123   243:166   
+NOTE: The infile INMONFYL is:
+      
+      Filename=C:\Users\Donald Murray\OneDrive - Smarter Balanced UCSC\T4T 
+      Summary\Jun2023\ApplicationUsageReportDE.csv,
+      RECFM=V,LRECL=32767,File Size (bytes)=5049,
+      Last Modified=06Jul2023:16:20:40,
+      Create Time=06Jul2023:22:19:00
+
+NOTE: 34 records were read from the infile INMONFYL.
+      The minimum record length was 125.
+      The maximum record length was 186.
+NOTE: The data set WORK.MNTHLY has 34 observations and 7 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+MLOGIC(SETT4T):  Beginning execution.
+MPRINT(SETT4T):   libname t4t postgres
+MLOGIC(CONT4T):  Beginning execution.
+MPRINT(CONT4T):   server
+MLOGIC(CONT4T):  Ending execution.
+MPRINT(SETT4T):  ="analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com" 
+port=5432 database=t4t user=dmurray 
+password="{SAS004}70C77B5C28AB1C0D08B92DB91E465FE4E886F34B598E14AF";
+NOTE: Libref T4T was successfully assigned as follows: 
+      Engine:        POSTGRES 
+      Physical Name: analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com
+MLOGIC(SETT4T):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MPRINT(READMONTHLY):   proc sql;
+MPRINT(READMONTHLY):   create table monthly as select a.*, b.state as member from Mnthly as a, 
+t4t.total_logins as b where upcase(a.Login) = upcase(b.email) ;
+NOTE: Table WORK.MONTHLY created, with 32 rows and 8 columns.
+
+MPRINT(READMONTHLY):   quit;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           1.84 seconds
+      cpu time            0.26 seconds
+      
+The SAS System
+
+
+SYMBOLGEN:  Macro variable ST resolves to DE
+MLOGIC(READMONTHLY):  %IF condition %eval("&ST." = "ZZ") is FALSE
+MLOGIC(SETT4T):  Beginning execution.
+MPRINT(SETT4T):   libname t4t postgres
+MLOGIC(CONT4T):  Beginning execution.
+MPRINT(CONT4T):   server
+MLOGIC(CONT4T):  Ending execution.
+MPRINT(SETT4T):  ="analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com" 
+port=5432 database=t4t user=dmurray 
+password="{SAS004}70C77B5C28AB1C0D08B92DB91E465FE4E886F34B598E14AF";
+NOTE: Libref T4T was successfully assigned as follows: 
+      Engine:        POSTGRES 
+      Physical Name: analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com
+MLOGIC(SETT4T):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MPRINT(READMONTHLY):   proc sql;
+MPRINT(READMONTHLY):   Title "Retrieve max aur_id value from t4t.app_use_rept.";
+MPRINT(READMONTHLY):   select max(aur_id) into :lastindx from t4t.app_use_rept;
+MPRINT(READMONTHLY):   quit;
+NOTE: The PROCEDURE SQL printed page 21.
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.68 seconds
+      cpu time            0.01 seconds
+      
+
+MPRINT(READMONTHLY):   data Monthly2;
+MPRINT(READMONTHLY):   format indx 6.0;
+MPRINT(READMONTHLY):   set monthly;
+SYMBOLGEN:  Macro variable LASTINDX resolves to      211011
+MPRINT(READMONTHLY):   indx = _n_ + 211011;
+MPRINT(READMONTHLY):   run;
+
+NOTE: There were 32 observations read from the data set WORK.MONTHLY.
+NOTE: The data set WORK.MONTHLY2 has 32 observations and 9 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+MLOGIC(GETSNOW):  Beginning execution.
+MLOGIC(GETSNOW):  %GLOBAL  NOW
+MLOGIC(GETSNOW):  %LET (variable name is TIME)
+MLOGIC(GETSNOW):  %LET (variable name is DATE)
+MLOGIC(GETSNOW):  %LET (variable name is NOW)
+SYMBOLGEN:  Macro variable DATE resolves to 06JUL2023
+SYMBOLGEN:  Macro variable TIME resolves to 16:34
+MLOGIC(GETSNOW):  Ending execution.
+MPRINT(READMONTHLY):  ;
+SYMBOLGEN:  Macro variable ST resolves to DE
+SYMBOLGEN:  Macro variable NOW resolves to 06JUL2023 16:34
+MPRINT(READMONTHLY):   Title "Quick look at Monthly data for DE [06JUL2023 16:34]";
+MPRINT(READMONTHLY):   proc print data=Monthly2 (obs=9);
+MPRINT(READMONTHLY):   run;
+The SAS System
+
+
+NOTE: There were 9 observations read from the data set WORK.MONTHLY2.
+NOTE: The PROCEDURE PRINT printed page 22.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+SYMBOLGEN:  Macro variable INSRT resolves to 1
+MLOGIC(READMONTHLY):  %IF condition %eval(&insrt. = 1) is TRUE
+MLOGIC(SETT4T):  Beginning execution.
+MPRINT(SETT4T):   libname t4t postgres
+MLOGIC(CONT4T):  Beginning execution.
+MPRINT(CONT4T):   server
+MLOGIC(CONT4T):  Ending execution.
+MPRINT(SETT4T):  ="analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com" 
+port=5432 database=t4t user=dmurray 
+password="{SAS004}70C77B5C28AB1C0D08B92DB91E465FE4E886F34B598E14AF";
+NOTE: Libref T4T was successfully assigned as follows: 
+      Engine:        POSTGRES 
+      Physical Name: analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com
+MLOGIC(SETT4T):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MPRINT(READMONTHLY):   proc sql;
+MPRINT(READMONTHLY):   insert into t4t.app_use_rept select indx, person, Login, appUserName, 
+NumLogins, LastLogin, LastLoginISO8601, monthYear, member from Monthly2;
+NOTE: 32 rows were inserted into T4T.APP_USE_REPT.
+
+MPRINT(READMONTHLY):   quit;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           3.85 seconds
+      cpu time            0.06 seconds
+      
+
+MLOGIC(READMONTHLY):  Ending execution.
+MLOGIC(READMONTHLY):  Beginning execution.
+MLOGIC(READMONTHLY):  Parameter ST has value HI
+MLOGIC(READMONTHLY):  Parameter INSRT has value 1
+SYMBOLGEN:  Macro variable SRCFLDR resolves to C:\Users\Donald Murray\OneDrive - Smarter Balanced 
+            UCSC\T4T Summary
+SYMBOLGEN:  Macro variable MONYEAR resolves to Jun2023
+SYMBOLGEN:  Macro variable ST resolves to HI
+MPRINT(READMONTHLY):   filename inMonFyl "C:\Users\Donald Murray\OneDrive - Smarter Balanced 
+UCSC\T4T Summary\Jun2023\ApplicationUsageReportHI.csv";
+MPRINT(READMONTHLY):   data Mnthly;
+MPRINT(READMONTHLY):   format person $32. Login $64. appUserName $64. NumLogins_Str $6. NumLogins 
+6.0 LastLogin_str $28. LastLogin DateTime20. LastLoginISO8601_str $30. LastLoginISO8601 E8601DT19. 
+monthYear $8. monp 3.0 dayp 3.0 yearp 4.0 hourp 3.0 minp 3.0 secp 3.0 datepart $10. timepart $8.;
+MPRINT(READMONTHLY):   infile inMonFyl firstobs = 2 dlm = ',';
+MPRINT(READMONTHLY):   input person $ Login $ appUserName $ NumLogins_Str $ LastLogin_str $ 
+LastLoginISO8601_str $ ;
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Beginning execution.
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Parameter VARNAME has value person
+SYMBOLGEN:  Macro variable VARNAME resolves to person
+The SAS System
+
+SYMBOLGEN:  Macro variable VARNAME resolves to person
+SYMBOLGEN:  Macro variable VARNAME resolves to person
+MPRINT(STRIPLEADINGSINGLEQUOTE):   if substr(dequote(person), 1, 1) = "'" then person = 
+substr(dequote(person), 2);
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Beginning execution.
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Parameter VARNAME has value Login
+SYMBOLGEN:  Macro variable VARNAME resolves to Login
+SYMBOLGEN:  Macro variable VARNAME resolves to Login
+SYMBOLGEN:  Macro variable VARNAME resolves to Login
+MPRINT(STRIPLEADINGSINGLEQUOTE):   if substr(dequote(Login), 1, 1) = "'" then Login = 
+substr(dequote(Login), 2);
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Beginning execution.
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Parameter VARNAME has value appUserName
+SYMBOLGEN:  Macro variable VARNAME resolves to appUserName
+SYMBOLGEN:  Macro variable VARNAME resolves to appUserName
+SYMBOLGEN:  Macro variable VARNAME resolves to appUserName
+MPRINT(STRIPLEADINGSINGLEQUOTE):   if substr(dequote(appUserName), 1, 1) = "'" then appUserName = 
+substr(dequote(appUserName), 2);
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MPRINT(READMONTHLY):   if substr(dequote(NumLogins_Str), 1, 1) = "'" then NumLogins = 
+put(substr(dequote(NumLogins_Str), 2), 6.0);
+MPRINT(READMONTHLY):   else NumLogins = put(dequote(NumLogins_Str), 6.0);
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Beginning execution.
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Parameter VARNAME has value LastLogin_str
+SYMBOLGEN:  Macro variable VARNAME resolves to LastLogin_str
+SYMBOLGEN:  Macro variable VARNAME resolves to LastLogin_str
+SYMBOLGEN:  Macro variable VARNAME resolves to LastLogin_str
+MPRINT(STRIPLEADINGSINGLEQUOTE):   if substr(dequote(LastLogin_str), 1, 1) = "'" then LastLogin_str 
+= substr(dequote(LastLogin_str), 2);
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MPRINT(READMONTHLY):   * put 'LastLogin_str: ' LastLogin_str;
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Beginning execution.
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Parameter VARNAME has value LastLoginISO8601_str
+SYMBOLGEN:  Macro variable VARNAME resolves to LastLoginISO8601_str
+SYMBOLGEN:  Macro variable VARNAME resolves to LastLoginISO8601_str
+SYMBOLGEN:  Macro variable VARNAME resolves to LastLoginISO8601_str
+MPRINT(STRIPLEADINGSINGLEQUOTE):   if substr(dequote(LastLoginISO8601_str), 1, 1) = "'" then 
+LastLoginISO8601_str = substr(dequote(LastLoginISO8601_str), 2);
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MPRINT(READMONTHLY):   * put 'LastLoginISO8601_str: ' LastLoginISO8601_str;
+MPRINT(READMONTHLY):   datepart = scan(LastLogin_str, 1, ' ');
+MPRINT(READMONTHLY):   timepart = scan(LastLogin_str, 2, ' ');
+MPRINT(READMONTHLY):   monp = put(scan(datepart, 1, '/'), 2.0);
+MPRINT(READMONTHLY):   dayp = put(scan(datepart, 2, '/'), 2.0);
+MPRINT(READMONTHLY):   yearp = put(scan(datepart, 3, '/'), 2.0) + 2000;
+MPRINT(READMONTHLY):   hourp = put(scan(timepart, 1, ':'), 2.0);
+MPRINT(READMONTHLY):   if index(LastLogin_str, ' PM ') > 0 then do;
+The SAS System
+
+MPRINT(READMONTHLY):   if hourp < 12 then hourp = hourp + 12;
+MPRINT(READMONTHLY):   end;
+MPRINT(READMONTHLY):   else if index(LastLogin_str, ' AM ') > 0 then do;
+MPRINT(READMONTHLY):   if hourp = 12 then hourp = 0;
+MPRINT(READMONTHLY):   end;
+MPRINT(READMONTHLY):   minp = put(scan(timepart, 2, ':'), 2.0);
+MPRINT(READMONTHLY):   secp = put(scan(timepart, 3, ':'), 2.0);
+MPRINT(READMONTHLY):   LastLogin = dhms(mdy(monp, dayp, yearp), hourp, minp, secp);
+MPRINT(READMONTHLY):   datepart = scan(LastLoginISO8601_str, 1, 'T');
+MPRINT(READMONTHLY):   timepart = scan(scan(LastLoginISO8601_str, 2, 'T'), 1, '.');
+MPRINT(READMONTHLY):   yearp = put(scan(datepart, 1, '-'), 4.0);
+MPRINT(READMONTHLY):   monp = put(scan(datepart, 2, '-'), 2.0);
+MPRINT(READMONTHLY):   dayp = put(scan(datepart, 3, '-'), 2.0);
+MPRINT(READMONTHLY):   hourp = put(scan(timepart, 1, ':'), 2.0);
+MPRINT(READMONTHLY):   minp = put(scan(timepart, 2, ':'), 2.0);
+MPRINT(READMONTHLY):   secp = put(scan(timepart, 3, ':'), 2.0);
+MPRINT(READMONTHLY):   LastLoginISO8601 = dhms(mdy(monp, dayp, yearp), hourp, minp, secp);
+SYMBOLGEN:  Macro variable MONYEAR resolves to Jun2023
+MPRINT(READMONTHLY):   monthYear = "Jun2023";
+MPRINT(READMONTHLY):   * member = "&ST.";
+MPRINT(READMONTHLY):   drop NumLogins_Str LastLoginISO8601_str LastLogin_str monp dayp yearp hourp 
+minp secp datepart timepart;
+MPRINT(READMONTHLY):   run;
+
+NOTE: Character values have been converted to numeric values at the places given by: 
+      (Line):(Column).
+      243:204   243:14    243:77    243:120   243:164   243:215   243:194   243:237   243:202
+      243:245   243:36    243:80    243:123   243:166   
+NOTE: The infile INMONFYL is:
+      
+      Filename=C:\Users\Donald Murray\OneDrive - Smarter Balanced UCSC\T4T 
+      Summary\Jun2023\ApplicationUsageReportHI.csv,
+      RECFM=V,LRECL=32767,File Size (bytes)=6084,
+      Last Modified=06Jul2023:16:20:40,
+      Create Time=06Jul2023:22:19:00
+
+NOTE: 49 records were read from the infile INMONFYL.
+      The minimum record length was 114.
+      The maximum record length was 172.
+NOTE: The data set WORK.MNTHLY has 49 observations and 7 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.02 seconds
+      cpu time            0.01 seconds
+      
+
+MLOGIC(SETT4T):  Beginning execution.
+MPRINT(SETT4T):   libname t4t postgres
+MLOGIC(CONT4T):  Beginning execution.
+MPRINT(CONT4T):   server
+MLOGIC(CONT4T):  Ending execution.
+MPRINT(SETT4T):  ="analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com" 
+port=5432 database=t4t user=dmurray 
+password="{SAS004}70C77B5C28AB1C0D08B92DB91E465FE4E886F34B598E14AF";
+NOTE: Libref T4T was successfully assigned as follows: 
+The SAS System
+
+      Engine:        POSTGRES 
+      Physical Name: analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com
+MLOGIC(SETT4T):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MPRINT(READMONTHLY):   proc sql;
+MPRINT(READMONTHLY):   create table monthly as select a.*, b.state as member from Mnthly as a, 
+t4t.total_logins as b where upcase(a.Login) = upcase(b.email) ;
+NOTE: Table WORK.MONTHLY created, with 49 rows and 8 columns.
+
+MPRINT(READMONTHLY):   quit;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           1.87 seconds
+      cpu time            0.32 seconds
+      
+
+SYMBOLGEN:  Macro variable ST resolves to HI
+MLOGIC(READMONTHLY):  %IF condition %eval("&ST." = "ZZ") is FALSE
+MLOGIC(SETT4T):  Beginning execution.
+MPRINT(SETT4T):   libname t4t postgres
+MLOGIC(CONT4T):  Beginning execution.
+MPRINT(CONT4T):   server
+MLOGIC(CONT4T):  Ending execution.
+MPRINT(SETT4T):  ="analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com" 
+port=5432 database=t4t user=dmurray 
+password="{SAS004}70C77B5C28AB1C0D08B92DB91E465FE4E886F34B598E14AF";
+NOTE: Libref T4T was successfully assigned as follows: 
+      Engine:        POSTGRES 
+      Physical Name: analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com
+MLOGIC(SETT4T):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MPRINT(READMONTHLY):   proc sql;
+MPRINT(READMONTHLY):   Title "Retrieve max aur_id value from t4t.app_use_rept.";
+MPRINT(READMONTHLY):   select max(aur_id) into :lastindx from t4t.app_use_rept;
+MPRINT(READMONTHLY):   quit;
+NOTE: The PROCEDURE SQL printed page 23.
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.69 seconds
+      cpu time            0.01 seconds
+      
+
+MPRINT(READMONTHLY):   data Monthly2;
+MPRINT(READMONTHLY):   format indx 6.0;
+MPRINT(READMONTHLY):   set monthly;
+SYMBOLGEN:  Macro variable LASTINDX resolves to      211043
+MPRINT(READMONTHLY):   indx = _n_ + 211043;
+MPRINT(READMONTHLY):   run;
+
+NOTE: There were 49 observations read from the data set WORK.MONTHLY.
+NOTE: The data set WORK.MONTHLY2 has 49 observations and 9 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+The SAS System
+
+MLOGIC(GETSNOW):  Beginning execution.
+MLOGIC(GETSNOW):  %GLOBAL  NOW
+MLOGIC(GETSNOW):  %LET (variable name is TIME)
+MLOGIC(GETSNOW):  %LET (variable name is DATE)
+MLOGIC(GETSNOW):  %LET (variable name is NOW)
+SYMBOLGEN:  Macro variable DATE resolves to 06JUL2023
+SYMBOLGEN:  Macro variable TIME resolves to 16:34
+MLOGIC(GETSNOW):  Ending execution.
+MPRINT(READMONTHLY):  ;
+SYMBOLGEN:  Macro variable ST resolves to HI
+SYMBOLGEN:  Macro variable NOW resolves to 06JUL2023 16:34
+MPRINT(READMONTHLY):   Title "Quick look at Monthly data for HI [06JUL2023 16:34]";
+MPRINT(READMONTHLY):   proc print data=Monthly2 (obs=9);
+MPRINT(READMONTHLY):   run;
+
+NOTE: There were 9 observations read from the data set WORK.MONTHLY2.
+NOTE: The PROCEDURE PRINT printed page 24.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+SYMBOLGEN:  Macro variable INSRT resolves to 1
+MLOGIC(READMONTHLY):  %IF condition %eval(&insrt. = 1) is TRUE
+MLOGIC(SETT4T):  Beginning execution.
+MPRINT(SETT4T):   libname t4t postgres
+MLOGIC(CONT4T):  Beginning execution.
+MPRINT(CONT4T):   server
+MLOGIC(CONT4T):  Ending execution.
+MPRINT(SETT4T):  ="analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com" 
+port=5432 database=t4t user=dmurray 
+password="{SAS004}70C77B5C28AB1C0D08B92DB91E465FE4E886F34B598E14AF";
+NOTE: Libref T4T was successfully assigned as follows: 
+      Engine:        POSTGRES 
+      Physical Name: analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com
+MLOGIC(SETT4T):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MPRINT(READMONTHLY):   proc sql;
+MPRINT(READMONTHLY):   insert into t4t.app_use_rept select indx, person, Login, appUserName, 
+NumLogins, LastLogin, LastLoginISO8601, monthYear, member from Monthly2;
+NOTE: 49 rows were inserted into T4T.APP_USE_REPT.
+
+MPRINT(READMONTHLY):   quit;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           5.04 seconds
+      cpu time            0.04 seconds
+      
+
+MLOGIC(READMONTHLY):  Ending execution.
+244        	%ReadMonthly(ID, 1);		%ReadMonthly(IN, 1);
+MLOGIC(READMONTHLY):  Beginning execution.
+MLOGIC(READMONTHLY):  Parameter ST has value ID
+MLOGIC(READMONTHLY):  Parameter INSRT has value 1
+SYMBOLGEN:  Macro variable SRCFLDR resolves to C:\Users\Donald Murray\OneDrive - Smarter Balanced 
+The SAS System
+
+            UCSC\T4T Summary
+SYMBOLGEN:  Macro variable MONYEAR resolves to Jun2023
+SYMBOLGEN:  Macro variable ST resolves to ID
+MPRINT(READMONTHLY):   filename inMonFyl "C:\Users\Donald Murray\OneDrive - Smarter Balanced 
+UCSC\T4T Summary\Jun2023\ApplicationUsageReportID.csv";
+MPRINT(READMONTHLY):   data Mnthly;
+MPRINT(READMONTHLY):   format person $32. Login $64. appUserName $64. NumLogins_Str $6. NumLogins 
+6.0 LastLogin_str $28. LastLogin DateTime20. LastLoginISO8601_str $30. LastLoginISO8601 E8601DT19. 
+monthYear $8. monp 3.0 dayp 3.0 yearp 4.0 hourp 3.0 minp 3.0 secp 3.0 datepart $10. timepart $8.;
+MPRINT(READMONTHLY):   infile inMonFyl firstobs = 2 dlm = ',';
+MPRINT(READMONTHLY):   input person $ Login $ appUserName $ NumLogins_Str $ LastLogin_str $ 
+LastLoginISO8601_str $ ;
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Beginning execution.
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Parameter VARNAME has value person
+SYMBOLGEN:  Macro variable VARNAME resolves to person
+SYMBOLGEN:  Macro variable VARNAME resolves to person
+SYMBOLGEN:  Macro variable VARNAME resolves to person
+MPRINT(STRIPLEADINGSINGLEQUOTE):   if substr(dequote(person), 1, 1) = "'" then person = 
+substr(dequote(person), 2);
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Beginning execution.
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Parameter VARNAME has value Login
+SYMBOLGEN:  Macro variable VARNAME resolves to Login
+SYMBOLGEN:  Macro variable VARNAME resolves to Login
+SYMBOLGEN:  Macro variable VARNAME resolves to Login
+MPRINT(STRIPLEADINGSINGLEQUOTE):   if substr(dequote(Login), 1, 1) = "'" then Login = 
+substr(dequote(Login), 2);
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Beginning execution.
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Parameter VARNAME has value appUserName
+SYMBOLGEN:  Macro variable VARNAME resolves to appUserName
+SYMBOLGEN:  Macro variable VARNAME resolves to appUserName
+SYMBOLGEN:  Macro variable VARNAME resolves to appUserName
+MPRINT(STRIPLEADINGSINGLEQUOTE):   if substr(dequote(appUserName), 1, 1) = "'" then appUserName = 
+substr(dequote(appUserName), 2);
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MPRINT(READMONTHLY):   if substr(dequote(NumLogins_Str), 1, 1) = "'" then NumLogins = 
+put(substr(dequote(NumLogins_Str), 2), 6.0);
+MPRINT(READMONTHLY):   else NumLogins = put(dequote(NumLogins_Str), 6.0);
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Beginning execution.
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Parameter VARNAME has value LastLogin_str
+SYMBOLGEN:  Macro variable VARNAME resolves to LastLogin_str
+SYMBOLGEN:  Macro variable VARNAME resolves to LastLogin_str
+SYMBOLGEN:  Macro variable VARNAME resolves to LastLogin_str
+MPRINT(STRIPLEADINGSINGLEQUOTE):   if substr(dequote(LastLogin_str), 1, 1) = "'" then LastLogin_str 
+= substr(dequote(LastLogin_str), 2);
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MPRINT(READMONTHLY):   * put 'LastLogin_str: ' LastLogin_str;
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Beginning execution.
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Parameter VARNAME has value LastLoginISO8601_str
+The SAS System
+
+SYMBOLGEN:  Macro variable VARNAME resolves to LastLoginISO8601_str
+SYMBOLGEN:  Macro variable VARNAME resolves to LastLoginISO8601_str
+SYMBOLGEN:  Macro variable VARNAME resolves to LastLoginISO8601_str
+MPRINT(STRIPLEADINGSINGLEQUOTE):   if substr(dequote(LastLoginISO8601_str), 1, 1) = "'" then 
+LastLoginISO8601_str = substr(dequote(LastLoginISO8601_str), 2);
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MPRINT(READMONTHLY):   * put 'LastLoginISO8601_str: ' LastLoginISO8601_str;
+MPRINT(READMONTHLY):   datepart = scan(LastLogin_str, 1, ' ');
+MPRINT(READMONTHLY):   timepart = scan(LastLogin_str, 2, ' ');
+MPRINT(READMONTHLY):   monp = put(scan(datepart, 1, '/'), 2.0);
+MPRINT(READMONTHLY):   dayp = put(scan(datepart, 2, '/'), 2.0);
+MPRINT(READMONTHLY):   yearp = put(scan(datepart, 3, '/'), 2.0) + 2000;
+MPRINT(READMONTHLY):   hourp = put(scan(timepart, 1, ':'), 2.0);
+MPRINT(READMONTHLY):   if index(LastLogin_str, ' PM ') > 0 then do;
+MPRINT(READMONTHLY):   if hourp < 12 then hourp = hourp + 12;
+MPRINT(READMONTHLY):   end;
+MPRINT(READMONTHLY):   else if index(LastLogin_str, ' AM ') > 0 then do;
+MPRINT(READMONTHLY):   if hourp = 12 then hourp = 0;
+MPRINT(READMONTHLY):   end;
+MPRINT(READMONTHLY):   minp = put(scan(timepart, 2, ':'), 2.0);
+MPRINT(READMONTHLY):   secp = put(scan(timepart, 3, ':'), 2.0);
+MPRINT(READMONTHLY):   LastLogin = dhms(mdy(monp, dayp, yearp), hourp, minp, secp);
+MPRINT(READMONTHLY):   datepart = scan(LastLoginISO8601_str, 1, 'T');
+MPRINT(READMONTHLY):   timepart = scan(scan(LastLoginISO8601_str, 2, 'T'), 1, '.');
+MPRINT(READMONTHLY):   yearp = put(scan(datepart, 1, '-'), 4.0);
+MPRINT(READMONTHLY):   monp = put(scan(datepart, 2, '-'), 2.0);
+MPRINT(READMONTHLY):   dayp = put(scan(datepart, 3, '-'), 2.0);
+MPRINT(READMONTHLY):   hourp = put(scan(timepart, 1, ':'), 2.0);
+MPRINT(READMONTHLY):   minp = put(scan(timepart, 2, ':'), 2.0);
+MPRINT(READMONTHLY):   secp = put(scan(timepart, 3, ':'), 2.0);
+MPRINT(READMONTHLY):   LastLoginISO8601 = dhms(mdy(monp, dayp, yearp), hourp, minp, secp);
+SYMBOLGEN:  Macro variable MONYEAR resolves to Jun2023
+MPRINT(READMONTHLY):   monthYear = "Jun2023";
+MPRINT(READMONTHLY):   * member = "&ST.";
+MPRINT(READMONTHLY):   drop NumLogins_Str LastLoginISO8601_str LastLogin_str monp dayp yearp hourp 
+minp secp datepart timepart;
+MPRINT(READMONTHLY):   run;
+
+NOTE: Character values have been converted to numeric values at the places given by: 
+      (Line):(Column).
+      244:204   244:14    244:77    244:120   244:164   244:215   244:194   244:237   244:202
+      244:245   244:36    244:80    244:123   244:166   
+NOTE: The infile INMONFYL is:
+      
+      Filename=C:\Users\Donald Murray\OneDrive - Smarter Balanced UCSC\T4T 
+      Summary\Jun2023\ApplicationUsageReportID.csv,
+      RECFM=V,LRECL=32767,File Size (bytes)=16541,
+      Last Modified=06Jul2023:16:20:40,
+      Create Time=06Jul2023:22:19:00
+
+NOTE: 130 records were read from the infile INMONFYL.
+      The minimum record length was 111.
+      The maximum record length was 163.
+The SAS System
+
+NOTE: The data set WORK.MNTHLY has 130 observations and 7 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+MLOGIC(SETT4T):  Beginning execution.
+MPRINT(SETT4T):   libname t4t postgres
+MLOGIC(CONT4T):  Beginning execution.
+MPRINT(CONT4T):   server
+MLOGIC(CONT4T):  Ending execution.
+MPRINT(SETT4T):  ="analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com" 
+port=5432 database=t4t user=dmurray 
+password="{SAS004}70C77B5C28AB1C0D08B92DB91E465FE4E886F34B598E14AF";
+NOTE: Libref T4T was successfully assigned as follows: 
+      Engine:        POSTGRES 
+      Physical Name: analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com
+MLOGIC(SETT4T):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MPRINT(READMONTHLY):   proc sql;
+MPRINT(READMONTHLY):   create table monthly as select a.*, b.state as member from Mnthly as a, 
+t4t.total_logins as b where upcase(a.Login) = upcase(b.email) ;
+NOTE: Table WORK.MONTHLY created, with 130 rows and 8 columns.
+
+MPRINT(READMONTHLY):   quit;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           1.82 seconds
+      cpu time            0.34 seconds
+      
+
+SYMBOLGEN:  Macro variable ST resolves to ID
+MLOGIC(READMONTHLY):  %IF condition %eval("&ST." = "ZZ") is FALSE
+MLOGIC(SETT4T):  Beginning execution.
+MPRINT(SETT4T):   libname t4t postgres
+MLOGIC(CONT4T):  Beginning execution.
+MPRINT(CONT4T):   server
+MLOGIC(CONT4T):  Ending execution.
+MPRINT(SETT4T):  ="analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com" 
+port=5432 database=t4t user=dmurray 
+password="{SAS004}70C77B5C28AB1C0D08B92DB91E465FE4E886F34B598E14AF";
+NOTE: Libref T4T was successfully assigned as follows: 
+      Engine:        POSTGRES 
+      Physical Name: analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com
+MLOGIC(SETT4T):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MPRINT(READMONTHLY):   proc sql;
+MPRINT(READMONTHLY):   Title "Retrieve max aur_id value from t4t.app_use_rept.";
+MPRINT(READMONTHLY):   select max(aur_id) into :lastindx from t4t.app_use_rept;
+MPRINT(READMONTHLY):   quit;
+NOTE: The PROCEDURE SQL printed page 25.
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.69 seconds
+      cpu time            0.01 seconds
+      
+The SAS System
+
+
+MPRINT(READMONTHLY):   data Monthly2;
+MPRINT(READMONTHLY):   format indx 6.0;
+MPRINT(READMONTHLY):   set monthly;
+SYMBOLGEN:  Macro variable LASTINDX resolves to      211092
+MPRINT(READMONTHLY):   indx = _n_ + 211092;
+MPRINT(READMONTHLY):   run;
+
+NOTE: There were 130 observations read from the data set WORK.MONTHLY.
+NOTE: The data set WORK.MONTHLY2 has 130 observations and 9 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MLOGIC(GETSNOW):  Beginning execution.
+MLOGIC(GETSNOW):  %GLOBAL  NOW
+MLOGIC(GETSNOW):  %LET (variable name is TIME)
+MLOGIC(GETSNOW):  %LET (variable name is DATE)
+MLOGIC(GETSNOW):  %LET (variable name is NOW)
+SYMBOLGEN:  Macro variable DATE resolves to 06JUL2023
+SYMBOLGEN:  Macro variable TIME resolves to 16:34
+MLOGIC(GETSNOW):  Ending execution.
+MPRINT(READMONTHLY):  ;
+SYMBOLGEN:  Macro variable ST resolves to ID
+SYMBOLGEN:  Macro variable NOW resolves to 06JUL2023 16:34
+MPRINT(READMONTHLY):   Title "Quick look at Monthly data for ID [06JUL2023 16:34]";
+MPRINT(READMONTHLY):   proc print data=Monthly2 (obs=9);
+MPRINT(READMONTHLY):   run;
+
+NOTE: There were 9 observations read from the data set WORK.MONTHLY2.
+NOTE: The PROCEDURE PRINT printed page 26.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+SYMBOLGEN:  Macro variable INSRT resolves to 1
+MLOGIC(READMONTHLY):  %IF condition %eval(&insrt. = 1) is TRUE
+MLOGIC(SETT4T):  Beginning execution.
+MPRINT(SETT4T):   libname t4t postgres
+MLOGIC(CONT4T):  Beginning execution.
+MPRINT(CONT4T):   server
+MLOGIC(CONT4T):  Ending execution.
+MPRINT(SETT4T):  ="analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com" 
+port=5432 database=t4t user=dmurray 
+password="{SAS004}70C77B5C28AB1C0D08B92DB91E465FE4E886F34B598E14AF";
+NOTE: Libref T4T was successfully assigned as follows: 
+      Engine:        POSTGRES 
+      Physical Name: analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com
+MLOGIC(SETT4T):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MPRINT(READMONTHLY):   proc sql;
+MPRINT(READMONTHLY):   insert into t4t.app_use_rept select indx, person, Login, appUserName, 
+The SAS System
+
+NumLogins, LastLogin, LastLoginISO8601, monthYear, member from Monthly2;
+NOTE: 130 rows were inserted into T4T.APP_USE_REPT.
+
+MPRINT(READMONTHLY):   quit;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           11.09 seconds
+      cpu time            0.12 seconds
+      
+
+MLOGIC(READMONTHLY):  Ending execution.
+MLOGIC(READMONTHLY):  Beginning execution.
+MLOGIC(READMONTHLY):  Parameter ST has value IN
+MLOGIC(READMONTHLY):  Parameter INSRT has value 1
+SYMBOLGEN:  Macro variable SRCFLDR resolves to C:\Users\Donald Murray\OneDrive - Smarter Balanced 
+            UCSC\T4T Summary
+SYMBOLGEN:  Macro variable MONYEAR resolves to Jun2023
+SYMBOLGEN:  Macro variable ST resolves to IN
+MPRINT(READMONTHLY):   filename inMonFyl "C:\Users\Donald Murray\OneDrive - Smarter Balanced 
+UCSC\T4T Summary\Jun2023\ApplicationUsageReportIN.csv";
+MPRINT(READMONTHLY):   data Mnthly;
+MPRINT(READMONTHLY):   format person $32. Login $64. appUserName $64. NumLogins_Str $6. NumLogins 
+6.0 LastLogin_str $28. LastLogin DateTime20. LastLoginISO8601_str $30. LastLoginISO8601 E8601DT19. 
+monthYear $8. monp 3.0 dayp 3.0 yearp 4.0 hourp 3.0 minp 3.0 secp 3.0 datepart $10. timepart $8.;
+MPRINT(READMONTHLY):   infile inMonFyl firstobs = 2 dlm = ',';
+MPRINT(READMONTHLY):   input person $ Login $ appUserName $ NumLogins_Str $ LastLogin_str $ 
+LastLoginISO8601_str $ ;
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Beginning execution.
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Parameter VARNAME has value person
+SYMBOLGEN:  Macro variable VARNAME resolves to person
+SYMBOLGEN:  Macro variable VARNAME resolves to person
+SYMBOLGEN:  Macro variable VARNAME resolves to person
+MPRINT(STRIPLEADINGSINGLEQUOTE):   if substr(dequote(person), 1, 1) = "'" then person = 
+substr(dequote(person), 2);
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Beginning execution.
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Parameter VARNAME has value Login
+SYMBOLGEN:  Macro variable VARNAME resolves to Login
+SYMBOLGEN:  Macro variable VARNAME resolves to Login
+SYMBOLGEN:  Macro variable VARNAME resolves to Login
+MPRINT(STRIPLEADINGSINGLEQUOTE):   if substr(dequote(Login), 1, 1) = "'" then Login = 
+substr(dequote(Login), 2);
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Beginning execution.
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Parameter VARNAME has value appUserName
+SYMBOLGEN:  Macro variable VARNAME resolves to appUserName
+SYMBOLGEN:  Macro variable VARNAME resolves to appUserName
+SYMBOLGEN:  Macro variable VARNAME resolves to appUserName
+MPRINT(STRIPLEADINGSINGLEQUOTE):   if substr(dequote(appUserName), 1, 1) = "'" then appUserName = 
+substr(dequote(appUserName), 2);
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MPRINT(READMONTHLY):   if substr(dequote(NumLogins_Str), 1, 1) = "'" then NumLogins = 
+The SAS System
+
+put(substr(dequote(NumLogins_Str), 2), 6.0);
+MPRINT(READMONTHLY):   else NumLogins = put(dequote(NumLogins_Str), 6.0);
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Beginning execution.
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Parameter VARNAME has value LastLogin_str
+SYMBOLGEN:  Macro variable VARNAME resolves to LastLogin_str
+SYMBOLGEN:  Macro variable VARNAME resolves to LastLogin_str
+SYMBOLGEN:  Macro variable VARNAME resolves to LastLogin_str
+MPRINT(STRIPLEADINGSINGLEQUOTE):   if substr(dequote(LastLogin_str), 1, 1) = "'" then LastLogin_str 
+= substr(dequote(LastLogin_str), 2);
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MPRINT(READMONTHLY):   * put 'LastLogin_str: ' LastLogin_str;
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Beginning execution.
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Parameter VARNAME has value LastLoginISO8601_str
+SYMBOLGEN:  Macro variable VARNAME resolves to LastLoginISO8601_str
+SYMBOLGEN:  Macro variable VARNAME resolves to LastLoginISO8601_str
+SYMBOLGEN:  Macro variable VARNAME resolves to LastLoginISO8601_str
+MPRINT(STRIPLEADINGSINGLEQUOTE):   if substr(dequote(LastLoginISO8601_str), 1, 1) = "'" then 
+LastLoginISO8601_str = substr(dequote(LastLoginISO8601_str), 2);
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MPRINT(READMONTHLY):   * put 'LastLoginISO8601_str: ' LastLoginISO8601_str;
+MPRINT(READMONTHLY):   datepart = scan(LastLogin_str, 1, ' ');
+MPRINT(READMONTHLY):   timepart = scan(LastLogin_str, 2, ' ');
+MPRINT(READMONTHLY):   monp = put(scan(datepart, 1, '/'), 2.0);
+MPRINT(READMONTHLY):   dayp = put(scan(datepart, 2, '/'), 2.0);
+MPRINT(READMONTHLY):   yearp = put(scan(datepart, 3, '/'), 2.0) + 2000;
+MPRINT(READMONTHLY):   hourp = put(scan(timepart, 1, ':'), 2.0);
+MPRINT(READMONTHLY):   if index(LastLogin_str, ' PM ') > 0 then do;
+MPRINT(READMONTHLY):   if hourp < 12 then hourp = hourp + 12;
+MPRINT(READMONTHLY):   end;
+MPRINT(READMONTHLY):   else if index(LastLogin_str, ' AM ') > 0 then do;
+MPRINT(READMONTHLY):   if hourp = 12 then hourp = 0;
+MPRINT(READMONTHLY):   end;
+MPRINT(READMONTHLY):   minp = put(scan(timepart, 2, ':'), 2.0);
+MPRINT(READMONTHLY):   secp = put(scan(timepart, 3, ':'), 2.0);
+MPRINT(READMONTHLY):   LastLogin = dhms(mdy(monp, dayp, yearp), hourp, minp, secp);
+MPRINT(READMONTHLY):   datepart = scan(LastLoginISO8601_str, 1, 'T');
+MPRINT(READMONTHLY):   timepart = scan(scan(LastLoginISO8601_str, 2, 'T'), 1, '.');
+MPRINT(READMONTHLY):   yearp = put(scan(datepart, 1, '-'), 4.0);
+MPRINT(READMONTHLY):   monp = put(scan(datepart, 2, '-'), 2.0);
+MPRINT(READMONTHLY):   dayp = put(scan(datepart, 3, '-'), 2.0);
+MPRINT(READMONTHLY):   hourp = put(scan(timepart, 1, ':'), 2.0);
+MPRINT(READMONTHLY):   minp = put(scan(timepart, 2, ':'), 2.0);
+MPRINT(READMONTHLY):   secp = put(scan(timepart, 3, ':'), 2.0);
+MPRINT(READMONTHLY):   LastLoginISO8601 = dhms(mdy(monp, dayp, yearp), hourp, minp, secp);
+SYMBOLGEN:  Macro variable MONYEAR resolves to Jun2023
+MPRINT(READMONTHLY):   monthYear = "Jun2023";
+MPRINT(READMONTHLY):   * member = "&ST.";
+MPRINT(READMONTHLY):   drop NumLogins_Str LastLoginISO8601_str LastLogin_str monp dayp yearp hourp 
+minp secp datepart timepart;
+MPRINT(READMONTHLY):   run;
+
+NOTE: Character values have been converted to numeric values at the places given by: 
+The SAS System
+
+      (Line):(Column).
+      244:204   244:14    244:77    244:120   244:164   244:215   244:194   244:237   244:202
+      244:245   244:36    244:80    244:123   244:166   
+NOTE: The infile INMONFYL is:
+      
+      Filename=C:\Users\Donald Murray\OneDrive - Smarter Balanced UCSC\T4T 
+      Summary\Jun2023\ApplicationUsageReportIN.csv,
+      RECFM=V,LRECL=32767,File Size (bytes)=11503,
+      Last Modified=06Jul2023:16:20:40,
+      Create Time=06Jul2023:22:19:00
+
+NOTE: 86 records were read from the infile INMONFYL.
+      The minimum record length was 112.
+      The maximum record length was 158.
+NOTE: The data set WORK.MNTHLY has 86 observations and 7 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+MLOGIC(SETT4T):  Beginning execution.
+MPRINT(SETT4T):   libname t4t postgres
+MLOGIC(CONT4T):  Beginning execution.
+MPRINT(CONT4T):   server
+MLOGIC(CONT4T):  Ending execution.
+MPRINT(SETT4T):  ="analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com" 
+port=5432 database=t4t user=dmurray 
+password="{SAS004}70C77B5C28AB1C0D08B92DB91E465FE4E886F34B598E14AF";
+NOTE: Libref T4T was successfully assigned as follows: 
+      Engine:        POSTGRES 
+      Physical Name: analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com
+MLOGIC(SETT4T):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MPRINT(READMONTHLY):   proc sql;
+MPRINT(READMONTHLY):   create table monthly as select a.*, b.state as member from Mnthly as a, 
+t4t.total_logins as b where upcase(a.Login) = upcase(b.email) ;
+NOTE: Table WORK.MONTHLY created, with 85 rows and 8 columns.
+
+MPRINT(READMONTHLY):   quit;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           2.35 seconds
+      cpu time            0.29 seconds
+      
+
+SYMBOLGEN:  Macro variable ST resolves to IN
+MLOGIC(READMONTHLY):  %IF condition %eval("&ST." = "ZZ") is FALSE
+MLOGIC(SETT4T):  Beginning execution.
+MPRINT(SETT4T):   libname t4t postgres
+MLOGIC(CONT4T):  Beginning execution.
+MPRINT(CONT4T):   server
+MLOGIC(CONT4T):  Ending execution.
+MPRINT(SETT4T):  ="analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com" 
+port=5432 database=t4t user=dmurray 
+password="{SAS004}70C77B5C28AB1C0D08B92DB91E465FE4E886F34B598E14AF";
+The SAS System
+
+NOTE: Libref T4T was successfully assigned as follows: 
+      Engine:        POSTGRES 
+      Physical Name: analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com
+MLOGIC(SETT4T):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MPRINT(READMONTHLY):   proc sql;
+MPRINT(READMONTHLY):   Title "Retrieve max aur_id value from t4t.app_use_rept.";
+MPRINT(READMONTHLY):   select max(aur_id) into :lastindx from t4t.app_use_rept;
+MPRINT(READMONTHLY):   quit;
+NOTE: The PROCEDURE SQL printed page 27.
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.88 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(READMONTHLY):   data Monthly2;
+MPRINT(READMONTHLY):   format indx 6.0;
+MPRINT(READMONTHLY):   set monthly;
+SYMBOLGEN:  Macro variable LASTINDX resolves to      211222
+MPRINT(READMONTHLY):   indx = _n_ + 211222;
+MPRINT(READMONTHLY):   run;
+
+NOTE: There were 85 observations read from the data set WORK.MONTHLY.
+NOTE: The data set WORK.MONTHLY2 has 85 observations and 9 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+MLOGIC(GETSNOW):  Beginning execution.
+MLOGIC(GETSNOW):  %GLOBAL  NOW
+MLOGIC(GETSNOW):  %LET (variable name is TIME)
+MLOGIC(GETSNOW):  %LET (variable name is DATE)
+MLOGIC(GETSNOW):  %LET (variable name is NOW)
+SYMBOLGEN:  Macro variable DATE resolves to 06JUL2023
+SYMBOLGEN:  Macro variable TIME resolves to 16:34
+MLOGIC(GETSNOW):  Ending execution.
+MPRINT(READMONTHLY):  ;
+SYMBOLGEN:  Macro variable ST resolves to IN
+SYMBOLGEN:  Macro variable NOW resolves to 06JUL2023 16:34
+MPRINT(READMONTHLY):   Title "Quick look at Monthly data for IN [06JUL2023 16:34]";
+MPRINT(READMONTHLY):   proc print data=Monthly2 (obs=9);
+MPRINT(READMONTHLY):   run;
+
+NOTE: There were 9 observations read from the data set WORK.MONTHLY2.
+NOTE: The PROCEDURE PRINT printed page 28.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+SYMBOLGEN:  Macro variable INSRT resolves to 1
+MLOGIC(READMONTHLY):  %IF condition %eval(&insrt. = 1) is TRUE
+MLOGIC(SETT4T):  Beginning execution.
+The SAS System
+
+MPRINT(SETT4T):   libname t4t postgres
+MLOGIC(CONT4T):  Beginning execution.
+MPRINT(CONT4T):   server
+MLOGIC(CONT4T):  Ending execution.
+MPRINT(SETT4T):  ="analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com" 
+port=5432 database=t4t user=dmurray 
+password="{SAS004}70C77B5C28AB1C0D08B92DB91E465FE4E886F34B598E14AF";
+NOTE: Libref T4T was successfully assigned as follows: 
+      Engine:        POSTGRES 
+      Physical Name: analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com
+MLOGIC(SETT4T):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MPRINT(READMONTHLY):   proc sql;
+MPRINT(READMONTHLY):   insert into t4t.app_use_rept select indx, person, Login, appUserName, 
+NumLogins, LastLogin, LastLoginISO8601, monthYear, member from Monthly2;
+NOTE: 85 rows were inserted into T4T.APP_USE_REPT.
+
+MPRINT(READMONTHLY):   quit;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           7.49 seconds
+      cpu time            0.01 seconds
+      
+
+MLOGIC(READMONTHLY):  Ending execution.
+245        	%ReadMonthly(MI, 1);		%ReadMonthly(MT, 1);
+MLOGIC(READMONTHLY):  Beginning execution.
+MLOGIC(READMONTHLY):  Parameter ST has value MI
+MLOGIC(READMONTHLY):  Parameter INSRT has value 1
+SYMBOLGEN:  Macro variable SRCFLDR resolves to C:\Users\Donald Murray\OneDrive - Smarter Balanced 
+            UCSC\T4T Summary
+SYMBOLGEN:  Macro variable MONYEAR resolves to Jun2023
+SYMBOLGEN:  Macro variable ST resolves to MI
+MPRINT(READMONTHLY):   filename inMonFyl "C:\Users\Donald Murray\OneDrive - Smarter Balanced 
+UCSC\T4T Summary\Jun2023\ApplicationUsageReportMI.csv";
+MPRINT(READMONTHLY):   data Mnthly;
+MPRINT(READMONTHLY):   format person $32. Login $64. appUserName $64. NumLogins_Str $6. NumLogins 
+6.0 LastLogin_str $28. LastLogin DateTime20. LastLoginISO8601_str $30. LastLoginISO8601 E8601DT19. 
+monthYear $8. monp 3.0 dayp 3.0 yearp 4.0 hourp 3.0 minp 3.0 secp 3.0 datepart $10. timepart $8.;
+MPRINT(READMONTHLY):   infile inMonFyl firstobs = 2 dlm = ',';
+MPRINT(READMONTHLY):   input person $ Login $ appUserName $ NumLogins_Str $ LastLogin_str $ 
+LastLoginISO8601_str $ ;
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Beginning execution.
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Parameter VARNAME has value person
+SYMBOLGEN:  Macro variable VARNAME resolves to person
+SYMBOLGEN:  Macro variable VARNAME resolves to person
+SYMBOLGEN:  Macro variable VARNAME resolves to person
+MPRINT(STRIPLEADINGSINGLEQUOTE):   if substr(dequote(person), 1, 1) = "'" then person = 
+substr(dequote(person), 2);
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Beginning execution.
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Parameter VARNAME has value Login
+SYMBOLGEN:  Macro variable VARNAME resolves to Login
+SYMBOLGEN:  Macro variable VARNAME resolves to Login
+The SAS System
+
+SYMBOLGEN:  Macro variable VARNAME resolves to Login
+MPRINT(STRIPLEADINGSINGLEQUOTE):   if substr(dequote(Login), 1, 1) = "'" then Login = 
+substr(dequote(Login), 2);
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Beginning execution.
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Parameter VARNAME has value appUserName
+SYMBOLGEN:  Macro variable VARNAME resolves to appUserName
+SYMBOLGEN:  Macro variable VARNAME resolves to appUserName
+SYMBOLGEN:  Macro variable VARNAME resolves to appUserName
+MPRINT(STRIPLEADINGSINGLEQUOTE):   if substr(dequote(appUserName), 1, 1) = "'" then appUserName = 
+substr(dequote(appUserName), 2);
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MPRINT(READMONTHLY):   if substr(dequote(NumLogins_Str), 1, 1) = "'" then NumLogins = 
+put(substr(dequote(NumLogins_Str), 2), 6.0);
+MPRINT(READMONTHLY):   else NumLogins = put(dequote(NumLogins_Str), 6.0);
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Beginning execution.
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Parameter VARNAME has value LastLogin_str
+SYMBOLGEN:  Macro variable VARNAME resolves to LastLogin_str
+SYMBOLGEN:  Macro variable VARNAME resolves to LastLogin_str
+SYMBOLGEN:  Macro variable VARNAME resolves to LastLogin_str
+MPRINT(STRIPLEADINGSINGLEQUOTE):   if substr(dequote(LastLogin_str), 1, 1) = "'" then LastLogin_str 
+= substr(dequote(LastLogin_str), 2);
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MPRINT(READMONTHLY):   * put 'LastLogin_str: ' LastLogin_str;
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Beginning execution.
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Parameter VARNAME has value LastLoginISO8601_str
+SYMBOLGEN:  Macro variable VARNAME resolves to LastLoginISO8601_str
+SYMBOLGEN:  Macro variable VARNAME resolves to LastLoginISO8601_str
+SYMBOLGEN:  Macro variable VARNAME resolves to LastLoginISO8601_str
+MPRINT(STRIPLEADINGSINGLEQUOTE):   if substr(dequote(LastLoginISO8601_str), 1, 1) = "'" then 
+LastLoginISO8601_str = substr(dequote(LastLoginISO8601_str), 2);
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MPRINT(READMONTHLY):   * put 'LastLoginISO8601_str: ' LastLoginISO8601_str;
+MPRINT(READMONTHLY):   datepart = scan(LastLogin_str, 1, ' ');
+MPRINT(READMONTHLY):   timepart = scan(LastLogin_str, 2, ' ');
+MPRINT(READMONTHLY):   monp = put(scan(datepart, 1, '/'), 2.0);
+MPRINT(READMONTHLY):   dayp = put(scan(datepart, 2, '/'), 2.0);
+MPRINT(READMONTHLY):   yearp = put(scan(datepart, 3, '/'), 2.0) + 2000;
+MPRINT(READMONTHLY):   hourp = put(scan(timepart, 1, ':'), 2.0);
+MPRINT(READMONTHLY):   if index(LastLogin_str, ' PM ') > 0 then do;
+MPRINT(READMONTHLY):   if hourp < 12 then hourp = hourp + 12;
+MPRINT(READMONTHLY):   end;
+MPRINT(READMONTHLY):   else if index(LastLogin_str, ' AM ') > 0 then do;
+MPRINT(READMONTHLY):   if hourp = 12 then hourp = 0;
+MPRINT(READMONTHLY):   end;
+MPRINT(READMONTHLY):   minp = put(scan(timepart, 2, ':'), 2.0);
+MPRINT(READMONTHLY):   secp = put(scan(timepart, 3, ':'), 2.0);
+MPRINT(READMONTHLY):   LastLogin = dhms(mdy(monp, dayp, yearp), hourp, minp, secp);
+MPRINT(READMONTHLY):   datepart = scan(LastLoginISO8601_str, 1, 'T');
+MPRINT(READMONTHLY):   timepart = scan(scan(LastLoginISO8601_str, 2, 'T'), 1, '.');
+The SAS System
+
+MPRINT(READMONTHLY):   yearp = put(scan(datepart, 1, '-'), 4.0);
+MPRINT(READMONTHLY):   monp = put(scan(datepart, 2, '-'), 2.0);
+MPRINT(READMONTHLY):   dayp = put(scan(datepart, 3, '-'), 2.0);
+MPRINT(READMONTHLY):   hourp = put(scan(timepart, 1, ':'), 2.0);
+MPRINT(READMONTHLY):   minp = put(scan(timepart, 2, ':'), 2.0);
+MPRINT(READMONTHLY):   secp = put(scan(timepart, 3, ':'), 2.0);
+MPRINT(READMONTHLY):   LastLoginISO8601 = dhms(mdy(monp, dayp, yearp), hourp, minp, secp);
+SYMBOLGEN:  Macro variable MONYEAR resolves to Jun2023
+MPRINT(READMONTHLY):   monthYear = "Jun2023";
+MPRINT(READMONTHLY):   * member = "&ST.";
+MPRINT(READMONTHLY):   drop NumLogins_Str LastLoginISO8601_str LastLogin_str monp dayp yearp hourp 
+minp secp datepart timepart;
+MPRINT(READMONTHLY):   run;
+
+NOTE: Character values have been converted to numeric values at the places given by: 
+      (Line):(Column).
+      245:204   245:14    245:77    245:120   245:164   245:215   245:194   245:237   245:202
+      245:245   245:36    245:80    245:123   245:166   
+NOTE: The infile INMONFYL is:
+      
+      Filename=C:\Users\Donald Murray\OneDrive - Smarter Balanced UCSC\T4T 
+      Summary\Jun2023\ApplicationUsageReportMI.csv,
+      RECFM=V,LRECL=32767,File Size (bytes)=1093,
+      Last Modified=06Jul2023:16:20:40,
+      Create Time=06Jul2023:22:19:00
+
+NOTE: 8 records were read from the infile INMONFYL.
+      The minimum record length was 108.
+      The maximum record length was 156.
+NOTE: The data set WORK.MNTHLY has 8 observations and 7 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.02 seconds
+      cpu time            0.03 seconds
+      
+
+MLOGIC(SETT4T):  Beginning execution.
+MPRINT(SETT4T):   libname t4t postgres
+MLOGIC(CONT4T):  Beginning execution.
+MPRINT(CONT4T):   server
+MLOGIC(CONT4T):  Ending execution.
+MPRINT(SETT4T):  ="analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com" 
+port=5432 database=t4t user=dmurray 
+password="{SAS004}70C77B5C28AB1C0D08B92DB91E465FE4E886F34B598E14AF";
+NOTE: Libref T4T was successfully assigned as follows: 
+      Engine:        POSTGRES 
+      Physical Name: analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com
+MLOGIC(SETT4T):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MPRINT(READMONTHLY):   proc sql;
+MPRINT(READMONTHLY):   create table monthly as select a.*, b.state as member from Mnthly as a, 
+t4t.total_logins as b where upcase(a.Login) = upcase(b.email) ;
+NOTE: Table WORK.MONTHLY created, with 7 rows and 8 columns.
+
+MPRINT(READMONTHLY):   quit;
+The SAS System
+
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           1.79 seconds
+      cpu time            0.32 seconds
+      
+
+SYMBOLGEN:  Macro variable ST resolves to MI
+MLOGIC(READMONTHLY):  %IF condition %eval("&ST." = "ZZ") is FALSE
+MLOGIC(SETT4T):  Beginning execution.
+MPRINT(SETT4T):   libname t4t postgres
+MLOGIC(CONT4T):  Beginning execution.
+MPRINT(CONT4T):   server
+MLOGIC(CONT4T):  Ending execution.
+MPRINT(SETT4T):  ="analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com" 
+port=5432 database=t4t user=dmurray 
+password="{SAS004}70C77B5C28AB1C0D08B92DB91E465FE4E886F34B598E14AF";
+NOTE: Libref T4T was successfully assigned as follows: 
+      Engine:        POSTGRES 
+      Physical Name: analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com
+MLOGIC(SETT4T):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MPRINT(READMONTHLY):   proc sql;
+MPRINT(READMONTHLY):   Title "Retrieve max aur_id value from t4t.app_use_rept.";
+MPRINT(READMONTHLY):   select max(aur_id) into :lastindx from t4t.app_use_rept;
+MPRINT(READMONTHLY):   quit;
+NOTE: The PROCEDURE SQL printed page 29.
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.74 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(READMONTHLY):   data Monthly2;
+MPRINT(READMONTHLY):   format indx 6.0;
+MPRINT(READMONTHLY):   set monthly;
+SYMBOLGEN:  Macro variable LASTINDX resolves to      211307
+MPRINT(READMONTHLY):   indx = _n_ + 211307;
+MPRINT(READMONTHLY):   run;
+
+NOTE: There were 7 observations read from the data set WORK.MONTHLY.
+NOTE: The data set WORK.MONTHLY2 has 7 observations and 9 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.02 seconds
+      cpu time            0.03 seconds
+      
+
+MLOGIC(GETSNOW):  Beginning execution.
+MLOGIC(GETSNOW):  %GLOBAL  NOW
+MLOGIC(GETSNOW):  %LET (variable name is TIME)
+MLOGIC(GETSNOW):  %LET (variable name is DATE)
+MLOGIC(GETSNOW):  %LET (variable name is NOW)
+SYMBOLGEN:  Macro variable DATE resolves to 06JUL2023
+SYMBOLGEN:  Macro variable TIME resolves to 16:35
+MLOGIC(GETSNOW):  Ending execution.
+MPRINT(READMONTHLY):  ;
+SYMBOLGEN:  Macro variable ST resolves to MI
+The SAS System
+
+SYMBOLGEN:  Macro variable NOW resolves to 06JUL2023 16:35
+MPRINT(READMONTHLY):   Title "Quick look at Monthly data for MI [06JUL2023 16:35]";
+MPRINT(READMONTHLY):   proc print data=Monthly2 (obs=9);
+MPRINT(READMONTHLY):   run;
+
+NOTE: There were 7 observations read from the data set WORK.MONTHLY2.
+NOTE: The PROCEDURE PRINT printed page 30.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+SYMBOLGEN:  Macro variable INSRT resolves to 1
+MLOGIC(READMONTHLY):  %IF condition %eval(&insrt. = 1) is TRUE
+MLOGIC(SETT4T):  Beginning execution.
+MPRINT(SETT4T):   libname t4t postgres
+MLOGIC(CONT4T):  Beginning execution.
+MPRINT(CONT4T):   server
+MLOGIC(CONT4T):  Ending execution.
+MPRINT(SETT4T):  ="analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com" 
+port=5432 database=t4t user=dmurray 
+password="{SAS004}70C77B5C28AB1C0D08B92DB91E465FE4E886F34B598E14AF";
+NOTE: Libref T4T was successfully assigned as follows: 
+      Engine:        POSTGRES 
+      Physical Name: analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com
+MLOGIC(SETT4T):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MPRINT(READMONTHLY):   proc sql;
+MPRINT(READMONTHLY):   insert into t4t.app_use_rept select indx, person, Login, appUserName, 
+NumLogins, LastLogin, LastLoginISO8601, monthYear, member from Monthly2;
+NOTE: 7 rows were inserted into T4T.APP_USE_REPT.
+
+MPRINT(READMONTHLY):   quit;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           1.98 seconds
+      cpu time            0.06 seconds
+      
+
+MLOGIC(READMONTHLY):  Ending execution.
+MLOGIC(READMONTHLY):  Beginning execution.
+MLOGIC(READMONTHLY):  Parameter ST has value MT
+MLOGIC(READMONTHLY):  Parameter INSRT has value 1
+SYMBOLGEN:  Macro variable SRCFLDR resolves to C:\Users\Donald Murray\OneDrive - Smarter Balanced 
+            UCSC\T4T Summary
+SYMBOLGEN:  Macro variable MONYEAR resolves to Jun2023
+SYMBOLGEN:  Macro variable ST resolves to MT
+MPRINT(READMONTHLY):   filename inMonFyl "C:\Users\Donald Murray\OneDrive - Smarter Balanced 
+UCSC\T4T Summary\Jun2023\ApplicationUsageReportMT.csv";
+MPRINT(READMONTHLY):   data Mnthly;
+MPRINT(READMONTHLY):   format person $32. Login $64. appUserName $64. NumLogins_Str $6. NumLogins 
+6.0 LastLogin_str $28. LastLogin DateTime20. LastLoginISO8601_str $30. LastLoginISO8601 E8601DT19. 
+monthYear $8. monp 3.0 dayp 3.0 yearp 4.0 hourp 3.0 minp 3.0 secp 3.0 datepart $10. timepart $8.;
+MPRINT(READMONTHLY):   infile inMonFyl firstobs = 2 dlm = ',';
+MPRINT(READMONTHLY):   input person $ Login $ appUserName $ NumLogins_Str $ LastLogin_str $ 
+The SAS System
+
+LastLoginISO8601_str $ ;
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Beginning execution.
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Parameter VARNAME has value person
+SYMBOLGEN:  Macro variable VARNAME resolves to person
+SYMBOLGEN:  Macro variable VARNAME resolves to person
+SYMBOLGEN:  Macro variable VARNAME resolves to person
+MPRINT(STRIPLEADINGSINGLEQUOTE):   if substr(dequote(person), 1, 1) = "'" then person = 
+substr(dequote(person), 2);
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Beginning execution.
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Parameter VARNAME has value Login
+SYMBOLGEN:  Macro variable VARNAME resolves to Login
+SYMBOLGEN:  Macro variable VARNAME resolves to Login
+SYMBOLGEN:  Macro variable VARNAME resolves to Login
+MPRINT(STRIPLEADINGSINGLEQUOTE):   if substr(dequote(Login), 1, 1) = "'" then Login = 
+substr(dequote(Login), 2);
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Beginning execution.
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Parameter VARNAME has value appUserName
+SYMBOLGEN:  Macro variable VARNAME resolves to appUserName
+SYMBOLGEN:  Macro variable VARNAME resolves to appUserName
+SYMBOLGEN:  Macro variable VARNAME resolves to appUserName
+MPRINT(STRIPLEADINGSINGLEQUOTE):   if substr(dequote(appUserName), 1, 1) = "'" then appUserName = 
+substr(dequote(appUserName), 2);
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MPRINT(READMONTHLY):   if substr(dequote(NumLogins_Str), 1, 1) = "'" then NumLogins = 
+put(substr(dequote(NumLogins_Str), 2), 6.0);
+MPRINT(READMONTHLY):   else NumLogins = put(dequote(NumLogins_Str), 6.0);
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Beginning execution.
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Parameter VARNAME has value LastLogin_str
+SYMBOLGEN:  Macro variable VARNAME resolves to LastLogin_str
+SYMBOLGEN:  Macro variable VARNAME resolves to LastLogin_str
+SYMBOLGEN:  Macro variable VARNAME resolves to LastLogin_str
+MPRINT(STRIPLEADINGSINGLEQUOTE):   if substr(dequote(LastLogin_str), 1, 1) = "'" then LastLogin_str 
+= substr(dequote(LastLogin_str), 2);
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MPRINT(READMONTHLY):   * put 'LastLogin_str: ' LastLogin_str;
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Beginning execution.
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Parameter VARNAME has value LastLoginISO8601_str
+SYMBOLGEN:  Macro variable VARNAME resolves to LastLoginISO8601_str
+SYMBOLGEN:  Macro variable VARNAME resolves to LastLoginISO8601_str
+SYMBOLGEN:  Macro variable VARNAME resolves to LastLoginISO8601_str
+MPRINT(STRIPLEADINGSINGLEQUOTE):   if substr(dequote(LastLoginISO8601_str), 1, 1) = "'" then 
+LastLoginISO8601_str = substr(dequote(LastLoginISO8601_str), 2);
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MPRINT(READMONTHLY):   * put 'LastLoginISO8601_str: ' LastLoginISO8601_str;
+MPRINT(READMONTHLY):   datepart = scan(LastLogin_str, 1, ' ');
+MPRINT(READMONTHLY):   timepart = scan(LastLogin_str, 2, ' ');
+MPRINT(READMONTHLY):   monp = put(scan(datepart, 1, '/'), 2.0);
+The SAS System
+
+MPRINT(READMONTHLY):   dayp = put(scan(datepart, 2, '/'), 2.0);
+MPRINT(READMONTHLY):   yearp = put(scan(datepart, 3, '/'), 2.0) + 2000;
+MPRINT(READMONTHLY):   hourp = put(scan(timepart, 1, ':'), 2.0);
+MPRINT(READMONTHLY):   if index(LastLogin_str, ' PM ') > 0 then do;
+MPRINT(READMONTHLY):   if hourp < 12 then hourp = hourp + 12;
+MPRINT(READMONTHLY):   end;
+MPRINT(READMONTHLY):   else if index(LastLogin_str, ' AM ') > 0 then do;
+MPRINT(READMONTHLY):   if hourp = 12 then hourp = 0;
+MPRINT(READMONTHLY):   end;
+MPRINT(READMONTHLY):   minp = put(scan(timepart, 2, ':'), 2.0);
+MPRINT(READMONTHLY):   secp = put(scan(timepart, 3, ':'), 2.0);
+MPRINT(READMONTHLY):   LastLogin = dhms(mdy(monp, dayp, yearp), hourp, minp, secp);
+MPRINT(READMONTHLY):   datepart = scan(LastLoginISO8601_str, 1, 'T');
+MPRINT(READMONTHLY):   timepart = scan(scan(LastLoginISO8601_str, 2, 'T'), 1, '.');
+MPRINT(READMONTHLY):   yearp = put(scan(datepart, 1, '-'), 4.0);
+MPRINT(READMONTHLY):   monp = put(scan(datepart, 2, '-'), 2.0);
+MPRINT(READMONTHLY):   dayp = put(scan(datepart, 3, '-'), 2.0);
+MPRINT(READMONTHLY):   hourp = put(scan(timepart, 1, ':'), 2.0);
+MPRINT(READMONTHLY):   minp = put(scan(timepart, 2, ':'), 2.0);
+MPRINT(READMONTHLY):   secp = put(scan(timepart, 3, ':'), 2.0);
+MPRINT(READMONTHLY):   LastLoginISO8601 = dhms(mdy(monp, dayp, yearp), hourp, minp, secp);
+SYMBOLGEN:  Macro variable MONYEAR resolves to Jun2023
+MPRINT(READMONTHLY):   monthYear = "Jun2023";
+MPRINT(READMONTHLY):   * member = "&ST.";
+MPRINT(READMONTHLY):   drop NumLogins_Str LastLoginISO8601_str LastLogin_str monp dayp yearp hourp 
+minp secp datepart timepart;
+MPRINT(READMONTHLY):   run;
+
+NOTE: Character values have been converted to numeric values at the places given by: 
+      (Line):(Column).
+      245:204   245:14    245:77    245:120   245:164   245:215   245:194   245:237   245:202
+      245:245   245:36    245:80    245:123   245:166   
+NOTE: The infile INMONFYL is:
+      
+      Filename=C:\Users\Donald Murray\OneDrive - Smarter Balanced UCSC\T4T 
+      Summary\Jun2023\ApplicationUsageReportMT.csv,
+      RECFM=V,LRECL=32767,File Size (bytes)=1950,
+      Last Modified=06Jul2023:16:20:40,
+      Create Time=06Jul2023:22:19:00
+
+NOTE: 14 records were read from the infile INMONFYL.
+      The minimum record length was 108.
+      The maximum record length was 154.
+NOTE: The data set WORK.MNTHLY has 14 observations and 7 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+MLOGIC(SETT4T):  Beginning execution.
+MPRINT(SETT4T):   libname t4t postgres
+MLOGIC(CONT4T):  Beginning execution.
+MPRINT(CONT4T):   server
+MLOGIC(CONT4T):  Ending execution.
+The SAS System
+
+MPRINT(SETT4T):  ="analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com" 
+port=5432 database=t4t user=dmurray 
+password="{SAS004}70C77B5C28AB1C0D08B92DB91E465FE4E886F34B598E14AF";
+NOTE: Libref T4T was successfully assigned as follows: 
+      Engine:        POSTGRES 
+      Physical Name: analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com
+MLOGIC(SETT4T):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MPRINT(READMONTHLY):   proc sql;
+MPRINT(READMONTHLY):   create table monthly as select a.*, b.state as member from Mnthly as a, 
+t4t.total_logins as b where upcase(a.Login) = upcase(b.email) ;
+NOTE: Table WORK.MONTHLY created, with 12 rows and 8 columns.
+
+MPRINT(READMONTHLY):   quit;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           1.82 seconds
+      cpu time            0.31 seconds
+      
+
+SYMBOLGEN:  Macro variable ST resolves to MT
+MLOGIC(READMONTHLY):  %IF condition %eval("&ST." = "ZZ") is FALSE
+MLOGIC(SETT4T):  Beginning execution.
+MPRINT(SETT4T):   libname t4t postgres
+MLOGIC(CONT4T):  Beginning execution.
+MPRINT(CONT4T):   server
+MLOGIC(CONT4T):  Ending execution.
+MPRINT(SETT4T):  ="analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com" 
+port=5432 database=t4t user=dmurray 
+password="{SAS004}70C77B5C28AB1C0D08B92DB91E465FE4E886F34B598E14AF";
+NOTE: Libref T4T was successfully assigned as follows: 
+      Engine:        POSTGRES 
+      Physical Name: analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com
+MLOGIC(SETT4T):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MPRINT(READMONTHLY):   proc sql;
+MPRINT(READMONTHLY):   Title "Retrieve max aur_id value from t4t.app_use_rept.";
+MPRINT(READMONTHLY):   select max(aur_id) into :lastindx from t4t.app_use_rept;
+MPRINT(READMONTHLY):   quit;
+NOTE: The PROCEDURE SQL printed page 31.
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.69 seconds
+      cpu time            0.01 seconds
+      
+
+MPRINT(READMONTHLY):   data Monthly2;
+MPRINT(READMONTHLY):   format indx 6.0;
+MPRINT(READMONTHLY):   set monthly;
+SYMBOLGEN:  Macro variable LASTINDX resolves to      211314
+MPRINT(READMONTHLY):   indx = _n_ + 211314;
+MPRINT(READMONTHLY):   run;
+
+NOTE: There were 12 observations read from the data set WORK.MONTHLY.
+NOTE: The data set WORK.MONTHLY2 has 12 observations and 9 variables.
+NOTE: DATA statement used (Total process time):
+The SAS System
+
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+MLOGIC(GETSNOW):  Beginning execution.
+MLOGIC(GETSNOW):  %GLOBAL  NOW
+MLOGIC(GETSNOW):  %LET (variable name is TIME)
+MLOGIC(GETSNOW):  %LET (variable name is DATE)
+MLOGIC(GETSNOW):  %LET (variable name is NOW)
+SYMBOLGEN:  Macro variable DATE resolves to 06JUL2023
+SYMBOLGEN:  Macro variable TIME resolves to 16:35
+MLOGIC(GETSNOW):  Ending execution.
+MPRINT(READMONTHLY):  ;
+SYMBOLGEN:  Macro variable ST resolves to MT
+SYMBOLGEN:  Macro variable NOW resolves to 06JUL2023 16:35
+MPRINT(READMONTHLY):   Title "Quick look at Monthly data for MT [06JUL2023 16:35]";
+MPRINT(READMONTHLY):   proc print data=Monthly2 (obs=9);
+MPRINT(READMONTHLY):   run;
+
+NOTE: There were 9 observations read from the data set WORK.MONTHLY2.
+NOTE: The PROCEDURE PRINT printed page 32.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+SYMBOLGEN:  Macro variable INSRT resolves to 1
+MLOGIC(READMONTHLY):  %IF condition %eval(&insrt. = 1) is TRUE
+MLOGIC(SETT4T):  Beginning execution.
+MPRINT(SETT4T):   libname t4t postgres
+MLOGIC(CONT4T):  Beginning execution.
+MPRINT(CONT4T):   server
+MLOGIC(CONT4T):  Ending execution.
+MPRINT(SETT4T):  ="analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com" 
+port=5432 database=t4t user=dmurray 
+password="{SAS004}70C77B5C28AB1C0D08B92DB91E465FE4E886F34B598E14AF";
+NOTE: Libref T4T was successfully assigned as follows: 
+      Engine:        POSTGRES 
+      Physical Name: analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com
+MLOGIC(SETT4T):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MPRINT(READMONTHLY):   proc sql;
+MPRINT(READMONTHLY):   insert into t4t.app_use_rept select indx, person, Login, appUserName, 
+NumLogins, LastLogin, LastLoginISO8601, monthYear, member from Monthly2;
+NOTE: 12 rows were inserted into T4T.APP_USE_REPT.
+
+MPRINT(READMONTHLY):   quit;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           2.42 seconds
+      cpu time            0.06 seconds
+      
+
+MLOGIC(READMONTHLY):  Ending execution.
+246        	%ReadMonthly(NV, 1);		%ReadMonthly(OR, 1);
+The SAS System
+
+MLOGIC(READMONTHLY):  Beginning execution.
+MLOGIC(READMONTHLY):  Parameter ST has value NV
+MLOGIC(READMONTHLY):  Parameter INSRT has value 1
+SYMBOLGEN:  Macro variable SRCFLDR resolves to C:\Users\Donald Murray\OneDrive - Smarter Balanced 
+            UCSC\T4T Summary
+SYMBOLGEN:  Macro variable MONYEAR resolves to Jun2023
+SYMBOLGEN:  Macro variable ST resolves to NV
+MPRINT(READMONTHLY):   filename inMonFyl "C:\Users\Donald Murray\OneDrive - Smarter Balanced 
+UCSC\T4T Summary\Jun2023\ApplicationUsageReportNV.csv";
+MPRINT(READMONTHLY):   data Mnthly;
+MPRINT(READMONTHLY):   format person $32. Login $64. appUserName $64. NumLogins_Str $6. NumLogins 
+6.0 LastLogin_str $28. LastLogin DateTime20. LastLoginISO8601_str $30. LastLoginISO8601 E8601DT19. 
+monthYear $8. monp 3.0 dayp 3.0 yearp 4.0 hourp 3.0 minp 3.0 secp 3.0 datepart $10. timepart $8.;
+MPRINT(READMONTHLY):   infile inMonFyl firstobs = 2 dlm = ',';
+MPRINT(READMONTHLY):   input person $ Login $ appUserName $ NumLogins_Str $ LastLogin_str $ 
+LastLoginISO8601_str $ ;
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Beginning execution.
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Parameter VARNAME has value person
+SYMBOLGEN:  Macro variable VARNAME resolves to person
+SYMBOLGEN:  Macro variable VARNAME resolves to person
+SYMBOLGEN:  Macro variable VARNAME resolves to person
+MPRINT(STRIPLEADINGSINGLEQUOTE):   if substr(dequote(person), 1, 1) = "'" then person = 
+substr(dequote(person), 2);
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Beginning execution.
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Parameter VARNAME has value Login
+SYMBOLGEN:  Macro variable VARNAME resolves to Login
+SYMBOLGEN:  Macro variable VARNAME resolves to Login
+SYMBOLGEN:  Macro variable VARNAME resolves to Login
+MPRINT(STRIPLEADINGSINGLEQUOTE):   if substr(dequote(Login), 1, 1) = "'" then Login = 
+substr(dequote(Login), 2);
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Beginning execution.
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Parameter VARNAME has value appUserName
+SYMBOLGEN:  Macro variable VARNAME resolves to appUserName
+SYMBOLGEN:  Macro variable VARNAME resolves to appUserName
+SYMBOLGEN:  Macro variable VARNAME resolves to appUserName
+MPRINT(STRIPLEADINGSINGLEQUOTE):   if substr(dequote(appUserName), 1, 1) = "'" then appUserName = 
+substr(dequote(appUserName), 2);
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MPRINT(READMONTHLY):   if substr(dequote(NumLogins_Str), 1, 1) = "'" then NumLogins = 
+put(substr(dequote(NumLogins_Str), 2), 6.0);
+MPRINT(READMONTHLY):   else NumLogins = put(dequote(NumLogins_Str), 6.0);
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Beginning execution.
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Parameter VARNAME has value LastLogin_str
+SYMBOLGEN:  Macro variable VARNAME resolves to LastLogin_str
+SYMBOLGEN:  Macro variable VARNAME resolves to LastLogin_str
+SYMBOLGEN:  Macro variable VARNAME resolves to LastLogin_str
+MPRINT(STRIPLEADINGSINGLEQUOTE):   if substr(dequote(LastLogin_str), 1, 1) = "'" then LastLogin_str 
+= substr(dequote(LastLogin_str), 2);
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Ending execution.
+The SAS System
+
+MPRINT(READMONTHLY):  ;
+MPRINT(READMONTHLY):   * put 'LastLogin_str: ' LastLogin_str;
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Beginning execution.
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Parameter VARNAME has value LastLoginISO8601_str
+SYMBOLGEN:  Macro variable VARNAME resolves to LastLoginISO8601_str
+SYMBOLGEN:  Macro variable VARNAME resolves to LastLoginISO8601_str
+SYMBOLGEN:  Macro variable VARNAME resolves to LastLoginISO8601_str
+MPRINT(STRIPLEADINGSINGLEQUOTE):   if substr(dequote(LastLoginISO8601_str), 1, 1) = "'" then 
+LastLoginISO8601_str = substr(dequote(LastLoginISO8601_str), 2);
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MPRINT(READMONTHLY):   * put 'LastLoginISO8601_str: ' LastLoginISO8601_str;
+MPRINT(READMONTHLY):   datepart = scan(LastLogin_str, 1, ' ');
+MPRINT(READMONTHLY):   timepart = scan(LastLogin_str, 2, ' ');
+MPRINT(READMONTHLY):   monp = put(scan(datepart, 1, '/'), 2.0);
+MPRINT(READMONTHLY):   dayp = put(scan(datepart, 2, '/'), 2.0);
+MPRINT(READMONTHLY):   yearp = put(scan(datepart, 3, '/'), 2.0) + 2000;
+MPRINT(READMONTHLY):   hourp = put(scan(timepart, 1, ':'), 2.0);
+MPRINT(READMONTHLY):   if index(LastLogin_str, ' PM ') > 0 then do;
+MPRINT(READMONTHLY):   if hourp < 12 then hourp = hourp + 12;
+MPRINT(READMONTHLY):   end;
+MPRINT(READMONTHLY):   else if index(LastLogin_str, ' AM ') > 0 then do;
+MPRINT(READMONTHLY):   if hourp = 12 then hourp = 0;
+MPRINT(READMONTHLY):   end;
+MPRINT(READMONTHLY):   minp = put(scan(timepart, 2, ':'), 2.0);
+MPRINT(READMONTHLY):   secp = put(scan(timepart, 3, ':'), 2.0);
+MPRINT(READMONTHLY):   LastLogin = dhms(mdy(monp, dayp, yearp), hourp, minp, secp);
+MPRINT(READMONTHLY):   datepart = scan(LastLoginISO8601_str, 1, 'T');
+MPRINT(READMONTHLY):   timepart = scan(scan(LastLoginISO8601_str, 2, 'T'), 1, '.');
+MPRINT(READMONTHLY):   yearp = put(scan(datepart, 1, '-'), 4.0);
+MPRINT(READMONTHLY):   monp = put(scan(datepart, 2, '-'), 2.0);
+MPRINT(READMONTHLY):   dayp = put(scan(datepart, 3, '-'), 2.0);
+MPRINT(READMONTHLY):   hourp = put(scan(timepart, 1, ':'), 2.0);
+MPRINT(READMONTHLY):   minp = put(scan(timepart, 2, ':'), 2.0);
+MPRINT(READMONTHLY):   secp = put(scan(timepart, 3, ':'), 2.0);
+MPRINT(READMONTHLY):   LastLoginISO8601 = dhms(mdy(monp, dayp, yearp), hourp, minp, secp);
+SYMBOLGEN:  Macro variable MONYEAR resolves to Jun2023
+MPRINT(READMONTHLY):   monthYear = "Jun2023";
+MPRINT(READMONTHLY):   * member = "&ST.";
+MPRINT(READMONTHLY):   drop NumLogins_Str LastLoginISO8601_str LastLogin_str monp dayp yearp hourp 
+minp secp datepart timepart;
+MPRINT(READMONTHLY):   run;
+
+NOTE: Character values have been converted to numeric values at the places given by: 
+      (Line):(Column).
+      246:204   246:14    246:77    246:120   246:164   246:215   246:194   246:237   246:202
+      246:245   246:36    246:80    246:123   246:166   
+NOTE: The infile INMONFYL is:
+      
+      Filename=C:\Users\Donald Murray\OneDrive - Smarter Balanced UCSC\T4T 
+      Summary\Jun2023\ApplicationUsageReportNV.csv,
+      RECFM=V,LRECL=32767,File Size (bytes)=5367,
+      Last Modified=06Jul2023:16:20:40,
+      Create Time=06Jul2023:22:19:00
+The SAS System
+
+
+NOTE: 42 records were read from the infile INMONFYL.
+      The minimum record length was 118.
+      The maximum record length was 153.
+NOTE: The data set WORK.MNTHLY has 42 observations and 7 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+MLOGIC(SETT4T):  Beginning execution.
+MPRINT(SETT4T):   libname t4t postgres
+MLOGIC(CONT4T):  Beginning execution.
+MPRINT(CONT4T):   server
+MLOGIC(CONT4T):  Ending execution.
+MPRINT(SETT4T):  ="analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com" 
+port=5432 database=t4t user=dmurray 
+password="{SAS004}70C77B5C28AB1C0D08B92DB91E465FE4E886F34B598E14AF";
+NOTE: Libref T4T was successfully assigned as follows: 
+      Engine:        POSTGRES 
+      Physical Name: analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com
+MLOGIC(SETT4T):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MPRINT(READMONTHLY):   proc sql;
+MPRINT(READMONTHLY):   create table monthly as select a.*, b.state as member from Mnthly as a, 
+t4t.total_logins as b where upcase(a.Login) = upcase(b.email) ;
+NOTE: Table WORK.MONTHLY created, with 42 rows and 8 columns.
+
+MPRINT(READMONTHLY):   quit;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           1.81 seconds
+      cpu time            0.29 seconds
+      
+
+SYMBOLGEN:  Macro variable ST resolves to NV
+MLOGIC(READMONTHLY):  %IF condition %eval("&ST." = "ZZ") is FALSE
+MLOGIC(SETT4T):  Beginning execution.
+MPRINT(SETT4T):   libname t4t postgres
+MLOGIC(CONT4T):  Beginning execution.
+MPRINT(CONT4T):   server
+MLOGIC(CONT4T):  Ending execution.
+MPRINT(SETT4T):  ="analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com" 
+port=5432 database=t4t user=dmurray 
+password="{SAS004}70C77B5C28AB1C0D08B92DB91E465FE4E886F34B598E14AF";
+NOTE: Libref T4T was successfully assigned as follows: 
+      Engine:        POSTGRES 
+      Physical Name: analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com
+MLOGIC(SETT4T):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MPRINT(READMONTHLY):   proc sql;
+MPRINT(READMONTHLY):   Title "Retrieve max aur_id value from t4t.app_use_rept.";
+MPRINT(READMONTHLY):   select max(aur_id) into :lastindx from t4t.app_use_rept;
+MPRINT(READMONTHLY):   quit;
+NOTE: The PROCEDURE SQL printed page 33.
+The SAS System
+
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.71 seconds
+      cpu time            0.03 seconds
+      
+
+MPRINT(READMONTHLY):   data Monthly2;
+MPRINT(READMONTHLY):   format indx 6.0;
+MPRINT(READMONTHLY):   set monthly;
+SYMBOLGEN:  Macro variable LASTINDX resolves to      211326
+MPRINT(READMONTHLY):   indx = _n_ + 211326;
+MPRINT(READMONTHLY):   run;
+
+NOTE: There were 42 observations read from the data set WORK.MONTHLY.
+NOTE: The data set WORK.MONTHLY2 has 42 observations and 9 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.02 seconds
+      cpu time            0.01 seconds
+      
+
+MLOGIC(GETSNOW):  Beginning execution.
+MLOGIC(GETSNOW):  %GLOBAL  NOW
+MLOGIC(GETSNOW):  %LET (variable name is TIME)
+MLOGIC(GETSNOW):  %LET (variable name is DATE)
+MLOGIC(GETSNOW):  %LET (variable name is NOW)
+SYMBOLGEN:  Macro variable DATE resolves to 06JUL2023
+SYMBOLGEN:  Macro variable TIME resolves to 16:35
+MLOGIC(GETSNOW):  Ending execution.
+MPRINT(READMONTHLY):  ;
+SYMBOLGEN:  Macro variable ST resolves to NV
+SYMBOLGEN:  Macro variable NOW resolves to 06JUL2023 16:35
+MPRINT(READMONTHLY):   Title "Quick look at Monthly data for NV [06JUL2023 16:35]";
+MPRINT(READMONTHLY):   proc print data=Monthly2 (obs=9);
+MPRINT(READMONTHLY):   run;
+
+NOTE: There were 9 observations read from the data set WORK.MONTHLY2.
+NOTE: The PROCEDURE PRINT printed page 34.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+SYMBOLGEN:  Macro variable INSRT resolves to 1
+MLOGIC(READMONTHLY):  %IF condition %eval(&insrt. = 1) is TRUE
+MLOGIC(SETT4T):  Beginning execution.
+MPRINT(SETT4T):   libname t4t postgres
+MLOGIC(CONT4T):  Beginning execution.
+MPRINT(CONT4T):   server
+MLOGIC(CONT4T):  Ending execution.
+MPRINT(SETT4T):  ="analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com" 
+port=5432 database=t4t user=dmurray 
+password="{SAS004}70C77B5C28AB1C0D08B92DB91E465FE4E886F34B598E14AF";
+NOTE: Libref T4T was successfully assigned as follows: 
+      Engine:        POSTGRES 
+      Physical Name: analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com
+The SAS System
+
+MLOGIC(SETT4T):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MPRINT(READMONTHLY):   proc sql;
+MPRINT(READMONTHLY):   insert into t4t.app_use_rept select indx, person, Login, appUserName, 
+NumLogins, LastLogin, LastLoginISO8601, monthYear, member from Monthly2;
+NOTE: 42 rows were inserted into T4T.APP_USE_REPT.
+
+MPRINT(READMONTHLY):   quit;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           4.55 seconds
+      cpu time            0.04 seconds
+      
+
+MLOGIC(READMONTHLY):  Ending execution.
+MLOGIC(READMONTHLY):  Beginning execution.
+MLOGIC(READMONTHLY):  Parameter ST has value OR
+MLOGIC(READMONTHLY):  Parameter INSRT has value 1
+SYMBOLGEN:  Macro variable SRCFLDR resolves to C:\Users\Donald Murray\OneDrive - Smarter Balanced 
+            UCSC\T4T Summary
+SYMBOLGEN:  Macro variable MONYEAR resolves to Jun2023
+SYMBOLGEN:  Macro variable ST resolves to OR
+MPRINT(READMONTHLY):   filename inMonFyl "C:\Users\Donald Murray\OneDrive - Smarter Balanced 
+UCSC\T4T Summary\Jun2023\ApplicationUsageReportOR.csv";
+MPRINT(READMONTHLY):   data Mnthly;
+MPRINT(READMONTHLY):   format person $32. Login $64. appUserName $64. NumLogins_Str $6. NumLogins 
+6.0 LastLogin_str $28. LastLogin DateTime20. LastLoginISO8601_str $30. LastLoginISO8601 E8601DT19. 
+monthYear $8. monp 3.0 dayp 3.0 yearp 4.0 hourp 3.0 minp 3.0 secp 3.0 datepart $10. timepart $8.;
+MPRINT(READMONTHLY):   infile inMonFyl firstobs = 2 dlm = ',';
+MPRINT(READMONTHLY):   input person $ Login $ appUserName $ NumLogins_Str $ LastLogin_str $ 
+LastLoginISO8601_str $ ;
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Beginning execution.
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Parameter VARNAME has value person
+SYMBOLGEN:  Macro variable VARNAME resolves to person
+SYMBOLGEN:  Macro variable VARNAME resolves to person
+SYMBOLGEN:  Macro variable VARNAME resolves to person
+MPRINT(STRIPLEADINGSINGLEQUOTE):   if substr(dequote(person), 1, 1) = "'" then person = 
+substr(dequote(person), 2);
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Beginning execution.
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Parameter VARNAME has value Login
+SYMBOLGEN:  Macro variable VARNAME resolves to Login
+SYMBOLGEN:  Macro variable VARNAME resolves to Login
+SYMBOLGEN:  Macro variable VARNAME resolves to Login
+MPRINT(STRIPLEADINGSINGLEQUOTE):   if substr(dequote(Login), 1, 1) = "'" then Login = 
+substr(dequote(Login), 2);
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Beginning execution.
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Parameter VARNAME has value appUserName
+SYMBOLGEN:  Macro variable VARNAME resolves to appUserName
+SYMBOLGEN:  Macro variable VARNAME resolves to appUserName
+SYMBOLGEN:  Macro variable VARNAME resolves to appUserName
+MPRINT(STRIPLEADINGSINGLEQUOTE):   if substr(dequote(appUserName), 1, 1) = "'" then appUserName = 
+The SAS System
+
+substr(dequote(appUserName), 2);
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MPRINT(READMONTHLY):   if substr(dequote(NumLogins_Str), 1, 1) = "'" then NumLogins = 
+put(substr(dequote(NumLogins_Str), 2), 6.0);
+MPRINT(READMONTHLY):   else NumLogins = put(dequote(NumLogins_Str), 6.0);
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Beginning execution.
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Parameter VARNAME has value LastLogin_str
+SYMBOLGEN:  Macro variable VARNAME resolves to LastLogin_str
+SYMBOLGEN:  Macro variable VARNAME resolves to LastLogin_str
+SYMBOLGEN:  Macro variable VARNAME resolves to LastLogin_str
+MPRINT(STRIPLEADINGSINGLEQUOTE):   if substr(dequote(LastLogin_str), 1, 1) = "'" then LastLogin_str 
+= substr(dequote(LastLogin_str), 2);
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MPRINT(READMONTHLY):   * put 'LastLogin_str: ' LastLogin_str;
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Beginning execution.
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Parameter VARNAME has value LastLoginISO8601_str
+SYMBOLGEN:  Macro variable VARNAME resolves to LastLoginISO8601_str
+SYMBOLGEN:  Macro variable VARNAME resolves to LastLoginISO8601_str
+SYMBOLGEN:  Macro variable VARNAME resolves to LastLoginISO8601_str
+MPRINT(STRIPLEADINGSINGLEQUOTE):   if substr(dequote(LastLoginISO8601_str), 1, 1) = "'" then 
+LastLoginISO8601_str = substr(dequote(LastLoginISO8601_str), 2);
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MPRINT(READMONTHLY):   * put 'LastLoginISO8601_str: ' LastLoginISO8601_str;
+MPRINT(READMONTHLY):   datepart = scan(LastLogin_str, 1, ' ');
+MPRINT(READMONTHLY):   timepart = scan(LastLogin_str, 2, ' ');
+MPRINT(READMONTHLY):   monp = put(scan(datepart, 1, '/'), 2.0);
+MPRINT(READMONTHLY):   dayp = put(scan(datepart, 2, '/'), 2.0);
+MPRINT(READMONTHLY):   yearp = put(scan(datepart, 3, '/'), 2.0) + 2000;
+MPRINT(READMONTHLY):   hourp = put(scan(timepart, 1, ':'), 2.0);
+MPRINT(READMONTHLY):   if index(LastLogin_str, ' PM ') > 0 then do;
+MPRINT(READMONTHLY):   if hourp < 12 then hourp = hourp + 12;
+MPRINT(READMONTHLY):   end;
+MPRINT(READMONTHLY):   else if index(LastLogin_str, ' AM ') > 0 then do;
+MPRINT(READMONTHLY):   if hourp = 12 then hourp = 0;
+MPRINT(READMONTHLY):   end;
+MPRINT(READMONTHLY):   minp = put(scan(timepart, 2, ':'), 2.0);
+MPRINT(READMONTHLY):   secp = put(scan(timepart, 3, ':'), 2.0);
+MPRINT(READMONTHLY):   LastLogin = dhms(mdy(monp, dayp, yearp), hourp, minp, secp);
+MPRINT(READMONTHLY):   datepart = scan(LastLoginISO8601_str, 1, 'T');
+MPRINT(READMONTHLY):   timepart = scan(scan(LastLoginISO8601_str, 2, 'T'), 1, '.');
+MPRINT(READMONTHLY):   yearp = put(scan(datepart, 1, '-'), 4.0);
+MPRINT(READMONTHLY):   monp = put(scan(datepart, 2, '-'), 2.0);
+MPRINT(READMONTHLY):   dayp = put(scan(datepart, 3, '-'), 2.0);
+MPRINT(READMONTHLY):   hourp = put(scan(timepart, 1, ':'), 2.0);
+MPRINT(READMONTHLY):   minp = put(scan(timepart, 2, ':'), 2.0);
+MPRINT(READMONTHLY):   secp = put(scan(timepart, 3, ':'), 2.0);
+MPRINT(READMONTHLY):   LastLoginISO8601 = dhms(mdy(monp, dayp, yearp), hourp, minp, secp);
+SYMBOLGEN:  Macro variable MONYEAR resolves to Jun2023
+MPRINT(READMONTHLY):   monthYear = "Jun2023";
+MPRINT(READMONTHLY):   * member = "&ST.";
+MPRINT(READMONTHLY):   drop NumLogins_Str LastLoginISO8601_str LastLogin_str monp dayp yearp hourp 
+The SAS System
+
+minp secp datepart timepart;
+MPRINT(READMONTHLY):   run;
+
+NOTE: Character values have been converted to numeric values at the places given by: 
+      (Line):(Column).
+      246:204   246:14    246:77    246:120   246:164   246:215   246:194   246:237   246:202
+      246:245   246:36    246:80    246:123   246:166   
+NOTE: The infile INMONFYL is:
+      
+      Filename=C:\Users\Donald Murray\OneDrive - Smarter Balanced UCSC\T4T 
+      Summary\Jun2023\ApplicationUsageReportOR.csv,
+      RECFM=V,LRECL=32767,File Size (bytes)=16706,
+      Last Modified=06Jul2023:16:20:40,
+      Create Time=06Jul2023:22:19:00
+
+NOTE: 122 records were read from the infile INMONFYL.
+      The minimum record length was 105.
+      The maximum record length was 169.
+NOTE: The data set WORK.MNTHLY has 122 observations and 7 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+MLOGIC(SETT4T):  Beginning execution.
+MPRINT(SETT4T):   libname t4t postgres
+MLOGIC(CONT4T):  Beginning execution.
+MPRINT(CONT4T):   server
+MLOGIC(CONT4T):  Ending execution.
+MPRINT(SETT4T):  ="analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com" 
+port=5432 database=t4t user=dmurray 
+password="{SAS004}70C77B5C28AB1C0D08B92DB91E465FE4E886F34B598E14AF";
+NOTE: Libref T4T was successfully assigned as follows: 
+      Engine:        POSTGRES 
+      Physical Name: analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com
+MLOGIC(SETT4T):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MPRINT(READMONTHLY):   proc sql;
+MPRINT(READMONTHLY):   create table monthly as select a.*, b.state as member from Mnthly as a, 
+t4t.total_logins as b where upcase(a.Login) = upcase(b.email) ;
+NOTE: Table WORK.MONTHLY created, with 119 rows and 8 columns.
+
+MPRINT(READMONTHLY):   quit;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           1.82 seconds
+      cpu time            0.32 seconds
+      
+
+SYMBOLGEN:  Macro variable ST resolves to OR
+MLOGIC(READMONTHLY):  %IF condition %eval("&ST." = "ZZ") is FALSE
+MLOGIC(SETT4T):  Beginning execution.
+MPRINT(SETT4T):   libname t4t postgres
+MLOGIC(CONT4T):  Beginning execution.
+MPRINT(CONT4T):   server
+The SAS System
+
+MLOGIC(CONT4T):  Ending execution.
+MPRINT(SETT4T):  ="analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com" 
+port=5432 database=t4t user=dmurray 
+password="{SAS004}70C77B5C28AB1C0D08B92DB91E465FE4E886F34B598E14AF";
+NOTE: Libref T4T was successfully assigned as follows: 
+      Engine:        POSTGRES 
+      Physical Name: analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com
+MLOGIC(SETT4T):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MPRINT(READMONTHLY):   proc sql;
+MPRINT(READMONTHLY):   Title "Retrieve max aur_id value from t4t.app_use_rept.";
+MPRINT(READMONTHLY):   select max(aur_id) into :lastindx from t4t.app_use_rept;
+MPRINT(READMONTHLY):   quit;
+NOTE: The PROCEDURE SQL printed page 35.
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.68 seconds
+      cpu time            0.01 seconds
+      
+
+MPRINT(READMONTHLY):   data Monthly2;
+MPRINT(READMONTHLY):   format indx 6.0;
+MPRINT(READMONTHLY):   set monthly;
+SYMBOLGEN:  Macro variable LASTINDX resolves to      211368
+MPRINT(READMONTHLY):   indx = _n_ + 211368;
+MPRINT(READMONTHLY):   run;
+
+NOTE: There were 119 observations read from the data set WORK.MONTHLY.
+NOTE: The data set WORK.MONTHLY2 has 119 observations and 9 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MLOGIC(GETSNOW):  Beginning execution.
+MLOGIC(GETSNOW):  %GLOBAL  NOW
+MLOGIC(GETSNOW):  %LET (variable name is TIME)
+MLOGIC(GETSNOW):  %LET (variable name is DATE)
+MLOGIC(GETSNOW):  %LET (variable name is NOW)
+SYMBOLGEN:  Macro variable DATE resolves to 06JUL2023
+SYMBOLGEN:  Macro variable TIME resolves to 16:35
+MLOGIC(GETSNOW):  Ending execution.
+MPRINT(READMONTHLY):  ;
+SYMBOLGEN:  Macro variable ST resolves to OR
+SYMBOLGEN:  Macro variable NOW resolves to 06JUL2023 16:35
+MPRINT(READMONTHLY):   Title "Quick look at Monthly data for OR [06JUL2023 16:35]";
+MPRINT(READMONTHLY):   proc print data=Monthly2 (obs=9);
+MPRINT(READMONTHLY):   run;
+
+NOTE: There were 9 observations read from the data set WORK.MONTHLY2.
+NOTE: The PROCEDURE PRINT printed page 36.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+The SAS System
+
+
+SYMBOLGEN:  Macro variable INSRT resolves to 1
+MLOGIC(READMONTHLY):  %IF condition %eval(&insrt. = 1) is TRUE
+MLOGIC(SETT4T):  Beginning execution.
+MPRINT(SETT4T):   libname t4t postgres
+MLOGIC(CONT4T):  Beginning execution.
+MPRINT(CONT4T):   server
+MLOGIC(CONT4T):  Ending execution.
+MPRINT(SETT4T):  ="analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com" 
+port=5432 database=t4t user=dmurray 
+password="{SAS004}70C77B5C28AB1C0D08B92DB91E465FE4E886F34B598E14AF";
+NOTE: Libref T4T was successfully assigned as follows: 
+      Engine:        POSTGRES 
+      Physical Name: analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com
+MLOGIC(SETT4T):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MPRINT(READMONTHLY):   proc sql;
+MPRINT(READMONTHLY):   insert into t4t.app_use_rept select indx, person, Login, appUserName, 
+NumLogins, LastLogin, LastLoginISO8601, monthYear, member from Monthly2;
+NOTE: 119 rows were inserted into T4T.APP_USE_REPT.
+
+MPRINT(READMONTHLY):   quit;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           10.17 seconds
+      cpu time            0.01 seconds
+      
+
+MLOGIC(READMONTHLY):  Ending execution.
+247        	%ReadMonthly(SD, 1);		%ReadMonthly(VI, 1);
+MLOGIC(READMONTHLY):  Beginning execution.
+MLOGIC(READMONTHLY):  Parameter ST has value SD
+MLOGIC(READMONTHLY):  Parameter INSRT has value 1
+SYMBOLGEN:  Macro variable SRCFLDR resolves to C:\Users\Donald Murray\OneDrive - Smarter Balanced 
+            UCSC\T4T Summary
+SYMBOLGEN:  Macro variable MONYEAR resolves to Jun2023
+SYMBOLGEN:  Macro variable ST resolves to SD
+MPRINT(READMONTHLY):   filename inMonFyl "C:\Users\Donald Murray\OneDrive - Smarter Balanced 
+UCSC\T4T Summary\Jun2023\ApplicationUsageReportSD.csv";
+MPRINT(READMONTHLY):   data Mnthly;
+MPRINT(READMONTHLY):   format person $32. Login $64. appUserName $64. NumLogins_Str $6. NumLogins 
+6.0 LastLogin_str $28. LastLogin DateTime20. LastLoginISO8601_str $30. LastLoginISO8601 E8601DT19. 
+monthYear $8. monp 3.0 dayp 3.0 yearp 4.0 hourp 3.0 minp 3.0 secp 3.0 datepart $10. timepart $8.;
+MPRINT(READMONTHLY):   infile inMonFyl firstobs = 2 dlm = ',';
+MPRINT(READMONTHLY):   input person $ Login $ appUserName $ NumLogins_Str $ LastLogin_str $ 
+LastLoginISO8601_str $ ;
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Beginning execution.
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Parameter VARNAME has value person
+SYMBOLGEN:  Macro variable VARNAME resolves to person
+SYMBOLGEN:  Macro variable VARNAME resolves to person
+SYMBOLGEN:  Macro variable VARNAME resolves to person
+MPRINT(STRIPLEADINGSINGLEQUOTE):   if substr(dequote(person), 1, 1) = "'" then person = 
+substr(dequote(person), 2);
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Ending execution.
+MPRINT(READMONTHLY):  ;
+The SAS System
+
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Beginning execution.
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Parameter VARNAME has value Login
+SYMBOLGEN:  Macro variable VARNAME resolves to Login
+SYMBOLGEN:  Macro variable VARNAME resolves to Login
+SYMBOLGEN:  Macro variable VARNAME resolves to Login
+MPRINT(STRIPLEADINGSINGLEQUOTE):   if substr(dequote(Login), 1, 1) = "'" then Login = 
+substr(dequote(Login), 2);
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Beginning execution.
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Parameter VARNAME has value appUserName
+SYMBOLGEN:  Macro variable VARNAME resolves to appUserName
+SYMBOLGEN:  Macro variable VARNAME resolves to appUserName
+SYMBOLGEN:  Macro variable VARNAME resolves to appUserName
+MPRINT(STRIPLEADINGSINGLEQUOTE):   if substr(dequote(appUserName), 1, 1) = "'" then appUserName = 
+substr(dequote(appUserName), 2);
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MPRINT(READMONTHLY):   if substr(dequote(NumLogins_Str), 1, 1) = "'" then NumLogins = 
+put(substr(dequote(NumLogins_Str), 2), 6.0);
+MPRINT(READMONTHLY):   else NumLogins = put(dequote(NumLogins_Str), 6.0);
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Beginning execution.
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Parameter VARNAME has value LastLogin_str
+SYMBOLGEN:  Macro variable VARNAME resolves to LastLogin_str
+SYMBOLGEN:  Macro variable VARNAME resolves to LastLogin_str
+SYMBOLGEN:  Macro variable VARNAME resolves to LastLogin_str
+MPRINT(STRIPLEADINGSINGLEQUOTE):   if substr(dequote(LastLogin_str), 1, 1) = "'" then LastLogin_str 
+= substr(dequote(LastLogin_str), 2);
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MPRINT(READMONTHLY):   * put 'LastLogin_str: ' LastLogin_str;
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Beginning execution.
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Parameter VARNAME has value LastLoginISO8601_str
+SYMBOLGEN:  Macro variable VARNAME resolves to LastLoginISO8601_str
+SYMBOLGEN:  Macro variable VARNAME resolves to LastLoginISO8601_str
+SYMBOLGEN:  Macro variable VARNAME resolves to LastLoginISO8601_str
+MPRINT(STRIPLEADINGSINGLEQUOTE):   if substr(dequote(LastLoginISO8601_str), 1, 1) = "'" then 
+LastLoginISO8601_str = substr(dequote(LastLoginISO8601_str), 2);
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MPRINT(READMONTHLY):   * put 'LastLoginISO8601_str: ' LastLoginISO8601_str;
+MPRINT(READMONTHLY):   datepart = scan(LastLogin_str, 1, ' ');
+MPRINT(READMONTHLY):   timepart = scan(LastLogin_str, 2, ' ');
+MPRINT(READMONTHLY):   monp = put(scan(datepart, 1, '/'), 2.0);
+MPRINT(READMONTHLY):   dayp = put(scan(datepart, 2, '/'), 2.0);
+MPRINT(READMONTHLY):   yearp = put(scan(datepart, 3, '/'), 2.0) + 2000;
+MPRINT(READMONTHLY):   hourp = put(scan(timepart, 1, ':'), 2.0);
+MPRINT(READMONTHLY):   if index(LastLogin_str, ' PM ') > 0 then do;
+MPRINT(READMONTHLY):   if hourp < 12 then hourp = hourp + 12;
+MPRINT(READMONTHLY):   end;
+MPRINT(READMONTHLY):   else if index(LastLogin_str, ' AM ') > 0 then do;
+MPRINT(READMONTHLY):   if hourp = 12 then hourp = 0;
+MPRINT(READMONTHLY):   end;
+MPRINT(READMONTHLY):   minp = put(scan(timepart, 2, ':'), 2.0);
+The SAS System
+
+MPRINT(READMONTHLY):   secp = put(scan(timepart, 3, ':'), 2.0);
+MPRINT(READMONTHLY):   LastLogin = dhms(mdy(monp, dayp, yearp), hourp, minp, secp);
+MPRINT(READMONTHLY):   datepart = scan(LastLoginISO8601_str, 1, 'T');
+MPRINT(READMONTHLY):   timepart = scan(scan(LastLoginISO8601_str, 2, 'T'), 1, '.');
+MPRINT(READMONTHLY):   yearp = put(scan(datepart, 1, '-'), 4.0);
+MPRINT(READMONTHLY):   monp = put(scan(datepart, 2, '-'), 2.0);
+MPRINT(READMONTHLY):   dayp = put(scan(datepart, 3, '-'), 2.0);
+MPRINT(READMONTHLY):   hourp = put(scan(timepart, 1, ':'), 2.0);
+MPRINT(READMONTHLY):   minp = put(scan(timepart, 2, ':'), 2.0);
+MPRINT(READMONTHLY):   secp = put(scan(timepart, 3, ':'), 2.0);
+MPRINT(READMONTHLY):   LastLoginISO8601 = dhms(mdy(monp, dayp, yearp), hourp, minp, secp);
+SYMBOLGEN:  Macro variable MONYEAR resolves to Jun2023
+MPRINT(READMONTHLY):   monthYear = "Jun2023";
+MPRINT(READMONTHLY):   * member = "&ST.";
+MPRINT(READMONTHLY):   drop NumLogins_Str LastLoginISO8601_str LastLogin_str monp dayp yearp hourp 
+minp secp datepart timepart;
+MPRINT(READMONTHLY):   run;
+
+NOTE: Character values have been converted to numeric values at the places given by: 
+      (Line):(Column).
+      247:204   247:14    247:77    247:120   247:164   247:215   247:194   247:237   247:202
+      247:245   247:36    247:80    247:123   247:166   
+NOTE: The infile INMONFYL is:
+      
+      Filename=C:\Users\Donald Murray\OneDrive - Smarter Balanced UCSC\T4T 
+      Summary\Jun2023\ApplicationUsageReportSD.csv,
+      RECFM=V,LRECL=32767,File Size (bytes)=6941,
+      Last Modified=06Jul2023:16:20:40,
+      Create Time=06Jul2023:22:19:00
+
+NOTE: 52 records were read from the infile INMONFYL.
+      The minimum record length was 116.
+      The maximum record length was 157.
+NOTE: The data set WORK.MNTHLY has 52 observations and 7 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+MLOGIC(SETT4T):  Beginning execution.
+MPRINT(SETT4T):   libname t4t postgres
+MLOGIC(CONT4T):  Beginning execution.
+MPRINT(CONT4T):   server
+MLOGIC(CONT4T):  Ending execution.
+MPRINT(SETT4T):  ="analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com" 
+port=5432 database=t4t user=dmurray 
+password="{SAS004}70C77B5C28AB1C0D08B92DB91E465FE4E886F34B598E14AF";
+NOTE: Libref T4T was successfully assigned as follows: 
+      Engine:        POSTGRES 
+      Physical Name: analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com
+MLOGIC(SETT4T):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MPRINT(READMONTHLY):   proc sql;
+MPRINT(READMONTHLY):   create table monthly as select a.*, b.state as member from Mnthly as a, 
+The SAS System
+
+t4t.total_logins as b where upcase(a.Login) = upcase(b.email) ;
+NOTE: Table WORK.MONTHLY created, with 52 rows and 8 columns.
+
+MPRINT(READMONTHLY):   quit;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           3.51 seconds
+      cpu time            0.40 seconds
+      
+
+SYMBOLGEN:  Macro variable ST resolves to SD
+MLOGIC(READMONTHLY):  %IF condition %eval("&ST." = "ZZ") is FALSE
+MLOGIC(SETT4T):  Beginning execution.
+MPRINT(SETT4T):   libname t4t postgres
+MLOGIC(CONT4T):  Beginning execution.
+MPRINT(CONT4T):   server
+MLOGIC(CONT4T):  Ending execution.
+MPRINT(SETT4T):  ="analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com" 
+port=5432 database=t4t user=dmurray 
+password="{SAS004}70C77B5C28AB1C0D08B92DB91E465FE4E886F34B598E14AF";
+NOTE: Libref T4T was successfully assigned as follows: 
+      Engine:        POSTGRES 
+      Physical Name: analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com
+MLOGIC(SETT4T):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MPRINT(READMONTHLY):   proc sql;
+MPRINT(READMONTHLY):   Title "Retrieve max aur_id value from t4t.app_use_rept.";
+MPRINT(READMONTHLY):   select max(aur_id) into :lastindx from t4t.app_use_rept;
+MPRINT(READMONTHLY):   quit;
+NOTE: The PROCEDURE SQL printed page 37.
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.73 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(READMONTHLY):   data Monthly2;
+MPRINT(READMONTHLY):   format indx 6.0;
+MPRINT(READMONTHLY):   set monthly;
+SYMBOLGEN:  Macro variable LASTINDX resolves to      211487
+MPRINT(READMONTHLY):   indx = _n_ + 211487;
+MPRINT(READMONTHLY):   run;
+
+NOTE: There were 52 observations read from the data set WORK.MONTHLY.
+NOTE: The data set WORK.MONTHLY2 has 52 observations and 9 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MLOGIC(GETSNOW):  Beginning execution.
+MLOGIC(GETSNOW):  %GLOBAL  NOW
+MLOGIC(GETSNOW):  %LET (variable name is TIME)
+MLOGIC(GETSNOW):  %LET (variable name is DATE)
+MLOGIC(GETSNOW):  %LET (variable name is NOW)
+SYMBOLGEN:  Macro variable DATE resolves to 06JUL2023
+The SAS System
+
+SYMBOLGEN:  Macro variable TIME resolves to 16:35
+MLOGIC(GETSNOW):  Ending execution.
+MPRINT(READMONTHLY):  ;
+SYMBOLGEN:  Macro variable ST resolves to SD
+SYMBOLGEN:  Macro variable NOW resolves to 06JUL2023 16:35
+MPRINT(READMONTHLY):   Title "Quick look at Monthly data for SD [06JUL2023 16:35]";
+MPRINT(READMONTHLY):   proc print data=Monthly2 (obs=9);
+MPRINT(READMONTHLY):   run;
+
+NOTE: There were 9 observations read from the data set WORK.MONTHLY2.
+NOTE: The PROCEDURE PRINT printed page 38.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+SYMBOLGEN:  Macro variable INSRT resolves to 1
+MLOGIC(READMONTHLY):  %IF condition %eval(&insrt. = 1) is TRUE
+MLOGIC(SETT4T):  Beginning execution.
+MPRINT(SETT4T):   libname t4t postgres
+MLOGIC(CONT4T):  Beginning execution.
+MPRINT(CONT4T):   server
+MLOGIC(CONT4T):  Ending execution.
+MPRINT(SETT4T):  ="analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com" 
+port=5432 database=t4t user=dmurray 
+password="{SAS004}70C77B5C28AB1C0D08B92DB91E465FE4E886F34B598E14AF";
+NOTE: Libref T4T was successfully assigned as follows: 
+      Engine:        POSTGRES 
+      Physical Name: analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com
+MLOGIC(SETT4T):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MPRINT(READMONTHLY):   proc sql;
+MPRINT(READMONTHLY):   insert into t4t.app_use_rept select indx, person, Login, appUserName, 
+NumLogins, LastLogin, LastLoginISO8601, monthYear, member from Monthly2;
+NOTE: 52 rows were inserted into T4T.APP_USE_REPT.
+
+MPRINT(READMONTHLY):   quit;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           5.12 seconds
+      cpu time            0.03 seconds
+      
+
+MLOGIC(READMONTHLY):  Ending execution.
+MLOGIC(READMONTHLY):  Beginning execution.
+MLOGIC(READMONTHLY):  Parameter ST has value VI
+MLOGIC(READMONTHLY):  Parameter INSRT has value 1
+SYMBOLGEN:  Macro variable SRCFLDR resolves to C:\Users\Donald Murray\OneDrive - Smarter Balanced 
+            UCSC\T4T Summary
+SYMBOLGEN:  Macro variable MONYEAR resolves to Jun2023
+SYMBOLGEN:  Macro variable ST resolves to VI
+MPRINT(READMONTHLY):   filename inMonFyl "C:\Users\Donald Murray\OneDrive - Smarter Balanced 
+UCSC\T4T Summary\Jun2023\ApplicationUsageReportVI.csv";
+MPRINT(READMONTHLY):   data Mnthly;
+MPRINT(READMONTHLY):   format person $32. Login $64. appUserName $64. NumLogins_Str $6. NumLogins 
+The SAS System
+
+6.0 LastLogin_str $28. LastLogin DateTime20. LastLoginISO8601_str $30. LastLoginISO8601 E8601DT19. 
+monthYear $8. monp 3.0 dayp 3.0 yearp 4.0 hourp 3.0 minp 3.0 secp 3.0 datepart $10. timepart $8.;
+MPRINT(READMONTHLY):   infile inMonFyl firstobs = 2 dlm = ',';
+MPRINT(READMONTHLY):   input person $ Login $ appUserName $ NumLogins_Str $ LastLogin_str $ 
+LastLoginISO8601_str $ ;
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Beginning execution.
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Parameter VARNAME has value person
+SYMBOLGEN:  Macro variable VARNAME resolves to person
+SYMBOLGEN:  Macro variable VARNAME resolves to person
+SYMBOLGEN:  Macro variable VARNAME resolves to person
+MPRINT(STRIPLEADINGSINGLEQUOTE):   if substr(dequote(person), 1, 1) = "'" then person = 
+substr(dequote(person), 2);
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Beginning execution.
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Parameter VARNAME has value Login
+SYMBOLGEN:  Macro variable VARNAME resolves to Login
+SYMBOLGEN:  Macro variable VARNAME resolves to Login
+SYMBOLGEN:  Macro variable VARNAME resolves to Login
+MPRINT(STRIPLEADINGSINGLEQUOTE):   if substr(dequote(Login), 1, 1) = "'" then Login = 
+substr(dequote(Login), 2);
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Beginning execution.
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Parameter VARNAME has value appUserName
+SYMBOLGEN:  Macro variable VARNAME resolves to appUserName
+SYMBOLGEN:  Macro variable VARNAME resolves to appUserName
+SYMBOLGEN:  Macro variable VARNAME resolves to appUserName
+MPRINT(STRIPLEADINGSINGLEQUOTE):   if substr(dequote(appUserName), 1, 1) = "'" then appUserName = 
+substr(dequote(appUserName), 2);
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MPRINT(READMONTHLY):   if substr(dequote(NumLogins_Str), 1, 1) = "'" then NumLogins = 
+put(substr(dequote(NumLogins_Str), 2), 6.0);
+MPRINT(READMONTHLY):   else NumLogins = put(dequote(NumLogins_Str), 6.0);
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Beginning execution.
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Parameter VARNAME has value LastLogin_str
+SYMBOLGEN:  Macro variable VARNAME resolves to LastLogin_str
+SYMBOLGEN:  Macro variable VARNAME resolves to LastLogin_str
+SYMBOLGEN:  Macro variable VARNAME resolves to LastLogin_str
+MPRINT(STRIPLEADINGSINGLEQUOTE):   if substr(dequote(LastLogin_str), 1, 1) = "'" then LastLogin_str 
+= substr(dequote(LastLogin_str), 2);
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MPRINT(READMONTHLY):   * put 'LastLogin_str: ' LastLogin_str;
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Beginning execution.
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Parameter VARNAME has value LastLoginISO8601_str
+SYMBOLGEN:  Macro variable VARNAME resolves to LastLoginISO8601_str
+SYMBOLGEN:  Macro variable VARNAME resolves to LastLoginISO8601_str
+SYMBOLGEN:  Macro variable VARNAME resolves to LastLoginISO8601_str
+MPRINT(STRIPLEADINGSINGLEQUOTE):   if substr(dequote(LastLoginISO8601_str), 1, 1) = "'" then 
+LastLoginISO8601_str = substr(dequote(LastLoginISO8601_str), 2);
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Ending execution.
+MPRINT(READMONTHLY):  ;
+The SAS System
+
+MPRINT(READMONTHLY):   * put 'LastLoginISO8601_str: ' LastLoginISO8601_str;
+MPRINT(READMONTHLY):   datepart = scan(LastLogin_str, 1, ' ');
+MPRINT(READMONTHLY):   timepart = scan(LastLogin_str, 2, ' ');
+MPRINT(READMONTHLY):   monp = put(scan(datepart, 1, '/'), 2.0);
+MPRINT(READMONTHLY):   dayp = put(scan(datepart, 2, '/'), 2.0);
+MPRINT(READMONTHLY):   yearp = put(scan(datepart, 3, '/'), 2.0) + 2000;
+MPRINT(READMONTHLY):   hourp = put(scan(timepart, 1, ':'), 2.0);
+MPRINT(READMONTHLY):   if index(LastLogin_str, ' PM ') > 0 then do;
+MPRINT(READMONTHLY):   if hourp < 12 then hourp = hourp + 12;
+MPRINT(READMONTHLY):   end;
+MPRINT(READMONTHLY):   else if index(LastLogin_str, ' AM ') > 0 then do;
+MPRINT(READMONTHLY):   if hourp = 12 then hourp = 0;
+MPRINT(READMONTHLY):   end;
+MPRINT(READMONTHLY):   minp = put(scan(timepart, 2, ':'), 2.0);
+MPRINT(READMONTHLY):   secp = put(scan(timepart, 3, ':'), 2.0);
+MPRINT(READMONTHLY):   LastLogin = dhms(mdy(monp, dayp, yearp), hourp, minp, secp);
+MPRINT(READMONTHLY):   datepart = scan(LastLoginISO8601_str, 1, 'T');
+MPRINT(READMONTHLY):   timepart = scan(scan(LastLoginISO8601_str, 2, 'T'), 1, '.');
+MPRINT(READMONTHLY):   yearp = put(scan(datepart, 1, '-'), 4.0);
+MPRINT(READMONTHLY):   monp = put(scan(datepart, 2, '-'), 2.0);
+MPRINT(READMONTHLY):   dayp = put(scan(datepart, 3, '-'), 2.0);
+MPRINT(READMONTHLY):   hourp = put(scan(timepart, 1, ':'), 2.0);
+MPRINT(READMONTHLY):   minp = put(scan(timepart, 2, ':'), 2.0);
+MPRINT(READMONTHLY):   secp = put(scan(timepart, 3, ':'), 2.0);
+MPRINT(READMONTHLY):   LastLoginISO8601 = dhms(mdy(monp, dayp, yearp), hourp, minp, secp);
+SYMBOLGEN:  Macro variable MONYEAR resolves to Jun2023
+MPRINT(READMONTHLY):   monthYear = "Jun2023";
+MPRINT(READMONTHLY):   * member = "&ST.";
+MPRINT(READMONTHLY):   drop NumLogins_Str LastLoginISO8601_str LastLogin_str monp dayp yearp hourp 
+minp secp datepart timepart;
+MPRINT(READMONTHLY):   run;
+
+NOTE: Character values have been converted to numeric values at the places given by: 
+      (Line):(Column).
+      247:204   247:14    247:77    247:120   247:164   247:215   247:194   247:237   247:202
+      247:245   247:36    247:80    247:123   247:166   
+NOTE: The infile INMONFYL is:
+      
+      Filename=C:\Users\Donald Murray\OneDrive - Smarter Balanced UCSC\T4T 
+      Summary\Jun2023\ApplicationUsageReportVI.csv,
+      RECFM=V,LRECL=32767,File Size (bytes)=2030,
+      Last Modified=06Jul2023:16:20:40,
+      Create Time=06Jul2023:22:19:00
+
+NOTE: 15 records were read from the infile INMONFYL.
+      The minimum record length was 121.
+      The maximum record length was 139.
+NOTE: The data set WORK.MNTHLY has 15 observations and 7 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MLOGIC(SETT4T):  Beginning execution.
+The SAS System
+
+MPRINT(SETT4T):   libname t4t postgres
+MLOGIC(CONT4T):  Beginning execution.
+MPRINT(CONT4T):   server
+MLOGIC(CONT4T):  Ending execution.
+MPRINT(SETT4T):  ="analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com" 
+port=5432 database=t4t user=dmurray 
+password="{SAS004}70C77B5C28AB1C0D08B92DB91E465FE4E886F34B598E14AF";
+NOTE: Libref T4T was successfully assigned as follows: 
+      Engine:        POSTGRES 
+      Physical Name: analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com
+MLOGIC(SETT4T):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MPRINT(READMONTHLY):   proc sql;
+MPRINT(READMONTHLY):   create table monthly as select a.*, b.state as member from Mnthly as a, 
+t4t.total_logins as b where upcase(a.Login) = upcase(b.email) ;
+NOTE: Table WORK.MONTHLY created, with 15 rows and 8 columns.
+
+MPRINT(READMONTHLY):   quit;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           1.84 seconds
+      cpu time            0.24 seconds
+      
+
+SYMBOLGEN:  Macro variable ST resolves to VI
+MLOGIC(READMONTHLY):  %IF condition %eval("&ST." = "ZZ") is FALSE
+MLOGIC(SETT4T):  Beginning execution.
+MPRINT(SETT4T):   libname t4t postgres
+MLOGIC(CONT4T):  Beginning execution.
+MPRINT(CONT4T):   server
+MLOGIC(CONT4T):  Ending execution.
+MPRINT(SETT4T):  ="analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com" 
+port=5432 database=t4t user=dmurray 
+password="{SAS004}70C77B5C28AB1C0D08B92DB91E465FE4E886F34B598E14AF";
+NOTE: Libref T4T was successfully assigned as follows: 
+      Engine:        POSTGRES 
+      Physical Name: analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com
+MLOGIC(SETT4T):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MPRINT(READMONTHLY):   proc sql;
+MPRINT(READMONTHLY):   Title "Retrieve max aur_id value from t4t.app_use_rept.";
+MPRINT(READMONTHLY):   select max(aur_id) into :lastindx from t4t.app_use_rept;
+MPRINT(READMONTHLY):   quit;
+NOTE: The PROCEDURE SQL printed page 39.
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.68 seconds
+      cpu time            0.01 seconds
+      
+
+MPRINT(READMONTHLY):   data Monthly2;
+MPRINT(READMONTHLY):   format indx 6.0;
+MPRINT(READMONTHLY):   set monthly;
+SYMBOLGEN:  Macro variable LASTINDX resolves to      211539
+MPRINT(READMONTHLY):   indx = _n_ + 211539;
+MPRINT(READMONTHLY):   run;
+The SAS System
+
+
+NOTE: There were 15 observations read from the data set WORK.MONTHLY.
+NOTE: The data set WORK.MONTHLY2 has 15 observations and 9 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MLOGIC(GETSNOW):  Beginning execution.
+MLOGIC(GETSNOW):  %GLOBAL  NOW
+MLOGIC(GETSNOW):  %LET (variable name is TIME)
+MLOGIC(GETSNOW):  %LET (variable name is DATE)
+MLOGIC(GETSNOW):  %LET (variable name is NOW)
+SYMBOLGEN:  Macro variable DATE resolves to 06JUL2023
+SYMBOLGEN:  Macro variable TIME resolves to 16:35
+MLOGIC(GETSNOW):  Ending execution.
+MPRINT(READMONTHLY):  ;
+SYMBOLGEN:  Macro variable ST resolves to VI
+SYMBOLGEN:  Macro variable NOW resolves to 06JUL2023 16:35
+MPRINT(READMONTHLY):   Title "Quick look at Monthly data for VI [06JUL2023 16:35]";
+MPRINT(READMONTHLY):   proc print data=Monthly2 (obs=9);
+MPRINT(READMONTHLY):   run;
+
+NOTE: There were 9 observations read from the data set WORK.MONTHLY2.
+NOTE: The PROCEDURE PRINT printed page 40.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+SYMBOLGEN:  Macro variable INSRT resolves to 1
+MLOGIC(READMONTHLY):  %IF condition %eval(&insrt. = 1) is TRUE
+MLOGIC(SETT4T):  Beginning execution.
+MPRINT(SETT4T):   libname t4t postgres
+MLOGIC(CONT4T):  Beginning execution.
+MPRINT(CONT4T):   server
+MLOGIC(CONT4T):  Ending execution.
+MPRINT(SETT4T):  ="analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com" 
+port=5432 database=t4t user=dmurray 
+password="{SAS004}70C77B5C28AB1C0D08B92DB91E465FE4E886F34B598E14AF";
+NOTE: Libref T4T was successfully assigned as follows: 
+      Engine:        POSTGRES 
+      Physical Name: analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com
+MLOGIC(SETT4T):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MPRINT(READMONTHLY):   proc sql;
+MPRINT(READMONTHLY):   insert into t4t.app_use_rept select indx, person, Login, appUserName, 
+NumLogins, LastLogin, LastLoginISO8601, monthYear, member from Monthly2;
+NOTE: 15 rows were inserted into T4T.APP_USE_REPT.
+
+MPRINT(READMONTHLY):   quit;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           2.63 seconds
+      cpu time            0.04 seconds
+The SAS System
+
+      
+
+MLOGIC(READMONTHLY):  Ending execution.
+248        	%ReadMonthly(WA, 1);
+MLOGIC(READMONTHLY):  Beginning execution.
+MLOGIC(READMONTHLY):  Parameter ST has value WA
+MLOGIC(READMONTHLY):  Parameter INSRT has value 1
+SYMBOLGEN:  Macro variable SRCFLDR resolves to C:\Users\Donald Murray\OneDrive - Smarter Balanced 
+            UCSC\T4T Summary
+SYMBOLGEN:  Macro variable MONYEAR resolves to Jun2023
+SYMBOLGEN:  Macro variable ST resolves to WA
+MPRINT(READMONTHLY):   filename inMonFyl "C:\Users\Donald Murray\OneDrive - Smarter Balanced 
+UCSC\T4T Summary\Jun2023\ApplicationUsageReportWA.csv";
+MPRINT(READMONTHLY):   data Mnthly;
+MPRINT(READMONTHLY):   format person $32. Login $64. appUserName $64. NumLogins_Str $6. NumLogins 
+6.0 LastLogin_str $28. LastLogin DateTime20. LastLoginISO8601_str $30. LastLoginISO8601 E8601DT19. 
+monthYear $8. monp 3.0 dayp 3.0 yearp 4.0 hourp 3.0 minp 3.0 secp 3.0 datepart $10. timepart $8.;
+MPRINT(READMONTHLY):   infile inMonFyl firstobs = 2 dlm = ',';
+MPRINT(READMONTHLY):   input person $ Login $ appUserName $ NumLogins_Str $ LastLogin_str $ 
+LastLoginISO8601_str $ ;
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Beginning execution.
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Parameter VARNAME has value person
+SYMBOLGEN:  Macro variable VARNAME resolves to person
+SYMBOLGEN:  Macro variable VARNAME resolves to person
+SYMBOLGEN:  Macro variable VARNAME resolves to person
+MPRINT(STRIPLEADINGSINGLEQUOTE):   if substr(dequote(person), 1, 1) = "'" then person = 
+substr(dequote(person), 2);
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Beginning execution.
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Parameter VARNAME has value Login
+SYMBOLGEN:  Macro variable VARNAME resolves to Login
+SYMBOLGEN:  Macro variable VARNAME resolves to Login
+SYMBOLGEN:  Macro variable VARNAME resolves to Login
+MPRINT(STRIPLEADINGSINGLEQUOTE):   if substr(dequote(Login), 1, 1) = "'" then Login = 
+substr(dequote(Login), 2);
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Beginning execution.
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Parameter VARNAME has value appUserName
+SYMBOLGEN:  Macro variable VARNAME resolves to appUserName
+SYMBOLGEN:  Macro variable VARNAME resolves to appUserName
+SYMBOLGEN:  Macro variable VARNAME resolves to appUserName
+MPRINT(STRIPLEADINGSINGLEQUOTE):   if substr(dequote(appUserName), 1, 1) = "'" then appUserName = 
+substr(dequote(appUserName), 2);
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MPRINT(READMONTHLY):   if substr(dequote(NumLogins_Str), 1, 1) = "'" then NumLogins = 
+put(substr(dequote(NumLogins_Str), 2), 6.0);
+MPRINT(READMONTHLY):   else NumLogins = put(dequote(NumLogins_Str), 6.0);
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Beginning execution.
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Parameter VARNAME has value LastLogin_str
+SYMBOLGEN:  Macro variable VARNAME resolves to LastLogin_str
+SYMBOLGEN:  Macro variable VARNAME resolves to LastLogin_str
+The SAS System
+
+SYMBOLGEN:  Macro variable VARNAME resolves to LastLogin_str
+MPRINT(STRIPLEADINGSINGLEQUOTE):   if substr(dequote(LastLogin_str), 1, 1) = "'" then LastLogin_str 
+= substr(dequote(LastLogin_str), 2);
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MPRINT(READMONTHLY):   * put 'LastLogin_str: ' LastLogin_str;
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Beginning execution.
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Parameter VARNAME has value LastLoginISO8601_str
+SYMBOLGEN:  Macro variable VARNAME resolves to LastLoginISO8601_str
+SYMBOLGEN:  Macro variable VARNAME resolves to LastLoginISO8601_str
+SYMBOLGEN:  Macro variable VARNAME resolves to LastLoginISO8601_str
+MPRINT(STRIPLEADINGSINGLEQUOTE):   if substr(dequote(LastLoginISO8601_str), 1, 1) = "'" then 
+LastLoginISO8601_str = substr(dequote(LastLoginISO8601_str), 2);
+MLOGIC(STRIPLEADINGSINGLEQUOTE):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MPRINT(READMONTHLY):   * put 'LastLoginISO8601_str: ' LastLoginISO8601_str;
+MPRINT(READMONTHLY):   datepart = scan(LastLogin_str, 1, ' ');
+MPRINT(READMONTHLY):   timepart = scan(LastLogin_str, 2, ' ');
+MPRINT(READMONTHLY):   monp = put(scan(datepart, 1, '/'), 2.0);
+MPRINT(READMONTHLY):   dayp = put(scan(datepart, 2, '/'), 2.0);
+MPRINT(READMONTHLY):   yearp = put(scan(datepart, 3, '/'), 2.0) + 2000;
+MPRINT(READMONTHLY):   hourp = put(scan(timepart, 1, ':'), 2.0);
+MPRINT(READMONTHLY):   if index(LastLogin_str, ' PM ') > 0 then do;
+MPRINT(READMONTHLY):   if hourp < 12 then hourp = hourp + 12;
+MPRINT(READMONTHLY):   end;
+MPRINT(READMONTHLY):   else if index(LastLogin_str, ' AM ') > 0 then do;
+MPRINT(READMONTHLY):   if hourp = 12 then hourp = 0;
+MPRINT(READMONTHLY):   end;
+MPRINT(READMONTHLY):   minp = put(scan(timepart, 2, ':'), 2.0);
+MPRINT(READMONTHLY):   secp = put(scan(timepart, 3, ':'), 2.0);
+MPRINT(READMONTHLY):   LastLogin = dhms(mdy(monp, dayp, yearp), hourp, minp, secp);
+MPRINT(READMONTHLY):   datepart = scan(LastLoginISO8601_str, 1, 'T');
+MPRINT(READMONTHLY):   timepart = scan(scan(LastLoginISO8601_str, 2, 'T'), 1, '.');
+MPRINT(READMONTHLY):   yearp = put(scan(datepart, 1, '-'), 4.0);
+MPRINT(READMONTHLY):   monp = put(scan(datepart, 2, '-'), 2.0);
+MPRINT(READMONTHLY):   dayp = put(scan(datepart, 3, '-'), 2.0);
+MPRINT(READMONTHLY):   hourp = put(scan(timepart, 1, ':'), 2.0);
+MPRINT(READMONTHLY):   minp = put(scan(timepart, 2, ':'), 2.0);
+MPRINT(READMONTHLY):   secp = put(scan(timepart, 3, ':'), 2.0);
+MPRINT(READMONTHLY):   LastLoginISO8601 = dhms(mdy(monp, dayp, yearp), hourp, minp, secp);
+SYMBOLGEN:  Macro variable MONYEAR resolves to Jun2023
+MPRINT(READMONTHLY):   monthYear = "Jun2023";
+MPRINT(READMONTHLY):   * member = "&ST.";
+MPRINT(READMONTHLY):   drop NumLogins_Str LastLoginISO8601_str LastLogin_str monp dayp yearp hourp 
+minp secp datepart timepart;
+MPRINT(READMONTHLY):   run;
+
+NOTE: Character values have been converted to numeric values at the places given by: 
+      (Line):(Column).
+      248:204   248:14    248:77    248:120   248:164   248:215   248:194   248:237   248:202
+      248:245   248:36    248:80    248:123   248:166   
+NOTE: The infile INMONFYL is:
+      
+      Filename=C:\Users\Donald Murray\OneDrive - Smarter Balanced UCSC\T4T 
+The SAS System
+
+      Summary\Jun2023\ApplicationUsageReportWA.csv,
+      RECFM=V,LRECL=32767,File Size (bytes)=42159,
+      Last Modified=06Jul2023:16:20:40,
+      Create Time=06Jul2023:22:19:00
+
+NOTE: 316 records were read from the infile INMONFYL.
+      The minimum record length was 103.
+      The maximum record length was 175.
+NOTE: The data set WORK.MNTHLY has 316 observations and 7 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MLOGIC(SETT4T):  Beginning execution.
+MPRINT(SETT4T):   libname t4t postgres
+MLOGIC(CONT4T):  Beginning execution.
+MPRINT(CONT4T):   server
+MLOGIC(CONT4T):  Ending execution.
+MPRINT(SETT4T):  ="analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com" 
+port=5432 database=t4t user=dmurray 
+password="{SAS004}70C77B5C28AB1C0D08B92DB91E465FE4E886F34B598E14AF";
+NOTE: Libref T4T was successfully assigned as follows: 
+      Engine:        POSTGRES 
+      Physical Name: analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com
+MLOGIC(SETT4T):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MPRINT(READMONTHLY):   proc sql;
+MPRINT(READMONTHLY):   create table monthly as select a.*, b.state as member from Mnthly as a, 
+t4t.total_logins as b where upcase(a.Login) = upcase(b.email) ;
+NOTE: Table WORK.MONTHLY created, with 309 rows and 8 columns.
+
+MPRINT(READMONTHLY):   quit;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           1.83 seconds
+      cpu time            0.26 seconds
+      
+
+SYMBOLGEN:  Macro variable ST resolves to WA
+MLOGIC(READMONTHLY):  %IF condition %eval("&ST." = "ZZ") is FALSE
+MLOGIC(SETT4T):  Beginning execution.
+MPRINT(SETT4T):   libname t4t postgres
+MLOGIC(CONT4T):  Beginning execution.
+MPRINT(CONT4T):   server
+MLOGIC(CONT4T):  Ending execution.
+MPRINT(SETT4T):  ="analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com" 
+port=5432 database=t4t user=dmurray 
+password="{SAS004}70C77B5C28AB1C0D08B92DB91E465FE4E886F34B598E14AF";
+NOTE: Libref T4T was successfully assigned as follows: 
+      Engine:        POSTGRES 
+      Physical Name: analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com
+MLOGIC(SETT4T):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MPRINT(READMONTHLY):   proc sql;
+The SAS System
+
+MPRINT(READMONTHLY):   Title "Retrieve max aur_id value from t4t.app_use_rept.";
+MPRINT(READMONTHLY):   select max(aur_id) into :lastindx from t4t.app_use_rept;
+MPRINT(READMONTHLY):   quit;
+NOTE: The PROCEDURE SQL printed page 41.
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.70 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(READMONTHLY):   data Monthly2;
+MPRINT(READMONTHLY):   format indx 6.0;
+MPRINT(READMONTHLY):   set monthly;
+SYMBOLGEN:  Macro variable LASTINDX resolves to      211554
+MPRINT(READMONTHLY):   indx = _n_ + 211554;
+MPRINT(READMONTHLY):   run;
+
+NOTE: There were 309 observations read from the data set WORK.MONTHLY.
+NOTE: The data set WORK.MONTHLY2 has 309 observations and 9 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MLOGIC(GETSNOW):  Beginning execution.
+MLOGIC(GETSNOW):  %GLOBAL  NOW
+MLOGIC(GETSNOW):  %LET (variable name is TIME)
+MLOGIC(GETSNOW):  %LET (variable name is DATE)
+MLOGIC(GETSNOW):  %LET (variable name is NOW)
+SYMBOLGEN:  Macro variable DATE resolves to 06JUL2023
+SYMBOLGEN:  Macro variable TIME resolves to 16:36
+MLOGIC(GETSNOW):  Ending execution.
+MPRINT(READMONTHLY):  ;
+SYMBOLGEN:  Macro variable ST resolves to WA
+SYMBOLGEN:  Macro variable NOW resolves to 06JUL2023 16:36
+MPRINT(READMONTHLY):   Title "Quick look at Monthly data for WA [06JUL2023 16:36]";
+MPRINT(READMONTHLY):   proc print data=Monthly2 (obs=9);
+MPRINT(READMONTHLY):   run;
+
+NOTE: There were 9 observations read from the data set WORK.MONTHLY2.
+NOTE: The PROCEDURE PRINT printed page 42.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+SYMBOLGEN:  Macro variable INSRT resolves to 1
+MLOGIC(READMONTHLY):  %IF condition %eval(&insrt. = 1) is TRUE
+MLOGIC(SETT4T):  Beginning execution.
+MPRINT(SETT4T):   libname t4t postgres
+MLOGIC(CONT4T):  Beginning execution.
+MPRINT(CONT4T):   server
+MLOGIC(CONT4T):  Ending execution.
+MPRINT(SETT4T):  ="analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com" 
+port=5432 database=t4t user=dmurray 
+The SAS System
+
+password="{SAS004}70C77B5C28AB1C0D08B92DB91E465FE4E886F34B598E14AF";
+NOTE: Libref T4T was successfully assigned as follows: 
+      Engine:        POSTGRES 
+      Physical Name: analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com
+MLOGIC(SETT4T):  Ending execution.
+MPRINT(READMONTHLY):  ;
+MPRINT(READMONTHLY):   proc sql;
+MPRINT(READMONTHLY):   insert into t4t.app_use_rept select indx, person, Login, appUserName, 
+NumLogins, LastLogin, LastLoginISO8601, monthYear, member from Monthly2;
+NOTE: 309 rows were inserted into T4T.APP_USE_REPT.
+
+MPRINT(READMONTHLY):   quit;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           23.43 seconds
+      cpu time            0.18 seconds
+      
+
+MLOGIC(READMONTHLY):  Ending execution.
+249        	
+250        /*	%ReadMonthly(VT, 0);		*/
+
+NOTE: SAS Institute Inc., SAS Campus Drive, Cary, NC USA 27513-2414
+NOTE: The SAS System used:
+      real time           5:05.00
+      cpu time            10.21 seconds
+      

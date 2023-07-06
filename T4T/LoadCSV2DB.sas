@@ -38,6 +38,21 @@
  |	2022 01 04		Load Dec2021 data.																																|
  |	2022 03 02		Load Feb2022 data.																																|
  |	2022 04 04		Load Mar2022 data.																																|
+ |	2022 05 05		Load Apr2022 data.																																|
+ |	2022 06 06		Load May2022 data.																																|
+ |	2022 07 01		Load Jun2022 data.																																|
+ |	2022 08 02		Load Jul2022 data.																																|
+ |	2022 09 06		Load Aug2022 data (VT data no longer included).																		|
+ |	2022 10 06		Load Sep2022 data.																																|
+ |	2022 11 07		Load Oct2022 data.																																|
+ |	2022 12 02		Load Nov2022 data.																																|
+ |	2023 01 04		Load Dec2022 data.																																|
+ |	2023 02 05		Load Jan2023 data.																																|
+ |	2023 03 03		Load Feb2023 data.																																|
+ |	2023 04 05		Load Mar2023 data.																																|
+ |	2023 05 03		Load Apr2023 data.																																|
+ |	2023 06 05		Load May2023 data.																																|
+ |	2023 07 06		Load Jun2023 data.																																|
  *==================================================================================================*/
 
 %let sysroot=C:\Users\Donald Murray;
@@ -46,8 +61,8 @@
 %let srcFldr=&sysroot.\OneDrive - Smarter Balanced UCSC\T4T Summary;
 
 %global monYear;
-%let monYear = Mar2022;				/* !!!!! <<<<<====----====<<<<< !!!!!	*/
-%let monYr_id = 8;						/* !!!!! <<<<<====----====<<<<< !!!!!	*/
+%let monYear = Jun2023;				/* !!!!! <<<<<====----====<<<<< !!!!!	*/
+%let monYr_id = 23;						/* !!!!! <<<<<====----====<<<<< !!!!!	*/
 
 %macro ConT4T;
 	server="analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com"
@@ -130,7 +145,7 @@
 	%end;
 
 %mend ProcessTotalLogins;
-	%ProcessTotalLogins(load2DB=0);
+	%ProcessTotalLogins(load2DB=1);
 
 %macro StripLeadingSingleQuote(varName);
 	if substr(dequote(&varName.), 1, 1) = "'" then &varName. = substr(dequote(&varName.), 2);
@@ -210,7 +225,7 @@
 
 	%GetSnow;
 	Title "Quick look at Monthly data for &ST. [&now.]";
-	proc print data=Monthly2 (obs=10);
+	proc print data=Monthly2 (obs=9);
 	run;
 
 	%if %eval(&insrt. = 1) %then %do;
@@ -222,12 +237,14 @@
 			from Monthly2;
 		quit;
 	%end;
-		
+
 %mend ReadMonthly;
-	%ReadMonthly(CA, 0);		%ReadMonthly(CT, 0);
-	%ReadMonthly(DE, 0);		%ReadMonthly(HI, 0);
-	%ReadMonthly(ID, 0);		%ReadMonthly(IN, 0);
-	%ReadMonthly(MI, 0);		%ReadMonthly(MT, 0);
-	%ReadMonthly(NV, 0);		%ReadMonthly(OR, 0);
-	%ReadMonthly(SD, 0);		%ReadMonthly(VI, 0);
-	%ReadMonthly(VT, 0);		%ReadMonthly(WA, 0);
+	%ReadMonthly(CA, 1);		%ReadMonthly(CT, 1);
+	%ReadMonthly(DE, 1);		%ReadMonthly(HI, 1);
+	%ReadMonthly(ID, 1);		%ReadMonthly(IN, 1);
+	%ReadMonthly(MI, 1);		%ReadMonthly(MT, 1);
+	%ReadMonthly(NV, 1);		%ReadMonthly(OR, 1);
+	%ReadMonthly(SD, 1);		%ReadMonthly(VI, 1);
+	%ReadMonthly(WA, 1);
+	
+/*	%ReadMonthly(VT, 0);		*/

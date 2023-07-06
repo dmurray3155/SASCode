@@ -1,0 +1,265 @@
+1                                          The SAS System               16:41 Thursday, July 6, 2023
+
+NOTE: Copyright (c) 2016 by SAS Institute Inc., Cary, NC, USA. 
+NOTE: SAS (r) Proprietary Software 9.4 (TS1M7) 
+      Licensed to UNIVERSITY OF CALIFORNIA SYSTEM-SFA-T&R, Site 70081229.
+NOTE: This session is executing on the X64_10PRO  platform.
+
+
+
+NOTE: Analytical products:
+      
+      SAS/STAT 15.2
+      SAS/ETS 15.2
+      SAS/OR 15.2
+      SAS/IML 15.2
+      SAS/QC 15.2
+
+NOTE: Additional host information:
+
+ X64_10PRO WIN 10.0.19041  Workstation
+
+NOTE: SAS initialization used:
+      real time           0.30 seconds
+      cpu time            0.32 seconds
+      
+
+NOTE: AUTOEXEC processing beginning; file is C:\Program 
+      Files\SASHome\SASFoundation\9.4\autoexec.sas.
+
+
+NOTE: PROCEDURE SETINIT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+Original site validation data
+Current version: 9.04.01M7P080520
+Site name:    'UNIVERSITY OF CALIFORNIA SYSTEM-SFA-T&R'.
+Site number:  70081229.
+CPU A: Model name='' model number='' serial=''.
+Expiration:   30JUN2023.
+Grace Period:  45 days (ending 14AUG2023).
+Warning Period: 45 days (ending 28SEP2023).
+System birthday:   20JUN2022.
+Operating System:   WX64_WKS.
+Product expiration dates:
+---Base SAS Software                                                                                
+    30JUN2023 (CPU A) 
+---SAS/STAT                                                                                         
+    30JUN2023 (CPU A) 
+---SAS/GRAPH                                                                                        
+    30JUN2023 (CPU A) 
+---SAS/ETS                                                                                          
+    30JUN2023 (CPU A) 
+---SAS/FSP                                                                                          
+    30JUN2023 (CPU A) 
+---SAS/OR                                                                                           
+2                                          The SAS System               16:41 Thursday, July 6, 2023
+
+    30JUN2023 (CPU A) 
+---SAS/AF                                                                                           
+    30JUN2023 (CPU A) 
+---SAS/IML                                                                                          
+    30JUN2023 (CPU A) 
+---SAS/QC                                                                                           
+    30JUN2023 (CPU A) 
+---SAS/SHARE                                                                                        
+    30JUN2023 (CPU A) 
+---SAS/ASSIST                                                                                       
+    30JUN2023 (CPU A) 
+---SAS/CONNECT                                                                                      
+    30JUN2023 (CPU A) 
+---SAS/TOOLKIT                                                                                      
+    30JUN2023 (CPU A) 
+---SAS/EIS                                                                                          
+    30JUN2023 (CPU A) 
+---SAS/GIS                                                                                          
+    30JUN2023 (CPU A) 
+---SAS/SHARE*NET                                                                                    
+    30JUN2023 (CPU A) 
+---SAS Enterprise Miner                                                                             
+    30JUN2023 (CPU A) 
+---SAS/IntrNet                                                                                      
+    30JUN2023 (CPU A) 
+---MDDB Server common products                                                                      
+    30JUN2023 (CPU A) 
+---SAS Integration Technologies                                                                     
+    30JUN2023 (CPU A) 
+---SAS/Secure 168-bit                                                                               
+    30JUN2023 (CPU A) 
+---SAS/Secure Windows                                                                               
+    30JUN2023 (CPU A) 
+---SAS Text Miner                                                                                   
+    30JUN2023 (CPU A) 
+---SAS/Genetics                                                                                     
+    30JUN2023 (CPU A) 
+---SAS Enterprise Guide                                                                             
+    30JUN2023 (CPU A) 
+---SAS Bridge for ESRI                                                                              
+    30JUN2023 (CPU A) 
+---OR OPT                                                                                           
+    30JUN2023 (CPU A) 
+---OR PRS                                                                                           
+    30JUN2023 (CPU A) 
+---OR IVS                                                                                           
+    30JUN2023 (CPU A) 
+---OR LSO                                                                                           
+    30JUN2023 (CPU A) 
+---SAS/ACCESS Interface to DB2                                                                      
+    30JUN2023 (CPU A) 
+---SAS/ACCESS Interface to Oracle                                                                   
+    30JUN2023 (CPU A) 
+---SAS/ACCESS Interface to SAP ASE                                                                  
+3                                          The SAS System               16:41 Thursday, July 6, 2023
+
+    30JUN2023 (CPU A) 
+---SAS/ACCESS Interface to PC Files                                                                 
+    30JUN2023 (CPU A) 
+---SAS/ACCESS Interface to ODBC                                                                     
+    30JUN2023 (CPU A) 
+---SAS/ACCESS Interface to OLE DB                                                                   
+    30JUN2023 (CPU A) 
+---SAS/ACCESS Interface to R/3                                                                      
+    30JUN2023 (CPU A) 
+---SAS/ACCESS Interface to Teradata                                                                 
+    30JUN2023 (CPU A) 
+---SAS/ACCESS Interface to Microsoft SQL Server                                                     
+    30JUN2023 (CPU A) 
+---SAS/ACCESS Interface to MySQL                                                                    
+    30JUN2023 (CPU A) 
+---Text Miner for French                                                                            
+    30JUN2023 (CPU A) 
+---SAS/IML Studio                                                                                   
+    30JUN2023 (CPU A) 
+---SAS Workspace Server for Local Access                                                            
+    30JUN2023 (CPU A) 
+---SAS/ACCESS Interface to Netezza                                                                  
+    30JUN2023 (CPU A) 
+---SAS/ACCESS Interface to Aster nCluster                                                           
+    30JUN2023 (CPU A) 
+---SAS/ACCESS Interface to Greenplum                                                                
+    30JUN2023 (CPU A) 
+---SAS/ACCESS Interface to SAP IQ                                                                   
+    30JUN2023 (CPU A) 
+---SAS/ACCESS to Hadoop                                                                             
+    30JUN2023 (CPU A) 
+---SAS/ACCESS to Vertica                                                                            
+    30JUN2023 (CPU A) 
+---SAS/ACCESS to Postgres                                                                           
+    30JUN2023 (CPU A) 
+---SAS/ACCESS to Impala                                                                             
+    30JUN2023 (CPU A) 
+---SAS/ACCESS to Salesforce                                                                         
+    30JUN2023 (CPU A) 
+---SAS/ACCESS to HAWQ                                                                               
+    30JUN2023 (CPU A) 
+---SAS/ACCESS to Amazon Redshift                                                                    
+    30JUN2023 (CPU A) 
+---High Performance Suite                                                                           
+    30JUN2023 (CPU A) 
+---SAS Add-in for Microsoft Excel                                                                   
+    30JUN2023 (CPU A) 
+---SAS/ACCESS to SAP HANA                                                                           
+    30JUN2023 (CPU A) 
+---SAS/ACCESS Interface to the PI System                                                            
+    30JUN2023 (CPU A) 
+---SAS/ACCESS to JDBC                                                                               
+    30JUN2023 (CPU A) 
+---SAS/ACCESS to Snowflake                                                                          
+4                                          The SAS System               16:41 Thursday, July 6, 2023
+
+    30JUN2023 (CPU A) 
+
+MPRINT(SETOPTIONS):   symbolgen spool formchar="|----|+|---+=|-/\<>*";
+MLOGIC(SETOPTIONS):  Ending execution.
+
+NOTE: AUTOEXEC processing completed.
+
+1          
+2          %macro ConT4T;
+3          	server="analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com"
+4          	port=5432 database=t4t user=dmurray
+5          	password="{SAS004}70C77B5C28AB1C0D08B92DB91E465FE4E886F34B598E14AF"
+6          %mend ConT4T;
+7          %macro SetT4T;
+8          	/*	Set LibName to access data from TCD system	*/
+9          	libname t4t postgres %ConT4T;
+10         %mend SetT4T;
+11         
+12         %SetT4T;
+MLOGIC(SETT4T):  Beginning execution.
+MPRINT(SETT4T):   libname t4t postgres
+MLOGIC(CONT4T):  Beginning execution.
+MPRINT(CONT4T):   server
+MLOGIC(CONT4T):  Ending execution.
+MPRINT(SETT4T):  ="analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com" 
+port=5432 database=t4t user=dmurray 
+password="{SAS004}70C77B5C28AB1C0D08B92DB91E465FE4E886F34B598E14AF";
+NOTE: Libref T4T was successfully assigned as follows: 
+      Engine:        POSTGRES 
+      Physical Name: analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com
+MLOGIC(SETT4T):  Ending execution.
+13         
+14         proc sql;
+15         	create table timediff as
+16         	select aur_id, monthyear, member, login, lastloginpt, lastloginiso8601,
+17         		lastloginiso8601 - lastloginpt as time_diff
+18         	from t4t.app_use_rept
+19         	where monthyear = 'Jun2023';
+NOTE: Table WORK.TIMEDIFF created, with 2308 rows and 7 columns.
+
+20         quit;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           1.02 seconds
+      cpu time            0.06 seconds
+      
+
+21         
+22         %GetSnow;
+MLOGIC(GETSNOW):  Beginning execution.
+MLOGIC(GETSNOW):  %GLOBAL  NOW
+MLOGIC(GETSNOW):  %LET (variable name is TIME)
+MLOGIC(GETSNOW):  %LET (variable name is DATE)
+MLOGIC(GETSNOW):  %LET (variable name is NOW)
+SYMBOLGEN:  Macro variable DATE resolves to 06JUL2023
+The SAS System
+
+SYMBOLGEN:  Macro variable TIME resolves to 16:41
+MLOGIC(GETSNOW):  Ending execution.
+SYMBOLGEN:  Macro variable NOW resolves to 06JUL2023 16:41
+23         Title1 "Study of date / time stamp values in t4t.app_use_rept [&now.]";
+24         Title2 "time_diff = lastloginiso8601 - lastloginpt";
+25         proc freq data=timediff;
+26         	tables time_diff;
+27         	run;
+
+NOTE: There were 2308 observations read from the data set WORK.TIMEDIFF.
+NOTE: The PROCEDURE FREQ printed page 1.
+NOTE: PROCEDURE FREQ used (Total process time):
+      real time           0.03 seconds
+      cpu time            0.03 seconds
+      
+
+28         footnote "The time_diff value changes at transition to / from daylight saving time";
+29         
+30         ods graphics on;
+31         proc corr data=timediff
+32                   plots(maxpoints = 6600) = scatter ;
+33            var lastloginpt lastloginiso8601;
+34         	 format lastloginpt datetime20.;
+35          run;
+
+WARNING: The correlation between variables lastloginiso8601 and lastloginpt is either -1 or 1. The 
+         prediction/confidence ellipses for these two variables are not created.
+NOTE: The PROCEDURE CORR printed page 2.
+NOTE: PROCEDURE CORR used (Total process time):
+      real time           3.67 seconds
+      cpu time            0.86 seconds
+      
+
+36         ods graphics off;
+NOTE: SAS Institute Inc., SAS Campus Drive, Cary, NC USA 27513-2414
+NOTE: The SAS System used:
+      real time           7.19 seconds
+      cpu time            2.54 seconds
+      

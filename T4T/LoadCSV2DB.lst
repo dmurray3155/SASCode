@@ -1,0 +1,1468 @@
+FD of state from TotalLogins [06JUL2023 16:31]
+
+The FREQ Procedure
+
+                                  Cumulative    Cumulative
+state    Frequency     Percent     Frequency      Percent
+----------------------------------------------------------
+CA          57631       43.68         57631        43.68  
+CT          15245       11.56         72876        55.24  
+DE           2348        1.78         75224        57.02  
+HI           4098        3.11         79322        60.12  
+ID           7353        5.57         86675        65.70  
+IN          15624       11.84        102299        77.54  
+MI            864        0.65        103163        78.19  
+MT           2835        2.15        105998        80.34  
+NV           2951        2.24        108949        82.58  
+OR           6720        5.09        115669        87.67  
+OT            121        0.09        115790        87.76  
+SD           4143        3.14        119933        90.90  
+VI            539        0.41        120472        91.31  
+VT            916        0.69        121388        92.01  
+WA          10545        7.99        131933       100.00  
+Macro ReptMulti results reported on Jul 6, 2023 at 4:31:23 PM
+Variable ucemail occurs multiple times in TotalLogins
+
+Obs    ucemail                                                             COUNT
+
+  1    AAMAYA@HLPUSD.K12.CA.US                                               2  
+  2    AARON.ALBRECHT@SBCUSD.K12.CA.US                                       2  
+  3    AARON_BOEHME@CESD.US                                                  2  
+  4    ABUCHTA@STAMFORDCT.GOV                                                2  
+  5    ACARRUTHERS@LCUSD.NET                                                 2  
+  6    ACOLLINS@PSUSD.US                                                     2  
+  7    ACORRIS@SHELTONPUBLICSCHOOLS.ORG                                      2  
+  8    ADAM.NELSON@K12.SD.US                                                 2  
+  9    ADAMSJ@D93.K12.ID.US                                                  2  
+ 10    ADENA.JOSEPH@RICHGROVE.ORG                                            2  
+ 11    ADORACION.YUMUL@TWINRIVERSUSD.ORG                                     2  
+ 12    ADUNCAN@TTSD.K12.OR.US                                                2  
+ 13    AGGERLA@NV.CCSD.NET                                                   2  
+ 14    AGOMEZ@LLCSD.NET                                                      2  
+ 15    AINETTE.RUBIO@OMSD.NET                                                2  
+ 16    AJAEGER@STAMFORDCT.GOV                                                2  
+ 17    ALBERTO.HERNANDEZ@KENT.K12.WA.US                                      2  
+ 18    ALDENAJ@NV.CCSD.NET                                                   2  
+ 19    ALEDEZMA@PARAMOUNT.K12.CA.US                                          2  
+ 20    ALEXANDRA.LEONARDO@WCCUSD.NET                                         2  
+ 21    ALISSAKEANE@CI.BRISTOL.CT.US                                          2  
+ 22    ALLISON.PEET@CAPE.K12.DE.US                                           2  
+ 23    ALLISON.SINACOLA@VERNONCT.ORG                                         2  
+ 24    AMANDA.NOLL@SMYRNA.K12.DE.US                                          2  
+ 25    AMANDA.THACKER@SWEETWATERSCHOOLS.ORG                                  2  
+ 26    AMANDA.THRONSON@STATE.SD.US                                           2  
+ 27    AMANDA_NOLAN@ETIWANDA.ORG                                             2  
+ 28    AMBER.MCKINNEY@LAUSD.NET                                              2  
+ 29    AMY.KEOUGH@K12.SD.US                                                  2  
+ 30    AMY.THIERRY@SMARTERBALANCED.ORG                                       2  
+ 31    AMY_SCHMELDER@WHPS.ORG                                                2  
+ 32    ANARGUELLO@MCFARLAND.K12.CA.US                                        2  
+ 33    ANDERSEK@D93.K12.ID.US                                                2  
+ 34    ANDRADEC@LANCSD.ORG                                                   2  
+ 35    ANDREOLIS@LANCSD.ORG                                                  2  
+ 36    ANDREW.HENDERSON@TUMWATER.K12.WA.US                                   2  
+ 37    ANGEE.BRIONES@GCCCHARTERS.ORG                                         2  
+ 38    ANGELA.BALLIET@FRESNOUNIFIED.ORG                                      2  
+ 39    ANGELA.RAMIREZ@FRESNOUNIFIED.ORG                                      2  
+ 40    ANGIE.CARBAJAL@LAUSD.NET                                              2  
+ 41    ANNAMCLELLAND@MADERAUSD.ORG                                           2  
+ 42    ANNE.RICHARDS@FRESNOUNIFIED.ORG                                       2  
+ 43    ANSPAS@NV.CCSD.NET                                                    2  
+ 44    ARN0875@LAUSD.NET                                                     2  
+ 45    ASMEISSNER@CAPOUSD.ORG                                                2  
+ 46    ASTIGERS@ACES.ORG                                                     2  
+ 47    AWALKER@WINDHAM.K12.CT.US                                             2  
+ 48    AWARREN@WASHOESCHOOLS.NET                                             2  
+ 49    AYERSJL@NV.CCSD.NET                                                   2  
+ 50    BAIRDJC@NV.CCSD.NET                                                   2  
+ 51    BANUELOS_YESENIA@MONTEBELLO.K12.CA.US                                 2  
+Macro ReptMulti results reported on Jul 6, 2023 at 4:31:23 PM
+Variable ucemail occurs multiple times in TotalLogins
+
+Obs    ucemail                                                             COUNT
+
+ 52    BARBARA.LEROY@CVESD.ORG                                               2  
+ 53    BEAUPJA@NV.CCSD.NET                                                   2  
+ 54    BECKEAR@NV.CCSD.NET                                                   2  
+ 55    BECKER_BARRIE@LACOE.EDU                                               2  
+ 56    BEECHJ@NV.CCSD.NET                                                    2  
+ 57    BELTRAN_MARGARITO@MONTEBELLO.K12.CA.US                                2  
+ 58    BHALL@DILLONELEM.K12.MT.US                                            2  
+ 59    BJBOLLA@CAPOUSD.ORG                                                   2  
+ 60    BLANCA.SHAFER@K12.SD.US                                               2  
+ 61    BRACHJ@NV.CCSD.NET                                                    2  
+ 62    BRAD.JUNGWIRTH@K12.SD.US                                              2  
+ 63    BRAD.WALKER@SMARTERBALANCED.ORG                                       2  
+ 64    BRAD.YERDON@K12.SD.US                                                 2  
+ 65    BRAMIREZ1@LBSCHOOLS.NET                                               2  
+ 66    BRANDON.BOLYARD@VALLIVUE.ORG                                          2  
+ 67    BRENDA.LABAU@K12.SD.US                                                2  
+ 68    BRENDASELVA@CCUSD.ORG                                                 2  
+ 69    BRITTANY.BEAUMONT@HIGHLINESCHOOLS.ORG                                 2  
+ 70    BRITTNEY_THOMAS@AVUSD.ORG                                             2  
+ 71    BROCK.PASHEN@K12.SD.US                                                2  
+ 72    BROWNJ10@NV.CCSD.NET                                                  2  
+ 73    BRUNELLES@NEWLONDON.ORG                                               2  
+ 74    BTOMA@WATERBURY.K12.CT.US                                             2  
+ 75    BYOUNG2@EVERETTSD.ORG                                                 2  
+ 76    CALDEM@NV.CCSD.NET                                                    2  
+ 77    CARACLM@NV.CCSD.NET                                                   2  
+ 78    CARLIJK@NV.CCSD.NET                                                   2  
+ 79    CARLOS.RAMIREZ3@LAUSD.NET                                             2  
+ 80    CARMEN.JAUREGUI@PACOIMACHARTER.ORG                                    2  
+ 81    CARMEN_CHIC@LAWNDALESD.NET                                            2  
+ 82    CAROL.ECKMANN@K12.SD.US                                               2  
+ 83    CAROLINE.HALL@SBCUSD.K12.CA.US                                        2  
+ 84    CARRI.SHIVELY@ASPIREPUBLICSCHOOLS.ORG                                 2  
+ 85    CARRIE.WILHELM@SVUSD.ORG                                              2  
+ 86    CARUSA@NV.CCSD.NET                                                    2  
+ 87    CATHARINE.LAROCQUE@BELLINGHAMSCHOOLS.ORG                              2  
+ 88    CATHLEEN.REESE@SOMERSETNV.ORG                                         2  
+ 89    CDAY@DINUBA.K12.CA.US                                                 2  
+ 90    CDELALOZA@ERUSD.ORG                                                   2  
+ 91    CHAMOK@NV.CCSD.NET                                                    2  
+ 92    CHARIS.BLANCHETTE@K12.SD.US                                           2  
+ 93    CHELSIE.MOAK@TWINRIVERSUSD.ORG                                        2  
+ 94    CHERISE.JACKSON@VALLIVUE.ORG                                          2  
+ 95    CHIDINMA.KALU@SBCUSD.K12.CA.US                                        2  
+ 96    CHIEM_LAURA@MONTEBELLO.K12.CA.US                                      2  
+ 97    CHRIST@SD381.K12.ID.US                                                2  
+ 98    CHRISTINA.BOOTH@STATE.SD.US                                           2  
+ 99    CHRISTINA.DWIRE@VERNONCT.ORG                                          2  
+100    CHRISTINA.PENICHE@PUSD.ORG                                            2  
+101    CHRISTINA_SANDERS@YCS.WEDNET.EDU                                      2  
+102    CHRISTINE.M.KOSTERS@K12.SD.US                                         2  
+Macro ReptMulti results reported on Jul 6, 2023 at 4:31:23 PM
+Variable ucemail occurs multiple times in TotalLogins
+
+Obs    ucemail                                                             COUNT
+
+103    CHRISTINEC@WAPATOSD.ORG                                               2  
+104    CISRAEL@OJAIUSD.ORG                                                   2  
+105    CJSIMMONS@PALMDALESD.ORG                                              2  
+106    CKUHL@CVSD.ORG                                                        2  
+107    CLARK.TRACY@TUSD.ORG                                                  2  
+108    CMANASSERO@CDE.CA.GOV                                                 2  
+109    CNILAND-POIRIER@WINDHAM.K12.CT.US                                     2  
+110    CONNOAF@NV.CCSD.NET                                                   2  
+111    COOPERM@NV.CCSD.NET                                                   2  
+112    COSTAJC@NV.CCSD.NET                                                   2  
+113    COSTATJ@NV.CCSD.NET                                                   2  
+114    CPETUYA@EGUSD.NET                                                     2  
+115    CTEDDER@STAMFORDCT.GOV                                                2  
+116    CULBEBK@NV.CCSD.NET                                                   2  
+117    CURRY.KARI@WESTADA.ORG                                                2  
+118    CXU4637@LAUSD.NET                                                     2  
+119    CYNTHIA.PURVES@FRESNOUNIFIED.ORG                                      2  
+120    DAN.KENNEDY@K12.SD.US                                                 2  
+121    DANA.METTLER@TUMWATER.K12.WA.US                                       2  
+122    DANIEL.FISCHER@K12.SD.US                                              2  
+123    DANIELLE.HUNT@K12.SD.US                                               2  
+124    DANIELLE_SUMLIN@ETIWANDA.ORG                                          2  
+125    DARIN.EICH@K12.SD.US                                                  2  
+126    DAVID-DEJAGER@SCUSD.EDU                                               2  
+127    DAVID.HUDSON@IRSD.K12.DE.US                                           2  
+128    DAVID.PARASCAND@TUMWATER.K12.WA.US                                    2  
+129    DAWN.CASTILLO@SWEETWATERSCHOOLS.ORG                                   2  
+130    DAWNE.PRESS@SWEETWATERSCHOOLS.ORG                                     2  
+131    DAWN_BECKLEY@WHPS.ORG                                                 2  
+132    DEANA.LYNCH@IRSD.K12.DE.US                                            2  
+133    DEANNA.PRICHARD@MEAD354.ORG                                           2  
+134    DEBBIE.CAMPA@OMSD.NET                                                 2  
+135    DEBORAH.DAVIDSON@FRESNOUNIFIED.ORG                                    2  
+136    DENISE.BOUTOT@VERNONCT.ORG                                            2  
+137    DENISE.BRANDNER@K12.SD.US                                             2  
+138    DENISE.KESEL@DESERTSANDS.US                                           2  
+139    DENNICJ@NV.CCSD.NET                                                   2  
+140    DENTMK@NV.CCSD.NET                                                    2  
+141    DESTINEE.BANKS@TWINRIVERSUSD.ORG                                      2  
+142    DEVI_SOK-HUYNH@MYFSD.ORG                                              2  
+143    DFISHER@SCOTTSVALLEYUSD.ORG                                           2  
+144    DIANA.SANCHEZ@CVESD.ORG                                               2  
+145    DIANE.DEURMIER@K12.SD.US                                              2  
+146    DIANNE.GUERRERO@CVESD.ORG                                             2  
+147    DMILLS@PORTANGELESSCHOOLS.ORG                                         2  
+148    DON.WOODWARD@PSD201.ORG                                               2  
+149    DONATO.AUDREY@BATTLEGROUNDPS.ORG                                      2  
+150    DOUGLAS.WILKINS@FRESNOUNIFIED.ORG                                     2  
+151    DROBERTS@OJAIUSD.ORG                                                  2  
+152    DSERENA@EGUSD.NET                                                     2  
+153    DSILVA@STAMFORDCT.GOV                                                 2  
+Macro ReptMulti results reported on Jul 6, 2023 at 4:31:23 PM
+Variable ucemail occurs multiple times in TotalLogins
+
+Obs    ucemail                                                             COUNT
+
+154    DUKEJM@NV.CCSD.NET                                                    2  
+155    EBONILLA@LLCSD.NET                                                    2  
+156    ECHAVCA@NV.CCSD.NET                                                   2  
+157    EDIFONZO@HAMDEN.ORG                                                   2  
+158    EFONG@EESD.ORG                                                        2  
+159    EGIBBONS@STOCKTONUSD.NET                                              2  
+160    EHERNANDEZ@NLMUSD.ORG                                                 2  
+161    EILEEN_LEONG@CHINO.K12.CA.US                                          2  
+162    ELIZABETH.DRAKE@K12.SD.US                                             2  
+163    ELIZABETH_ABURTO@AVUSD.ORG                                            2  
+164    ELLEN.FRIES@DINUBA.K12.CA.US                                          2  
+165    EMILY.KING@MERCERISLANDSCHOOLS.ORG                                    2  
+166    EMILY.LEHNE@CAPE.K12.DE.US                                            2  
+167    ERINTIMBERMAN@IUSD.ORG                                                2  
+168    ERLOZANO@MCFARLAND.K12.CA.US                                          2  
+169    ERODRIGUEZ@RCOE.US                                                    2  
+170    ESOTZING@STAMFORDCT.GOV                                               2  
+171    ESPERANZA.CASTRO@SBCUSD.K12.CA.US                                     2  
+172    ESPERANZA.RAMIREZ@FRESNOUNIFIED.ORG                                   2  
+173    ESTHER.WU@MVLA.NET                                                    2  
+174    ETOWERS@NTHURSTON.K12.WA.US                                           2  
+175    FARAMA@NV.CCSD.NET                                                    2  
+176    FARINCJ@NV.CCSD.NET                                                   2  
+177    FAULENTI@STAMFORDCT.GOV                                               2  
+178    FDONKOR@PALMDALESD.ORG                                                2  
+179    FELDMM@NV.CCSD.NET                                                    2  
+180    FENNEDM@NV.CCSD.NET                                                   2  
+181    FILOSI.ANNA@NORTH-HAVEN.K12.CT.US                                     2  
+182    FITZGERALD.HEATHER@TUSD.ORG                                           2  
+183    FULLETR@NV.CCSD.NET                                                   2  
+184    FURGUESOND@NEWLONDON.ORG                                              2  
+185    GABRIEL-RAMIREZ@SCUSD.EDU                                             2  
+186    GAC3051@LAUSD.NET                                                     2  
+187    GAIL.PAGANO@SMARTERBALANCED.ORG                                       2  
+188    GAIL.SHERWOOD@K12.SD.US                                               2  
+189    GALLALA@NV.CCSD.NET                                                   2  
+190    GAYANE.SARGSYAN@FRESNOUNIFIED.ORG                                     2  
+191    GFIGUEROA@PALMDALESD.ORG                                              2  
+192    GGA0235@LAUSD.NET                                                     2  
+193    GOMEZE@SFUSD.EDU                                                      2  
+194    GRANDPRE.COLETTE@NORTH-HAVEN.K12.CT.US                                2  
+195    GREGHOLMAN@CCUSD.ORG                                                  2  
+196    GREGORY.CELESTINO@SAUSD.US                                            2  
+197    GREGORY_REED@CSD49.ORG                                                2  
+198    GRIMEM1@NV.CCSD.NET                                                   2  
+199    GSORENSE@LAUSD.NET                                                    2  
+200    GUTHRKI@NV.CCSD.NET                                                   2  
+201    GXG1483@LAUSD.NET                                                     2  
+202    HARPEJK@NV.CCSD.NET                                                   2  
+203    HARRISON.RANDOLPH@LAUSD.NET                                           2  
+204    HARTMAE@NV.CCSD.NET                                                   2  
+Macro ReptMulti results reported on Jul 6, 2023 at 4:31:23 PM
+Variable ucemail occurs multiple times in TotalLogins
+
+Obs    ucemail                                                             COUNT
+
+205    HAYNESA@D93.K12.ID.US                                                 2  
+206    HBARRON@MSD.K12.DE.US                                                 2  
+207    HEATHER.EDDINGTON@CVESD.ORG                                           2  
+208    HEIDI.DEVLIN@K12.SD.US                                                2  
+209    HEIDI.STREIT@K12.SD.US                                                2  
+210    HEIDI_WALKER-LYNCH@MTNVIEW.K12.CA.US                                  2  
+211    HELEN_SON@CESD.US                                                     2  
+212    HENNEMM@NV.CCSD.NET                                                   2  
+213    HERESCF@NV.CCSD.NET                                                   2  
+214    HKHAUO@LAUSD.NET                                                      2  
+215    HODGKEE@NV.CCSD.NET                                                   2  
+216    HOPKINSJ@D93.K12.ID.US                                                2  
+217    HOWE_SARAH@MONTEBELLO.K12.CA.US                                       2  
+218    HPLANAS@BRIDGEPORTEDU.NET                                             2  
+219    HUFFMKJ1@NV.CCSD.NET                                                  2  
+220    HUNTERK@LANCSD.ORG                                                    2  
+221    IAQ7692@LAUSD.NET                                                     2  
+222    IBARRPR@NV.CCSD.NET                                                   2  
+223    INWANKWO@OGSD.NET                                                     2  
+224    IROATA@STAMFORDCT.GOV                                                 2  
+225    ISABEL.SANTOS@OMSD.NET                                                2  
+226    IVEYOL@NV.CCSD.NET                                                    2  
+227    JACARTER@PALMDALESD.ORG                                               2  
+228    JACKIE.WURTZ@K12.SD.US                                                2  
+229    JACKLAI@NV.CCSD.NET                                                   2  
+230    JACKSONN@D93.K12.ID.US                                                2  
+231    JACKSONN@NEWLONDON.ORG                                                2  
+232    JAMES.CORTRIGHT@TWINRIVERSUSD.ORG                                     2  
+233    JANE.STROUP@SBCSS.NET                                                 2  
+234    JANET.HATCH@FRESNOUNIFIED.ORG                                         2  
+235    JANGD@NV.CCSD.NET                                                     2  
+236    JANNETTE.GARDNER@FOWLER.K12.CA.US                                     2  
+237    JASON.SCHULTZ@EVERGREENPS.ORG                                         2  
+238    JASON_ANTAYA@PVUSD.NET                                                2  
+239    JBARRON@LEWISTONSCHOOLS.NET                                           2  
+240    JBINGH2@LAUSD.NET                                                     2  
+241    JDELGADO@LLCSD.NET                                                    2  
+242    JEANNIE.GIORDANO@FRESNOUNIFIED.ORG                                    2  
+243    JEANNINE_THOMAS@CHINO.K12.CA.US                                       2  
+244    JENESHIPMAN@MADERAUSD.ORG                                             2  
+245    JENNIFER.ANDERSON@OMSD.NET                                            2  
+246    JENNIFER.BROWNE@CHRISTINA.K12.DE.US                                   2  
+247    JENNIFER.CARR@FRESNOUNIFIED.ORG                                       2  
+248    JENNIFER.DALLMANN@K12.SD.US                                           2  
+249    JENNIFER.HOWARTH@DESERTSANDS.US                                       2  
+250    JENNIFER.ORLEN@IRSD.K12.DE.US                                         2  
+251    JENNIFER.SMITH@DESERTSANDS.US                                         2  
+252    JENNIFER.SYVERSON@OMSD.NET                                            2  
+253    JENNIFER.WELLS@NEW-HAVEN.K12.CT.US                                    2  
+254    JENNIFER_UKANOWICZ@WHPS.ORG                                           2  
+255    JENNY.ANDERSON@RSDMAIL.ORG                                            2  
+Macro ReptMulti results reported on Jul 6, 2023 at 4:31:23 PM
+Variable ucemail occurs multiple times in TotalLogins
+
+Obs    ucemail                                                             COUNT
+
+256    JENNY.ANLIKER@K12.SD.US                                               2  
+257    JESSICA.LESKE@SBCUSD.K12.CA.US                                        2  
+258    JESSICA.MULLER@SMARTERBALANCED.ORG                                    2  
+259    JESSICA.PEROFF@LAUSD.NET                                              2  
+260    JESSICA.RINGGENBERG@K12.SD.US                                         2  
+261    JFALZONE@REGION15.ORG                                                 2  
+262    JJONES1@STAMFORDCT.GOV                                                2  
+263    JKIM@EVERETTSD.ORG                                                    2  
+264    JKROUPA@NLMUSD.ORG                                                    2  
+265    JMA0033@LAUSD.NET                                                     2  
+266    JNAJERA@AZUSA.ORG                                                     2  
+267    JNOVARRO@WESTBROOKCTSCHOOLS.ORG                                       2  
+268    JOAN.MARBLE@KSD.ORG                                                   2  
+269    JOANNA.SCOTT@CVESD.ORG                                                2  
+270    JOHN.LIVEZEY@BELLINGHAMSCHOOLS.ORG                                    2  
+271    JOHNSONKAT@D93.K12.ID.US                                              2  
+272    JOLENE.MCGARRAH@SBCUSD.K12.CA.US                                      2  
+273    JON.GARRY@K12.SD.US                                                   2  
+274    JON.PETERS@K12.SD.US                                                  2  
+275    JONESJ14@NV.CCSD.NET                                                  2  
+276    JOTOON@STOCKTONUSD.NET                                                2  
+277    JOY.WOOD@PCA.K12.DE.US                                                2  
+278    JSIMMS@CALIVA.ORG                                                     2  
+279    JSNODGRASS@KUNASCHOOLS.ORG                                            2  
+280    JULI.TROWBRIDGE@K12.SD.US                                             2  
+281    JULIE.KNOWLES@OMSD.NET                                                2  
+282    JVO0690@LAUSD.NET                                                     2  
+283    JXA6634@LAUSD.NET                                                     2  
+284    JXR8310@LAUSD.NET                                                     2  
+285    JZAMORANO@TCSDK8.ORG                                                  2  
+286    KAEMINGKT@LYNDEN.WEDNET.EDU                                           2  
+287    KARA.WONG@PUSD.ORG                                                    2  
+288    KAREN.OLSON@DESERTSANDS.US                                            2  
+289    KARLA.GOODMAN@PACOIMACHARTER.ORG                                      2  
+290    KARMEN.JOHNSON@K12.SD.US                                              2  
+291    KATRINA-GALVAN@SCUSD.EDU                                              2  
+292    KATRINA.MARTINEZ@DORALACADEMYNV.ORG                                   2  
+293    KATRINA.RUDEBUSCH@K12.SD.US                                           2  
+294    KBROOKER@STAMFORDCT.GOV                                               2  
+295    KBROWNING@TORRINGTON.ORG                                              2  
+296    KBUNTING@WASHOESCHOOLS.NET                                            2  
+297    KCARSON@PARAMOUNT.K12.CA.US                                           2  
+298    KCHAMBERS@STAMFORDCT.GOV                                              2  
+299    KCORBI@STAMFORDCT.GOV                                                 2  
+300    KDAVIDSON@STOCKTONUSD.NET                                             2  
+301    KDUDEK@WINDHAM.K12.CT.US                                              2  
+302    KEALLISO@TAHOMASD.US                                                  2  
+303    KELLEY.GRUNEICH@K12.SD.US                                             2  
+304    KENDRA.CRUZ@SBCUSD.K12.CA.US                                          2  
+305    KERRILYNN_ONEILL@WHPS.ORG                                             2  
+306    KESLER.MATTHEW@BATTLEGROUNDPS.ORG                                     2  
+Macro ReptMulti results reported on Jul 6, 2023 at 4:31:23 PM
+Variable ucemail occurs multiple times in TotalLogins
+
+Obs    ucemail                                                             COUNT
+
+307    KEVIN.EVANGELINOS@FRESNOUNIFIED.ORG                                   2  
+308    KHANNM@FUSD.NET                                                       2  
+309    KIM.HILL@K12.SD.US                                                    2  
+310    KIMBERLEE.DAVIS@SBCUSD.K12.CA.US                                      2  
+311    KMACDONALD@EVERETTSD.ORG                                              2  
+312    KMCGUIRE@MYCPMS.NET                                                   2  
+313    KMOLITOR@MSD.K12.DE.US                                                2  
+314    KOHENIR@NV.CCSD.NET                                                   2  
+315    KONEILL@STAMFORDCT.GOV                                                2  
+316    KOSSSM@NV.CCSD.NET                                                    2  
+317    KPAPE@DILLONELEM.K12.MT.US                                            2  
+318    KPHUN@LAUSD.NET                                                       2  
+319    KRISLYN.CARLSON@K12.SD.US                                             2  
+320    KRISTIN.TRYGSTAD@K12.SD.US                                            2  
+321    KRISTY.JARROTT@K12.SD.US                                              2  
+322    KROUNTOS@REGION15.ORG                                                 2  
+323    KSACHS@SHELTONSCHOOLS.ORG                                             2  
+324    KSANTILLI@SHELTONPUBLICSCHOOLS.ORG                                    2  
+325    KSVOBODA@GLENDORA.K12.CA.US                                           2  
+326    KWELSH@STAMFORDCT.GOV                                                 2  
+327    KYLE.MCNAMAR@VERNONCT.ORG                                             2  
+328    KZAHNER@MARTINEZ.K12.CA.US                                            2  
+329    LAFLACL@NV.CCSD.NET                                                   2  
+330    LARA.HEISSER@ASPIREPUBLICSCHOOLS.ORG                                  2  
+331    LARITTICA.HANDY@LAUREL.K12.DE.US                                      2  
+332    LARRY.KELLER@K12.SD.US                                                2  
+333    LASTBA@NV.CCSD.NET                                                    2  
+334    LAURIE_PERRY@WHPS.ORG                                                 2  
+335    LAWANDA.FEDT@K12.SD.US                                                2  
+336    LCAMMAROTA@STAMFORDCT.GOV                                             2  
+337    LCOVINGTON@LLCSD.NET                                                  2  
+338    LDA4169@LAUSD.NET                                                     2  
+339    LDELATORRE@VVUHSD.ORG                                                 2  
+340    LEAH_CLAYTON@WHPS.ORG                                                 2  
+341    LECHTK@NV.CCSD.NET                                                    2  
+342    LEGASPI.LEAH@TUSD.ORG                                                 2  
+343    LEISHMANJ@LANCSD.ORG                                                  2  
+344    LEXY.RABENBERG@K12.SD.US                                              2  
+345    LFINCH@STAMFORDCT.GOV                                                 2  
+346    LHAPEMAN@OGSD.NET                                                     2  
+347    LHONN@CVSD.ORG                                                        2  
+348    LILIA.RODRIGUEZ@CVESD.ORG                                             2  
+349    LINDA.DAYE@CAPITAL.K12.DE.US                                          2  
+350    LINDSEY.PETERS@K12.SD.US                                              2  
+351    LISA.GALLO@MVLA.NET                                                   2  
+352    LISA.GASKILL@WJUSD.ORG                                                2  
+353    LISA.JACKSON@K12.SD.US                                                2  
+354    LISANDRA.DEGOMEZ@CVESD.ORG                                            2  
+355    LISANNE.FLOYD@SANJUAN.EDU                                             2  
+356    LISA_SEIBERT@BUSDK12.COM                                              2  
+357    LIZABETH.KOENIG@SALINASUHSD.ORG                                       2  
+Macro ReptMulti results reported on Jul 6, 2023 at 4:31:23 PM
+Variable ucemail occurs multiple times in TotalLogins
+
+Obs    ucemail                                                             COUNT
+
+358    LLEFFELMAN@EVERETTSD.ORG                                              2  
+359    LLYNAM@STAMFORDCT.GOV                                                 2  
+360    LOCAMPO@RCOE.US                                                       2  
+361    LONGHURST_GF@MTNHOMESD.ORG                                            2  
+362    LOPEZA16@NV.CCSD.NET                                                  2  
+363    LOPEZS@LANCSD.ORG                                                     2  
+364    LORI.MCCORD@KSD.ORG                                                   2  
+365    LORI.MULLEN@K12.SD.US                                                 2  
+366    LORY.DURKIEWICZ@SBCUSD.K12.CA.US                                      2  
+367    LOUIS.BLAKELY@SMARTERBALANCED.ORG                                     2  
+368    LOVIEDO@CONEJOUSD.ORG                                                 2  
+369    LPUYEAR@DILLONELEM.K12.MT.US                                          2  
+370    LRUIZ@STOCKTONUSD.NET                                                 2  
+371    LSEILER@OXNARDSD.ORG                                                  2  
+372    LSICAIROS@MCSD.K12.CA.US                                              2  
+373    LSOUTHWELL@POWAYUSD.COM                                               2  
+374    LUU_FANTIMA@MONTEBELLO.K12.CA.US                                      2  
+375    LVALDES@BASSETTUSD.ORG                                                2  
+376    LVALDEZ@VVUHSD.ORG                                                    2  
+377    LYNDI.SMITH@K12.SD.US                                                 2  
+378    LYNETTE.COKER@K12.SD.US                                               2  
+379    LYNN.ARNOLD@K12.SD.US                                                 2  
+380    M.DEJEREZ@CVESD.ORG                                                   2  
+381    MALCOLM-FLOYD@SCUSD.EDU                                               2  
+382    MARCY_LIGHT@WHPS.ORG                                                  2  
+383    MARGARET.BARKER@EVERGREENPS.ORG                                       2  
+384    MARIA.OLAZABAL@LAUSD.NET                                              2  
+385    MARIEHURD@CI.BRISTOL.CT.US                                            2  
+386    MARIO.NUNEZ@KERMANUSD.COM                                             2  
+387    MARQUEIA.DAVIS@BSD.K12.DE.US                                          2  
+388    MARTIEE3@NV.CCSD.NET                                                  2  
+389    MARY-ELIZABETH.QUAN@OMSD.NET                                          2  
+390    MARY.BUCHANAN@FRESNOUNIFIED.ORG                                       2  
+391    MARY.RIVERS@HESPERIAUSD.ORG                                           2  
+392    MARY.STEFFEN@K12.SD.US                                                2  
+393    MATTHEW.MCCLELLAN@MVLA.NET                                            2  
+394    MAUREEN_CURRAN@WHPS.ORG                                               2  
+395    MAVERY@HESD.ORG                                                       2  
+396    MAYE@LANCSD.ORG                                                       2  
+397    MAYER_JENNIFER@MONTEBELLO.K12.CA.US                                   2  
+398    MAZARKD@NV.CCSD.NET                                                   2  
+399    MCARRILLO@NLMUSD.ORG                                                  2  
+400    MCCORMSL@PUYALLUP.K12.WA.US                                           2  
+401    MCKINLEY_MARK@LACOE.EDU                                               2  
+402    MCLARK@SHELTONPUBLICSCHOOLS.ORG                                       2  
+403    MCNALLENM@NEWLONDON.ORG                                               2  
+404    MDALING@OKSD.WEDNET.EDU                                               2  
+405    MDELROSARIO@LBSCHOOLS.NET                                             2  
+406    MDONCH@STAMFORDCT.GOV                                                 2  
+407    MEGAN_WARES@WHPS.ORG                                                  2  
+408    MEGHAN.FULMER@IRSD.K12.DE.US                                          2  
+Macro ReptMulti results reported on Jul 6, 2023 at 4:31:23 PM
+Variable ucemail occurs multiple times in TotalLogins
+
+Obs    ucemail                                                             COUNT
+
+409    MEISTCK@NV.CCSD.NET                                                   2  
+410    MEJICR@NV.CCSD.NET                                                    2  
+411    MELANIE.JANZEN@SBCSS.NET                                              2  
+412    MELINDA.GOODWIN@KENT.K12.WA.US                                        2  
+413    MELISSA.GARCIA@CVESD.ORG                                              2  
+414    MEM2203@LAUSD.NET                                                     2  
+415    MENDOMM1@NV.CCSD.NET                                                  2  
+416    MFANO@STAMFORDCT.GOV                                                  2  
+417    MFITZPATRICK@CTREG14.ORG                                              2  
+418    MGALVA3@LAUSD.NET                                                     2  
+419    MGARRI1@LAUSD.NET                                                     2  
+420    MGOUGH@STAMFORDCT.GOV                                                 2  
+421    MHEMPHILL@MCSD.K12.CA.US                                              2  
+422    MICHAEL.ANDERSON@EVERGREENPS.ORG                                      2  
+423    MICHAEL_COBB@WHPS.ORG                                                 2  
+424    MICHELE.COUGHLIN@K12.SD.US                                            2  
+425    MICHELE.MARKARIAN@FRESNOUNIFIED.ORG                                   2  
+426    MICHELE_NARAMORE@CHINO.K12.CA.US                                      2  
+427    MICHELLE.PETERSEN@COLSTRIP.K12.MT.US                                  2  
+428    MICHELLE.ROSADO@CT.GOV                                                2  
+429    MICHELLE_PONCE@AVUSD.ORG                                              2  
+430    MIJANM@NV.CCSD.NET                                                    2  
+431    MIKKECA@PUYALLUP.K12.WA.US                                            2  
+432    MILOSKM@NV.CCSD.NET                                                   2  
+433    MKNEPSHIELD@RCSDK8.ORG                                                2  
+434    MKYOUNG@CAPOUSD.ORG                                                   2  
+435    MLT1876@LAUSD.NET                                                     2  
+436    MMARTINEZ@LLCSD.NET                                                   2  
+437    MMCGRATH@STAMFORDCT.GOV                                               2  
+438    MNA4664@LAUSD.NET                                                     2  
+439    MOKI.CARREON@CVESD.ORG                                                2  
+440    MOLLIE.SLABA@K12.SD.US                                                2  
+441    MONTEEK@NV.CCSD.NET                                                   2  
+442    MORALE1@NV.CCSD.NET                                                   2  
+443    MORGANL@MPSVT.ORG                                                     2  
+444    MORTEJB@NV.CCSD.NET                                                   2  
+445    MOUNTSK@RAINIER.WEDNET.EDU                                            2  
+446    MRASK@VVUHSD.ORG                                                      2  
+447    MSANDERS@LIBERTY.K12.CA.US                                            2  
+448    MTA9805@LAUSD.NET                                                     2  
+449    NANCY.EAST@K12.SD.US                                                  2  
+450    NANCY.HER2@FRESNOUNIFIED.ORG                                          2  
+451    NANCY_MOSES@WHPS.ORG                                                  2  
+452    NATALEE_RUDY@CHINO.K12.CA.US                                          2  
+453    NCCAMACHO@PALMDALESD.ORG                                              2  
+454    NCM1956@LAUSD.NET                                                     2  
+455    NHICKS@STAMFORDCT.GOV                                                 2  
+456    NICOLE.HARDISTY@TWINRIVERSUSD.ORG                                     2  
+457    NICOLE.NELSON@K12.SD.US                                               2  
+458    NOBLENC@NV.CCSD.NET                                                   2  
+459    NOEL.SAULLO@CVESD.ORG                                                 2  
+Macro ReptMulti results reported on Jul 6, 2023 at 4:31:23 PM
+Variable ucemail occurs multiple times in TotalLogins
+
+Obs    ucemail                                                             COUNT
+
+460    NOELLE.ANDERSON@FRESNOUNIFIED.ORG                                     2  
+461    NOREEN.GONZALEZ@HESPERIAUSD.ORG                                       2  
+462    NORMA.CRISOSTOMO@OMSD.NET                                             2  
+463    NORMA.LOPEZ@CVESD.ORG                                                 2  
+464    NSMITHERS@DOE.IN.GOV                                                  2  
+465    OGDENSL@NV.CCSD.NET                                                   2  
+466    OLIVEMA2@NV.CCSD.NET                                                  2  
+467    OLIVIA.LIN@MVLA.NET                                                   2  
+468    OLIVIA_SWINTH@CESD.US                                                 2  
+469    OLSENBL@NV.CCSD.NET                                                   2  
+470    ORTIZJA@NV.CCSD.NET                                                   2  
+471    OSMIN.RAMOS@LAUSD.NET                                                 2  
+472    PALACJF@NV.CCSD.NET                                                   2  
+473    PALMIVM@NV.CCSD.NET                                                   2  
+474    PALMK@NV.CCSD.NET                                                     2  
+475    PAM.BAUER@K12.SD.US                                                   2  
+476    PARSOD1@NV.CCSD.NET                                                   2  
+477    PATRICIA.ROBILLARD@FRESNOUNIFIED.ORG                                  2  
+478    PATTI.MITZEL@K12.SD.US                                                2  
+479    PEBBLC@NV.CCSD.NET                                                    2  
+480    PENAS@D93.K12.ID.US                                                   2  
+481    PERLIN.NICOLE@NORTH-HAVEN.K12.CT.US                                   2  
+482    PETERSEM@D93.K12.ID.US                                                2  
+483    PJANICEK@GSD54.ORG                                                    2  
+484    PMOORE@STAMFORDCT.GOV                                                 2  
+485    POPEKS@NV.CCSD.NET                                                    2  
+486    PURSERA@D93.K12.ID.US                                                 2  
+487    PWILDENRADT@OGSD.NET                                                  2  
+488    RACHAEL.BARR@VALLIVUE.ORG                                             2  
+489    RACHEL.WALDNER@K12.SD.US                                              2  
+490    RANKISM@NV.CCSD.NET                                                   2  
+491    RBELTZ@MCSD.K12.CA.US                                                 2  
+492    RBOOTHROYD@STAMFORDCT.GOV                                             2  
+493    REBECCA.DELBUSTO@CVESD.ORG                                            2  
+494    REBECCAC@CKSCHOOLS.ORG                                                2  
+495    REHREML@NV.CCSD.NET                                                   2  
+496    RHONE@CVSD.ORG                                                        2  
+497    RITA.BOYKINS@CJUHSD.NET                                               2  
+498    RIVERMA2@NV.CCSD.NET                                                  2  
+499    RJACKS-GARRETT@CHICOUSD.ORG                                           2  
+500    RLULU@BASINSCHOOLS.NET                                                2  
+501    RMM4931@LAUSD.NET                                                     2  
+502    ROBERT.BEAN@SBCUSD.K12.CA.US                                          2  
+503    ROBERT.RINKER@HIGHLINESCHOOLS.ORG                                     2  
+504    ROBERT.SCHWARTZ@LAUSD.NET                                             2  
+505    ROBIN.HEMMEN@K12.SD.US                                                2  
+506    ROBIN.THOMAS@HESPERIAUSD.ORG                                          2  
+507    ROCHELLE_MOSS@CHINO.K12.CA.US                                         2  
+508    ROCKWCK@NV.CCSD.NET                                                   2  
+509    RON_MARCHELL@WHPS.ORG                                                 2  
+510    ROSANNA_ELGOHARY@BUSDK12.COM                                          2  
+Macro ReptMulti results reported on Jul 6, 2023 at 4:31:23 PM
+Variable ucemail occurs multiple times in TotalLogins
+
+Obs    ucemail                                                             COUNT
+
+511    ROWBOTHAMC@NEWLONDON.ORG                                              2  
+512    SABRINA.BYINGTON@MEAD354.ORG                                          2  
+513    SAMBREN@NV.CCSD.NET                                                   2  
+514    SANDRA.AGUAYO@FRESNOUNIFIED.ORG                                       2  
+515    SANDRA_FRIESEN@CHINO.K12.CA.US                                        2  
+516    SANTOS_HEIDI@MONTEBELLO.K12.CA.US                                     2  
+517    SARA.BRISBY@ABLECHARTER.COM                                           2  
+518    SARA.HEFFNER@K12.SD.US                                                2  
+519    SARAH.BETLEJEWSKI@IRSD.K12.DE.US                                      2  
+520    SARAH.BROCK@IRSD.K12.DE.US                                            2  
+521    SCHINDLERE@NEWLONDON.ORG                                              2  
+522    SCHLIDC@NV.CCSD.NET                                                   2  
+523    SCOTTGANDY@MADERAUSD.ORG                                              2  
+524    SCOTTKM@NV.CCSD.NET                                                   2  
+525    SCURRMR@NV.CCSD.NET                                                   2  
+526    SHANNONG@CKSCHOOLS.ORG                                                2  
+527    SHARON.SCHWEBACH@K12.SD.US                                            2  
+528    SHARON.VESTAL@SDSTATE.EDU                                             2  
+529    SHARPJD@NV.CCSD.NET                                                   2  
+530    SHELBY.BERTRAM@K12.SD.US                                              2  
+531    SHELLEY.MCBRIDE@IRSD.K12.DE.US                                        2  
+532    SHERRI.HORAN@K12.SD.US                                                2  
+533    SIDNEY.VANG@FRESNOUNIFIED.ORG                                         2  
+534    SKDADWAL@STOCKTONUSD.NET                                              2  
+535    SKING2@PSD267.ORG                                                     2  
+536    SKINNBJ@NV.CCSD.NET                                                   2  
+537    SMALEC@NLMUSD.ORG                                                     2  
+538    SMDAVIS@WASHOESCHOOLS.NET                                             2  
+539    SMITHK@TRUMBULLPS.ORG                                                 2  
+540    SMOFFIT@CVSD.ORG                                                      2  
+541    SMORRIS2@EVERETTSD.ORG                                                2  
+542    SOLOMCL@NV.CCSD.NET                                                   2  
+543    SONIA.BORJA@TWINRIVERSUSD.ORG                                         2  
+544    SONIA.CERVANTES@PACOIMACHARTER.ORG                                    2  
+545    SONSONG@NV.CCSD.NET                                                   2  
+546    SPEREZ02@LAUSD.NET                                                    2  
+547    SREDSMITH@PVUSD.US                                                    2  
+548    SRETES@NV.CCSD.NET                                                    2  
+549    SRODRIGUEZ@HLPUSD.K12.CA.US                                           2  
+550    SSILVA@LBSCHOOLS.NET                                                  2  
+551    STACEY-NAKASHIMA@SCUSD.EDU                                            2  
+552    STACI.POKORSKI@K12.SD.US                                              2  
+553    STAMBORINO@STAMFORDCT.GOV                                             2  
+554    STEBBINSS@LANCSD.ORG                                                  2  
+555    STEELM1@NV.CCSD.NET                                                   2  
+556    STEPHANIE.FORTUNATO@INGLEWOODUSD.COM                                  2  
+557    STEPHANIE.JONES@K12.SD.US                                             2  
+558    STEVEN.FENCL@VALLIVUE.ORG                                             2  
+559    STEVETL@NV.CCSD.NET                                                   2  
+560    STHERRIEN@EASTHAMPTONCT.ORG                                           2  
+561    SUELLEN_CRAWFORD@WHPS.ORG                                             2  
+Macro ReptMulti results reported on Jul 6, 2023 at 4:31:23 PM
+Variable ucemail occurs multiple times in TotalLogins
+
+Obs    ucemail                                                             COUNT
+
+562    SUE_MARTUCCI@WHPS.ORG                                                 2  
+563    SULTANA.DIXON@OMSD.NET                                                2  
+564    SUSAN.LAMARCHE@MVLA.NET                                               2  
+565    SUSANNA.TAYLOR@KENT.K12.WA.US                                         2  
+566    SWANST@NV.CCSD.NET                                                    2  
+567    SXM4111@LAUSD.NET                                                     2  
+568    SZEWCAD@NV.CCSD.NET                                                   2  
+569    TALENA.HILL@SBCUSD.K12.CA.US                                          2  
+570    TANSOTEGUI@BASINSCHOOLS.NET                                           2  
+571    TARA.PETERS@LAUSD.NET                                                 2  
+572    TARAUJO@CLASSICALACADEMY.COM                                          2  
+573    TATE.BOUMAN@K12.SD.US                                                 2  
+574    TBECH501@COLCHESTERCT.ORG                                             2  
+575    TBOWEN@LBSCHOOLS.NET                                                  2  
+576    TEEMAMJ@NV.CCSD.NET                                                   2  
+577    TEENAH@WESTBYSCHOOL.K12.MT.US                                         2  
+578    TERESA.OLSON@K12.SD.US                                                2  
+579    TERESA.REHBERG@SBCUSD.K12.CA.US                                       2  
+580    TGOTHMANN@CVSD.ORG                                                    2  
+581    THIESJL@NV.CCSD.NET                                                   2  
+582    THOMAS.LOPEZ@OMSD.NET                                                 2  
+583    THURMJ@NV.CCSD.NET                                                    2  
+584    TIFFANY.KAROW@MVLA.NET                                                2  
+585    TIFFANY.WENDLING@K12.SD.US                                            2  
+586    TISMITH@PAYETTESCHOOLS.ORG                                            2  
+587    TMM4405@LAUSD.NET                                                     2  
+588    TOM_LUCEY@WHPS.ORG                                                    2  
+589    TONIA.WARZECHA@K12.SD.US                                              2  
+590    TONY.ALPERT@SMARTERBALANCED.ORG                                       2  
+591    TORRES_IVONNE@MONTEBELLO.K12.CA.US                                    2  
+592    TORTORA.CHRISTINA@NORTH-HAVEN.K12.CT.US                               2  
+593    TOWNSJR@NV.CCSD.NET                                                   2  
+594    TRICIA.GRAY@SVUSD.ORG                                                 2  
+595    TRISHA.KLEIN@SMARTERBALANCED.ORG                                      2  
+596    TRISTEN.LECHNER@K12.SD.US                                             2  
+597    TROY.WIEBE@K12.SD.US                                                  2  
+598    TURNET3@NV.CCSD.NET                                                   2  
+599    TYNDAK@NV.CCSD.NET                                                    2  
+600    ULRICMM@NV.CCSD.NET                                                   2  
+601    VERONICA.SMITH@PUSD.ORG                                               2  
+602    VHUDSON@MSD.K12.DE.US                                                 2  
+603    VIVIAN.HIRAYAMA@FRESNOUNIFIED.ORG                                     2  
+604    VJB8730@LAUSD.NET                                                     2  
+605    VPUNCHES@WEAVERUSD.ORG                                                2  
+606    VRUBIO@LLCSD.NET                                                      2  
+607    VSUN@GUSD.NET                                                         2  
+608    VWOODS@MCSD.K12.CA.US                                                 2  
+609    VXD3805@LAUSD.NET                                                     2  
+610    WALKEKE1@NV.CCSD.NET                                                  2  
+611    WHOGAN@TAHOMASD.US                                                    2  
+612    WILLIAM.HAWKINS@TWINRIVERSUSD.ORG                                     2  
+Macro ReptMulti results reported on Jul 6, 2023 at 4:31:23 PM
+Variable ucemail occurs multiple times in TotalLogins
+
+Obs    ucemail                                                             COUNT
+
+613    WINDY_CURTIS@CHINO.K12.CA.US                                          2  
+614    WISEMANL@NEWLONDON.ORG                                                2  
+615    WJCOKER@HLPUSD.K12.CA.US                                              2  
+616    WMALONEY@SHELTONPUBLICSCHOOLS.ORG                                     2  
+617    WOLFEA@NV.CCSD.NET                                                    2  
+618    WOODFBA@NV.CCSD.NET                                                   2  
+619    WOODTI@FUSD.NET                                                       2  
+620    WOOLSJ@NV.CCSD.NET                                                    2  
+621    WSTOWE@SHELTONPUBLICSCHOOLS.ORG                                       2  
+622    WXC1276@LAUSD.NET                                                     2  
+623    YLY@HLPUSD.K12.CA.US                                                  2  
+624    YVONNE.LUNA@KSD.ORG                                                   2  
+625    YXS3649@LAUSD.NET                                                     2  
+Macro ReptMulti results reported on Jul 6, 2023 at 4:31:23 PM
+Variable email occurs multiple times in TotalLogins3
+
+Obs    email                                                               COUNT
+
+ 1     jessica.muller@smarterbalanced.org                                    2  
+ 2     stephanie.fortunato@inglewoodusd.com                                  2  
+        max
+-----------
+     130742
+Retrieve max aur_id value from t4t.app_use_rept.
+
+        max
+-----------
+     209555
+Quick look at Monthly data for CA [06JUL2023 16:32]
+
+ 
+ Obs      indx    person
+
+   1    209556    Kris Boneman                    
+   2    209557    Donna Simmons                   
+   3    209558    Erick Marquez                   
+   4    209559    ANA FILOMIA                     
+   5    209560    Frank Urquiza                   
+   6    209561    Karen Costa                     
+   7    209562    Kelly Wilson                    
+   8    209563    Larissa Goosev                  
+   9    209564    Laura Valadez                   
+
+ 
+ Obs    Login
+
+   1    boneman@bonita.k12.ca.us                                        
+   2    donna.simmons@fresnounified.org                                 
+   3    erick.marquez@partnershipla.org                                 
+   4    filomiaa@lancsd.org                                             
+   5    furquiza@hemetusd.org                                           
+   6    karen.costa@kingscoe.org                                        
+   7    kwilson@dpol.net                                                
+   8    largoosev@cojusd.org                                            
+   9    laura.valadez@lausd.net                                         
+
+ 
+ Obs    appUserName
+
+   1    boneman@bonita.k12.ca.us                                        
+   2    donna.simmons@fresnounified.org                                 
+   3    erick.marquez@partnershipla.org                                 
+   4    filomiaa@lancsd.org                                             
+   5    furquiza@hemetusd.org                                           
+   6    karen.costa@kingscoe.org                                        
+   7    kwilson@dpol.net                                                
+   8    largoosev@cojusd.org                                            
+   9    laura.valadez@lausd.net                                         
+
+         Num                                                     month
+ Obs    Logins               LastLogin    LastLoginISO8601       Year        member
+
+   1         3      27JUN2023:10:45:21    2023-06-27T17:45:21    Jun2023       CA  
+   2         3      06JUN2023:11:33:24    2023-06-06T18:33:24    Jun2023       CA  
+   3         2      01JUN2023:14:04:06    2023-06-01T21:04:06    Jun2023       CA  
+   4         1      07JUN2023:08:45:22    2023-06-07T15:45:22    Jun2023       CA  
+   5         3      05JUN2023:12:43:24    2023-06-05T19:43:24    Jun2023       CA  
+   6         1      29JUN2023:09:44:54    2023-06-29T16:44:54    Jun2023       CA  
+   7         2      01JUN2023:11:29:27    2023-06-01T18:29:27    Jun2023       CA  
+   8         1      06JUN2023:09:19:13    2023-06-06T16:19:13    Jun2023       CA  
+   9         2      14JUN2023:11:00:44    2023-06-14T18:00:44    Jun2023       CA  
+Retrieve max aur_id value from t4t.app_use_rept.
+
+        max
+-----------
+     210696
+Quick look at Monthly data for CT [06JUL2023 16:33]
+
+ 
+Obs      indx    person
+
+  1    210697    Amy Taylor                      
+  2    210698    Brian Coughlan                  
+  3    210699    Colette Bennett                 
+  4    210700    Erica Ladrigan                  
+  5    210701    Heather Glynn                   
+  6    210702    jeff corbishley                 
+  7    210703    JF Halbrooks                    
+  8    210704    Kerin Tighe                     
+  9    210705    Nicole Ryan                     
+
+ 
+Obs    Login
+
+  1    amy_taylor@isaacschool.org                                      
+  2    bcoughlan@parkcityprep.org                                      
+  3    colette.bennett@whschools.org                                   
+  4    erica.ladrigan@naugatuck.k12.ct.us                              
+  5    hglynn@northbranfordschools.org                                 
+  6    jcorbishley@ridgefieldps.net                                    
+  7    jf.halbrooks@lebanonct.org                                      
+  8    ktighe@westportps.org                                           
+  9    nryan@coventryct.org                                            
+
+ 
+Obs    appUserName
+
+  1    amy_taylor@isaacschool.org                                      
+  2    bcoughlan@parkcityprep.org                                      
+  3    colette.bennett@whschools.org                                   
+  4    erica.ladrigan@naugatuck.k12.ct.us                              
+  5    hglynn@northbranfordschools.org                                 
+  6    jcorbishley@ridgefieldps.net                                    
+  7    jf.halbrooks@lebanonct.org                                      
+  8    ktighe@westportps.org                                           
+  9    nryan@coventryct.org                                            
+
+        Num                                                     month
+Obs    Logins               LastLogin    LastLoginISO8601       Year        member
+
+  1         4      06JUN2023:10:22:34    2023-06-06T17:22:34    Jun2023       CT  
+  2         2      01JUN2023:09:06:09    2023-06-01T16:06:09    Jun2023       CT  
+  3         4      30JUN2023:10:07:10    2023-06-30T17:07:10    Jun2023       CT  
+  4         1      06JUN2023:11:55:18    2023-06-06T18:55:18    Jun2023       CT  
+  5         3      13JUN2023:07:05:22    2023-06-13T14:05:22    Jun2023       CT  
+  6         2      14JUN2023:07:54:28    2023-06-14T14:54:28    Jun2023       CT  
+  7         5      12JUN2023:13:48:51    2023-06-12T20:48:51    Jun2023       CT  
+  8         4      05JUN2023:10:22:09    2023-06-05T17:22:09    Jun2023       CT  
+  9         1      04JUN2023:08:53:30    2023-06-04T15:53:30    Jun2023       CT  
+Retrieve max aur_id value from t4t.app_use_rept.
+
+        max
+-----------
+     211011
+Quick look at Monthly data for DE [06JUL2023 16:34]
+
+ 
+Obs      indx    person
+
+  1    211012    Derek Smith                     
+  2    211013    Jessica Hernandez-Perez         
+  3    211014    Andrea Winkleblech              
+  4    211015    Christina Burton                
+  5    211016    Demo AIRAdmin                   
+  6    211017    Gina Voges                      
+  7    211018    Katia Foret                     
+  8    211019    Veronica Laise                  
+  9    211020    Tracy Lauer                     
+
+ 
+Obs    Login
+
+  1    derek.smith@seaford.k12.de.us                                   
+  2    jessica.hernandez-perez@apposchooldistrict.com                  
+  3    andrea.winkleblech@capital.k12.de.us                            
+  4    christina.burton@seaford.k12.de.us                              
+  5    demo.air_admin@cambiumassessment.com                            
+  6    gina.voges@laurel.k12.de.us                                     
+  7    katia.foret@doe.k12.de.us                                       
+  8    vlaise@msd.k12.de.us                                            
+  9    tracy.lauer@bsd.k12.de.us                                       
+
+ 
+Obs    appUserName
+
+  1    derek.smith@seaford.k12.de.us                                   
+  2    jessica.hernandez-perez@apposchooldistrict.com                  
+  3    andrea.winkleblech@capital.k12.de.us                            
+  4    christina.burton@seaford.k12.de.us                              
+  5    demo.air_admin@cambiumassessment.com                            
+  6    gina.voges@laurel.k12.de.us                                     
+  7    katia.foret@doe.k12.de.us                                       
+  8    vlaise@msd.k12.de.us                                            
+  9    tracy.lauer@bsd.k12.de.us                                       
+
+        Num                                                     month
+Obs    Logins               LastLogin    LastLoginISO8601       Year        member
+
+  1         8      05JUN2023:19:40:55    2023-06-06T02:40:55    Jun2023       DE  
+  2         2      12JUN2023:11:39:13    2023-06-12T18:39:13    Jun2023       DE  
+  3         3      13JUN2023:05:04:49    2023-06-13T12:04:49    Jun2023       DE  
+  4         4      08JUN2023:10:39:44    2023-06-08T17:39:44    Jun2023       DE  
+  5         1      12JUN2023:11:49:22    2023-06-12T18:49:22    Jun2023       DE  
+  6         4      22JUN2023:07:22:55    2023-06-22T14:22:55    Jun2023       DE  
+  7         2      11JUN2023:20:19:44    2023-06-12T03:19:44    Jun2023       DE  
+  8        14      24JUN2023:14:44:16    2023-06-24T21:44:16    Jun2023       DE  
+  9         3      13JUN2023:09:04:42    2023-06-13T16:04:42    Jun2023       DE  
+Retrieve max aur_id value from t4t.app_use_rept.
+
+        max
+-----------
+     211043
+Quick look at Monthly data for HI [06JUL2023 16:34]
+
+ 
+Obs      indx    person
+
+  1    211044    Kinau Camacho                   
+  2    211045    Janice Eala                     
+  3    211046    Tara Schwartz                   
+  4    211047    Debbie Bates                    
+  5    211048    Holu wickersham                 
+  6    211049    Kalea Rogers                    
+  7    211050    Tiana Fuertes                   
+  8    211051    Marissa Carlos                  
+  9    211052    Tiare Walker                    
+
+ 
+Obs    Login
+
+  1    10011294@k12.hi.us                                              
+  2    10119118@k12.hi.us                                              
+  3    10086303@k12.hi.us                                              
+  4    20277182@k12.hi.us                                              
+  5    10000535@k12.hi.us                                              
+  6    10005519@k12.hi.us                                              
+  7    10014325@k12.hi.us                                              
+  8    10092294@k12.hi.us                                              
+  9    20095486@k12.hi.us                                              
+
+ 
+Obs    appUserName
+
+  1    10011294@k12.hi.us                                              
+  2    10119118@k12.hi.us                                              
+  3    10086303@k12.hi.us                                              
+  4    20277182@k12.hi.us                                              
+  5    10000535@k12.hi.us                                              
+  6    10005519@k12.hi.us                                              
+  7    10014325@k12.hi.us                                              
+  8    10092294@k12.hi.us                                              
+  9    20095486@k12.hi.us                                              
+
+        Num                                                     month
+Obs    Logins               LastLogin    LastLoginISO8601       Year        member
+
+  1         3      08JUN2023:14:49:34    2023-06-08T21:49:34    Jun2023       HI  
+  2         8      30JUN2023:11:15:20    2023-06-30T18:15:20    Jun2023       HI  
+  3         3      22JUN2023:16:46:54    2023-06-22T23:46:54    Jun2023       HI  
+  4         9      23JUN2023:11:03:57    2023-06-23T18:03:57    Jun2023       HI  
+  5         3      06JUN2023:13:22:56    2023-06-06T20:22:56    Jun2023       HI  
+  6         6      30JUN2023:12:55:11    2023-06-30T19:55:11    Jun2023       HI  
+  7         3      15JUN2023:14:03:00    2023-06-15T21:03:00    Jun2023       HI  
+  8         2      07JUN2023:16:22:59    2023-06-07T23:22:59    Jun2023       HI  
+  9         4      09JUN2023:13:28:56    2023-06-09T20:28:56    Jun2023       HI  
+Retrieve max aur_id value from t4t.app_use_rept.
+
+        max
+-----------
+     211092
+Quick look at Monthly data for ID [06JUL2023 16:34]
+
+ 
+Obs      indx    person
+
+  1    211093    Jeramiah Brown                  
+  2    211094    Deanza Knibbs                   
+  3    211095    Mary Pattis                     
+  4    211096    Christy Swafford                
+  5    211097    Jodi Togiai                     
+  6    211098    Angie Godfrey                   
+  7    211099    Laura Milton                    
+  8    211100    Tamara Scribner                 
+  9    211101    Alicia Perkins                  
+
+ 
+Obs    Login
+
+  1    brown.jeramiah@westada.org                                      
+  2    knibbsd@d93.k12.id.us                                           
+  3    mary.pattis@sd273.com                                           
+  4    swaffordch@tfsd.org                                             
+  5    togijodi@d55.k12.id.us                                          
+  6    angiegodfrey@isu.edu                                            
+  7    miltlaur@sd91.org                                               
+  8    tscribner@isd221.net                                            
+  9    aperkins@nsd131.org                                             
+
+ 
+Obs    appUserName
+
+  1    brown.jeramiah@westada.org                                      
+  2    knibbsd@d93.k12.id.us                                           
+  3    mary.pattis@sd273.com                                           
+  4    swaffordch@tfsd.org                                             
+  5    togijodi@d55.k12.id.us                                          
+  6    angiegodfrey@isu.edu                                            
+  7    miltlaur@sd91.org                                               
+  8    tscribner@isd221.net                                            
+  9    aperkins@nsd131.org                                             
+
+        Num                                                     month
+Obs    Logins               LastLogin    LastLoginISO8601       Year        member
+
+  1         6      02JUN2023:13:39:39    2023-06-02T20:39:39    Jun2023       ID  
+  2         4      06JUN2023:09:05:32    2023-06-06T16:05:32    Jun2023       ID  
+  3         2      13JUN2023:15:08:05    2023-06-13T22:08:05    Jun2023       ID  
+  4         3      15JUN2023:11:15:48    2023-06-15T18:15:48    Jun2023       ID  
+  5         4      20JUN2023:11:41:41    2023-06-20T18:41:41    Jun2023       ID  
+  6         8      13JUN2023:12:11:19    2023-06-13T19:11:19    Jun2023       ID  
+  7         3      07JUN2023:13:23:54    2023-06-07T20:23:54    Jun2023       ID  
+  8         2      01JUN2023:10:31:57    2023-06-01T17:31:57    Jun2023       ID  
+  9         2      29JUN2023:10:29:29    2023-06-29T17:29:29    Jun2023       ID  
+Retrieve max aur_id value from t4t.app_use_rept.
+
+        max
+-----------
+     211222
+Quick look at Monthly data for IN [06JUL2023 16:34]
+
+ 
+Obs      indx    person
+
+  1    211223    Lindsey Martin                  
+  2    211224    Kaleigh Hesher                  
+  3    211225    Jennifer Greenlee               
+  4    211226    Holly Miller                    
+  5    211227    KATHLEEN GORDON                 
+  6    211228    Dianne Meyer                    
+  7    211229    Allison Coulter                 
+  8    211230    Andrea Larkey                   
+  9    211231    Brittany Forler                 
+
+ 
+Obs    Login
+
+  1    lnmartin@lsc.k12.in.us                                          
+  2    khesher@lsc.k12.in.us                                           
+  3    jgreenlee@stjosephgradeschool.com                               
+  4    holly.miller@nacs.k12.in.us                                     
+  5    kathleen.gordon@fwcs.k12.in.us                                  
+  6    meyerd@rssc.k12.in.us                                           
+  7    agcoulter@avon-schools.org                                      
+  8    andrea.larkey@nwcs.k12.in.us                                    
+  9    bforler@warrick.k12.in.us                                       
+
+ 
+Obs    appUserName
+
+  1    lnmartin@lsc.k12.in.us                                          
+  2    khesher@lsc.k12.in.us                                           
+  3    jgreenlee@stjosephgradeschool.com                               
+  4    holly.miller@nacs.k12.in.us                                     
+  5    kathleen.gordon@fwcs.k12.in.us                                  
+  6    meyerd@rssc.k12.in.us                                           
+  7    agcoulter@avon-schools.org                                      
+  8    andrea.larkey@nwcs.k12.in.us                                    
+  9    bforler@warrick.k12.in.us                                       
+
+        Num                                                     month
+Obs    Logins               LastLogin    LastLoginISO8601       Year        member
+
+  1         1      27JUN2023:07:58:35    2023-06-27T14:58:35    Jun2023       IN  
+  2         1      26JUN2023:09:03:32    2023-06-26T16:03:32    Jun2023       IN  
+  3         4      12JUN2023:04:07:29    2023-06-12T11:07:29    Jun2023       IN  
+  4         3      12JUN2023:10:13:27    2023-06-12T17:13:27    Jun2023       IN  
+  5         2      28JUN2023:10:51:28    2023-06-28T17:51:28    Jun2023       IN  
+  6        10      12JUN2023:17:27:41    2023-06-13T00:27:41    Jun2023       IN  
+  7         3      13JUN2023:05:08:18    2023-06-13T12:08:18    Jun2023       IN  
+  8         2      01JUN2023:09:51:22    2023-06-01T16:51:22    Jun2023       IN  
+  9         2      01JUN2023:08:58:50    2023-06-01T15:58:50    Jun2023       IN  
+Retrieve max aur_id value from t4t.app_use_rept.
+
+        max
+-----------
+     211307
+Quick look at Monthly data for MI [06JUL2023 16:35]
+
+ 
+Obs      indx    person
+
+ 1     211308    Scott Roark                     
+ 2     211309    Toyre Burks                     
+ 3     211310    Dotty Hottum                    
+ 4     211311    Francisca Kidder                
+ 5     211312    Jennifer Lowe                   
+ 6     211313    Patrick McKerr                  
+ 7     211314    Lisa Zettle                     
+
+ 
+Obs    Login
+
+ 1     Roark72@gmail.com                                               
+ 2     tk_burks@yahoo.com                                              
+ 3     DottyHottum@hartlandschools.us                                  
+ 4     francisca.kidder@lansingschools.net                             
+ 5     jlowe@nbbroncos.net                                             
+ 6     pmckerr@unioncityschools.org                                    
+ 7     zettlel@baisd.net                                               
+
+ 
+Obs    appUserName
+
+ 1     Roark72@gmail.com                                               
+ 2     tk_burks@yahoo.com                                              
+ 3     DottyHottum@hartlandschools.us                                  
+ 4     francisca.kidder@lansingschools.net                             
+ 5     jlowe@nbbroncos.net                                             
+ 6     pmckerr@unioncityschools.org                                    
+ 7     zettlel@baisd.net                                               
+
+        Num                                                     month
+Obs    Logins               LastLogin    LastLoginISO8601       Year        member
+
+ 1          1      08JUN2023:10:13:22    2023-06-08T17:13:22    Jun2023       MI  
+ 2          2      19JUN2023:19:04:37    2023-06-20T02:04:37    Jun2023       MI  
+ 3          2      06JUN2023:05:53:32    2023-06-06T12:53:32    Jun2023       MI  
+ 4          4      29JUN2023:09:28:26    2023-06-29T16:28:26    Jun2023       MI  
+ 5          5      14JUN2023:06:26:32    2023-06-14T13:26:32    Jun2023       MI  
+ 6          2      26JUN2023:06:14:53    2023-06-26T13:14:53    Jun2023       MI  
+ 7         10      08JUN2023:11:39:03    2023-06-08T18:39:03    Jun2023       MI  
+Retrieve max aur_id value from t4t.app_use_rept.
+
+        max
+-----------
+     211314
+Quick look at Monthly data for MT [06JUL2023 16:35]
+
+ 
+Obs      indx    person
+
+  1    211315    Roger Dereszynski               
+  2    211316    Emily Larson                    
+  3    211317    Amber Lynch                     
+  4    211318    Martin Kuhl                     
+  5    211319    Tessa Murphy-Vought             
+  6    211320    Yvonne Field                    
+  7    211321    kim lee                         
+  8    211322    Bridget Royce                   
+  9    211323    Kelly Henderson                 
+
+ 
+Obs    Login
+
+  1    dereszynskir@billingsschools.org                                
+  2    larson@victor.k12.mt.us                                         
+  3    lynch@victor.k12.mt.us                                          
+  4    mkuhl@mtcityschool.net                                          
+  5    tvought@arrowheadk8.org                                         
+  6    yfield@mt.gov                                                   
+  7    leek@libbyschools.org                                           
+  8    broyce@mhstigers.org                                            
+  9    super@gallatingatewayschool.com                                 
+
+ 
+Obs    appUserName
+
+  1    dereszynskir@billingsschools.org                                
+  2    larson@victor.k12.mt.us                                         
+  3    lynch@victor.k12.mt.us                                          
+  4    mkuhl@mtcityschool.net                                          
+  5    tvought@arrowheadk8.org                                         
+  6    yfield@mt.gov                                                   
+  7    leek@libbyschools.org                                           
+  8    broyce@mhstigers.org                                            
+  9    super@gallatingatewayschool.com                                 
+
+        Num                                                     month
+Obs    Logins               LastLogin    LastLoginISO8601       Year        member
+
+  1         4      26JUN2023:09:34:33    2023-06-26T16:34:33    Jun2023       MT  
+  2         7      21JUN2023:14:38:23    2023-06-21T21:38:23    Jun2023       MT  
+  3         9      24JUN2023:14:24:31    2023-06-24T21:24:31    Jun2023       MT  
+  4         4      06JUN2023:12:06:35    2023-06-06T19:06:35    Jun2023       MT  
+  5         2      02JUN2023:12:35:22    2023-06-02T19:35:22    Jun2023       MT  
+  6         1      14JUN2023:13:05:59    2023-06-14T20:05:59    Jun2023       MT  
+  7         6      05JUN2023:09:30:54    2023-06-05T16:30:54    Jun2023       MT  
+  8         2      29JUN2023:10:21:35    2023-06-29T17:21:35    Jun2023       MT  
+  9         3      14JUN2023:08:32:08    2023-06-14T15:32:08    Jun2023       MT  
+Retrieve max aur_id value from t4t.app_use_rept.
+
+        max
+-----------
+     211326
+Quick look at Monthly data for NV [06JUL2023 16:35]
+
+ 
+Obs      indx    person
+
+  1    211327    EMILY GARCIA                    
+  2    211328    Suzanne Schultz                 
+  3    211329    MICHAEL BILLER                  
+  4    211330    Colleen Stewart                 
+  5    211331    CHRISTIAN HAWORTH               
+  6    211332    JIM FROST                       
+  7    211333    Nancy Bleuer                    
+  8    211334    SASHA OQUENDO                   
+  9    211335    CORI ZANCANELLA                 
+
+ 
+Obs    Login
+
+  1    GARCIEV@NV.CCSD.NET                                             
+  2    sschultz@hcsdnv.com                                             
+  3    MBiller@washoeschools.net                                       
+  4    graceca@nv.ccsd.net                                             
+  5    HAWORCF@NV.CCSD.NET                                             
+  6    jfrost@washoeschools.net                                        
+  7    nbleuer@coralacademylv.org                                      
+  8    OQUENSS@NV.CCSD.NET                                             
+  9    CZancanella@WashoeSchools.net                                   
+
+ 
+Obs    appUserName
+
+  1    GARCIEV@NV.CCSD.NET                                             
+  2    sschultz@hcsdnv.com                                             
+  3    MBiller@washoeschools.net                                       
+  4    graceca@nv.ccsd.net                                             
+  5    HAWORCF@NV.CCSD.NET                                             
+  6    jfrost@washoeschools.net                                        
+  7    nbleuer@coralacademylv.org                                      
+  8    OQUENSS@NV.CCSD.NET                                             
+  9    CZancanella@WashoeSchools.net                                   
+
+        Num                                                     month
+Obs    Logins               LastLogin    LastLoginISO8601       Year        member
+
+  1         2      14JUN2023:08:53:58    2023-06-14T15:53:58    Jun2023       NV  
+  2         4      01JUN2023:11:44:43    2023-06-01T18:44:43    Jun2023       NV  
+  3        37      12JUN2023:11:07:42    2023-06-12T18:07:42    Jun2023       NV  
+  4        29      26JUN2023:16:06:44    2023-06-26T23:06:44    Jun2023       NV  
+  5         2      08JUN2023:12:20:35    2023-06-08T19:20:35    Jun2023       NV  
+  6         2      05JUN2023:08:36:00    2023-06-05T15:36:00    Jun2023       NV  
+  7         3      01JUN2023:09:23:56    2023-06-01T16:23:56    Jun2023       NV  
+  8         3      29JUN2023:10:25:05    2023-06-29T17:25:05    Jun2023       NV  
+  9         7      27JUN2023:21:14:31    2023-06-28T04:14:31    Jun2023       NV  
+Retrieve max aur_id value from t4t.app_use_rept.
+
+        max
+-----------
+     211368
+Quick look at Monthly data for OR [06JUL2023 16:35]
+
+ 
+Obs      indx    person
+
+  1    211369    Bruce Martin                    
+  2    211370    Juan Rodriguez                  
+  3    211371    Tiffany Rush                    
+  4    211372    Angie Douma                     
+  5    211373    Mark Benedict                   
+  6    211374    Sean Davidson                   
+  7    211375    Ryan Ware                       
+  8    211376    Tracy Schmiedeberg              
+  9    211377    Acacia Caraballo                
+
+ 
+Obs    Login
+
+  1    bmartin@nbend.k12.or.us                                         
+  2    juan.rodriguez@hermistonsd.org                                  
+  3    trush@nbend.k12.or.us                                           
+  4    angied@nknsd.org                                                
+  5    benedicm@loswego.k12.or.us                                      
+  6    davidsons@eaglepnt.k12.or.us                                    
+  7    ryanware@nknsd.org                                              
+  8    schmiedebergt@kcsd.k12.or.us                                    
+  9    acacia.caraballo@lebanon.k12.or.us                              
+
+ 
+Obs    appUserName
+
+  1    bmartin@nbend.k12.or.us                                         
+  2    juan.rodriguez@hermistonsd.org                                  
+  3    trush@nbend.k12.or.us                                           
+  4    angied@nknsd.org                                                
+  5    benedicm@loswego.k12.or.us                                      
+  6    davidsons@eaglepnt.k12.or.us                                    
+  7    ryanware@nknsd.org                                              
+  8    schmiedebergt@kcsd.k12.or.us                                    
+  9    acacia.caraballo@lebanon.k12.or.us                              
+
+        Num                                                     month
+Obs    Logins               LastLogin    LastLoginISO8601       Year        member
+
+  1         4      08JUN2023:13:59:04    2023-06-08T20:59:04    Jun2023       OR  
+  2         5      06JUN2023:10:54:40    2023-06-06T17:54:40    Jun2023       OR  
+  3         3      12JUN2023:15:39:27    2023-06-12T22:39:27    Jun2023       OR  
+  4         1      02JUN2023:09:24:53    2023-06-02T16:24:53    Jun2023       OR  
+  5         1      08JUN2023:15:07:54    2023-06-08T22:07:54    Jun2023       OR  
+  6         3      12JUN2023:14:28:19    2023-06-12T21:28:19    Jun2023       OR  
+  7        14      13JUN2023:15:29:23    2023-06-13T22:29:23    Jun2023       OR  
+  8         4      02JUN2023:14:52:02    2023-06-02T21:52:02    Jun2023       OR  
+  9         7      13JUN2023:09:01:36    2023-06-13T16:01:36    Jun2023       OR  
+Retrieve max aur_id value from t4t.app_use_rept.
+
+        max
+-----------
+     211487
+Quick look at Monthly data for SD [06JUL2023 16:35]
+
+ 
+Obs      indx    person
+
+  1    211488    Lindsey Schilling               
+  2    211489    Jennifer Schumacher             
+  3    211490    Melanie Williamson              
+  4    211491    Ann Noyes                       
+  5    211492    Hollie Hoffman                  
+  6    211493    Cary Davis                      
+  7    211494    Trent Doerges                   
+  8    211495    Jeremy Elsom                    
+  9    211496    Allyson Boerger                 
+
+ 
+Obs    Login
+
+  1    lindsey.schilling@k12.sd.us                                     
+  2    jennifer.schumacher@k12.sd.us                                   
+  3    melanie.williamson@k12.sd.us                                    
+  4    ann.noyes@k12.sd.us                                             
+  5    hollie.hoffman@k12.sd.us                                        
+  6    cary.davis@k12.sd.us                                            
+  7    trent.doerges@k12.sd.us                                         
+  8    jeremy.elsom@k12.sd.us                                          
+  9    allyson.boerger@k12.sd.us                                       
+
+ 
+Obs    appUserName
+
+  1    lindsey.schilling@k12.sd.us                                     
+  2    jennifer.schumacher@k12.sd.us                                   
+  3    melanie.williamson@k12.sd.us                                    
+  4    ann.noyes@k12.sd.us                                             
+  5    hollie.hoffman@k12.sd.us                                        
+  6    cary.davis@k12.sd.us                                            
+  7    trent.doerges@k12.sd.us                                         
+  8    jeremy.elsom@k12.sd.us                                          
+  9    allyson.boerger@k12.sd.us                                       
+
+        Num                                                     month
+Obs    Logins               LastLogin    LastLoginISO8601       Year        member
+
+  1         1      08JUN2023:11:29:01    2023-06-08T18:29:01    Jun2023       SD  
+  2         3      12JUN2023:10:20:44    2023-06-12T17:20:44    Jun2023       SD  
+  3         3      14JUN2023:16:38:10    2023-06-14T23:38:10    Jun2023       SD  
+  4         5      09JUN2023:15:56:30    2023-06-09T22:56:30    Jun2023       SD  
+  5         5      14JUN2023:10:12:37    2023-06-14T17:12:37    Jun2023       SD  
+  6         2      14JUN2023:10:17:27    2023-06-14T17:17:27    Jun2023       SD  
+  7         2      03JUN2023:12:33:52    2023-06-03T19:33:52    Jun2023       SD  
+  8         3      14JUN2023:16:39:34    2023-06-14T23:39:34    Jun2023       SD  
+  9         9      21JUN2023:11:00:07    2023-06-21T18:00:07    Jun2023       SD  
+Retrieve max aur_id value from t4t.app_use_rept.
+
+        max
+-----------
+     211539
+Quick look at Monthly data for VI [06JUL2023 16:35]
+
+ 
+Obs      indx    person
+
+  1    211540    Audrey Bowry                    
+  2    211541    Retchie Gonzales                
+  3    211542    Cassandra Mumin                 
+  4    211543    Karen Bellot                    
+  5    211544    Kerra Samuel                    
+  6    211545    Paulina Croskey                 
+  7    211546    AnnMay Barretto                 
+  8    211547    Michelle Davis-Baron            
+  9    211548    Linda Ritter                    
+
+ 
+Obs    Login
+
+  1    audrey.bowry@vide.vi                                            
+  2    retchie.gonzales@vide.vi                                        
+  3    cassandra.mumin@vide.vi                                         
+  4    karen.bellot@vide.vi                                            
+  5    kerra.samuel@vide.vi                                            
+  6    paulina.croskey@vide.vi                                         
+  7    annmay.barretto@vide.vi                                         
+  8    michelle.davis@vide.vi                                          
+  9    linda.ritter@vide.vi                                            
+
+ 
+Obs    appUserName
+
+  1    audrey.bowry@vide.vi                                            
+  2    retchie.gonzales@vide.vi                                        
+  3    cassandra.mumin@vide.vi                                         
+  4    karen.bellot@vide.vi                                            
+  5    kerra.samuel@vide.vi                                            
+  6    paulina.croskey@vide.vi                                         
+  7    annmay.barretto@vide.vi                                         
+  8    michelle.davis@vide.vi                                          
+  9    linda.ritter@vide.vi                                            
+
+        Num                                                     month
+Obs    Logins               LastLogin    LastLoginISO8601       Year        member
+
+  1         3      24JUN2023:18:02:24    2023-06-25T01:02:24    Jun2023       VI  
+  2         4      27JUN2023:20:18:45    2023-06-28T03:18:45    Jun2023       VI  
+  3         4      01JUN2023:09:17:25    2023-06-01T16:17:25    Jun2023       VI  
+  4         3      04JUN2023:06:08:25    2023-06-04T13:08:25    Jun2023       VI  
+  5         8      13JUN2023:12:20:08    2023-06-13T19:20:08    Jun2023       VI  
+  6        29      20JUN2023:17:53:29    2023-06-21T00:53:29    Jun2023       VI  
+  7         5      04JUN2023:17:41:52    2023-06-05T00:41:52    Jun2023       VI  
+  8         1      01JUN2023:08:46:33    2023-06-01T15:46:33    Jun2023       VI  
+  9        10      01JUN2023:10:41:11    2023-06-01T17:41:11    Jun2023       VI  
+Retrieve max aur_id value from t4t.app_use_rept.
+
+        max
+-----------
+     211554
+Quick look at Monthly data for WA [06JUL2023 16:36]
+
+ 
+Obs      indx    person
+
+  1    211555    ALLISON MACGURN                 
+  2    211556    JEANINE BUTLER                  
+  3    211557    JAEL MARIE CROUSE               
+  4    211558    MEGAN FLANAGAN                  
+  5    211559    Susie Dickens                   
+  6    211560    Britta Martens                  
+  7    211561    Malinda Huddleston              
+  8    211562    JENNIFER SOIKA                  
+  9    211563    Julie Nelson                    
+
+ 
+Obs    Login
+
+  1    amacgurn@auburn.wednet.edu                                      
+  2    jeanineb4learning@gmail.com                                     
+  3    jcrouse@swsd101.org                                             
+  4    megan_flanagan@sumnersd.org                                     
+  5    sdickens@nsd.org                                                
+  6    bmartens@mtbaker.wednet.edu                                     
+  7    huddlesm@woodlandschools.org                                    
+  8    jsoika@cloverpark.k12.wa.us                                     
+  9    julie.c.nelson@ksd.org                                          
+
+ 
+Obs    appUserName
+
+  1    amacgurn@auburn.wednet.edu                                      
+  2    jeanineb4learning@gmail.com                                     
+  3    jcrouse@swsd101.org                                             
+  4    megan_flanagan@sumnersd.org                                     
+  5    sdickens@nsd.org                                                
+  6    bmartens@mtbaker.wednet.edu                                     
+  7    huddlesm@woodlandschools.org                                    
+  8    jsoika@cloverpark.k12.wa.us                                     
+  9    julie.c.nelson@ksd.org                                          
+
+        Num                                                     month
+Obs    Logins               LastLogin    LastLoginISO8601       Year        member
+
+  1        24      21JUN2023:08:40:11    2023-06-21T15:40:11    Jun2023       WA  
+  2         7      15JUN2023:13:55:13    2023-06-15T20:55:13    Jun2023       WA  
+  3         1      10JUN2023:18:56:04    2023-06-11T01:56:04    Jun2023       WA  
+  4         4      12JUN2023:14:38:55    2023-06-12T21:38:55    Jun2023       WA  
+  5         9      15JUN2023:17:11:14    2023-06-16T00:11:14    Jun2023       WA  
+  6         1      08JUN2023:15:26:15    2023-06-08T22:26:15    Jun2023       WA  
+  7         2      05JUN2023:13:23:58    2023-06-05T20:23:58    Jun2023       WA  
+  8         4      02JUN2023:08:57:59    2023-06-02T15:57:59    Jun2023       WA  
+  9         1      14JUN2023:15:25:20    2023-06-14T22:25:20    Jun2023       WA  
