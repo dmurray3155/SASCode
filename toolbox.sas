@@ -53,6 +53,45 @@
 		port=5432 database=tcd user=root password="eiY8phohiu7Pho3e";
 %mend SetTCD;
 
+/*==========================================================================================================*
+ |  Name: Set(*)																																														|
+ |  Author: Don Murray (as Smarter Balanced)																																|
+ |  Purpose: General, often used utilities																																	|
+ |  Notes: Added under SBAC tenure																																					|
+ |  Application: Define SAS library to postGreSQL TCD access.																								|
+ *------- Development History ------------------------------------------------------------------------------*
+ |  2025 01 06		Initial Logic Development.																																|
+ *==========================================================================================================*/
+filename sbcf "C:\Users\dmurray\MySAS\SBACConfig.json";
+libname myconfig JSON fileref=sbcf;
+
+/*Set credential macro variables*/
+%macro SetTCD;
+	data _null_;
+		set myconfig.dbinfo_tcd;
+		call symput('tcd_server',   Server);
+		call symput('tcd_port',     Port);
+		call symput('tcd_database', Database);
+		call symput('tcd_uid',      Uid);
+		call symput('tcd_pwd',      Pwd);
+	run;
+	libname tcd postgres server="&tcd_server." port=&tcd_port.
+	user=&tcd_uid. password="&tcd_pwd." database=&tcd_database.;
+%mend SetTCD;
+
+%macro SetT4T;
+	data _null_;
+		set myconfig.dbinfo_t4t;
+		call symput('t4t_server',   Server);
+		call symput('t4t_port',     Port);
+		call symput('t4t_database', Database);
+		call symput('t4t_uid',      Uid);
+		call symput('t4t_pwd',      Pwd);
+	run;
+	libname t4t postgres server="&t4t_server." port=&t4t_port.
+	user=&t4t_uid. password="&t4t_pwd." database=&t4t_database.;
+%mend SetT4T;
+
 /*-------------------------------------------------------------------*
  | Set preferred system options based on SAS version (03 DEC 2009)   |
  *-------------------------------------------------------------------*/
@@ -247,7 +286,7 @@
  | Return SAS date value from string pieces 19 SEP 2011              |
  *-------------------------------------------------------------------*/
  %macro Time_HMS(HH, MM, SS);
-    if &MM in ("01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12")
+    if &HH in ("01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12")
        and &MM in ("01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12",
                    "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24",
                    "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36",
