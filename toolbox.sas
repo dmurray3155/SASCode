@@ -30,10 +30,11 @@
  |  Application: Define SAS library to postGreSQL IMRT production access.																		|
  *------- Development History ------------------------------------------------------------------------------*
  |  2019 08 15		Initial Logic Development.																																|
+ |	2025 03 07		Updated server name after DB upgrade by tech. team.																				|
  *==========================================================================================================*/
 %macro SetIMRTPrd;
 	/*	Set LibName to access data from IMRT production system	*/
-	libname imrtprd postgres server='imrt-prod-bi.c7g9woytu6d2.us-west-2.rds.amazonaws.com'
+	libname imrtprd postgres server='imrt-prod-v12-22-reader.c7g9woytu6d2.us-west-2.rds.amazonaws.com'
 					port=5432 user=analyst password='che3UaPo' database=imrt;
 %mend SetIMRTPrd;
 
@@ -46,12 +47,13 @@
  *------- Development History ------------------------------------------------------------------------------*
  |  2019 08 28		Initial Logic Development.																																|
  *==========================================================================================================*/
-%macro SetTCD;
+%macro SetTCD_old;
 	/*	Set LibName to access data from TCD system	*/
 	libname itmsts postgres
 		server="analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com"
 		port=5432 database=tcd user=root password="eiY8phohiu7Pho3e";
-%mend SetTCD;
+%mend SetTCD_old;
+/* {SAS004}70C77B5C28AB1C0D08B92DB91E465FE4E886F34B598E14A = eiY8phohiu7Pho3e	*/
 
 /*==========================================================================================================*
  |  Name: Set(*)																																														|
@@ -62,11 +64,11 @@
  *------- Development History ------------------------------------------------------------------------------*
  |  2025 01 06		Initial Logic Development.																																|
  *==========================================================================================================*/
-filename sbcf "C:\Users\dmurray\MySAS\SBACConfig.json";
-libname myconfig JSON fileref=sbcf;
 
 /*Set credential macro variables*/
 %macro SetTCD;
+	filename sbcf "C:\SAS\SBACConfig.json";
+	libname myconfig JSON fileref=sbcf;
 	data _null_;
 		set myconfig.dbinfo_tcd;
 		call symput('tcd_server',   Server);
@@ -80,6 +82,8 @@ libname myconfig JSON fileref=sbcf;
 %mend SetTCD;
 
 %macro SetT4T;
+	filename sbcf "C:\SAS\SBACConfig.json";
+	libname myconfig JSON fileref=sbcf;
 	data _null_;
 		set myconfig.dbinfo_t4t;
 		call symput('t4t_server',   Server);
@@ -91,6 +95,29 @@ libname myconfig JSON fileref=sbcf;
 	libname t4t postgres server="&t4t_server." port=&t4t_port.
 	user=&t4t_uid. password="&t4t_pwd." database=&t4t_database.;
 %mend SetT4T;
+
+%macro SetDBM(schema=public);
+	filename sbcf "C:\SAS\SBACConfig.json";
+	libname myconfig JSON fileref=sbcf;
+	data _null_;
+		set myconfig.dbinfo_dbm;
+		call symput('dbm_server',   Server);
+		call symput('dbm_port',     Port);
+		call symput('dbm_database', Database);
+		call symput('dbm_uid',      Uid);
+		call symput('dbm_pwd',      Pwd);
+	run;
+	libname dbm postgres server="&dbm_server." schema=&schema. port=&dbm_port.
+	user=&dbm_uid. password="&dbm_pwd." database=&dbm_database.;
+%mend SetDBM;
+
+/*	Below added to avoid debugging JSON above on 2025-02-26	*/
+%macro SetDBMExp(schema=public);
+	libname dbm postgres
+		server="analyticsaurora-cluster.cluster-cimuvo5urx1e.us-west-2.rds.amazonaws.com"
+		schema=&schema. port=5432 database=dbm user=dmurray
+		password="{SAS004}70C77B5C28AB1C0D08B92DB91E465FE4E886F34B598E14AF";
+%mend SetDBMExp;
 
 /*-------------------------------------------------------------------*
  | Set preferred system options based on SAS version (03 DEC 2009)   |
@@ -277,7 +304,7 @@ libname myconfig JSON fileref=sbcf;
                      "1994", "1995", "1996", "1997", "1998", "1999", "2000", "2001", "2002",
                      "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011",
                      "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020",
-										 "2021", "2022", "2023", "2024", "2025")
+										 "2021", "2022", "2023", "2024", "2025", "2026", "2027", "2028", "2029")
             then Date_Val = MDY(&MM, &DD, &YYYY);
     else Date_Val = .;
  %mend Date_MDY;
@@ -286,7 +313,8 @@ libname myconfig JSON fileref=sbcf;
  | Return SAS date value from string pieces 19 SEP 2011              |
  *-------------------------------------------------------------------*/
  %macro Time_HMS(HH, MM, SS);
-    if &HH in ("01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12")
+    if &HH in ("01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12",
+    						"13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23")
        and &MM in ("01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12",
                    "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24",
                    "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36",
