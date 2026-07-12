@@ -1,0 +1,7 @@
+{
+  "bundle": "t002_itemid_itemtype",
+  "source_file": "EFT_Merge/2022-23/read_itid_ittyp.sas",
+  "source_blob_sha": "38f664f2e043a8b5a4076b49cb65ce2d599ffda0",
+  "source_commit": "0a3d7b798f695cde191fc9c26115fede37f57146",
+  "notes": "The file's primary logic (left commented out by the author, marked 'used by importETSCSV.sas') is un-commented and adapted: hardcoded D:\\SBAC\\... libname path replaced with a relative WORK path, and itemid_itemtype.csv (item id / item type pairs, no PII) written inline instead of read from the vendor delivery folder. Reads the CSV, prints it, then PROC SQL group-by counts items by type. Consecutive Title1/Title2 in the PROC SQL block was collapsed to a single Title1 for engine compatibility."
+}

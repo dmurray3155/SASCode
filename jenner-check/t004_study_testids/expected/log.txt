@@ -1,0 +1,30 @@
+
+NOTE: Option OBS changed to 100.
+NOTE: Library LIBHERE assigned path=..
+NOTE: DATA libhere.ela03_AIRSrc
+
+NOTE: Processing inline DATALINES (8 lines)
+
+NOTE: Read 8 rows from DATALINES.
+NOTE: Wrote libhere.ela03_AIRSrc (8 rows, 2 columns).
+NOTE: DATA elapsed:
+  wall  0.00 seconds
+  cpu   0.00 seconds
+NOTE: DATA libhere.ela03_ETSSrc
+
+NOTE: Processing inline DATALINES (6 lines)
+
+NOTE: Read 6 rows from DATALINES.
+NOTE: Wrote libhere.ela03_ETSSrc (6 rows, 1 columns).
+NOTE: DATA elapsed:
+  wall  0.00 seconds
+  cpu   0.00 seconds
+NOTE: Option LS changed to 135.
+NOTE: Option TITLE changed to libhere.ela03_AIRSrc [on 24299 at 11:11:58 AM].
+NOTE: PROC FREQ
+NOTE: ODS plot written: freq_mosaic_transformed_clientname_testid.spec.json
+NOTE: PROC FREQ statement used.
+NOTE: Option TITLE changed to libhere.ela03_ETSSrc [on 24299 at 11:11:58 AM].
+NOTE: PROC FREQ
+NOTE: ODS plot written: freq_itemsegmentid.spec.json
+NOTE: PROC FREQ statement used.

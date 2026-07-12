@@ -1,0 +1,23 @@
+
+NOTE: Option OBS changed to 100.
+NOTE: DATA _null_
+
+NOTE: Writing to fileref tdf_sample.csv (/tmp/work/r_beef09357b3846f386a98da31f26c131/tdf_sample.csv)
+NOTE: DATA _null_ completed. Output written to fileref tdf_sample.csv (/tmp/work/r_beef09357b3846f386a98da31f26c131/tdf_sample.csv)
+NOTE: Library LIBHERE assigned path=..
+NOTE: DATA libHere.TDF_sample
+
+NOTE: Reading from fileref tdf_sample.csv (tdf_sample.csv)
+
+NOTE: Read 5 rows from tdf_sample.csv.
+NOTE: Wrote libHere.TDF_sample (5 rows, 61 columns).
+NOTE: DATA elapsed:
+  wall  0.00 seconds
+  cpu   0.00 seconds
+NOTE: Option TITLE changed to Contents of libHere.TDF_sample [on 24299 at 11:09:41 AM].
+NOTE: PROC PRINT data=libHere.TDF_sample
+
+NOTE: PROC PRINT completed: 5 observations printed, 10 variables
+NOTE: PROC SQL 
+
+NOTE: PROC SQL statement used.

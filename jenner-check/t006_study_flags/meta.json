@@ -1,0 +1,7 @@
+{
+  "bundle": "t006_study_flags",
+  "source_file": "ValidateResults.sas",
+  "source_blob_sha": "f5eed4ca8c76ca4e867e033838af0a2829cb90a2",
+  "source_commit": "0a3d7b798f695cde191fc9c26115fede37f57146",
+  "notes": "The %studyFlags macro (a 4-way PROC FREQ cross-tab, including the name-literal column 'Current Status'n exactly as the author wrote it) is unmodified. %ReadTheXL and %MergeWFS2XL, which read a local XLSX pull-list tracker and join to a live Postgres item-workflow database via %SetIMRTPrd (a toolbox.sas macro embedding a live database password, not reproduced anywhere in this bundle), are not called. libhere.sumELA_w_WFS is instead built inline from small mock rows (no PII) carrying the same four columns (AsmtType, Role, 'Current Status'n, workflow_status) that studyFlags cross-tabulates."
+}

@@ -1,0 +1,21 @@
+                         Check contents of IACal.itemid_itemtype_2223 [on 24299 at 11:08:07 AM]                         
+
+
+  Obs  itemid  itemtype
+-----  ------  --------
+    1   10234  MC
+    2   10235  MC
+    3   10236  CR
+    4   10237  MC
+    5   10238  TE
+    6   10239  CR
+    7   10240  MC
+    8   10241  TE
+
+                         Check contents of IACal.itemid_itemtype_2223 [on 24299 at 11:08:07 AM]                         
+
+itemtype  frequency
+--------  ---------
+      CR          2
+      MC          4
+      TE          2

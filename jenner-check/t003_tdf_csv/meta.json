@@ -1,0 +1,7 @@
+{
+  "bundle": "t003_tdf_csv",
+  "source_file": "FFConfigSheets202021/ReadTDFCSV.sas",
+  "source_blob_sha": "7e8c1daf9c8ea26f2eb8c054bcbe68970c51f27c",
+  "source_commit": "0a3d7b798f695cde191fc9c26115fede37f57146",
+  "notes": "%VarFmtLst (the 61-field TDF FORMAT/INFORMAT list) and %ReadTDFCSV (the fixed-shape INFILE/INPUT reader for Test Definition File CSVs) are copied verbatim into autoexec.sas. script.sas writes a small, non-PII mock TDF CSV inline (5 item rows spanning ELA grade 3 and Math grade 5, using real TDF column names: AssessmentType, Subject, StudentGrade, Claim, Target, DOK, WorkflowStatus, etc.) instead of reading from the author's SharePoint-synced Prebuild_TDF folder, then calls %ReadTDFCSV exactly as the file's own commented-out usage does, followed by a %StudyTDF-style PROC SQL WHERE/ORDER BY subset on Subject='MATH' and StudentGrade=5 (adapted from the file's own %StudyTDF macro further down in the same file)."
+}

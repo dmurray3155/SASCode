@@ -1,0 +1,7 @@
+{
+  "bundle": "t001_ebsr_split",
+  "source_file": "FTData201819/modelEBSRsplit.sas",
+  "source_blob_sha": "a4c5ad00f233ea651059c60f73d0ae83d5c2ae82",
+  "source_commit": "0a3d7b798f695cde191fc9c26115fede37f57146",
+  "notes": "Runs unmodified. Splits EBSR (evidence-based selected response) field strings from AIR and ETS vendor formats using INDEX/SUBSTR to locate the boundary between two interaction responses; both DATA steps use inline literal test data already present in the source, no external files or libnames."
+}

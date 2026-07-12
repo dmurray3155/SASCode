@@ -1,0 +1,26 @@
+
+NOTE: Option OBS changed to 100.
+NOTE: DATA t4t_app_use_rept
+
+NOTE: Processing inline DATALINES (5 lines)
+
+NOTE: Read 5 rows from DATALINES.
+NOTE: Wrote t4t_app_use_rept (5 rows, 6 columns).
+NOTE: DATA elapsed:
+  wall  0.00 seconds
+  cpu   0.00 seconds
+NOTE: PROC SQL 
+
+NOTE: Table timediff created.
+NOTE: PROC SQL statement used.
+NOTE: Option TITLE changed to Study of date / time stamp values in t4t_app_use_rept [12JUL2026 11:13] -- time_diff = lastloginiso8601 - lastloginpt.
+NOTE: PROC FREQ
+NOTE: ODS plot written: freq_time_diff.spec.json
+NOTE: PROC FREQ statement used.
+NOTE: Option FOOTNOTE changed to The time_diff value changes at transition to / from daylight saving time.
+NOTE: ODS Graphics is ON (width=640px, height=480px, format=SVG).
+NOTE: PROC CORR data=timediff
+
+NOTE: ODS plot written: corr_heatmap.spec.json
+NOTE: PROC CORR ODS Graphics generated.
+NOTE: ODS Graphics is OFF.

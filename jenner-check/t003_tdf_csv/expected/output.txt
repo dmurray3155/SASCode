@@ -1,0 +1,18 @@
+                                Contents of libHere.TDF_sample [on 24299 at 11:09:41 AM]                                
+
+
+  Obs  AssessmentType  Subject  StudentGrade        ShortTitle  ItemId  ItemType  Claim  Target  DOK              WorkflowStatus
+-----  --------------  -------  ------------  ----------------  ------  --------  -----  ------  ---  --------------------------
+    1  ICA             ELA                 3  ICA-ELA-03         20145  MC            2  1         2  Item Approved for Operatio
+    2  ICA             ELA                 3  ICA-ELA-03         20146  MC            2  2         3  Item Approved for Operatio
+    3  ICA             MATH                5  ICA-MATH-05        30871  MC            1  1         2  Item Approved for Operatio
+    4  IAB             MATH                5  IAB-MATH-05-FR     30902  MC            3  1         3  Item Approved for Operatio
+    5  IAB             MATH                5  IAB-MATH-05-FR     30903  CR            3  2         4  Item In Development
+
+                                Contents of libHere.TDF_sample [on 24299 at 11:09:41 AM]                                
+
+    ShortTitle  Sequence  ItemId  ItemType  Claim  DOK              WorkflowStatus
+--------------  --------  ------  --------  -----  ---  --------------------------
+IAB-MATH-05-FR         1   30902        MC      3    3  Item Approved for Operatio
+IAB-MATH-05-FR         2   30903        CR      3    4         Item In Development
+   ICA-MATH-05         1   30871        MC      1    2  Item Approved for Operatio

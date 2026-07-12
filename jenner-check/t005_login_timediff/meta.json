@@ -1,0 +1,7 @@
+{
+  "bundle": "t005_login_timediff",
+  "source_file": "T4T/study_date_times.sas",
+  "source_blob_sha": "26a0608a3ba499616bd910f1d3f8b1155136a065",
+  "source_commit": "0a3d7b798f695cde191fc9c26115fede37f57146",
+  "notes": "The %SetT4T/%ConT4T connection macros (which embed a live database password in the source repo) are dropped entirely and NOT reproduced anywhere in this bundle. t4t.app_use_rept is rebuilt inline from small mock login-timestamp rows (no PII, synthetic user ids) carrying the same two datetime columns (lastloginpt, lastloginiso8601) the script studies. The PROC SQL time_diff computation, PROC FREQ, and PROC CORR + ODS GRAPHICS scatter block are otherwise unmodified -- this is the file's own diagnostic for the Pacific-time-vs-ISO8601 timestamp drift noted in T4T/LoadCSV2DB.sas's amendment history. Consecutive Title1/Title2 collapsed into one Title for engine compatibility."
+}
