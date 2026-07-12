@@ -1,0 +1,13 @@
+{
+  "_captured_at": "2026-07-12T11:08:07Z",
+  "_captured_run_id": "r_7aedb0fd713b4dc5916ee50af8b377db",
+  "status": "ok",
+  "exit_code": 0,
+  "log_contains": [
+    "NOTE: Wrote IACal.itemid_itemtype_2223 (8 rows, 2 columns).",
+    "NOTE: PROC PRINT completed: 8 observations printed, 2 variables",
+    "NOTE: PROC SQL statement used."
+  ],
+  "log_does_not_contain": ["ERROR:", "[JENNER-ERROR"],
+  "diagnostics": {"parse_warnings": [], "runtime_warnings": []}
+}

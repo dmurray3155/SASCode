@@ -1,0 +1,7 @@
+{
+  "bundle": "t004_study_testids",
+  "source_file": "FTData201819/Study_TestIDs.sas",
+  "source_blob_sha": "7399bced3461614d761ebdd6ffbd5627add61aae",
+  "source_commit": "0a3d7b798f695cde191fc9c26115fede37f57146",
+  "notes": "The %StudyTstIDs macro (PROC FREQ cross-tab of transformed_clientname * TestId over the AIR-source vendor table, then a one-way PROC FREQ of itemSegmentId over the ETS-source vendor table) is unmodified. The %include \"SetSessionEnv.sas\" and its hardcoded OneDrive libname are replaced with a WORK-library assignment, and libhere.ela03_AIRSrc / libhere.ela03_ETSSrc are built inline from small mock rows (no PII, synthetic LEA/client and segment identifiers matching the vendor delivery column names used across this repo's EFT_Merge and FTData201819 import scripts) instead of the real AIR/ETS CSV deliveries."
+}

@@ -1,0 +1,13 @@
+{
+  "_captured_at": "2026-07-12T11:11:58Z",
+  "_captured_run_id": "r_d33cad65883a46ce8da89b6960e483e2",
+  "status": "ok",
+  "exit_code": 0,
+  "log_contains": [
+    "NOTE: Wrote libhere.ela03_AIRSrc (8 rows, 2 columns).",
+    "NOTE: Wrote libhere.ela03_ETSSrc (6 rows, 1 columns).",
+    "NOTE: PROC FREQ statement used."
+  ],
+  "log_does_not_contain": ["ERROR:", "[JENNER-ERROR"],
+  "diagnostics": {"parse_warnings": [], "runtime_warnings": []}
+}

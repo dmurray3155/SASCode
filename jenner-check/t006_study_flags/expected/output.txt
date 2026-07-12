@@ -1,0 +1,15 @@
+                             Check WFS for ELA in 18-19 Summative [on 24299 at 11:14:28 AM]                             
+
+                                                   The FREQ Procedure
+
+AsmtType    Role    Current Status    workflow_status    Frequency    Percent    Cumulative    Cumulative
+                                                                                  Frequency       Percent
+---------------------------------------------------------------------------------------------------------
+ICA         Item    Active            Item_Approved              1     16.67             1        16.67
+ICA         Item    Active            Item_In_Review             1     16.67             2        33.33
+SUM         Item    Active            Item_Approved              2     33.33             4        66.67
+SUM         Item    Retired           Item_Retired               1     16.67             5        83.33
+SUM         Stim    Active            Item_Approved              1     16.67             6       100.00
+
+Total Frequency = 6
+

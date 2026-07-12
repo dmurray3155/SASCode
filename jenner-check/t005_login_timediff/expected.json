@@ -1,0 +1,13 @@
+{
+  "_captured_at": "2026-07-12T11:13:00Z",
+  "_captured_run_id": "r_a7e9548826cd4b8cbf779d33ab04be40",
+  "status": "ok",
+  "exit_code": 0,
+  "log_contains": [
+    "NOTE: Table timediff created.",
+    "NOTE: PROC FREQ statement used.",
+    "NOTE: PROC CORR ODS Graphics generated."
+  ],
+  "log_does_not_contain": ["ERROR:", "[JENNER-ERROR", "WARNING: No observations"],
+  "diagnostics": {"parse_warnings": [], "runtime_warnings": []}
+}

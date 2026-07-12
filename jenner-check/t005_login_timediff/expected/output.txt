@@ -1,0 +1,27 @@
+ Study of date / time stamp values in t4t_app_use_rept [12JUL2026 11:13] -- time_diff = lastloginiso8601 - lastloginpt  
+
+                                                   The FREQ Procedure
+
+                                       Cumulative    Cumulative
+time_diff    Frequency    Percent     Frequency      Percent
+------------------------------------------------------------------
+25200                4    100.00            4       100.00
+ Study of date / time stamp values in t4t_app_use_rept [12JUL2026 11:13] -- time_diff = lastloginiso8601 - lastloginpt  
+
+                    The CORR Procedure
+                2 Variables:    lastloginpt   lastloginiso8601
+                    Simple Statistics
+Variable         N      Mean   Std Dev       Sum   Minimum   Maximum
+--------  --------  --------  --------  --------  --------  --------
+lastloginpt              4  07JUN2023:10:41:45  179350.14943  24SEP2213:18:47:00  05JUN2023:14:02:00  10JUN2023:08:00:00
+lastloginiso8601         4  07JUN2023:17:41:45  179350.14943  25SEP2213:22:47:00  05JUN2023:21:02:00  10JUN2023:15:00:00
+   Pearson Correlation Coefficients, N = 4
+          Prob > |r| under H0: Rho=0
+          lastloginptlastloginiso8601
+--------  --------  --------
+lastloginpt   1.00000   1.00000
+              .       <.0001
+lastloginiso8601   1.00000   1.00000
+            <.0001      .
+
+The time_diff value changes at transition to / from daylight saving time
